@@ -2,377 +2,52 @@
 <html lang="no">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Nye Sundsøya · Inderøy — leiligheter, rekkehus og eneboliger</title>
-<meta name="description" content="Nye Sundsøya på Inderøy — 19 nye boliger ved sundet i første salgstrinn: 8 leiligheter, 5 rekkehus og 6 eneboliger. Se ledige boliger, priser og salgsoppgaver.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Lora:wght@500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="/prospekt/sundsoya/">
+<title>Sundsøya · Salgsoppgaver</title>
 <style>
-  :root{
-    --paper:#f4efe4; --paper2:#efe9da; --forest:#3a472f; --forest2:#2e3a25;
-    --brass:#a8884e; --brass-lys:#d9b878; --muted:#6a6b5e; --ink:#3a3b32;
-    --linje:#ddd5c2; --kort:#faf7ee;
-  }
+  :root{ --forest:#3A472F; --brass:#A8884E; --paper:#F4EFE4; }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{background:var(--paper);color:var(--ink);font-family:'Outfit',sans-serif;font-size:16px;line-height:1.6}
-  img{max-width:100%;display:block}
-  a{color:inherit}
-  .vev{max-width:1180px;margin:0 auto;padding:0 20px}
-  .eyebrow{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--brass);font-weight:600}
-  h2{font-family:'Gloock',serif;font-weight:400;font-size:clamp(26px,3.6vw,40px);line-height:1.15;color:var(--forest);margin:10px 0 14px}
-  .ingress{color:var(--muted);max-width:640px}
-
-  /* ---------- toppbar ---------- */
-  .topp{position:sticky;top:0;z-index:50;background:rgba(244,239,228,.94);backdrop-filter:blur(8px);
-        border-bottom:1px solid var(--linje)}
-  .topp-i{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
-  .logo{font-family:'Lora',serif;font-weight:700;letter-spacing:.32em;font-size:15px;color:var(--forest);text-decoration:none}
-  .logo span{color:var(--brass)}
-  .topp nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
-  .topp nav a{text-decoration:none;font-size:13.5px;font-weight:500;color:var(--muted);padding:8px 12px;border-radius:20px;transition:.15s}
-  .topp nav a:hover{color:var(--forest);background:var(--paper2)}
-  .topp .velgerknapp{background:var(--forest);color:#f2eddc;border-radius:22px;padding:9px 18px;font-weight:600;letter-spacing:.04em}
-  .topp .velgerknapp:hover{background:var(--forest2);color:#fff}
-  @media(max-width:860px){ .topp nav a:not(.velgerknapp){display:none} }
-
-  /* ---------- hero ---------- */
-  .hero{position:relative;overflow:hidden;background:var(--forest)}
-  .hero img{width:100%;height:min(78vh,760px);object-fit:cover;object-position:center 66%}
-  .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,26,15,.18) 0%,rgba(20,26,15,.08) 40%,rgba(20,26,15,.62) 100%)}
-  .hero-tekst{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 20px 46px;max-width:1180px;margin:0 auto;color:#f6f2e6}
-  .hero-tekst .eyebrow{color:var(--brass-lys)}
-  .hero h1{font-family:'Gloock',serif;font-weight:400;font-size:clamp(38px,6.4vw,72px);line-height:1.04;margin:10px 0 10px;text-shadow:0 2px 24px rgba(0,0,0,.35)}
-  .hero .lead{max-width:560px;font-size:clamp(15px,1.6vw,18px);color:#ece6d2;text-shadow:0 1px 12px rgba(0,0,0,.4)}
-  .chips{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 22px}
-  .chip{background:rgba(244,239,228,.16);border:1px solid rgba(244,239,228,.38);backdrop-filter:blur(4px);
-        color:#f6f2e6;font-size:13px;font-weight:500;letter-spacing:.05em;padding:7px 15px;border-radius:20px}
-  .cta-rad{display:flex;gap:12px;flex-wrap:wrap}
-  .knapp{display:inline-block;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.06em;
-         padding:13px 26px;border-radius:28px;transition:.15s}
-  .knapp.primar{background:var(--brass);color:#fff}
-  .knapp.primar:hover{background:#96763d;transform:translateY(-2px)}
-  .knapp.sekundar{border:1.5px solid rgba(244,239,228,.65);color:#f6f2e6}
-  .knapp.sekundar:hover{background:rgba(244,239,228,.14)}
-  .knapp.mork{border:1.5px solid var(--forest);color:var(--forest)}
-  .knapp.mork:hover{background:var(--forest);color:#f2eddc}
-
-  /* ---------- seksjoner ---------- */
-  section{padding:72px 0}
-  @media(max-width:700px){ section{padding:52px 0} }
-
-  /* boligtypekort */
-  .typegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;margin-top:34px}
-  .typekort{background:var(--kort);border:1px solid var(--linje);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;
-            text-decoration:none;transition:.18s;box-shadow:0 10px 30px rgba(58,71,47,.07)}
-  .typekort:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(58,71,47,.14)}
-  .typekort .tfoto{aspect-ratio:4/3;overflow:hidden}
-  .typekort .tfoto img{width:100%;height:100%;object-fit:cover;transition:.4s}
-  .typekort:hover .tfoto img{transform:scale(1.04)}
-  .typekort .tk{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
-  .typekort h3{font-family:'Gloock',serif;font-weight:400;font-size:23px;color:var(--forest)}
-  .typekort .tsub{color:var(--brass);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin:3px 0 10px}
-  .typekort p{color:var(--muted);font-size:14.5px;margin-bottom:14px}
-  .typekort .tpris{margin-top:auto;display:flex;align-items:baseline;justify-content:space-between;gap:8px;border-top:1px solid var(--linje);padding-top:14px}
-  .typekort .tpris b{font-family:'Lora',serif;font-size:19px;color:var(--forest)}
-  .typekort .tpris span{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);font-weight:600}
-
-  /* velger-band */
-  .band{background:var(--forest);color:#f0ead8;padding:58px 0}
-  .band .vev{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
-  .band h2{color:#f6f2e6;margin:6px 0 8px}
-  .band p{color:#cfc9ae;max-width:560px}
-  .band .eyebrow{color:var(--brass-lys)}
-  .band .knapp{margin-left:auto}
-  @media(max-width:820px){ .band .knapp{margin-left:0} }
-
-  /* prosjekt */
-  .tospalter{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center}
-  @media(max-width:860px){ .tospalter{grid-template-columns:1fr} }
-  .ramme{border-radius:14px;overflow:hidden;border:1px solid var(--linje);box-shadow:0 16px 44px rgba(58,71,47,.12)}
-  .bildestabel{display:grid;gap:18px}
-  .bildestabel .ramme img{aspect-ratio:4/3;object-fit:cover;width:100%}
-  .fakta{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linje);border:1px solid var(--linje);border-radius:12px;overflow:hidden;margin-top:26px}
-  .fakta div{background:var(--kort);padding:13px 16px}
-  .fakta .fl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-weight:600}
-  .fakta .fv{font-weight:500;color:var(--ink);font-size:14.5px}
-
-  /* kvalitet */
-  .kvalitet{background:var(--paper2)}
-  .fotorad{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px}
-  @media(max-width:700px){ .fotorad{grid-template-columns:1fr} }
-  .fotorad figure{border-radius:14px;overflow:hidden;border:1px solid var(--linje);margin:0}
-  .fotorad img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/4.4}
-  .punkter{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:30px}
-  .punkt{background:var(--kort);border:1px solid var(--linje);border-radius:12px;padding:18px 20px}
-  .punkt b{display:block;font-family:'Lora',serif;color:var(--forest);margin-bottom:5px;font-size:15.5px}
-  .punkt span{color:var(--muted);font-size:14px}
-
-  /* salgsoppgaver */
-  .bokgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px;margin-top:34px}
-  .bok{background:var(--kort);border:1px solid var(--linje);border-radius:14px;padding:24px;text-align:center;transition:.18s}
-  .bok:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(58,71,47,.12)}
-  .bok .omslag{width:62%;margin:0 auto 18px;aspect-ratio:210/297;border-radius:4px;overflow:hidden;box-shadow:0 14px 30px rgba(40,48,30,.3)}
-  .bok .omslag img{width:100%;height:100%;object-fit:cover}
-  .bok h3{font-family:'Gloock',serif;font-weight:400;font-size:20px;color:var(--forest)}
-  .bok .bsub{color:var(--muted);font-size:13px;margin:4px 0 16px}
-  .bok .blenker{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-  .bok .blenker a{text-decoration:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
-                  padding:9px 16px;border-radius:22px}
-  .bok .les{background:var(--forest);color:#f2eddc}
-  .bok .les:hover{background:var(--forest2)}
-  .bok .pdf{border:1px solid var(--linje);color:var(--muted)}
-  .bok .pdf:hover{border-color:var(--brass);color:var(--brass)}
-
-  /* kontakt */
-  .kontakt{background:var(--forest);color:#f0ead8;text-align:center;padding:76px 0}
-  .kontakt .eyebrow{color:var(--brass-lys)}
-  .kontakt h2{color:#f6f2e6}
-  .kontakt .ingress{margin:0 auto;color:#cfc9ae}
-  .megler-grid{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-top:34px}
-  .megler{background:rgba(244,239,228,.07);border:1px solid rgba(217,184,120,.3);border-radius:14px;padding:24px 34px;min-width:250px}
-  .megler .mn{font-family:'Lora',serif;font-size:18px;color:#f6f2e6}
-  .megler .mr{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass-lys);margin:4px 0 12px}
-  .megler a{display:block;text-decoration:none;color:#e6dfc8;font-size:14.5px;line-height:1.9}
-  .megler a:hover{color:var(--brass-lys)}
-
-  /* footer */
-  .forbehold{background:var(--forest2);color:#a9a992;font-size:12px;line-height:1.9;text-align:center;padding:30px 20px 36px}
-  .forbehold a{color:#cfc9ae}
+  body{background:#11150e;color:#e9e3d4;font-family:'Helvetica Neue',Arial,sans-serif;min-height:100vh;
+       display:flex;flex-direction:column;align-items:center;padding:7vh 20px 40px}
+  .eyebrow{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--brass)}
+  h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:40px;letter-spacing:.04em;margin:10px 0 4px}
+  .lead{color:#b7b09c;font-size:14px;letter-spacing:.04em;margin-bottom:46px}
+  .grid{display:flex;gap:30px;flex-wrap:wrap;justify-content:center;max-width:1100px}
+  .card{width:300px;text-decoration:none;color:inherit;display:block;transition:transform .2s}
+  .card:hover{transform:translateY(-6px)}
+  .thumb{width:100%;aspect-ratio:210/297;background:#222;border-radius:4px;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.55);border:1px solid rgba(168,136,78,.25)}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .ct{margin-top:16px;font-family:Georgia,serif;font-size:19px;letter-spacing:.02em}
+  .cs{color:#9c9684;font-size:12px;letter-spacing:.06em;margin-top:3px}
+  .open{margin-top:10px;display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);border:1px solid rgba(168,136,78,.5);padding:7px 14px;border-radius:30px}
+  .foot{margin-top:54px;color:#6f6a5b;font-size:11px;letter-spacing:.1em;text-align:center;line-height:1.8}
+  .velger-cta{display:inline-block;margin:-26px 0 44px;text-decoration:none;font-size:12px;letter-spacing:.2em;
+       text-transform:uppercase;color:#11150e;background:var(--brass);padding:13px 30px;border-radius:30px;
+       transition:.15s;font-weight:600}
+  .velger-cta:hover{background:#c5a160;transform:translateY(-2px)}
 </style>
 </head>
 <body>
-
-<header class="topp">
-  <div class="topp-i">
-    <a class="logo" href="#">SUNDS<span>ØYA</span></a>
-    <nav>
-      <a href="#boligene">Boligene</a>
-      <a href="#prosjektet">Prosjektet</a>
-      <a href="#beliggenhet">Beliggenhet</a>
-      <a href="#salgsoppgaver">Salgsoppgaver</a>
-      <a href="#kontakt">Kontakt</a>
-      <a class="velgerknapp" href="velger/">Boligvelger</a>
-    </nav>
-  </div>
-</header>
-
-<div class="hero">
-  <img src="img/hero-prosjekt.jpg" alt="Nye Sundsøya sett ovenfra — det nye nabolaget ved sundet og «pollen» på Inderøy" fetchpriority="high">
-  <div class="hero-tekst">
-    <div class="eyebrow">Inderøy · Trøndelag</div>
-    <h1>Nye Sundsøya</h1>
-    <p class="lead">Et helt nytt nabolag ved sundet, nede ved vannkanten på idylliske Inderøy —
-       leiligheter, rekkehus og eneboliger i første salgstrinn.</p>
-    <div class="chips">
-      <span class="chip">19 boliger</span>
-      <span class="chip">38–119 m² BRA‑i</span>
-      <span class="chip">Fra kr 2 315 000</span>
-    </div>
-    <div class="cta-rad">
-      <a class="knapp primar" href="velger/">Se ledige boliger ›</a>
-      <a class="knapp sekundar" href="#salgsoppgaver">Les salgsoppgavene</a>
-    </div>
-  </div>
-</div>
-
-<section id="boligene">
-  <div class="vev">
-    <div class="eyebrow">Første salgstrinn</div>
-    <h2>Tre måter å bo ved sundet på</h2>
-    <p class="ingress">Første salgstrinn på Sundsøya rommer 19 boliger fordelt på leilighetsbygget BK1a,
-       rekkehusrekka på felt B4 og eneboligene på felt B3 og B5 — alle tegnet av Eggen Arkitekter
-       som moderne trehus i varme, jordnære farger.</p>
-    <div class="typegrid">
-      <a class="typekort" href="velger/#leiligheter">
-        <div class="tfoto"><img src="velger/img/leil-foto.jpg" alt="Leilighetsbygget BK1a" loading="lazy"></div>
-        <div class="tk">
-          <h3>Leiligheter</h3>
-          <div class="tsub">8 selveierleiligheter · BK1a</div>
-          <p>Fra kompakte 2‑roms til toppleilighet med egen loftstue. Heis, carport og
-             balkong eller terrasse mot sundet. 38–109 m² BRA‑i.</p>
-          <div class="tpris"><b>Fra kr 2 315 000</b><span>Se boligene ›</span></div>
-        </div>
-      </a>
-      <a class="typekort" href="velger/#rekkehus">
-        <div class="tfoto"><img src="velger/img/rek-foto.jpg" alt="Rekkehusrekka på felt B4" loading="lazy"></div>
-        <div class="tk">
-          <h3>Rekkehus</h3>
-          <div class="tsub">5 rekkehus · B4</div>
-          <p>Familieboliger over to plan med tre soverom, to balkonger og carport —
-             midt i det nye nabolaget. Ca. 96 m² BRA‑i.</p>
-          <div class="tpris"><b>Fra kr 5 390 000</b><span>Se boligene ›</span></div>
-        </div>
-      </a>
-      <a class="typekort" href="velger/#eneboliger">
-        <div class="tfoto"><img src="velger/img/ene-foto.jpg" alt="Eneboligene på felt B3 og B5" loading="lazy"></div>
-        <div class="tk">
-          <h3>Eneboliger</h3>
-          <div class="tsub">6 eneboliger · B3 &amp; B5</div>
-          <p>Moderne eneboliger i front mot fjorden, med tre soverom, takterrasse og
-             valget mellom to planløsninger. 119 m² BRA‑i.</p>
-          <div class="tpris"><b>Fra kr 6 390 000</b><span>Se boligene ›</span></div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<div class="band">
-  <div class="vev">
-    <div>
-      <div class="eyebrow">Boligvelgeren</div>
-      <h2>Finn boligen som passer deg</h2>
-      <p>Se status og pris for hver enkelt bolig, bla i plantegningene, sammenlign i tabellen
-         og meld interesse direkte til megler.</p>
-    </div>
-    <a class="knapp primar" href="velger/">Åpne boligvelgeren ›</a>
-  </div>
-</div>
-
-<section id="prosjektet">
-  <div class="vev tospalter">
-    <div>
-      <div class="eyebrow">Prosjektet</div>
-      <h2>Moderne trehus som harmonerer med småhusmiljøet</h2>
-      <p class="ingress" style="margin-bottom:14px">Prisbelønte Eggen Arkitekter har tegnet et nabolag
-         med både harmoni og moderne kvaliteter: trefasader med stående panel i varme, jordnære farger
-         under enkle, rene saltak. Sjøfronten åpnes opp og blir tilgjengelig for både beboere og
-         besøkende, og mellom husene skapes hyggelige uterom med inspirasjon fra den varme atmosfæren
-         i Straumen.</p>
-      <p class="ingress">Prosjektets sosiale møteplass blir felleshuset ved «pollen», med ute- og
-         innestue, peis og badstue. Sundsøya bygges ut trinnvis — senere salgstrinn legges ut etter hvert.</p>
-      <div class="fakta">
-        <div><div class="fl">Byggestart</div><div class="fv">Planlagt Q2 2027</div></div>
-        <div><div class="fl">Byggetid</div><div class="fv">12–16 måneder</div></div>
-        <div><div class="fl">Ferdigstillelse</div><div class="fv">Antatt 2028</div></div>
-        <div><div class="fl">Eierform</div><div class="fv">Selveier</div></div>
-        <div><div class="fl">Selger</div><div class="fv">Sundsøya Eiendom AS</div></div>
-        <div><div class="fl">Arkitekt</div><div class="fv">Eggen Arkitekter AS</div></div>
-      </div>
-    </div>
-    <div class="ramme"><img src="img/arkitektur.jpg" alt="Leilighetsbygget BK1a — moderne trehus i stående panel under enkle saltak" loading="lazy"></div>
-  </div>
-</section>
-
-<section class="kvalitet">
-  <div class="vev">
-    <div class="eyebrow">Kvalitet og bokvalitet</div>
-    <h2>Lyse rom mot fjorden</h2>
-    <p class="ingress">Store vindusflater slipper inn dagslyset og åpner stuen mot sundet og utsikten.
-       Boligene leveres med gjennomtenkte planløsninger og moderne standard etter TEK17 —
-       alt er nytt, og du er den første som tar det i bruk.</p>
-    <div class="fotorad">
-      <figure><img src="img/interior-spis.jpg" alt="Lys stue og spisestue med utsikt mot sundet (illustrasjon)" loading="lazy"></figure>
-      <figure><img src="img/interior-stue.jpg" alt="Stue med store vindusflater og utgang til balkong (illustrasjon)" loading="lazy"></figure>
-    </div>
-    <div class="punkter">
-      <div class="punkt"><b>Alt er nytt</b><span>Ny bolig etter dagens tekniske krav — uten oppussingsbehov og med garantier etter bustadoppføringslova.</span></div>
-      <div class="punkt"><b>Utsikt og uterom</b><span>Balkong, terrasse eller takterrasse mot sundet — og felles uterom mellom husene.</span></div>
-      <div class="punkt"><b>Tilvalg</b><span>Er du tidlig ute, kan du sette ditt eget preg på boligen gjennom prosjektets tilvalgsmeny.</span></div>
-      <div class="punkt"><b>Felleshus ved «pollen»</b><span>Ute- og innestue, peis og badstue — nabolagets sosiale møteplass ved vannet.</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="beliggenhet">
-  <div class="vev tospalter">
-    <div class="bildestabel">
-      <div class="ramme"><img src="img/flyfoto.jpg" alt="Sundet og Straumen sett ovenfra" loading="lazy"></div>
-      <div class="ramme"><img src="img/fellesskap.jpg" style="object-position:center 78%" alt="Rom for lek og fellesskap mellom husene (illustrasjon)" loading="lazy"></div>
-    </div>
-    <div>
-      <div class="eyebrow">Beliggenhet</div>
-      <h2>Ved sundet, midt i Den Gyldne Omvei</h2>
-      <p class="ingress" style="margin-bottom:14px">Sundsøya ligger nede ved vannkanten, et steinkast fra
-         Straumen sentrum på Inderøy — kjent for Den Gyldne Omvei med lokalmat, kultur og noen av
-         Trøndelags vakreste kulturlandskap.</p>
-      <p class="ingress">Fra boligene går og sykler du til butikker, kafeer, skole og barnehage i
-         Straumen, og sjøfronten utenfor døra åpnes opp for både beboere og besøkende. Et nabolag
-         for hele familien — med rom for lek og fellesskap.</p>
-      <div class="fakta">
-        <div><div class="fl">Kommune</div><div class="fv">Inderøy</div></div>
-        <div><div class="fl">Sentrum</div><div class="fv">Gangavstand til Straumen</div></div>
-        <div><div class="fl">Sjøfront</div><div class="fv">Åpnes for alle</div></div>
-        <div><div class="fl">Nabolag</div><div class="fv">Rom for lek og fellesskap</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="salgsoppgaver">
-  <div class="vev">
-    <div class="eyebrow">Salgsoppgaver</div>
-    <h2>Fordyp deg i prosjektet</h2>
-    <p class="ingress">Hver boligtype har sin egen komplette salgsoppgave med plantegninger,
-       leveransebeskrivelse, priser og alle vedlegg. Les dem som oppslag her på siden, eller
-       last ned PDF.</p>
-    <div class="bokgrid">
-      <div class="bok">
-        <div class="omslag"><img src="leil/p001.jpg" alt="Salgsoppgave leiligheter" loading="lazy"></div>
-        <h3>Leiligheter</h3>
-        <div class="bsub">8 selveierleiligheter · BK1a</div>
-        <div class="blenker">
-          <a class="les" href="les.html?b=leil">Les ›</a>
-          <a class="pdf" href="leil/Sundsoya_Leiligheter_Salgsoppgave.pdf" download>PDF</a>
-        </div>
-      </div>
-      <div class="bok">
-        <div class="omslag"><img src="rekkehus/p001.jpg" alt="Salgsoppgave rekkehus" loading="lazy"></div>
-        <h3>Rekkehus</h3>
-        <div class="bsub">5 rekkehus · B4</div>
-        <div class="blenker">
-          <a class="les" href="les.html?b=rekkehus">Les ›</a>
-          <a class="pdf" href="rekkehus/Sundsoya_Rekkehus_Salgsoppgave.pdf" download>PDF</a>
-        </div>
-      </div>
-      <div class="bok">
-        <div class="omslag"><img src="eneboliger/p001.jpg" alt="Salgsoppgave eneboliger" loading="lazy"></div>
-        <h3>Eneboliger</h3>
-        <div class="bsub">6 eneboliger · B3 &amp; B5</div>
-        <div class="blenker">
-          <a class="les" href="les.html?b=eneboliger">Les ›</a>
-          <a class="pdf" href="eneboliger/Sundsoya_Eneboliger_Salgsoppgave.pdf" download>PDF</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="kontakt" id="kontakt">
-  <div class="vev">
-    <div class="eyebrow">Heimdal Eiendomsmegling</div>
-    <h2>Meld interesse</h2>
-    <p class="ingress">Ta gjerne kontakt for prisliste, salgsoppgave med vedlegg eller en hyggelig
-       boligprat — helt uforpliktende.</p>
-    <div class="megler-grid">
-      <div class="megler">
-        <div class="mn">Andreas Myran Steen</div>
-        <div class="mr">Eiendomsmegler / Partner</div>
-        <a href="mailto:ams@hem.no">ams@hem.no</a>
-        <a href="tel:+4741609008">416 09 008</a>
-      </div>
-      <div class="megler">
-        <div class="mn">Marius Tuset</div>
-        <div class="mr">Eiendomsmeglerfullmektig</div>
-        <a href="mailto:mt@hem.no">mt@hem.no</a>
-        <a href="tel:+4791919207">919 19 207</a>
-      </div>
-    </div>
-    <div class="cta-rad" style="margin-top:30px;justify-content:center">
-      <a class="knapp primar" href="mailto:ams@hem.no?cc=mt@hem.no&subject=Interesse%20%E2%80%93%20Nye%20Sunds%C3%B8ya&body=Hei!%0A%0AJeg%20%C3%B8nsker%20mer%20informasjon%20om%20boligene%20p%C3%A5%20Sunds%C3%B8ya.%0A%0ANavn%3A%0ATelefon%3A%0A">Meld interesse ›</a>
-      <a class="knapp sekundar" href="velger/">Se ledige boliger</a>
-    </div>
-  </div>
-</div>
-
-<div class="forbehold">
-  Selger: Sundsøya Eiendom AS, org.nr. 984 777 760 · Arkitekt: Eggen Arkitekter AS · Megler: Heimdal Eiendomsmegling AS.<br>
-  Alle priser, arealer og statuser er veiledende og med forbehold om endringer, mellomsalg og skrive-/trykkfeil.
-  Den til enhver tid gjeldende prislisten og fullstendig salgsoppgave med vedlegg fås hos megler og er bindende grunnlag for et kjøp.
-  Alle bilder og tegninger er illustrasjoner — avvik vil forekomme.
-</div>
-
+  <div class="eyebrow">Inderøy · Trøndelag</div>
+  <h1>Sundsøya</h1>
+  <div class="lead">Den gyldne mulighet — salgsoppgaver</div>
+  <a class="velger-cta" href="velger/">Boligvelger · se ledige boliger ›</a>
+  <div class="grid" id="grid"></div>
+  <div class="foot">Selger: Sundsøya Eiendom AS · Arkitekt: Eggen Arkitekter · Megler: Heimdal Eiendomsmegling<br>Alle bilder og tegninger er illustrasjoner. Forbehold om endringer og skrive-/trykkfeil.</div>
+<script>
+  const BOOKS=[
+    {slug:'leil', t:'Leiligheter', s:'8 selveierleiligheter · BK1a'},
+    {slug:'rekkehus', t:'Rekkehus', s:'5 rekkehus · B4'},
+    {slug:'eneboliger', t:'Eneboliger', s:'6 eneboliger · B3 & B5'},
+  ];
+  const g=document.getElementById('grid');
+  BOOKS.forEach(b=>{
+    const a=document.createElement('a'); a.className='card'; a.href='les.html?b='+b.slug;
+    a.innerHTML=`<div class="thumb"><img src="${b.slug}/p001.jpg" alt="${b.t}"></div>
+      <div class="ct">${b.t}</div><div class="cs">${b.s}</div><span class="open">Les som oppslag ›</span>`;
+    g.appendChild(a);
+  });
+</script>
 </body>
 </html>

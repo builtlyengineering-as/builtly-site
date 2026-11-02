@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/velger", "destination": "https://builtly.ai/prospekt/sundsoya/velger/" },
+    { "source": "/velger/:path*", "destination": "https://builtly.ai/prospekt/sundsoya/velger/:path*" },
+    { "source": "/les.html", "destination": "https://builtly.ai/prospekt/sundsoya/les.html" },
+    { "source": "/leil/:path*", "destination": "https://builtly.ai/prospekt/sundsoya/leil/:path*" },
+    { "source": "/rekkehus/:path*", "destination": "https://builtly.ai/prospekt/sundsoya/rekkehus/:path*" },
+    { "source": "/eneboliger/:path*", "destination": "https://builtly.ai/prospekt/sundsoya/eneboliger/:path*" }
+  ]
+}
