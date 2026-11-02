@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sundsøya · Boligvelger</title>
+<meta name="description" content="Boligvelger for Sundsøya, salgstrinn 1 — 8 leiligheter, 5 rekkehus og 6 eneboliger på idylliske Inderøy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Lora:wght@500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4efe4; --paper2:#efe9da; --forest:#3a472f; --forest2:#2e3a25;
+    --brass:#a8884e; --brass-lys:#d9b878; --muted:#6a6b5e; --ink:#3a3b32;
+    --linje:#ddd5c2; --kort:#faf7ee;
+    --ledig:#4a7a46; --reservert:#a8884e; --solgt:#9a988c;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:'Outfit',sans-serif;font-size:16px;line-height:1.6}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+
+  /* ---------- toppbar ---------- */
+  .topp{position:sticky;top:0;z-index:50;background:rgba(244,239,228,.94);backdrop-filter:blur(8px);
+        border-bottom:1px solid var(--linje)}
+  .topp-i{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+  .logo{font-family:'Lora',serif;font-weight:700;letter-spacing:.32em;font-size:15px;color:var(--forest);text-decoration:none}
+  .logo span{color:var(--brass)}
+  .topp nav{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+  .topp nav a{text-decoration:none;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+              padding:7px 12px;border-radius:30px;transition:.15s}
+  .topp nav a:hover{color:var(--forest);background:var(--paper2)}
+  .ledigteller{font-size:12.5px;letter-spacing:.06em;color:var(--forest);background:var(--paper2);
+               border:1px solid var(--linje);border-radius:30px;padding:6px 14px;white-space:nowrap}
+  .ledigteller b{color:var(--ledig)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;background:var(--forest)}
+  .hero img{width:100%;height:min(66vh,560px);object-fit:cover;object-position:center 32%;opacity:.92}
+  .hero-tekst{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+              background:linear-gradient(180deg,rgba(17,21,14,.05) 35%,rgba(17,21,14,.72));}
+  .hero-i{max-width:1180px;margin:0 auto;width:100%;padding:0 20px 44px;color:#f2eddc}
+  .eyebrow{font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--brass-lys);margin-bottom:10px}
+  .hero h1{font-family:'Gloock',serif;font-weight:400;font-size:clamp(34px,5.4vw,56px);letter-spacing:.015em;line-height:1.1}
+  .hero p{max-width:640px;margin-top:12px;font-weight:300;font-size:16.5px;color:#e4ddc8}
+  .hero-chips{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+  .chip{text-decoration:none;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#f2eddc;
+        border:1px solid rgba(217,184,120,.55);border-radius:30px;padding:9px 18px;transition:.15s;background:rgba(17,21,14,.25)}
+  .chip:hover{background:var(--brass);border-color:var(--brass);color:#fff}
+  .chip b{font-weight:600;color:var(--brass-lys)}
+  .chip:hover b{color:#fff}
+
+  /* ---------- seksjoner ---------- */
+  main{max-width:1180px;margin:0 auto;padding:0 20px}
+  section{padding:64px 0 10px;scroll-margin-top:72px}
+  .sek-hode{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--linje);padding-bottom:16px;margin-bottom:26px}
+  .sek-nr{font-family:'Lora',serif;font-weight:700;color:var(--brass);font-size:19px}
+  .sek-hode h2{font-family:'Gloock',serif;font-weight:400;color:var(--forest);font-size:clamp(26px,3.4vw,34px)}
+  .sek-sub{color:var(--muted);font-size:13px;letter-spacing:.18em;text-transform:uppercase}
+  .sek-intro{max-width:720px;color:var(--ink);font-weight:300;margin:-8px 0 26px}
+
+  /* ---------- etasjevelger (leiligheter) ---------- */
+  .plan-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:28px;align-items:start}
+  .faner{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+  .fane{font-family:'Outfit',sans-serif;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;
+        border:1px solid var(--linje);background:var(--kort);color:var(--muted);border-radius:30px;
+        padding:8px 16px;cursor:pointer;transition:.15s}
+  .fane:hover{border-color:var(--brass)}
+  .fane.aktiv{background:var(--forest);border-color:var(--forest);color:#f2eddc}
+  .plan-ramme{position:relative;background:#fff;border:1px solid var(--linje);border-radius:6px;overflow:hidden;
+              box-shadow:0 14px 36px rgba(58,71,47,.08)}
+  .plan-ramme img{width:100%}
+  .markor{position:absolute;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;
+          background:var(--forest);color:#f2eddc;border:2px solid rgba(255,255,255,.9);
+          font-family:'Outfit',sans-serif;font-weight:600;font-size:13px;letter-spacing:.02em;
+          display:flex;align-items:center;justify-content:center;cursor:pointer;
+          box-shadow:0 6px 16px rgba(17,21,14,.35);transition:.15s}
+  .markor:hover{transform:translate(-50%,-50%) scale(1.12);background:var(--brass)}
+  .markor.reservert{background:var(--reservert)}
+  .markor.solgt{background:var(--solgt)}
+  .plan-note{font-size:12px;color:var(--muted);letter-spacing:.04em;margin-top:10px}
+
+  /* ---------- enhetskort ---------- */
+  .kortliste{display:flex;flex-direction:column;gap:12px}
+  .kortgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+  .ekort{background:var(--kort);border:1px solid var(--linje);border-radius:6px;padding:16px 18px;
+         cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:7px;text-align:left;font-family:'Outfit',sans-serif}
+  .ekort:hover{border-color:var(--brass);box-shadow:0 10px 26px rgba(58,71,47,.10);transform:translateY(-2px)}
+  .ekort-topp{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .ekort-navn{font-family:'Lora',serif;font-weight:700;font-size:18px;color:var(--forest)}
+  .ekort-meta{font-size:12.5px;color:var(--muted);letter-spacing:.05em}
+  .ekort-pris{font-size:16px;font-weight:600;color:var(--ink)}
+  .ekort-pris small{font-weight:400;color:var(--muted);font-size:12px}
+  .badge{font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border-radius:20px;
+         padding:4px 11px;white-space:nowrap}
+  .badge.ledig{background:rgba(74,122,70,.12);color:var(--ledig)}
+  .badge.reservert{background:rgba(168,136,78,.15);color:#8a6c35}
+  .badge.solgt{background:rgba(154,152,140,.18);color:#6e6d64}
+  .ekort.solgt{opacity:.62}
+
+  .sek-foto{border-radius:6px;overflow:hidden;border:1px solid var(--linje);margin-bottom:26px;
+            box-shadow:0 14px 36px rgba(58,71,47,.08);position:relative}
+  .sek-foto img{width:100%;max-height:430px;object-fit:cover}
+  .sek-foto.hel img{max-height:none;object-fit:unset}
+  .sek-foto .ill{position:absolute;right:12px;bottom:10px;font-size:10.5px;letter-spacing:.08em;color:rgba(255,255,255,.75);
+                 text-shadow:0 1px 3px rgba(0,0,0,.6)}
+  .sek-foto.lys .ill{color:var(--muted);text-shadow:none}
+
+  /* ---------- samletabell ---------- */
+  .tab-verktoy{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+  .tab-verktoy .fane{padding:7px 14px}
+  table.alle{width:100%;border-collapse:collapse;background:var(--kort);border:1px solid var(--linje);border-radius:6px;overflow:hidden}
+  .tabellrull{overflow-x:auto;border-radius:6px}
+  table.alle th{background:var(--forest);color:#f2eddc;text-align:left;font-size:11.5px;letter-spacing:.14em;
+                text-transform:uppercase;font-weight:600;padding:12px 14px;white-space:nowrap;cursor:pointer;user-select:none}
+  table.alle th .pil{opacity:.55;font-size:10px}
+  table.alle td{padding:11px 14px;border-top:1px solid var(--linje);font-size:14.5px;white-space:nowrap}
+  table.alle tr{cursor:pointer;transition:.1s}
+  table.alle tbody tr:hover{background:#f1ecdf}
+  table.alle td:last-child,table.alle th:last-child{text-align:right}
+  .tr-solgt td{color:#8a897e}
+
+  /* ---------- modal ---------- */
+  .modal-bak{position:fixed;inset:0;background:rgba(17,21,14,.55);z-index:90;display:flex;
+             align-items:center;justify-content:center;padding:18px}
+  .modal{background:var(--paper);border-radius:8px;max-width:980px;width:100%;max-height:92vh;overflow:auto;
+         box-shadow:0 30px 80px rgba(0,0,0,.4);position:relative}
+  .modal-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .modal-teg{background:#fff;border-right:1px solid var(--linje);display:flex;flex-direction:column}
+  .modal-teg img{width:100%;object-fit:contain}
+  .teg-faner{display:flex;gap:6px;padding:10px 12px;border-top:1px solid var(--linje)}
+  .modal-info{padding:28px 28px 24px}
+  .lukk{position:absolute;top:10px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--linje);
+        background:var(--paper);color:var(--muted);font-size:17px;cursor:pointer;z-index:2}
+  .lukk:hover{background:var(--forest);color:#fff;border-color:var(--forest)}
+  .m-eyebrow{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--brass);margin-bottom:6px}
+  .modal-info h3{font-family:'Gloock',serif;font-weight:400;font-size:30px;color:var(--forest)}
+  .m-status{margin:10px 0 16px}
+  .fakta{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linje);border:1px solid var(--linje);
+         border-radius:6px;overflow:hidden;margin:14px 0 18px}
+  .fakta div{background:var(--kort);padding:10px 13px}
+  .fakta .fl{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .fakta .fv{font-size:15px;font-weight:500;color:var(--ink)}
+  .prislinje{display:flex;justify-content:space-between;gap:12px;font-size:14.5px;padding:7px 0;border-bottom:1px dashed var(--linje)}
+  .prislinje.total{border-bottom:none;font-weight:600;font-size:16.5px;color:var(--forest);padding-top:10px}
+  .m-note{font-size:12.5px;color:var(--muted);margin-top:12px;line-height:1.55}
+  .cta-rad{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .knapp{display:inline-block;text-decoration:none;text-align:center;font-size:12.5px;letter-spacing:.14em;
+         text-transform:uppercase;border-radius:30px;padding:12px 22px;transition:.15s;border:1px solid transparent;cursor:pointer;font-family:'Outfit',sans-serif}
+  .knapp.primar{background:var(--forest);color:#f2eddc}
+  .knapp.primar:hover{background:var(--brass)}
+  .knapp.sekundar{border-color:var(--brass);color:var(--forest);background:transparent}
+  .knapp.sekundar:hover{background:var(--brass);color:#fff}
+
+  /* ---------- kontakt + footer ---------- */
+  .kontakt{background:var(--forest);color:#e9e3d4;margin-top:70px}
+  .kontakt-i{max-width:1180px;margin:0 auto;padding:56px 20px 46px}
+  .kontakt h2{font-family:'Gloock',serif;font-weight:400;font-size:30px;color:#f2eddc}
+  .megler-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:26px;max-width:720px}
+  .megler{background:rgba(244,239,228,.07);border:1px solid rgba(217,184,120,.3);border-radius:6px;padding:20px 22px}
+  .megler .mn{font-family:'Lora',serif;font-weight:700;font-size:18px}
+  .megler .mr{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass-lys);margin:3px 0 12px}
+  .megler a{color:#e9e3d4;text-decoration:none;display:block;font-size:14.5px;padding:2px 0}
+  .megler a:hover{color:var(--brass-lys)}
+  .forbehold{max-width:1180px;margin:0 auto;padding:26px 20px 40px;color:var(--muted);font-size:12px;line-height:1.8;letter-spacing:.03em}
+  .forbehold a{color:var(--forest)}
+
+  @media (max-width:860px){
+    .plan-grid{grid-template-columns:1fr}
+    .modal-grid{grid-template-columns:1fr}
+    .modal-teg{border-right:none;border-bottom:1px solid var(--linje)}
+    .markor{width:38px;height:38px;font-size:11.5px}
+    .topp nav{display:none}
+    .hero img{height:min(52vh,400px)}
+  }
+</style>
+</head>
+<body>
+
+<header class="topp">
+  <div class="topp-i">
+    <a class="logo" href="./../">SUNDS<span>Ø</span>YA</a>
+    <span class="ledigteller" id="teller"></span>
+    <nav>
+      <a href="#leiligheter">Leiligheter</a>
+      <a href="#rekkehus">Rekkehus</a>
+      <a href="#eneboliger">Eneboliger</a>
+      <a href="#alle">Prisliste</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="img/hero.jpg" alt="Sundsøya sett fra luften, ved Sundet på Inderøy">
+  <div class="hero-tekst"><div class="hero-i">
+    <div class="eyebrow">Inderøy · Trøndelag · Salgstrinn 1</div>
+    <h1>Velg din bolig på Sundsøya</h1>
+    <p>Første salgstrinn består av 8 selveierleiligheter i bygg BK1a, 5 rekkehus i felt B4
+       og 6 eneboliger i felt B3 og B5 — alle nede ved vannkanten, i gangavstand fra Straumen sentrum.</p>
+    <div class="hero-chips">
+      <a class="chip" href="#leiligheter">Leiligheter <b>· 8</b></a>
+      <a class="chip" href="#rekkehus">Rekkehus <b>· 5</b></a>
+      <a class="chip" href="#eneboliger">Eneboliger <b>· 6</b></a>
+    </div>
+  </div></div>
+</div>
+
+<main>
+
+  <!-- ============ LEILIGHETER ============ -->
+  <section id="leiligheter">
+    <div class="sek-hode">
+      <span class="sek-nr">01</span><h2>Leilighetene</h2>
+      <span class="sek-sub">Bygg BK1a · 8 selveierleiligheter · 38–109 m²</span>
+    </div>
+    <p class="sek-intro">Velg etasje og trykk på en leilighet i plantegningen — eller bla i kortene.
+       Fra lyse 2-roms til en romslig toppleilighet med egen loftstue. Hver leilighet har terrasse
+       eller balkong, og egen carport kan kjøpes til.</p>
+    <div class="plan-grid">
+      <div>
+        <div class="faner" id="etasjefaner"></div>
+        <div class="plan-ramme" id="planramme">
+          <img id="planbilde" src="img/leil-plan01.jpg" alt="Etasjeplan">
+        </div>
+        <div class="plan-note">Etasjeplan · Eggen Arkitekter. Fargene skiller leilighetene på planet.
+          Illustrasjon. Avvik vil forekomme.</div>
+      </div>
+      <div class="kortliste" id="leilkort"></div>
+    </div>
+  </section>
+
+  <!-- ============ REKKEHUS ============ -->
+  <section id="rekkehus">
+    <div class="sek-hode">
+      <span class="sek-nr">02</span><h2>Rekkehusrekka</h2>
+      <span class="sek-sub">Felt B4 · 5 rekkehus · ca. 96 m² BRA-i</span>
+    </div>
+    <p class="sek-intro">Fem rekkehus på rekke med egen carport, sportsbod og to balkonger mot tunet
+       og fjorden. Tre soverom og bad på inngangsplanet, åpen stue og kjøkken under saltaket øverst —
+       samme gjennomarbeidede plan i alle fem.</p>
+    <div class="sek-foto"><img src="img/rek-foto.jpg" alt="De fem rekkehusene i felt B4 i kveldslys">
+      <span class="ill">Illustrasjon. Avvik vil forekomme.</span></div>
+    <div class="kortgrid" id="rekkort"></div>
+  </section>
+
+  <!-- ============ ENEBOLIGER ============ -->
+  <section id="eneboliger">
+    <div class="sek-hode">
+      <span class="sek-nr">03</span><h2>Eneboligene</h2>
+      <span class="sek-sub">Felt B3 &amp; B5 · 6 eneboliger · ca. 119 m² BRA-i · egne tomter</span>
+    </div>
+    <p class="sek-intro">Seks eneboliger i front, på egne fradelte tomter på cirka 150–300 m².
+       B3a–B3d danner den bakre rekka nærmest fjorden, B5a og B5b ligger mot tunet. Tre soverom,
+       to plan og takterrasse — og to planløsninger å velge mellom, uten priskonsekvens.</p>
+    <div class="sek-foto lys hel"><img src="img/ene-oversikt.jpg" alt="3D-oversikt over eneboligene B3a–B3d og B5a–B5b">
+      <span class="ill">3D-oversikt · Eggen Arkitekter. Illustrasjon. Avvik vil forekomme.</span></div>
+    <div class="kortgrid" id="enekort"></div>
+  </section>
+
+  <!-- ============ SAMLET PRISLISTE ============ -->
+  <section id="alle">
+    <div class="sek-hode">
+      <span class="sek-nr">04</span><h2>Alle boligene</h2>
+      <span class="sek-sub">Salgstrinn 1 · 19 boliger</span>
+    </div>
+    <div class="tab-verktoy" id="typefilter"></div>
+    <div class="tabellrull"><table class="alle">
+      <thead><tr>
+        <th data-sort="navn">Bolig <span class="pil">↕</span></th>
+        <th data-sort="type">Type</th>
+        <th data-sort="brai">BRA-i <span class="pil">↕</span></th>
+        <th data-sort="sov">Sov</th>
+        <th>Uteplass</th>
+        <th data-sort="status">Status</th>
+        <th data-sort="pris">Pris <span class="pil">↕</span></th>
+      </tr></thead>
+      <tbody id="tabellkropp"></tbody>
+    </table></div>
+    <p class="plan-note" style="margin-top:12px">Omkostninger kommer i tillegg til kjøpesum — trykk på en bolig
+      for fullstendig oversikt. Eksakt pris og status fremgår av den til enhver tid gjeldende prislisten hos megler.</p>
+  </section>
+</main>
+
+<!-- ============ KONTAKT ============ -->
+<div class="kontakt" id="kontakt">
+  <div class="kontakt-i">
+    <div class="eyebrow">Heimdal Eiendomsmegling</div>
+    <h2>Ta gjerne kontakt for en visning</h2>
+    <div class="megler-grid">
+      <div class="megler">
+        <div class="mn">Andreas Myran Steen</div>
+        <div class="mr">Eiendomsmegler / Partner</div>
+        <a href="mailto:ams@hem.no">ams@hem.no</a>
+        <a href="tel:+4741609008">416 09 008</a>
+      </div>
+      <div class="megler">
+        <div class="mn">Marius Tuset</div>
+        <div class="mr">Eiendomsmeglerfullmektig</div>
+        <a href="mailto:mt@hem.no">mt@hem.no</a>
+        <a href="tel:+4791919207">919 19 207</a>
+      </div>
+    </div>
+    <div class="cta-rad" style="margin-top:28px">
+      <a class="knapp sekundar" style="border-color:rgba(217,184,120,.6);color:#f2eddc" href="../les.html?b=leil">Salgsoppgave leiligheter</a>
+      <a class="knapp sekundar" style="border-color:rgba(217,184,120,.6);color:#f2eddc" href="../les.html?b=rekkehus">Salgsoppgave rekkehus</a>
+      <a class="knapp sekundar" style="border-color:rgba(217,184,120,.6);color:#f2eddc" href="../les.html?b=eneboliger">Salgsoppgave eneboliger</a>
+    </div>
+  </div>
+</div>
+
+<div class="forbehold">
+  Selger: Sundsøya Eiendom AS, org.nr. 984 777 760 · Arkitekt: Eggen Arkitekter AS · Megler: Heimdal Eiendomsmegling AS.<br>
+  Alle priser, arealer og statuser er veiledende og med forbehold om endringer, mellomsalg og skrive-/trykkfeil.
+  Den til enhver tid gjeldende prislisten og fullstendig salgsoppgave med vedlegg fås hos megler og er bindende grunnlag for et kjøp.
+  Alle bilder og tegninger er illustrasjoner — avvik vil forekomme.
+  <a href="../">Til salgsoppgavene ›</a>
+</div>
+
+<div id="modalfeste"></div>
+
+<script>
+/* =====================================================================
+   STATUS OG PRISER OPPDATERES HER.
+   status: 'ledig' | 'reservert' | 'solgt'   pris: kroner (tall)
+   Per prisliste 15.09.2026 — husk å holde denne i takt med meglers liste.
+   ===================================================================== */
+const ENHETER = [
+  // --- Leiligheter, bygg BK1a (omk = dokavgift + gebyrer, se OMK under)
+  {id:'A101', type:'leil', navn:'Leilighet 101', etasje:'Plan 01', plan:'plan01', typetekst:'3-roms',
+   sov:2, brai:79,  bra:'79,2', brae:'19,4', uteplass:'Terrasse',    pris:5415000, status:'reservert',
+   teg:['img/a101.jpg'], felleskost:1666},
+  {id:'A102', type:'leil', navn:'Leilighet 102', etasje:'Plan 01', plan:'plan01', typetekst:'3-roms',
+   sov:2, brai:67.9,bra:'67,9', brae:'10,0', uteplass:'Terrasse',    pris:4615000, status:'ledig',
+   teg:['img/a102.jpg'], felleskost:1324},
+  {id:'A201', type:'leil', navn:'Leilighet 201', etasje:'Plan 02', plan:'plan02', typetekst:'3-roms',
+   sov:2, brai:79,  bra:'79,2', brae:'18,7', uteplass:'2 balkonger', pris:5615000, status:'ledig',
+   teg:['img/a201.jpg'], felleskost:1661},
+  {id:'A202', type:'leil', navn:'Leilighet 202', etasje:'Plan 02', plan:'plan02', typetekst:'3-roms',
+   sov:2, brai:68,  bra:'67,9', brae:'9,4',  uteplass:'Balkong',     pris:4715000, status:'ledig',
+   teg:['img/a202.jpg'], felleskost:1316},
+  {id:'A203', type:'leil', navn:'Leilighet 203', etasje:'Plan 02', plan:'plan02', typetekst:'2-roms',
+   sov:1, brai:38,  bra:'38,4', brae:'6,8',  uteplass:'Balkong',     pris:2315000, status:'ledig',
+   teg:['img/a203.jpg'], felleskost:762},
+  {id:'A301', type:'leil', navn:'Leilighet 301 — toppleilighet', etasje:'Plan 03 + loft', plan:'plan03', typetekst:'Toppleilighet',
+   sov:2, brai:109, bra:'ca. 109', brae:'18,9', uteplass:'2 balkonger', pris:6115000, status:'reservert',
+   teg:['img/a301.jpg','img/a301-loft.jpg'], tegnavn:['Plan 03','Loft'], felleskost:2174,
+   ekstra:'Egen loftstue på 29,8 m² under saltaket.'},
+  {id:'A302', type:'leil', navn:'Leilighet 302', etasje:'Plan 03', plan:'plan03', typetekst:'3-roms',
+   sov:2, brai:68,  bra:'67,9', brae:'9,4',  uteplass:'Balkong',     pris:4815000, status:'ledig',
+   teg:['img/a302.jpg'], felleskost:1316},
+  {id:'A303', type:'leil', navn:'Leilighet 303', etasje:'Plan 03', plan:'plan03', typetekst:'2-roms',
+   sov:1, brai:38,  bra:'38,4', brae:'6,8',  uteplass:'Balkong',     pris:2515000, status:'ledig',
+   teg:['img/a303.jpg'], felleskost:762},
+
+  // --- Rekkehus, felt B4
+  {id:'B4a', type:'rek', navn:'Rekkehus B4a', etasje:'Enden av rekka', typetekst:'Rekkehus',
+   sov:3, brai:96, bra:'ca. 96', brae:'21', uteplass:'2 balkonger', pris:5690000, status:'ledig',
+   teg:['img/b4a.jpg']},
+  {id:'B4b', type:'rek', navn:'Rekkehus B4b', etasje:'Midt i rekka', typetekst:'Rekkehus',
+   sov:3, brai:96, bra:'ca. 96', brae:'21', uteplass:'2 balkonger', pris:5390000, status:'ledig',
+   teg:['img/b4b.jpg']},
+  {id:'B4c', type:'rek', navn:'Rekkehus B4c', etasje:'Midt i rekka', typetekst:'Rekkehus',
+   sov:3, brai:96, bra:'ca. 96', brae:'21', uteplass:'2 balkonger', pris:5390000, status:'reservert',
+   teg:['img/b4c.jpg']},
+  {id:'B4d', type:'rek', navn:'Rekkehus B4d', etasje:'Midt i rekka', typetekst:'Rekkehus',
+   sov:3, brai:96, bra:'ca. 96', brae:'21', uteplass:'2 balkonger', pris:5390000, status:'ledig',
+   teg:['img/b4d.jpg']},
+  {id:'B4e', type:'rek', navn:'Rekkehus B4e', etasje:'Enden av rekka', typetekst:'Rekkehus',
+   sov:3, brai:96, bra:'ca. 96', brae:'21', uteplass:'2 balkonger', pris:5590000, status:'ledig',
+   teg:['img/b4e.jpg']},
+
+  // --- Eneboliger, felt B3 og B5
+  {id:'B3a', type:'ene', navn:'Enebolig B3a', etasje:'Bakre rekka — nærmest fjorden', typetekst:'Enebolig',
+   sov:3, brai:119, bra:'119', brae:'23', uteplass:'Takterrasse', pris:7100000, status:'ledig',
+   teg:['img/ene-plan1.jpg','img/ene-plan2.jpg'], tegnavn:['Plan 1','Plan 2']},
+  {id:'B3b', type:'ene', navn:'Enebolig B3b', etasje:'Bakre rekka — nærmest fjorden', typetekst:'Enebolig',
+   sov:3, brai:119, bra:'119', brae:'23', uteplass:'Takterrasse', pris:6900000, status:'ledig',
+   teg:['img/ene-plan1.jpg','img/ene-plan2.jpg'], tegnavn:['Plan 1','Plan 2']},
+  {id:'B3c', type:'ene', navn:'Enebolig B3c', etasje:'Bakre rekka — nærmest fjorden', typetekst:'Enebolig',
+   sov:3, brai:119, bra:'119', brae:'23', uteplass:'Takterrasse', pris:6900000, status:'reservert',
+   teg:['img/ene-plan1.jpg','img/ene-plan2.jpg'], tegnavn:['Plan 1','Plan 2']},
+  {id:'B3d', type:'ene', navn:'Enebolig B3d', etasje:'Bakre rekka — nærmest fjorden', typetekst:'Enebolig',
+   sov:3, brai:119, bra:'119', brae:'23', uteplass:'Takterrasse', pris:6390000, status:'ledig',
+   teg:['img/ene-plan1.jpg','img/ene-plan2.jpg'], tegnavn:['Plan 1','Plan 2']},
+  {id:'B5a', type:'ene', navn:'Enebolig B5a', etasje:'Mot tunet', typetekst:'Enebolig',
+   sov:3, brai:119, bra:'119', brae:'23', uteplass:'Takterrasse', pris:6390000, status:'ledig',
+   teg:['img/ene-plan1.jpg','img/ene-plan2.jpg'], tegnavn:['Plan 1','Plan 2']},
+  {id:'B5b', type:'ene', navn:'Enebolig B5b', etasje:'Mot tunet', typetekst:'Enebolig',
+   sov:3, brai:119, bra:'119', brae:'23', uteplass:'Takterrasse', pris:6390000, status:'ledig',
+   teg:['img/ene-plan1.jpg','img/ene-plan2.jpg'], tegnavn:['Plan 1','Plan 2']},
+];
+
+/* Markørposisjoner på etasjeplanene (prosent av bildet) */
+const MARKORER = {
+  plan01: [{id:'A101', x:37,   y:48}, {id:'A102', x:64.5, y:50}],
+  plan02: [{id:'A201', x:36,   y:46}, {id:'A202', x:56.5, y:56}, {id:'A203', x:66.5, y:30}],
+  plan03: [{id:'A301', x:35,   y:48}, {id:'A302', x:61,   y:58}, {id:'A303', x:66.5, y:28}],
+  loft:   [{id:'A301', x:50,   y:48}],
+};
+const PLANBILDER = {plan01:'img/leil-plan01.jpg', plan02:'img/leil-plan02.jpg',
+                    plan03:'img/leil-plan03.jpg', loft:'img/leil-loft.jpg'};
+const PLANNAVN = {plan01:'Plan 01', plan02:'Plan 02', plan03:'Plan 03', loft:'Loft (301)'};
+
+/* Omkostninger per bolig: dokumentavgift (2,5 % av BRA-i × kr 3 250) + gebyrer.
+   Faste ledd: tinglysing skjøte 545 + tinglysing pant 545 + oppstartskapital
+   sameiet 10 000 + etableringsgebyr 2 500 + oppstartskapital velforeningen
+   5 000 + stiftelsesgebyr velforeningen 2 500 = 21 090. */
+const OMK_FAST = 21090;
+const omk = e => Math.round(e.brai * 3250 * 0.025 + OMK_FAST);
+
+const STATUSTEKST = {ledig:'Ledig', reservert:'Reservert', solgt:'Solgt'};
+const TYPETEKST = {leil:'Leilighet', rek:'Rekkehus', ene:'Enebolig'};
+const kr = n => 'kr ' + n.toLocaleString('nb-NO').replace(/,/g, ' ');
+
+/* ---------- toppteller ---------- */
+const ledige = ENHETER.filter(e => e.status === 'ledig').length;
+document.getElementById('teller').innerHTML = `<b>${ledige}</b> av ${ENHETER.length} boliger ledige`;
+
+/* ---------- etasjevelger ---------- */
+let aktivtPlan = 'plan01';
+const fanefeste = document.getElementById('etasjefaner');
+Object.keys(PLANBILDER).forEach(p => {
+  const b = document.createElement('button');
+  b.className = 'fane' + (p === aktivtPlan ? ' aktiv' : '');
+  b.textContent = PLANNAVN[p];
+  b.onclick = () => { aktivtPlan = p; tegnPlan(); };
+  b.dataset.plan = p;
+  fanefeste.appendChild(b);
+});
+
+function tegnPlan(){
+  fanefeste.querySelectorAll('.fane').forEach(b => b.classList.toggle('aktiv', b.dataset.plan === aktivtPlan));
+  const ramme = document.getElementById('planramme');
+  ramme.querySelectorAll('.markor').forEach(m => m.remove());
+  document.getElementById('planbilde').src = PLANBILDER[aktivtPlan];
+  (MARKORER[aktivtPlan] || []).forEach(m => {
+    const e = ENHETER.find(x => x.id === m.id);
+    const el = document.createElement('button');
+    el.className = 'markor ' + e.status;
+    el.style.left = m.x + '%';
+    el.style.top = m.y + '%';
+    el.textContent = e.id.replace('A','');
+    el.title = `${e.navn} — ${STATUSTEKST[e.status]}`;
+    el.onclick = () => visEnhet(e.id);
+    ramme.appendChild(el);
+  });
+  tegnLeilkort();
+}
+
+function kortHTML(e, kompakt){
+  const metadeler = [e.typetekst, `${e.bra} m² BRA-i`, `${e.sov} sov`, e.uteplass];
+  return `<div class="ekort-topp">
+      <span class="ekort-navn">${e.id}</span>
+      <span class="badge ${e.status}">${STATUSTEKST[e.status]}</span>
+    </div>
+    <div class="ekort-meta">${(kompakt ? metadeler : [e.etasje, ...metadeler]).join(' · ')}</div>
+    <div class="ekort-pris">${kr(e.pris)} <small>+ omk. ${kr(omk(e))}</small></div>`;
+}
+
+function tegnLeilkort(){
+  const feste = document.getElementById('leilkort');
+  feste.innerHTML = '';
+  ENHETER.filter(e => e.type === 'leil' && (e.plan === aktivtPlan || (aktivtPlan === 'loft' && e.id === 'A301')))
+    .forEach(e => {
+      const k = document.createElement('button');
+      k.className = 'ekort' + (e.status === 'solgt' ? ' solgt' : '');
+      k.innerHTML = kortHTML(e, true);
+      k.onclick = () => visEnhet(e.id);
+      feste.appendChild(k);
+    });
+}
+
+/* ---------- rekkehus- og enebolig-kort ---------- */
+function tegnGrid(type, festeId){
+  const feste = document.getElementById(festeId);
+  feste.innerHTML = '';
+  ENHETER.filter(e => e.type === type).forEach(e => {
+    const k = document.createElement('button');
+    k.className = 'ekort' + (e.status === 'solgt' ? ' solgt' : '');
+    k.innerHTML = kortHTML(e, false);
+    k.onclick = () => visEnhet(e.id);
+    feste.appendChild(k);
+  });
+}
+
+/* ---------- samletabell ---------- */
+let sortNokkel = 'navn', sortRetning = 1, typeFilter = 'alle';
+const filterfeste = document.getElementById('typefilter');
+[['alle','Alle'],['leil','Leiligheter'],['rek','Rekkehus'],['ene','Eneboliger']].forEach(([v, t]) => {
+  const b = document.createElement('button');
+  b.className = 'fane' + (v === 'alle' ? ' aktiv' : '');
+  b.textContent = t; b.dataset.v = v;
+  b.onclick = () => { typeFilter = v;
+    filterfeste.querySelectorAll('.fane').forEach(x => x.classList.toggle('aktiv', x.dataset.v === v));
+    tegnTabell(); };
+  filterfeste.appendChild(b);
+});
+document.querySelectorAll('table.alle th[data-sort]').forEach(th => {
+  th.onclick = () => {
+    const n = th.dataset.sort;
+    sortRetning = (sortNokkel === n) ? -sortRetning : 1;
+    sortNokkel = n;
+    tegnTabell();
+  };
+});
+function tegnTabell(){
+  const kropp = document.getElementById('tabellkropp');
+  kropp.innerHTML = '';
+  const rekke = {ledig:0, reservert:1, solgt:2};
+  ENHETER.filter(e => typeFilter === 'alle' || e.type === typeFilter)
+    .slice()
+    .sort((a, b) => {
+      let va, vb;
+      if (sortNokkel === 'pris')        { va = a.pris;         vb = b.pris; }
+      else if (sortNokkel === 'brai')   { va = a.brai;         vb = b.brai; }
+      else if (sortNokkel === 'sov')    { va = a.sov;          vb = b.sov; }
+      else if (sortNokkel === 'status') { va = rekke[a.status]; vb = rekke[b.status]; }
+      else if (sortNokkel === 'type')   { va = a.type;         vb = b.type; }
+      else                              { const to = {leil:0, rek:1, ene:2};
+                                          va = to[a.type] + '-' + a.id; vb = to[b.type] + '-' + b.id; }
+      return (va < vb ? -1 : va > vb ? 1 : 0) * sortRetning;
+    })
+    .forEach(e => {
+      const tr = document.createElement('tr');
+      if (e.status === 'solgt') tr.className = 'tr-solgt';
+      tr.innerHTML = `<td><b>${e.id}</b></td><td>${TYPETEKST[e.type]} · ${e.typetekst !== TYPETEKST[e.type] ? e.typetekst : e.etasje}</td>
+        <td>${e.bra} m²</td><td>${e.sov}</td><td>${e.uteplass}</td>
+        <td><span class="badge ${e.status}">${STATUSTEKST[e.status]}</span></td>
+        <td>${kr(e.pris)}</td>`;
+      tr.onclick = () => visEnhet(e.id);
+      kropp.appendChild(tr);
+    });
+}
+
+/* ---------- modal ---------- */
+function visEnhet(id){
+  const e = ENHETER.find(x => x.id === id);
+  const feste = document.getElementById('modalfeste');
+  const o = omk(e);
+  const fakta = [
+    ['Boligtype', e.typetekst === TYPETEKST[e.type] ? e.typetekst : `${TYPETEKST[e.type]} · ${e.typetekst}`],
+    [e.type === 'leil' ? 'Etasje' : 'Plassering', e.etasje],
+    ['BRA-i (internt)', `${e.bra} m²`],
+    ['BRA-e (bod mv.)', `${e.brae} m²`],
+    ['Soverom', e.sov],
+    ['Uteplass', e.uteplass],
+  ];
+  if (e.type === 'ene') fakta.push(['Tomt', 'Egen tomt, ca. 150–300 m²']);
+  if (e.type === 'rek') fakta.push(['Carport', 'Egen carport og sportsbod inkludert']);
+  const tegFaner = (e.teg.length > 1)
+    ? `<div class="teg-faner">${e.teg.map((t, i) =>
+        `<button class="fane${i === 0 ? ' aktiv' : ''}" data-teg="${t}">${(e.tegnavn || [])[i] || ('Tegning ' + (i + 1))}</button>`).join('')}</div>`
+    : '';
+  const noter = [];
+  if (e.type === 'leil') {
+    noter.push(`Stipulerte felleskostnader ${kr(e.felleskost)} per måned (TOBB, før carport-kontingent).`);
+    noter.push('Egen carport kan kjøpes til for kr 75 000 (+ kr 150/mnd i kontingent).');
+  }
+  noter.push('Kontingent til Sundsøya velforening er estimert til ca. kr 3 000 per år.');
+  if (e.type === 'ene') noter.push('To planløsninger tilbys uten priskonsekvens — se salgsoppgaven.');
+  if (e.ekstra) noter.unshift(e.ekstra);
+  const emne = encodeURIComponent(`Interesse for ${e.navn} — Sundsøya`);
+  const kropp = encodeURIComponent(`Hei!\n\nJeg er interessert i ${e.navn} (${e.bra} m², ${kr(e.pris)}) på Sundsøya og ønsker mer informasjon.\n\nNavn:\nTelefon:`);
+  feste.innerHTML = `
+  <div class="modal-bak" onclick="if(event.target===this)lukkModal()">
+    <div class="modal" role="dialog" aria-label="${e.navn}">
+      <button class="lukk" onclick="lukkModal()" aria-label="Lukk">✕</button>
+      <div class="modal-grid">
+        <div class="modal-teg">
+          <img id="modalteg" src="${e.teg[0]}" alt="Plantegning ${e.navn}">
+          ${tegFaner}
+        </div>
+        <div class="modal-info">
+          <div class="m-eyebrow">Sundsøya · Salgstrinn 1</div>
+          <h3>${e.navn}</h3>
+          <div class="m-status"><span class="badge ${e.status}">${STATUSTEKST[e.status]}</span></div>
+          <div class="fakta">${fakta.map(([l, v]) =>
+            `<div><div class="fl">${l}</div><div class="fv">${v}</div></div>`).join('')}</div>
+          <div class="prislinje"><span>Fastpris</span><span>${kr(e.pris)}</span></div>
+          <div class="prislinje"><span>Omkostninger (estimert)</span><span>${kr(o)}</span></div>
+          <div class="prislinje total"><span>Totalpris inkl. omkostninger</span><span>${kr(e.pris + o)}</span></div>
+          <p class="m-note">${noter.join(' ')}</p>
+          <div class="cta-rad">
+            ${e.status === 'solgt'
+              ? '<span class="m-note">Denne boligen er solgt — kontakt megler for lignende boliger i prosjektet.</span>'
+              : `<a class="knapp primar" href="mailto:ams@hem.no?cc=mt@hem.no&subject=${emne}&body=${kropp}">Meld interesse</a>`}
+            <a class="knapp sekundar" href="../les.html?b=${e.type === 'leil' ? 'leil' : e.type === 'rek' ? 'rekkehus' : 'eneboliger'}" target="_blank" rel="noopener">Les salgsoppgaven</a>
+          </div>
+          <p class="m-note" style="margin-top:14px">Omkostningene er estimert (dokumentavgift av ideell tomteverdi,
+            tinglysingsgebyrer og oppstartskapital/gebyrer til sameie og velforening) og forutsetter tinglysing av
+            ett pantedokument. Eksakt pris, status og omkostninger fremgår av gjeldende prisliste og salgsoppgave.</p>
+        </div>
+      </div>
+    </div>
+  </div>`;
+  feste.querySelectorAll('.teg-faner .fane').forEach(b => {
+    b.onclick = () => {
+      feste.querySelectorAll('.teg-faner .fane').forEach(x => x.classList.toggle('aktiv', x === b));
+      document.getElementById('modalteg').src = b.dataset.teg;
+    };
+  });
+  document.body.style.overflow = 'hidden';
+}
+function lukkModal(){
+  document.getElementById('modalfeste').innerHTML = '';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', ev => { if (ev.key === 'Escape') lukkModal(); });
+
+/* ---------- init ---------- */
+tegnPlan();
+tegnGrid('rek', 'rekkort');
+tegnGrid('ene', 'enekort');
+tegnTabell();
+</script>
+</body>
+</html>
