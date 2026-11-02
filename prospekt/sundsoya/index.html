@@ -39,7 +39,7 @@
 
   /* ---------- hero ---------- */
   .hero{position:relative;overflow:hidden;background:var(--forest)}
-  .hero img{width:100%;height:min(78vh,760px);object-fit:cover;object-position:center 35%}
+  .hero img{width:100%;height:min(78vh,760px);object-fit:cover;object-position:center 66%}
   .hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,26,15,.18) 0%,rgba(20,26,15,.08) 40%,rgba(20,26,15,.62) 100%)}
   .hero-tekst{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 20px 46px;max-width:1180px;margin:0 auto;color:#f6f2e6}
   .hero-tekst .eyebrow{color:var(--brass-lys)}
@@ -91,6 +91,8 @@
   .tospalter{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center}
   @media(max-width:860px){ .tospalter{grid-template-columns:1fr} }
   .ramme{border-radius:14px;overflow:hidden;border:1px solid var(--linje);box-shadow:0 16px 44px rgba(58,71,47,.12)}
+  .bildestabel{display:grid;gap:18px}
+  .bildestabel .ramme img{aspect-ratio:4/3;object-fit:cover;width:100%}
   .fakta{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linje);border:1px solid var(--linje);border-radius:12px;overflow:hidden;margin-top:26px}
   .fakta div{background:var(--kort);padding:13px 16px}
   .fakta .fl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-weight:600}
@@ -157,7 +159,7 @@
 </header>
 
 <div class="hero">
-  <img src="img/flyfoto.jpg" alt="Sundsøya sett ovenfra — nytt nabolag ved sundet på Inderøy" fetchpriority="high">
+  <img src="img/hero-prosjekt.jpg" alt="Nye Sundsøya sett ovenfra — det nye nabolaget ved sundet og «pollen» på Inderøy" fetchpriority="high">
   <div class="hero-tekst">
     <div class="eyebrow">Inderøy · Trøndelag</div>
     <h1>Nye Sundsøya</h1>
@@ -276,7 +278,10 @@
 
 <section id="beliggenhet">
   <div class="vev tospalter">
-    <div class="ramme"><img src="img/uterom.jpg" alt="Frodige uterom og grønne tun mellom husene (illustrasjon)" loading="lazy"></div>
+    <div class="bildestabel">
+      <div class="ramme"><img src="img/flyfoto.jpg" alt="Sundet og Straumen sett ovenfra" loading="lazy"></div>
+      <div class="ramme"><img src="img/fellesskap.jpg" style="object-position:center 78%" alt="Rom for lek og fellesskap mellom husene (illustrasjon)" loading="lazy"></div>
+    </div>
     <div>
       <div class="eyebrow">Beliggenhet</div>
       <h2>Ved sundet, midt i Den Gyldne Omvei</h2>
