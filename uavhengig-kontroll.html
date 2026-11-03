@@ -235,16 +235,16 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 .uk-punkt svg{width:18px;height:18px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transform:translateY(3px)}
 .uk-punkt.nei svg{stroke:var(--mid)}
 .uk-punkt b{color:var(--ink);font-weight:600}
-.uk-to{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,72px);align-items:start}
-@media (max-width:900px){.uk-to{grid-template-columns:1fr}}
-.uk-to h3{font-size:clamp(19px,2vw,24px);margin-bottom:18px}
+.uk-med{max-width:760px}
+.uk-med h3{font-size:clamp(19px,2vw,24px);margin-bottom:18px}
+.uk-hv-cta{margin-top:18px}
 .uk-hvorfor{margin-top:clamp(28px,4vh,40px);border-left:3px solid var(--accent);background:var(--bg);padding:clamp(20px,2.6vw,30px)}
 .section-soft .uk-hvorfor{background:var(--bg)}
 .uk-hvorfor h3{font-size:clamp(17px,1.8vw,21px);margin-bottom:10px}
 .uk-hvorfor p{margin:0;color:var(--ink-soft);font-size:15.5px;line-height:1.6;max-width:74ch}
 .uk-hvorfor p+p{margin-top:10px}
-.uk-hvorfor a{border-bottom:1px solid currentColor}
-.uk-hvorfor a:hover{color:var(--accent-soft)}
+.uk-hvorfor p a{border-bottom:1px solid currentColor}
+.uk-hvorfor p a:hover{color:var(--accent-soft)}
 .uk-svar{display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,1.2fr);gap:clamp(28px,4vw,72px);align-items:start}
 @media (max-width:900px){.uk-svar{grid-template-columns:1fr}}
 .uk-svar .tall{font-family:var(--font-display);font-size:clamp(44px,5.6vw,80px);font-weight:500;letter-spacing:-0.03em;line-height:1;color:var(--ink)}
@@ -373,25 +373,22 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 <section class="section section-soft">
 <div class="wrap">
 <div class="smark"><span class="num">02</span><span class="dash"></span><span>Fagene</span></div>
-<h2 class="dpy-2 rv" style="max-width:22ch">Tre fag, bare prosjektering</h2>
+<h2 class="dpy-2 rv" style="max-width:22ch">Tre fag</h2>
 <p class="lead rv" style="margin-top:18px;max-width:60ch">Hvert fag er en egen kontroll med egen pris og egen kontrollør. Dere velger fagene tiltaket trenger. Kontrollen gjelder prosjekteringen i tiltaksklasse 2, etter prosjekteringskontrollklasse 2 (PKK2).</p>
 <div class="cardgrid c3" style="margin-top:clamp(28px,4vh,44px)">
 <div class="card">
 <div class="head"><span>Fag 1</span><span class="topic">Prosjektering</span></div>
 <h3>Geoteknikk</h3>
-<p>Grunnforhold, fundamentering og stabilitet slik de er prosjektert.</p>
 <div class="foot"><span>Pris</span><span class="v mono">20 000 kr*</span></div>
 </div>
 <div class="card">
 <div class="head"><span>Fag 2</span><span class="topic">Prosjektering</span></div>
 <h3>Bygningsfysikk</h3>
-<p>Fuktsikring, lufttetthet og varmeisolering slik de er prosjektert.</p>
 <div class="foot"><span>Pris</span><span class="v mono">20 000 kr*</span></div>
 </div>
 <div class="card">
 <div class="head"><span>Fag 3</span><span class="topic">Prosjektering</span></div>
 <h3>Konstruksjonssikkerhet</h3>
-<p>Bæresystemet: laster, stabilitet og kapasitet slik de er prosjektert.</p>
 <div class="foot"><span>Pris</span><span class="v mono">20 000 kr*</span></div>
 </div>
 </div>
@@ -401,9 +398,8 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 <section class="section">
 <div class="wrap">
 <div class="smark"><span class="num">03</span><span class="dash"></span><span>Omfanget</span></div>
-<div class="uk-to">
-<div class="rv">
-<h3>Dette er med</h3>
+<div class="uk-med rv">
+<h3>Dette er med i prisen</h3>
 <ul class="uk-punkt">
 <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Kontroll av prosjekteringen i faget, etter tiltaksklasse 2.</span></li>
 <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Alle kontrollrunder til avvikene er lukket.</span></li>
@@ -411,19 +407,12 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Kontrollerklæringen og den endelige kontrollrapporten til byggesaken.</span></li>
 </ul>
 </div>
-<div class="rv">
-<h3>Dette er ikke med</h3>
-<ul class="uk-punkt nei">
-<li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg><span><b>Kontroll av utførelsen.</b> Vi kontrollerer prosjekteringen, ikke arbeidet på byggeplassen.</span></li>
-<li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg><span>Andre fag enn geoteknikk, bygningsfysikk og konstruksjonssikkerhet.</span></li>
-<li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg><span>Tiltak i tiltaksklasse 3.</span></li>
-</ul>
-</div>
-</div>
 <div class="uk-hvorfor rv">
-<h3>Hvorfor utførelsen ikke er med</h3>
-<p>Veiledningen til byggesaksforskriften sier at kontrollen av utførelsen kan gjøres som stikkprøver når de utførende dokumenterer kvaliteten godt og fortløpende (<a href="https://www.dibk.no/regelverk/sak/4/14/14-7" rel="noopener">DiBK, veiledning til SAK10 § 14-7</a>).</p>
-<p>Vi mener byggherren er best tjent med å la de prosjekterende følge opp utførelsen. De kjenner prosjektet best.</p>
+<h3>Kontroll av utførelsen</h3>
+<p>Kontroll av utførelsen gjøres på byggeplassen. DiBKs temaveileder sier at kontrollen av at tiltaket bygges etter produksjonsunderlaget «skjer ved inspeksjon på byggeplassen», og at det skal «påvises at hovedbæresystemet er utført slik det er prosjektert». Kontrollen skal også omfatte «stikkprøver av at materialene som er valgt har de egenskapene som er forutsatt i prosjekteringen» (<a href="https://www.dibk.no/saksbehandling-tilsyn-og-kontroll/temaveileder-uavhengig-kontroll/5.-gjennomforing-av-kontroll/5.2.-kontroll-av-prosjektering-og-utforelse/5.2.3.-obligatoriske-kontrollomrader--" rel="noopener">DiBK, temaveileder om uavhengig kontroll, 5.2.3</a>).</p>
+<p>Kontrolløren må altså være på byggeplassen mens arbeidet pågår, og omfanget følger framdriften. Derfor er kontroll av utførelsen ikke med i den faste prisen. Vi mener byggherren er best tjent med å la de prosjekterende følge opp utførelsen, fordi de kjenner prosjektet best.</p>
+<p>Vi tar gjerne uavhengig kontroll av utførelsen som en del av våre øvrige rådgivningstjenester. Ta kontakt for mer informasjon om gjennomføringen.</p>
+<div class="uk-hv-cta"><a href="mailto:uak@svar.builtly.ai?subject=Uavhengig%20kontroll%20av%20utf%C3%B8relsen%20%28UTF%29&amp;body=Hei%2C%0A%0AVi%20vil%20gjerne%20vite%20mer%20om%20uavhengig%20kontroll%20av%20utf%C3%B8relsen.%0A%0ATiltak%3A%20%0AKommune%3A%20%0AFag%3A%20%0A%0AMed%20hilsen%0A" class="btn btn-ghost">Spør om kontroll av utførelsen <span class="arr">→</span></a></div>
 </div>
 </div>
 </section>
@@ -455,7 +444,8 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 <h2 class="dpy-3">Send en forespørsel på e-post</h2>
 <p class="lead" style="margin-top:18px;max-width:46ch">Skriv hvilket tiltak det gjelder, og hvilke fag dere vil ha kontrollert. Vi svarer innen to virkedager og bekrefter oppdraget skriftlig før vi starter.</p>
 <ul class="uk-punkt" style="margin-top:24px">
-<li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Etter bekreftelsen får de prosjekterende en lenke og laster opp dokumentasjonen der. De trenger ingen konto.</span></li>
+<li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Etter bekreftelsen får de prosjekterende en lenke og laster opp dokumentasjonen der.</span></li>
+<li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>Dere som tiltakshaver holdes informert gjennom hele kontrollen.</span></li>
 <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg><span>En ingeniør i faget gjør kontrollen og signerer kontrollerklæringen.</span></li>
 </ul>
 </div>
@@ -477,37 +467,8 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 </div>
 </section>
 
-<section class="quiet-strip">
-<div class="wrap">
-<div class="inner">
-<span class="mark">Uavhengighet</span>
-<p>Kontrollen forutsetter at Builtly er uavhengig av dem som har prosjektert eller utført tiltaket. Viser det seg at uavhengigheten ikke kan ivaretas, kan Builtly si fra seg oppdraget.</p>
-</div>
-</div>
-</section>
-
 <!-- Plass til eksempelvideoen (#777). Settes inn når videoen finnes. -->
 <!-- Plass til referansene (#776). Blokken vises bare når det finnes godkjente referanser; uten referanser står ingenting her. -->
-
-<section class="section section-dark">
-<div class="wrap">
-<div class="cta-grid">
-<div class="rv">
-<h2 class="dpy-2">Skal tiltaket ha uavhengig kontroll?</h2>
-<p class="lead on-dark" style="margin-top:24px;max-width:52ch">Skriv til oss med tiltaket og fagene. Vi svarer innen to virkedager.</p>
-<div class="cta-actions">
-<a href="mailto:uak@svar.builtly.ai?subject=Foresp%C3%B8rsel%20om%20uavhengig%20kontroll&amp;body=Hei%2C%0A%0AVi%20%C3%B8nsker%20uavhengig%20kontroll%20av%20prosjekteringen.%0A%0ATiltak%3A%20%0AGnr%2Fbnr%3A%20%0AKommune%3A%20%0AFag%20%28geoteknikk%2C%20bygningsfysikk%2C%20konstruksjonssikkerhet%29%3A%20%0AAnsvarlig%20s%C3%B8ker%3A%20%0A%0AMed%20hilsen%0A" class="btn btn-light">Skriv til oss <span class="arr">→</span></a>
-</div>
-</div>
-<div class="cta-side rv">
-<div class="row" style="border-top-color:var(--dark-paper)"><span class="k" style="color:rgba(247,244,237,0.6)">E-post</span><span class="v uk-adr">uak@svar.builtly.ai</span></div>
-<div class="row" style="border-top-color:var(--line-dark)"><span class="k" style="color:rgba(247,244,237,0.6)">Foretak</span><span class="v" style="color:var(--dark-paper)">Builtly Engineering AS</span></div>
-<div class="row" style="border-top-color:var(--line-dark)"><span class="k" style="color:rgba(247,244,237,0.6)">Org.nr.</span><span class="v" style="color:var(--dark-paper)">837 694 892</span></div>
-<div class="row" style="border-top-color:var(--line-dark)"><span class="k" style="color:rgba(247,244,237,0.6)">Adresse</span><span class="v" style="color:var(--dark-paper)">Bassengbakken 4, 7042 Trondheim</span></div>
-</div>
-</div>
-</div>
-</section>
 
 </main>
 <footer>
