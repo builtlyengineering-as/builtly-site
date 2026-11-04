@@ -107,6 +107,10 @@
     {
       "source": "/control",
       "destination": "/control.html"
+    },
+    {
+      "source": "/uavhengig-kontroll",
+      "destination": "/uavhengig-kontroll.html"
     }
   ],
   "redirects": [
@@ -195,6 +199,11 @@
     {
       "source": "/prospekt/sundsoya/eneboliger",
       "destination": "/prospekt/sundsoya/les.html?b=eneboliger",
+      "permanent": false
+    },
+    {
+      "source": "/uak",
+      "destination": "/uavhengig-kontroll",
       "permanent": false
     }
   ]
