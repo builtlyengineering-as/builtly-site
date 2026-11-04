@@ -268,7 +268,9 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 .card .foot .v.mono{font-family:var(--font-mono);font-weight:500;font-size:12px}
 .uk-ref-rutenett{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
 .uk-ref{background:var(--bg);border:1px solid var(--line-strong);padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:18px;margin:0;min-width:0}
-.uk-ref .kar{font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.uk-ref .kar{display:flex;gap:4px;line-height:0}
+.uk-ref .kar svg{width:20px;height:20px;flex:0 0 auto;fill:var(--line-strong)}
+.uk-ref .kar svg.fylt{fill:var(--accent)}
 .uk-ref blockquote{margin:0;font-family:var(--font-serif);font-size:clamp(17px,1.6vw,20px);line-height:1.5;color:var(--ink);overflow-wrap:anywhere;white-space:pre-line}
 .uk-ref figcaption{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:14px;line-height:1.5;color:var(--ink-soft);overflow-wrap:anywhere}
 .uk-ref figcaption b{display:block;color:var(--ink);font-weight:600}
@@ -479,22 +481,25 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 <section class="section" id="referanser" hidden>
 <div class="wrap">
 <div class="smark"><span class="num">06</span><span class="dash"></span><span>Fra tiltakshaverne</span></div>
-<h2 class="dpy-3">Utvalgte tilbakemeldinger fra tiltakshavere, gjengitt med samtykke</h2>
+<h2 class="dpy-3">Tilbakemeldinger</h2>
 <div class="uk-ref-rutenett" id="referanser-liste" style="margin-top:clamp(28px,4vh,44px)"></div>
 </div>
 </section>
 <script>
 (function(){
   // Referansene hentes fra UAK (rewrite i vercel.json). Uten referanser, ved feil eller etter fire sekunder står det ingenting.
-  // Kortene bygges med textContent, ikke som HTML, så et sitat aldri blir kode.
+  // Teksten settes med textContent og stjernene bygges som DOM-noder, ikke som HTML, så et sitat aldri blir kode.
   var seksjon=document.getElementById('referanser'),liste=document.getElementById('referanser-liste');
   if(!seksjon||!liste||!window.fetch)return;
   var ctl=window.AbortController?new AbortController():null;
   var tid=setTimeout(function(){if(ctl)ctl.abort()},4000);
+  var SVGNS='http://www.w3.org/2000/svg';
   function tekst(v){return typeof v==='string'&&v.trim()?v.trim():''}
   function kort(r){
     var fig=document.createElement('figure');fig.className='uk-ref';
-    var kar=document.createElement('div');kar.className='kar';kar.textContent=r.karakter+' av 5';kar.setAttribute('aria-label','Karakter '+r.karakter+' av 5');
+    var kar=document.createElement('div');kar.className='kar';kar.setAttribute('role','img');kar.setAttribute('aria-label',r.karakter+' av 5 stjerner');
+    for(var i=1;i<=5;i++){var sv=document.createElementNS(SVGNS,'svg');sv.setAttribute('viewBox','0 0 20 20');sv.setAttribute('aria-hidden','true');if(i<=r.karakter)sv.setAttribute('class','fylt');
+      var pa=document.createElementNS(SVGNS,'path');pa.setAttribute('d','M10 1.6l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L1.4 7.9l6-.8z');sv.appendChild(pa);kar.appendChild(sv)}
     var sitat=document.createElement('blockquote');sitat.textContent='\u00AB'+r.sitat.trim()+'\u00BB';
     var bt=document.createElement('figcaption');
     var linjer=[tekst(r.rolle),tekst(r.foretak),tekst(r.prosjekt)].filter(Boolean);
