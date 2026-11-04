@@ -266,9 +266,9 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 .uk-uavh p{margin:0;color:var(--ink-soft);font-size:16px;line-height:1.6;max-width:62ch}
 .uk-uavh p+p{margin-top:12px}
 .card .foot .v.mono{font-family:var(--font-mono);font-weight:500;font-size:12px}
-.uk-ref-rutenett{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1px;background:var(--line-strong);border:1px solid var(--line-strong)}
-.uk-ref{background:var(--bg);padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:18px;margin:0;min-width:0}
-.uk-ref .kar{font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-soft);font-weight:600}
+.uk-ref-rutenett{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.uk-ref{background:var(--bg);border:1px solid var(--line-strong);padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:18px;margin:0;min-width:0}
+.uk-ref .kar{font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
 .uk-ref blockquote{margin:0;font-family:var(--font-serif);font-size:clamp(17px,1.6vw,20px);line-height:1.5;color:var(--ink);overflow-wrap:anywhere;white-space:pre-line}
 .uk-ref figcaption{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:14px;line-height:1.5;color:var(--ink-soft);overflow-wrap:anywhere}
 .uk-ref figcaption b{display:block;color:var(--ink);font-weight:600}
@@ -494,13 +494,13 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
   function tekst(v){return typeof v==='string'&&v.trim()?v.trim():''}
   function kort(r){
     var fig=document.createElement('figure');fig.className='uk-ref';
-    var kar=document.createElement('div');kar.className='kar';kar.textContent=r.karakter+' av 5';
+    var kar=document.createElement('div');kar.className='kar';kar.textContent=r.karakter+' av 5';kar.setAttribute('aria-label','Karakter '+r.karakter+' av 5');
     var sitat=document.createElement('blockquote');sitat.textContent='\u00AB'+r.sitat.trim()+'\u00BB';
     var bt=document.createElement('figcaption');
     var linjer=[tekst(r.rolle),tekst(r.foretak),tekst(r.prosjekt)].filter(Boolean);
     if(tekst(r.navn)){var b=document.createElement('b');b.textContent=r.navn.trim();bt.appendChild(b)}
     if(linjer.length){var s=document.createElement('span');s.textContent=linjer.join(' \u00B7 ');bt.appendChild(s)}
-    var fag=(Array.isArray(r.fag)?r.fag:[]).filter(function(f){return tekst(f)});
+    var fag=(Array.isArray(r.fag)?r.fag:[]).filter(function(f){return tekst(f)}).map(function(f){return f.trim()});
     var mnd=/^\d{4}-(0[1-9]|1[0-2])$/.test(r.maaned||'')?r.maaned:'';
     var navnMnd=['januar','februar','mars','april','mai','juni','juli','august','september','oktober','november','desember'];
     var meta=fag.slice();
