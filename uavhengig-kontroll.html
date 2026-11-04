@@ -245,6 +245,9 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 .uk-hvorfor p+p{margin-top:10px}
 .uk-hvorfor p a{border-bottom:1px solid currentColor}
 .uk-hvorfor p a:hover{color:var(--accent-soft)}
+.uk-omfang{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,4vw,72px);align-items:start}
+@media (max-width:900px){.uk-omfang{grid-template-columns:1fr}}
+.uk-omfang .uk-hvorfor{margin-top:0;background:var(--bg-soft)}
 .uk-svar{display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,1.2fr);gap:clamp(28px,4vw,72px);align-items:start}
 @media (max-width:900px){.uk-svar{grid-template-columns:1fr}}
 .uk-svar .tall{font-family:var(--font-display);font-size:clamp(44px,5.6vw,80px);font-weight:500;letter-spacing:-0.03em;line-height:1;color:var(--ink)}
@@ -407,6 +410,7 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 <section class="section">
 <div class="wrap">
 <div class="smark"><span class="num">03</span><span class="dash"></span><span>Omfanget</span></div>
+<div class="uk-omfang">
 <div class="uk-med rv">
 <h3>Dette er med i prisen</h3>
 <ul class="uk-punkt">
@@ -418,10 +422,11 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 </div>
 <div class="uk-hvorfor rv">
 <h3>Kontroll av utførelsen</h3>
-<p>Kontroll av utførelsen gjøres på byggeplassen. DiBKs temaveileder sier at kontrollen av at tiltaket bygges etter produksjonsunderlaget «skjer ved inspeksjon på byggeplassen», og at det skal «påvises at hovedbæresystemet er utført slik det er prosjektert». Kontrollen skal også omfatte «stikkprøver av at materialene som er valgt har de egenskapene som er forutsatt i prosjekteringen» (<a href="https://www.dibk.no/saksbehandling-tilsyn-og-kontroll/temaveileder-uavhengig-kontroll/5.-gjennomforing-av-kontroll/5.2.-kontroll-av-prosjektering-og-utforelse/5.2.3.-obligatoriske-kontrollomrader--" rel="noopener">DiBK, temaveileder om uavhengig kontroll, 5.2.3</a>).</p>
-<p>Kontrolløren må altså være på byggeplassen mens arbeidet pågår, og omfanget følger framdriften. Derfor er kontroll av utførelsen ikke med i den faste prisen. Vi mener byggherren er best tjent med å la de prosjekterende følge opp utførelsen, fordi de kjenner prosjektet best.</p>
-<p>Vi tar gjerne uavhengig kontroll av utførelsen som en del av våre øvrige rådgivningstjenester. Ta kontakt for mer informasjon om gjennomføringen.</p>
+<p>Kontroll av utførelsen gjøres på byggeplassen. DiBK legger opp til at det er kontrollforetaket som kontrollerer arbeidet der, ved inspeksjon og stikkprøver (<a href="https://www.dibk.no/saksbehandling-tilsyn-og-kontroll/temaveileder-uavhengig-kontroll/5.-gjennomforing-av-kontroll/5.2.-kontroll-av-prosjektering-og-utforelse/5.2.3.-obligatoriske-kontrollomrader--" rel="noopener">temaveileder om uavhengig kontroll, 5.2.3</a>, og <a href="https://www.dibk.no/regelverk/sak/4/14/14-7" rel="noopener">veiledningen til SAK10 § 14-7</a>).</p>
+<p>Kontrolløren må være på byggeplassen mens arbeidet pågår, og hvor ofte avhenger av framdriften og av hva som blir funnet. Uten tilstedeværelse på byggeplassen ville det ikke vært en god kontroll. Derfor er kontroll av utførelsen ikke med i den faste prisen.</p>
+<p>Vi tilbyr uavhengig kontroll av utførelsen som en del av våre øvrige rådgivningstjenester, med et omfang som passer prosjektet. Ta kontakt for mer informasjon.</p>
 <div class="uk-hv-cta"><a href="mailto:uak@svar.builtly.ai?subject=Uavhengig%20kontroll%20av%20utf%C3%B8relsen%20%28UTF%29&amp;body=Hei%2C%0A%0AVi%20vil%20gjerne%20vite%20mer%20om%20uavhengig%20kontroll%20av%20utf%C3%B8relsen.%0A%0ATiltak%3A%20%0AKommune%3A%20%0AFag%3A%20%0A%0AMed%20hilsen%0A" class="btn btn-ghost">Spør om kontroll av utførelsen <span class="arr">→</span></a></div>
+</div>
 </div>
 </div>
 </section>

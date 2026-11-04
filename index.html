@@ -152,9 +152,17 @@ body.menu-open{overflow:hidden}
 
 /* Hero illustration (architectural axonometric) */
 .hero-art{margin-top:clamp(24px,4vh,44px);padding-top:clamp(18px,2.5vh,30px);border-top:1px solid var(--line);display:flex;justify-content:flex-end}
-.hero .pillars{display:flex;flex-direction:column;align-items:flex-start;gap:15px;margin-top:clamp(30px,4.5vh,46px)}
-.hero .pillar{font-family:var(--font-display);font-size:clamp(14px,1.2vw,16px);font-weight:600;letter-spacing:-0.005em;color:var(--ink-soft);display:inline-flex;align-items:center;gap:12px}
-.hero .pillar::before{content:"";width:6px;height:6px;background:var(--accent);display:inline-block;flex:0 0 auto}
+/* Uavhengig kontroll: lanseringen. Bare norsk, skjules når språket byttes. */
+html:not([lang="no"]) .uk-nytt,html:not([lang="no"]) .uk-fremhev{display:none}
+.uk-nytt{display:inline-flex;align-items:center;gap:12px;max-width:100%;margin-bottom:22px;padding:6px 14px 6px 6px;border:1px solid var(--line-strong);background:var(--bg);font-family:var(--font-display);font-size:13.5px;font-weight:600;letter-spacing:-0.005em;color:var(--ink);transition:border-color .18s ease}
+.uk-nytt:hover{border-color:var(--ink)}
+.uk-nytt .b{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.16em;font-weight:600;color:var(--bg);background:var(--accent-soft);padding:4px 8px}
+.uk-nytt .t{min-width:0}
+.uk-nytt .b,.uk-nytt .arr{flex:0 0 auto}
+.uk-nytt .arr{color:var(--accent-soft);transition:transform .18s ease}
+.uk-nytt:hover .arr{transform:translateX(3px)}
+.uk-fremhev{padding:clamp(28px,4.5vh,48px) 0 0}
+.uk-fremhev .fotnote{margin:10px 0 0;font-size:13px;color:var(--mid)}
 .hero-art .scroll-hint{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--mid)}
 
 /* STATS — restrained corporate */
@@ -1388,6 +1396,7 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 <div class="wrap">
 <div class="hero-grid rv">
 <div class="hero-head">
+<a href="/uavhengig-kontroll.html" class="uk-nytt" lang="no"><span class="b">Nytt</span><span class="t">Uavhengig kontroll av prosjekteringen, fast pris per fag</span><span class="arr">→</span></a>
 <div class="eyebrow"><span class="accent-dot"></span><span data-i18n="home2.eyebrow">Fremtidens ingeniørselskap. Allerede her.</span></div>
 <h1 class="dpy-1"><span data-i18n-html="home2.h1">Rådgivende ingeniører.<br/>Banebrytende teknologi.</span></h1>
 </div>
@@ -1396,11 +1405,6 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 <div class="hero-actions">
 <a href="/bli-kunde.html" class="btn"><span data-i18n="home2.cta1">Be om tilbud på rådgivning</span> <span class="arr">→</span></a>
 <a href="/software.html" class="btn btn-ghost"><span data-i18n="home2.cta2">Utforsk Builtly Software</span> <span class="arr">→</span></a>
-</div>
-<div class="pillars">
-<span class="pillar" data-i18n="home2.pillar1">Rådgiveroppdrag med fagansvar</span>
-<span class="pillar" data-i18n="home2.pillar2">Deeptech software</span>
-<span class="pillar" data-i18n="home2.pillar3">Én modell av prosjektet</span>
 </div>
 </div>
 <div class="hero-side">
@@ -1463,6 +1467,22 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 .free-strip p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.6;max-width:66ch}
 .free-strip .fs-actions{display:flex;gap:12px;flex-wrap:wrap}
 </style>
+
+<section class="uk-fremhev" lang="no">
+<div class="wrap">
+<div class="free-strip rv">
+<div>
+<span class="fs-badge">Ny tjeneste</span>
+<h3>Uavhengig kontroll av prosjekteringen</h3>
+<p>Geoteknikk, bygningsfysikk og konstruksjonssikkerhet i tiltaksklasse 2. Fast pris per fag, 20 000 kr eks. mva.*, med alle kontrollrunder fram til kontrollerklæringen. Vi svarer innen to virkedager hver gang det er vår tur.</p>
+<p class="fotnote">* Inntil tre prosjekterende foretak i faget.</p>
+</div>
+<div class="fs-actions">
+<a href="/uavhengig-kontroll.html" class="btn">Se uavhengig kontroll <span class="arr">→</span></a>
+</div>
+</div>
+</div>
+</section>
 
 <section class="section" id="hva">
 <div class="wrap">

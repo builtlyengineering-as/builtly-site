@@ -180,6 +180,10 @@ a.card .foot .go{color:var(--accent);font-weight:600}
 .free-strip .fs-badge{display:inline-block;font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.16em;font-weight:600;color:var(--bg);background:var(--accent);padding:4px 10px;margin-bottom:14px}
 .free-strip h3{font-size:clamp(19px,2.1vw,26px);margin-bottom:10px}
 .free-strip p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.6;max-width:66ch}
+/* Uavhengig kontroll: lanseringen. Bare norsk, skjules når språket byttes. */
+html:not([lang="no"]) .uk-nytt,html:not([lang="no"]) .uk-fremhev{display:none}
+.uk-fremhev{padding:clamp(28px,4.5vh,48px) 0 0}
+.uk-fremhev .fotnote{margin:10px 0 0;font-size:13px;color:var(--mid)}
 .free-strip .fs-actions{display:flex;gap:12px;flex-wrap:wrap}
 /* CTA */
 .cta-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,5vw,96px);align-items:end}
@@ -291,6 +295,22 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 <div class="row"><span class="k" data-i18n="tj.ov.side2k">Kontrakt</span><span class="v">NS 8401 / NS 8402</span></div>
 <div class="row"><span class="k" data-i18n="tj.felles.leveranse_k">Leveranse</span><span class="v" data-i18n="tj.felles.leveranse_v">Redigerbare fagformater + rapport</span></div>
 <div class="row"><span class="k" data-i18n="tj.felles.svar_k">Svar på forespørsel</span><span class="v" data-i18n="tj.felles.svar_v">Innen én virkedag</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="uk-fremhev" lang="no">
+<div class="wrap">
+<div class="free-strip rv">
+<div>
+<span class="fs-badge">Ny tjeneste</span>
+<h3>Uavhengig kontroll av prosjekteringen</h3>
+<p>Geoteknikk, bygningsfysikk og konstruksjonssikkerhet i tiltaksklasse 2. Fast pris per fag, 20 000 kr eks. mva.*, med alle kontrollrunder fram til kontrollerklæringen. Vi svarer innen to virkedager hver gang det er vår tur.</p>
+<p class="fotnote">* Inntil tre prosjekterende foretak i faget.</p>
+</div>
+<div class="fs-actions">
+<a href="/uavhengig-kontroll.html" class="btn">Se uavhengig kontroll <span class="arr">→</span></a>
 </div>
 </div>
 </div>
