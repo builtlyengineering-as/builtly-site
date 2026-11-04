@@ -1,5 +1,20 @@
 {
+  "headers": [
+    {
+      "source": "/api/uak/referanser",
+      "headers": [
+        {
+          "key": "x-vercel-enable-rewrite-caching",
+          "value": "1"
+        }
+      ]
+    }
+  ],
   "rewrites": [
+    {
+      "source": "/api/uak/referanser",
+      "destination": "https://geonius-api.onrender.com/api/uak/offentlig/referanser"
+    },
     {
       "source": "/tjenester",
       "destination": "/tjenester.html"
