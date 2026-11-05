@@ -153,7 +153,7 @@ body.menu-open{overflow:hidden}
 /* Hero illustration (architectural axonometric) */
 .hero-art{margin-top:clamp(24px,4vh,44px);padding-top:clamp(18px,2.5vh,30px);border-top:1px solid var(--line);display:flex;justify-content:flex-end}
 /* Uavhengig kontroll: lanseringen. Bare norsk, skjules når språket byttes. */
-html:not([lang="no"]) .uk-nytt,html:not([lang="no"]) .uk-fremhev{display:none}
+html:not([lang="no"]) .uk-nytt{display:none}
 .uk-nytt{display:inline-flex;align-items:center;gap:12px;max-width:100%;margin-bottom:22px;padding:6px 14px 6px 6px;border:1px solid var(--line-strong);background:var(--bg);font-family:var(--font-display);font-size:13.5px;font-weight:600;letter-spacing:-0.005em;color:var(--ink);transition:border-color .18s ease}
 .uk-nytt:hover{border-color:var(--ink)}
 .uk-nytt .b{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.16em;font-weight:600;color:var(--bg);background:var(--accent-soft);padding:4px 8px}
@@ -161,8 +161,6 @@ html:not([lang="no"]) .uk-nytt,html:not([lang="no"]) .uk-fremhev{display:none}
 .uk-nytt .b,.uk-nytt .arr{flex:0 0 auto}
 .uk-nytt .arr{color:var(--accent-soft);transition:transform .18s ease}
 .uk-nytt:hover .arr{transform:translateX(3px)}
-.uk-fremhev{padding:clamp(28px,4.5vh,48px) 0 0}
-.uk-fremhev .fotnote{margin:10px 0 0;font-size:13px;color:var(--mid)}
 .hero-art .scroll-hint{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--mid)}
 
 /* STATS — restrained corporate */
@@ -1467,22 +1465,6 @@ footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);borde
 .free-strip p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.6;max-width:66ch}
 .free-strip .fs-actions{display:flex;gap:12px;flex-wrap:wrap}
 </style>
-
-<section class="uk-fremhev" lang="no">
-<div class="wrap">
-<div class="free-strip rv">
-<div>
-<span class="fs-badge">Ny tjeneste</span>
-<h3>Uavhengig kontroll av prosjekteringen</h3>
-<p>Geoteknikk, bygningsfysikk og konstruksjonssikkerhet i tiltaksklasse 2. Fast pris per fag, 20 000 kr eks. mva.*, med alle kontrollrunder fram til kontrollerklæringen. Vi svarer innen to virkedager hver gang det er vår tur.</p>
-<p class="fotnote">* Inntil tre prosjekterende foretak i faget.</p>
-</div>
-<div class="fs-actions">
-<a href="/uavhengig-kontroll.html" class="btn">Se uavhengig kontroll <span class="arr">→</span></a>
-</div>
-</div>
-</div>
-</section>
 
 <section class="section" id="hva">
 <div class="wrap">
