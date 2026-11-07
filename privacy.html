@@ -38,7 +38,7 @@ footer.site nav a{margin-right:16px}
 <main class="legal">
 <!-- CONTENT-START -->
 <h1>Personvernerklæring</h1>
-<p class="meta">Builtly Engineering AS · org.nr. 837 694 892 · Sist oppdatert 10. juli 2026 · Versjon 1.0</p>
+<p class="meta">Builtly Engineering AS · org.nr. 837 694 892 · Sist oppdatert 7. november 2026 · Versjon 1.1</p>
 
 <p>Denne personvernerklæringen forklarer hvordan Builtly Engineering AS behandler personopplysninger når du bruker våre tjenester: fagverktøy-portalen på <strong>app.builtly.ai</strong>, eiendomsportalen <strong>Builtly Maps</strong>, markedssiden <strong>builtly.ai</strong> og landingssider vi drifter for kunders boligprosjekter. Erklæringen er gitt i samsvar med personvernforordningen (GDPR) artikkel 13 og 14.</p>
 
@@ -92,7 +92,7 @@ footer.site nav a{margin-right:16px}
 
 <h2>4. Bruk av kunstig intelligens</h2>
 <p>Deler av Builtly bruker kunstig intelligens (KI) til tekst-, bilde- og dokumentanalyse — for eksempel til å tolke opplastede tegninger og dokumenter, generere og forbedre markedsføringstekst, og oppsummere innhold.</p>
-<p>Til dette bruker vi <strong>Claude fra Anthropic</strong> samt egne private modeller. I <strong>Mulighetsstudie-modulen</strong> brukes i tillegg <strong>Google Gemini</strong> til bildegenerering. <strong>OpenAI brukes ikke.</strong> Leverandørene behandler kun data <strong>når du faktisk bruker en KI-funksjon</strong>, og de <strong>trener ikke sine modeller på data som sendes via Builtlys API-integrasjoner</strong>.</p>
+<p>Til dette bruker vi <strong>Claude fra Anthropic</strong>. I <strong>Mulighetsstudie-modulen</strong> brukes i tillegg <strong>Google Gemini</strong> til bildegenerering. <strong>OpenAI</strong> brukes til bildegenerering i Render-modulen og som reserve i Konstruksjon-modulen. Leverandørene behandler kun data <strong>når du faktisk bruker en KI-funksjon</strong>, og de <strong>trener ikke sine modeller på data som sendes via Builtlys API-integrasjoner</strong>.</p>
 <p>KI-genererte resultater kan inneholde feil. Du bør derfor kontrollere innhold som er generert eller bearbeidet med KI før det brukes til beslutninger. Overføring til disse leverandørene er omtalt i punkt 6.</p>
 
 <h2>5. Databehandlere og mottakere</h2>
@@ -108,6 +108,7 @@ footer.site nav a{margin-right:16px}
 <tr><td><strong>Cloudflare</strong></td><td>DNS og innholdslevering (CDN)</td></tr>
 <tr><td><strong>Anthropic (Claude)</strong></td><td>KI-basert tekst- og dokumentanalyse (behandler kun data ved bruk av KI-funksjoner; trener ikke på Builtlys API-data)</td></tr>
 <tr><td><strong>Google (Gemini)</strong></td><td>Bildegenerering — kun i Mulighetsstudie-modulen (trener ikke på Builtlys API-data)</td></tr>
+<tr><td><strong>OpenAI</strong></td><td>Bildegenerering i Render-modulen, og reserve i Konstruksjon-modulen (behandler kun data ved bruk av disse funksjonene)</td></tr>
 <tr><td><strong>Resend</strong></td><td>Utsending av e-post</td></tr>
 <tr><td><strong>Twilio</strong></td><td>Utsending av SMS</td></tr>
 <tr><td><strong>Creditsafe</strong></td><td>Kredittopplysninger om foretak</td></tr>
@@ -118,7 +119,7 @@ footer.site nav a{margin-right:16px}
 <p>Vi selger ikke personopplysninger. Opplysninger kan utleveres til offentlige myndigheter der vi er rettslig forpliktet til det.</p>
 
 <h2>6. Overføring til tredjeland</h2>
-<p>Enkelte av våre databehandlere kan behandle personopplysninger utenfor EU/EØS, hovedsakelig i <strong>USA</strong>. Dette gjelder blant annet <strong>Anthropic</strong>, <strong>Google</strong>, <strong>Resend</strong>, <strong>Twilio</strong>, <strong>Vercel</strong>, <strong>Render</strong>, <strong>Cloudflare</strong> og <strong>Microsoft</strong>.</p>
+<p>Enkelte av våre databehandlere kan behandle personopplysninger utenfor EU/EØS, hovedsakelig i <strong>USA</strong>. Dette gjelder blant annet <strong>Anthropic</strong>, <strong>Google</strong>, <strong>OpenAI</strong>, <strong>Resend</strong>, <strong>Twilio</strong>, <strong>Vercel</strong>, <strong>Render</strong>, <strong>Cloudflare</strong> og <strong>Microsoft</strong>.</p>
 <p>Slik overføring skjer på grunnlag av:</p>
 <ul>
 <li><strong>EUs rammeverk for personvern mellom EU og USA (EU-US Data Privacy Framework)</strong>, der leverandøren er sertifisert, og/eller</li>
@@ -129,7 +130,7 @@ footer.site nav a{margin-right:16px}
 <h2>7. Lagringstid</h2>
 <p>Vi lagrer personopplysninger så lenge det er nødvendig for formålet de ble samlet inn for, eller så lenge vi er rettslig forpliktet til det. Under følger våre standard oppbevaringstider:</p>
 <ul>
-<li><strong>Brukerkonto</strong>: så lenge kundeforholdet varer, med en rimelig etterperiode for administrasjon og eventuelle etterfølgende henvendelser ‹etterperiode fastsettes›.</li>
+<li><strong>Brukerkonto</strong>: så lenge kundeforholdet varer, med en rimelig etterperiode for administrasjon og eventuelle etterfølgende henvendelser.</li>
 <li><strong>Regnskaps- og lønnsdata</strong>: <strong>5 år</strong> i henhold til bokføringsloven.</li>
 <li><strong>Markedsføringskontakter</strong>: til avmelding, eller inntil <strong>24 måneders inaktivitet</strong>.</li>
 <li><strong>Builtly Maps – innsynslogg</strong>: <strong>3 år</strong>.</li>
