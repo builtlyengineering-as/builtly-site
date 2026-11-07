@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.builtly.ai/</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/tjenester</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/software</loc><lastmod>2026-09-21</lastmod></url>
-  <url><loc>https://www.builtly.ai/prosjekthotell</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/salgskonsoll</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/maps</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/mulighetsstudie</loc><lastmod>2026-08-30</lastmod></url>
+  <url><loc>https://www.builtly.ai/</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://www.builtly.ai/tjenester</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://www.builtly.ai/software</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://www.builtly.ai/prosjekthotell</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://www.builtly.ai/salgskonsoll</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://www.builtly.ai/maps</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://www.builtly.ai/mulighetsstudie</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://www.builtly.ai/render</loc><lastmod>2026-09-13</lastmod></url>
   <url><loc>https://www.builtly.ai/control</loc><lastmod>2026-09-21</lastmod></url>
-  <url><loc>https://www.builtly.ai/uavhengig-kontroll</loc><lastmod>2026-11-03</lastmod></url>
+  <url><loc>https://www.builtly.ai/uavhengig-kontroll</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://www.builtly.ai/bim-viewer</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/platform</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/verktoy</loc><lastmod>2026-08-30</lastmod></url>
   <url><loc>https://www.builtly.ai/referanser</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/slik-jobber-vi</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/about</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/contact</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/industries</loc><lastmod>2026-08-30</lastmod></url>
+  <url><loc>https://www.builtly.ai/about</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://www.builtly.ai/contact</loc><lastmod>2026-11-07</lastmod></url>
   <url><loc>https://www.builtly.ai/careers</loc><lastmod>2026-08-30</lastmod></url>
   <url><loc>https://www.builtly.ai/trust</loc><lastmod>2026-08-30</lastmod></url>
   <url><loc>https://www.builtly.ai/bli-kunde</loc><lastmod>2026-08-30</lastmod></url>
@@ -26,13 +22,7 @@
   <url><loc>https://www.builtly.ai/privacy</loc><lastmod>2026-08-30</lastmod></url>
   <url><loc>https://www.builtly.ai/terms</loc><lastmod>2026-08-30</lastmod></url>
   <url><loc>https://www.builtly.ai/cookies</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/tjenester/akustikk</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/tjenester/brannsikkerhet</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/tjenester/byggherrestotte</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/tjenester/geoteknikk</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/tjenester/konstruksjon</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/tjenester/miljo</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/tjenester/sha</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/tjenester/teknisk-dd</loc><lastmod>2026-08-30</lastmod></url>
-  <url><loc>https://www.builtly.ai/tjenester/trafikk</loc><lastmod>2026-08-30</lastmod></url>
+  <url><loc>https://www.builtly.ai/tjenester/geoteknikk</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://www.builtly.ai/tjenester/konstruksjon</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://www.builtly.ai/tjenester/bygningsfysikk</loc><lastmod>2026-11-07</lastmod></url>
 </urlset>

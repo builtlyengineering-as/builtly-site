@@ -1826,6 +1826,13 @@ def main():
     sider = [tjenester_oversikt(), software_side(), referanser_side(), slik_jobber_vi()]
     sider += [fagside(f) for f in FAG]
 
+    # Fra lanseringen i november 2026 lager tools/nettsted/lag.py forsiden, Rådgivning
+    # (tjenester.html), fagsidene og software.html, og slik-jobber-vi og sju fagsider er
+    # tatt bort (302 i vercel.json). Her skrives bare referanser.html. De andre sidene
+    # bygges fortsatt i minnet, så i18n-laget beholder nøklene de eldre sidene bruker.
+    # Kjør tools/bytt_meny.py etterpå, så referanser.html får den nye menyen.
+    SKRIV = {"referanser.html"}
+    sider = [s for s in sider if s["path"] in SKRIV]
     os.makedirs(os.path.join(ROT, "tjenester"), exist_ok=True)
     for s in sider:
         full = os.path.join(ROT, s["path"])
