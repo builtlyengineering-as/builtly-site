@@ -2,461 +2,170 @@
 <html lang="no">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" data-i18n-attr-content="tj.str.desc" content="Builtly leverer komplette rådgiveroppdrag innen konstruksjon — bæresystemer, dimensjonering, konstruksjonssikkerhet, tegninger og beregningsgrunnlag. Be om tilbud." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title data-i18n="ns.konstruksjon._tittel">Konstruksjon · Rådgivning · Builtly</title>
+<meta name="description" content="Rådgivning i konstruksjon: bæresystem, dimensjonering og konstruktive vurderinger, og uavhengig kontroll av konstruksjonssikkerhet." data-i18n-attr-content="ns.konstruksjon._beskrivelse" />
 <meta name="theme-color" content="#FAFAF7" />
-<title data-i18n="tj.str.title">Konstruksjon · Rådgivende ingeniører · Builtly</title>
+<link rel="canonical" href="https://www.builtly.ai/tjenester/konstruksjon" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="nb_NO" />
+<meta property="og:site_name" content="Builtly" />
+<meta property="og:url" content="https://www.builtly.ai/tjenester/konstruksjon" />
+<meta property="og:title" content="Konstruksjon · Rådgivning · Builtly" />
+<meta property="og:description" content="Rådgivning i konstruksjon: bæresystem, dimensjonering og konstruktive vurderinger, og uavhengig kontroll av konstruksjonssikkerhet." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet" />
-<style>
-
-:root{
-  --bg:#FAFAF7; --bg-soft:#F1EEE6; --bg-warm:#EDE9DF;
-  --ink:#131820; --ink-soft:#2A323C; --mid:#6A6E76; --grey:#B8B5AD;
-  --dark:#131820; --dark-soft:#1C232D; --dark-paper:#F7F4ED;
-  --line:rgba(19,24,32,0.10); --line-strong:rgba(19,24,32,0.22);
-  --line-dark:rgba(247,244,237,0.10); --line-dark-strong:rgba(247,244,237,0.20);
-  --accent:#14B8A6; --accent-bright:#2DD4BF; --accent-soft:#0D9488;
-  --font-display:'Manrope','Helvetica Neue',system-ui,sans-serif;
-  --font-body:'Manrope','Helvetica Neue',system-ui,sans-serif;
-  --font-serif:'Newsreader','Times New Roman',serif;
-  --font-mono:'JetBrains Mono',Menlo,monospace;
-  --max:1440px; --gutter:clamp(24px,4.5vw,72px);
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.55;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;font-feature-settings:"ss01","cv11"}
-::selection{background:var(--ink);color:var(--bg)}
-h1,h2,h3,h4,h5{font-family:var(--font-display);font-weight:600;color:inherit;margin:0;line-height:1.05;letter-spacing:-0.022em}
-.dpy-1{font-size:clamp(38px,5.2vw,74px);line-height:1.05;letter-spacing:-0.028em;font-weight:500}
-.dpy-2{font-size:clamp(30px,4vw,56px);line-height:1.1;letter-spacing:-0.024em;font-weight:500}
-.dpy-3{font-size:clamp(24px,3vw,38px);line-height:1.12;letter-spacing:-0.02em;font-weight:600}
-.dpy-4{font-size:clamp(19px,2.1vw,26px);line-height:1.2;letter-spacing:-0.015em;font-weight:600}
-.lead{font-size:clamp(16.5px,1.35vw,21px);line-height:1.55;color:var(--ink-soft);font-weight:400;letter-spacing:-0.005em}
-.lead.on-dark{color:var(--dark-paper)}
-.serif{font-family:var(--font-serif);font-style:italic;font-weight:400;letter-spacing:-0.005em}
-.eyebrow{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;font-weight:500;color:var(--mid)}
-.eyebrow .accent-dot{display:inline-block;width:6px;height:6px;background:var(--accent);margin-right:10px;vertical-align:1px}
-a{color:inherit;text-decoration:none}
-.link-line{position:relative;padding-bottom:1px;border-bottom:1px solid currentColor;transition:opacity .2s}
-.link-line:hover{opacity:.6}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter);position:relative}
-.section{position:relative;padding:clamp(64px,9vh,110px) 0}
-.section-dark{background:var(--dark);color:var(--dark-paper)}
-.section-dark h1,.section-dark h2,.section-dark h3,.section-dark h4{color:var(--dark-paper)}
-.section-soft{background:var(--bg-soft)}
-.smark{display:flex;align-items:baseline;gap:14px;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--mid);margin-bottom:clamp(34px,4.5vh,54px)}
-.section-dark .smark{color:rgba(247,244,237,0.55)}
-.smark .num{color:var(--accent);font-weight:600}
-.section-dark .smark .num{color:var(--accent-bright)}
-.smark .dash{flex:0 0 32px;height:1px;background:currentColor;opacity:.5}
-.nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.92);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);border-bottom:1px solid var(--line)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px var(--gutter);max-width:var(--max);margin:0 auto;gap:32px}
-.logo{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-0.018em;color:var(--ink)}
-.logo-mark{display:inline-flex;width:26px;height:26px;border:1.5px solid var(--ink);border-radius:5px;align-items:center;justify-content:center;position:relative}
-.logo-mark::before{content:"";position:absolute;top:5px;right:5px;width:6px;height:6px;background:var(--accent);border-radius:50%}
-.logo .sub{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--mid);font-weight:500;margin-left:4px}
-.nav-links{display:flex;gap:clamp(20px,2.2vw,32px);font-size:14px;font-weight:500;color:var(--ink-soft);letter-spacing:-0.005em}
-.nav-links a{position:relative;padding:6px 0;transition:color .18s}
-.nav-links a:hover{color:var(--accent)}
-.nav-links a.active{color:var(--accent-soft)}
-
-@media (max-width:1240px){.nav-links{gap:14px;font-size:13.5px}}
-@media (max-width:1140px){.nav-links{gap:9px;font-size:12.5px}}
-@media (max-width:1040px){.nav-links{display:none}}
-.nav-burger{display:none;width:38px;height:38px;flex:0 0 auto;border:1px solid var(--line-strong);background:none;cursor:pointer;position:relative;padding:0}
-.nav-burger span{display:block;width:16px;height:1.5px;background:var(--ink);position:absolute;left:50%;transform:translateX(-50%);transition:transform .22s ease,opacity .16s ease,top .22s ease}
-.nav-burger span:nth-child(1){top:13px}
-.nav-burger span:nth-child(2){top:18px}
-.nav-burger span:nth-child(3){top:23px}
-body.menu-open .nav-burger span:nth-child(1){top:18px;transform:translateX(-50%) rotate(45deg)}
-body.menu-open .nav-burger span:nth-child(2){opacity:0}
-body.menu-open .nav-burger span:nth-child(3){top:18px;transform:translateX(-50%) rotate(-45deg)}
-.mobile-menu{display:none;position:fixed;inset:0;z-index:90;background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch;padding:96px var(--gutter) 44px;flex-direction:column}
-body.menu-open .mobile-menu{display:flex}
-body.menu-open{overflow:hidden}
-.mobile-menu .mm-eyebrow{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.16em;color:var(--mid);padding-bottom:10px;border-bottom:1px solid var(--line-strong)}
-.mobile-menu .mm-link{display:flex;align-items:baseline;gap:16px;padding:17px 2px;border-bottom:1px solid var(--line);font-family:var(--font-display);font-size:23px;font-weight:500;letter-spacing:-0.015em;color:var(--ink)}
-.mobile-menu .mm-num{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;color:var(--mid)}
-.mobile-menu .mm-link.active .mm-lab{color:var(--accent-soft)}
-.mobile-menu .mm-cta{margin-top:30px;align-self:flex-start;padding:12px 22px;font-size:13px}
-@media (max-width:1040px){.nav-burger{display:block}}
-@media (max-width:640px){.nav .btn-ghost{display:none}}
-@media (min-width:1041px){body.menu-open .mobile-menu{display:none}body.menu-open{overflow:auto}}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;background:var(--ink);color:var(--bg);font-family:var(--font-display);font-size:13px;font-weight:600;letter-spacing:-0.005em;border:0;cursor:pointer;white-space:nowrap;transition:background .18s ease,transform .18s ease}
-.nav-cta{display:flex;align-items:center;gap:12px}
-.nav .btn{padding:8px 15px;font-size:12px}
-.nav .btn-ghost{padding:7px 14px}
-@media (max-width:400px){.nav-inner{gap:9px}.nav-cta{gap:7px}.nav .btn{padding:7px 11px;font-size:11.5px}}
-.btn:hover{background:var(--accent)}
-.btn .arr{transition:transform .18s ease;font-weight:400}
-.btn:hover .arr{transform:translateX(3px)}
-.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line-strong);padding:10px 17px}
-.btn-ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.btn-light{background:var(--dark-paper);color:var(--ink)}
-.btn-light:hover{background:var(--accent);color:var(--bg)}
-.btn-dark-ghost{background:transparent;color:var(--dark-paper);border:1px solid var(--line-dark-strong);padding:10px 17px}
-.btn-dark-ghost:hover{background:var(--dark-paper);color:var(--ink);border-color:var(--dark-paper)}
-@media (max-width:520px){.nav-inner{gap:14px;padding:14px var(--gutter)}.logo .sub{display:none}.btn{padding:9px 14px;font-size:12px}}
-.lang-picker{display:inline-flex;align-items:center;gap:7px;background:none;border:1px solid var(--line-strong);padding:8px 11px;cursor:pointer;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;color:var(--ink);position:relative}
-.lang-picker:hover{border-color:var(--ink)}
-.lang-picker svg{width:13px;height:13px}
-.lang-menu{position:absolute;top:calc(100% + 8px);right:0;background:var(--bg);border:1px solid var(--line-strong);min-width:170px;z-index:120;box-shadow:0 16px 40px -18px rgba(19,24,32,0.28);padding:6px}
-.lang-menu[hidden]{display:none}
-.lang-option{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;background:none;border:0;text-align:left;padding:9px 10px;font-family:var(--font-body);font-size:13px;color:var(--ink-soft);cursor:pointer}
-.lang-option:hover{background:var(--bg-soft)}
-.lang-option .native{color:var(--mid);font-size:12px}
-.lang-option .check{width:11px;height:11px;stroke:var(--accent);fill:none;stroke-width:2;opacity:0}
-.lang-option.active .check{opacity:1}
-.lang-wrap{position:relative}
-/* småskjerm: nav-cta må få plass med «Be om tilbud» (sist i kaskaden med vilje) */
-@media (max-width:430px){
-  .nav-inner{gap:8px;padding:14px var(--gutter)}
-  .nav-cta{gap:7px}
-  .lang-picker{padding:6px 8px;gap:5px}
-  .lang-picker svg:last-child{display:none}
-  .nav .btn{padding:7px 10px;font-size:11.5px}
-  .nav .btn .arr{display:none}
-}
-/* hero for undersidene */
-.p-hero{padding:clamp(40px,7vh,84px) 0 clamp(36px,6vh,64px);border-bottom:1px solid var(--line)}
-.p-hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,0.9fr);gap:clamp(36px,5vw,90px);align-items:start}
-@media (max-width:1000px){.p-hero-grid{grid-template-columns:1fr}}
-.p-hero h1{margin-top:18px;text-wrap:balance}
-.p-hero .lead{margin-top:24px;max-width:56ch}
-.p-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-.p-side{display:flex;flex-direction:column}
-.p-side .row{padding:15px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:baseline}
-.p-side .row:first-child{border-top:1px solid var(--ink)}
-.p-side .row .k{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--mid)}
-.p-side .row .v{font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;text-align:right;max-width:26ch}
-/* kortgrid (hairline-rutenett) */
-.cardgrid{display:grid;gap:1px;background:var(--line-strong);border:1px solid var(--line-strong)}
-.cardgrid.c2{grid-template-columns:repeat(2,1fr)}
-.cardgrid.c3{grid-template-columns:repeat(3,1fr)}
-@media (max-width:980px){.cardgrid.c3{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:700px){.cardgrid.c2,.cardgrid.c3{grid-template-columns:1fr}}
-.card{background:var(--bg);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;min-height:200px;transition:background .18s ease;position:relative}
-.card:hover{background:var(--bg-soft)}
-.section-soft .card{background:var(--bg-soft)}
-.section-soft .card:hover{background:var(--bg)}
-.card .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);font-weight:600}
-.card .head .topic{color:var(--mid)}
-.card h3{margin-bottom:12px;font-size:clamp(19px,2vw,25px)}
-.card p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.55;flex-grow:1;max-width:56ch}
-.card .foot{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--mid)}
-.card .foot .v{font-family:var(--font-display);font-weight:600;color:var(--ink);font-size:13px;letter-spacing:-0.005em;text-transform:none}
-a.card .foot .go{color:var(--accent);font-weight:600}
-/* liste-rader (leveranser) */
-.dlist{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
-.dlist li{display:grid;grid-template-columns:clamp(40px,4vw,56px) 1fr;gap:clamp(16px,2.5vw,40px);padding:clamp(18px,2.6vh,26px) 0;border-bottom:1px solid var(--line);align-items:baseline}
-.dlist .n{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;color:var(--accent);font-weight:600}
-.dlist .t{font-family:var(--font-display);font-size:clamp(17px,1.8vw,21px);font-weight:600;letter-spacing:-0.012em;color:var(--ink)}
-.dlist .d{margin-top:6px;color:var(--ink-soft);font-size:15px;line-height:1.55;max-width:66ch}
-/* fase-rad */
-.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-strong);border:1px solid var(--line-strong)}
-@media (max-width:900px){.phases{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:540px){.phases{grid-template-columns:1fr}}
-.phase{background:var(--bg);padding:22px 20px 24px;min-height:150px}
-.section-soft .phase{background:var(--bg-soft)}
-.phase .ix{font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);font-weight:600;margin-bottom:8px}
-.phase .nm{font-family:var(--font-display);font-size:17px;font-weight:600;letter-spacing:-0.012em;color:var(--ink);margin-bottom:8px;line-height:1.15}
-.phase .ds{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
-/* stille sitat/garanti-strip */
-.quiet-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-soft);padding:clamp(32px,5vh,48px) 0}
-.quiet-strip .inner{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,44px);align-items:start;max-width:980px}
-@media (max-width:700px){.quiet-strip .inner{grid-template-columns:1fr}}
-.quiet-strip .mark{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);font-weight:600;padding-top:4px;white-space:nowrap}
-.quiet-strip p{margin:0;font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:var(--ink-soft);max-width:72ch}
-/* kryss-lenkekort */
-.crosslink{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;border:1px solid var(--line-strong);background:var(--bg);padding:clamp(24px,3vw,36px)}
-@media (max-width:700px){.crosslink{grid-template-columns:1fr}}
-.crosslink h3{font-size:clamp(18px,1.9vw,23px);margin-bottom:8px}
-.crosslink p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.55;max-width:64ch}
-/* gratis-produkt-stripe (BIM Viewer) */
-.free-strip{border:1px solid var(--line-strong);background:var(--bg);padding:clamp(26px,3.4vw,42px);display:grid;grid-template-columns:minmax(0,1.4fr) auto;gap:clamp(24px,3vw,56px);align-items:center}
-@media (max-width:880px){.free-strip{grid-template-columns:1fr}}
-.free-strip .fs-badge{display:inline-block;font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.16em;font-weight:600;color:var(--bg);background:var(--accent);padding:4px 10px;margin-bottom:14px}
-.free-strip h3{font-size:clamp(19px,2.1vw,26px);margin-bottom:10px}
-.free-strip p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.6;max-width:66ch}
-.free-strip .fs-actions{display:flex;gap:12px;flex-wrap:wrap}
-/* CTA */
-.cta-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,5vw,96px);align-items:end}
-@media (max-width:900px){.cta-grid{grid-template-columns:1fr}}
-.cta-side .row{display:flex;justify-content:space-between;padding:16px 0;border-top:1px solid var(--line);align-items:baseline;font-family:var(--font-mono);font-size:13px}
-.cta-side .row:first-child{border-top:1px solid var(--ink)}
-.cta-side .row .k{color:var(--mid);text-transform:uppercase;letter-spacing:0.14em;font-size:11px}
-.cta-side .row .v{color:var(--ink);font-weight:500;letter-spacing:-0.005em;text-align:right}
-.cta-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px}
-/* footer */
-footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);border-top:1px solid var(--line)}
-.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid var(--line)}
-@media (max-width:800px){.footer-top{grid-template-columns:1fr 1fr;gap:32px}}
-@media (max-width:480px){.footer-top{grid-template-columns:1fr;gap:32px}}
-.f-brand{font-family:var(--font-display);font-size:22px;font-weight:600;letter-spacing:-0.018em;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.f-brand .lm{width:24px;height:24px;border:1.5px solid var(--ink);border-radius:5px;position:relative}
-.f-brand .lm::before{content:"";position:absolute;top:4px;right:4px;width:6px;height:6px;background:var(--accent);border-radius:50%}
-.f-tag{font-size:14px;line-height:1.6;color:var(--mid);max-width:36ch}
-.f-col h5{color:var(--ink);font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;font-weight:600;margin-bottom:18px}
-.f-col ul{list-style:none;margin:0;padding:0}
-.f-col li{padding:5px 0;font-size:14px;line-height:1.5}
-.f-col a:hover{color:var(--accent)}
-.footer-bot{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--mid)}
-.footer-legal{flex-basis:100%;margin-top:8px;text-transform:none;letter-spacing:0.04em;opacity:.7;font-size:11px}
-/* reveal */
-.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}}
-
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/nettsted.css?v=20261107-lansering" />
+<script src="/i18n.js?v=20261107-lansering" defer></script>
+<script src="/nettsted.js?v=20261107-lansering" defer></script>
 </head>
 <body>
-<nav class="nav">
-<div class="nav-inner">
-<a href="/" class="logo"><span class="logo-mark"></span>Builtly<span class="sub">Engineering</span></a>
-<div class="nav-links">
-<a href="/tjenester.html" class="active" data-i18n="nav.services">Tjenester</a>
-<a href="/software.html" data-i18n="nav.software">Software</a>
-<a href="/referanser.html" data-i18n="nav.references">Referanser</a>
-<a href="/slik-jobber-vi.html" data-i18n="nav.method">Slik jobber vi</a>
-<a href="/about.html" data-i18n="nav.aboutBuiltly">Om Builtly</a>
-<a href="/contact.html" data-i18n="nav.contact">Kontakt</a>
-</div>
-<div class="nav-cta">
-<div class="lang-wrap">
-<button class="lang-picker" id="langPicker" aria-haspopup="true" aria-expanded="false" aria-label="Velg språk" data-i18n-attr-aria-label="lang.selectLabel">
-<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="8" cy="8" r="6.4"/><path d="M1.6 8h12.8M8 1.6c1.8 1.7 2.8 4 2.8 6.4S9.8 12.7 8 14.4C6.2 12.7 5.2 10.4 5.2 8S6.2 3.3 8 1.6Z"/></svg>
-<span class="lang-code">NO</span>
-<svg viewBox="0 0 10 6" width="9" height="6" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
-</button>
-<div class="lang-menu" id="langMenu" role="menu" hidden>
-<button class="lang-option" data-lang="en" role="menuitem">English<span class="native">English</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="lang-option" data-lang="de" role="menuitem">German<span class="native">Deutsch</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="lang-option" data-lang="sv" role="menuitem">Swedish<span class="native">Svenska</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="lang-option active" data-lang="no" role="menuitem">Norwegian<span class="native">Norsk</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="lang-option" data-lang="fi" role="menuitem">Finnish<span class="native">Suomi</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="lang-option" data-lang="da" role="menuitem">Danish<span class="native">Dansk</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-</div>
-</div>
-<a href="https://portal.builtly.ai" class="btn"><span data-i18n="nav.openPortal">Åpne portalen</span> <span class="arr">→</span></a>
-<button class="nav-burger" id="navBurger" type="button" aria-label="Meny" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
-</div>
-</div>
-</nav>
-<div class="mobile-menu" id="mobileMenu" hidden>
-<div class="mm-eyebrow">Builtly · Meny</div>
-<nav class="mm-links" aria-label="Mobilnavigasjon"></nav>
-<a href="https://portal.builtly.ai" class="btn mm-cta"><span data-i18n="nav.openPortal">Åpne portalen</span> <span class="arr">→</span></a>
-<a href="/bli-kunde.html" class="btn btn-ghost mm-cta" style="margin-top:10px"><span data-i18n="nav.quote">Be om tilbud</span></a>
-</div>
-<script>
-(function(){
-  var burger=document.getElementById('navBurger'),menu=document.getElementById('mobileMenu');
-  if(!burger||!menu)return;
-  var links=document.querySelectorAll('.nav-links a'),mm=menu.querySelector('.mm-links');
-  links.forEach(function(a,i){
-    var c=document.createElement('a');c.href=a.getAttribute('href');c.className='mm-link'+(a.classList.contains('active')?' active':'');
-    var num=document.createElement('span');num.className='mm-num';num.textContent=(i+1<10?'0':'')+(i+1);
-    var lab=document.createElement('span');lab.className='mm-lab';lab.textContent=a.textContent;
-    var k=a.getAttribute('data-i18n');if(k)lab.setAttribute('data-i18n',k);
-    c.appendChild(num);c.appendChild(lab);mm.appendChild(c);
-  });
-  function close(){document.body.classList.remove('menu-open');menu.hidden=true;burger.setAttribute('aria-expanded','false')}
-  burger.addEventListener('click',function(){
-    var open=document.body.classList.toggle('menu-open');
-    menu.hidden=!open;burger.setAttribute('aria-expanded',open?'true':'false');
-  });
-  menu.addEventListener('click',function(e){if(e.target.closest('a'))close()});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
-  window.addEventListener('resize',function(){if(window.innerWidth>1040)close()});
-})();
-</script>
+<!-- Laget av tools/nettsted/lag.py fra tools/nettsted/sider/konstruksjon.html. Rediger kilden, ikke denne fila. -->
+<header class="nav">
+  <div class="w nav-in">
+    <a class="logo" href="/" aria-label="Builtly"><span class="logo-mark"></span>Builtly</a>
+    <nav class="nav-links" aria-label="Hovedmeny" data-i18n-attr-aria-label="ns.nav.hovedmeny">
+      <div class="dd">
+        <button class="dd-btn on" type="button" aria-expanded="false" aria-controls="dd-rad"><span data-i18n-html="ns.nav.rad">Rådgivning</span> <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
+        <div class="dd-panel" id="dd-rad">
+          <a class="dd-i" href="/tjenester/geoteknikk"><span class="k">RIG</span><b data-i18n-html="ns.nav.geo">Geoteknikk</b><span data-i18n-html="ns.nav.geo.t">Grunnforhold, fundamentering, stabilitet og rapportering</span></a>
+          <a class="dd-i" href="/tjenester/konstruksjon"><span class="k">RIB</span><b data-i18n-html="ns.nav.rib">Konstruksjon</b><span data-i18n-html="ns.nav.rib.t">Bæresystem, dimensjonering og konstruktive vurderinger</span></a>
+          <a class="dd-i" href="/tjenester/bygningsfysikk"><span class="k">RIBfy</span><b data-i18n-html="ns.nav.fy">Bygningsfysikk</b><span data-i18n-html="ns.nav.fy.t">Energi, fukt, lufttetthet og klimaskjerm</span></a>
+          <a class="dd-i" href="/uavhengig-kontroll"><span class="k">UAK</span><b><span data-i18n-html="ns.nav.uak">Uavhengig kontroll</span><i class="ny" data-i18n-html="ns.nav.ny">NY</i></b><span data-i18n-html="ns.nav.uak.t">Tiltaksklasse 2, fast pris 20 000 kr per fag</span></a>
+          <div class="dd-fot"><span data-i18n-html="ns.nav.rad.fot">Rådgivende ingeniører i Trondheim</span><a href="/tjenester" data-i18n-html="ns.nav.rad.alt">Alt om rådgivning →</a></div>
+        </div>
+      </div>
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-sw">Software <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
+        <div class="dd-panel" id="dd-sw">
+          <a class="dd-i" href="/maps"><span class="k">01</span><b>Builtly Maps</b><span data-i18n-html="ns.nav.maps.t">Alt om eiendommen, på ett sted</span></a>
+          <a class="dd-i" href="/mulighetsstudie"><span class="k">02</span><b data-i18n-html="ns.nav.ms">Mulighetsstudie</b><span data-i18n-html="ns.nav.ms.t">Hva tomta tåler: alternativer, sol og økonomi</span></a>
+          <a class="dd-i" href="/prosjekthotell"><span class="k">03</span><b data-i18n-html="ns.nav.ph">Prosjekthotell</b><span data-i18n-html="ns.nav.ph.t">Hele prosjektet i ett rom</span></a>
+          <a class="dd-i" href="/salgskonsoll"><span class="k">04</span><b data-i18n-html="ns.nav.sk">Salgskonsoll</b><span data-i18n-html="ns.nav.sk.t">Fra første interessent til siste bolig solgt</span></a>
+          <div class="dd-fot"><span data-i18n-html="ns.nav.sw.fot">Også: Render · BIM Viewer · Control</span><a href="/software" data-i18n-html="ns.nav.sw.alt">Se hele løpet →</a></div>
+        </div>
+      </div>
+      <a href="/about" data-i18n-html="ns.nav.om">Om Builtly</a>
+      <a href="/contact" data-i18n-html="ns.nav.kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="lang"><a href="?lang=no&amp;lang_src=manual" data-sprak="no" hreflang="no">NO</a> · <a href="?lang=en&amp;lang_src=manual" data-sprak="en" hreflang="en">EN</a></span>
+      <a class="nav-login" href="https://portal.builtly.ai" data-i18n-html="ns.nav.login">Logg inn</a>
+      <a class="btn" href="/contact"><span data-i18n-html="ns.nav.cta">Ta kontakt</span> <span aria-hidden="true">→</span></a>
+      <button class="burger" type="button" aria-label="Meny" data-i18n-attr-aria-label="ns.nav.meny" aria-expanded="false" aria-controls="mm"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mm" id="mm">
+    <div class="w mm-in">
+      <div><h4 data-i18n-html="ns.nav.rad.h">Rådgivning</h4>
+        <a href="/tjenester/geoteknikk"><span data-i18n-html="ns.nav.geo">Geoteknikk</span> <span>RIG</span></a>
+        <a href="/tjenester/konstruksjon"><span data-i18n-html="ns.nav.rib">Konstruksjon</span> <span>RIB</span></a>
+        <a href="/tjenester/bygningsfysikk"><span data-i18n-html="ns.nav.fy">Bygningsfysikk</span> <span>RIBfy</span></a>
+        <a href="/uavhengig-kontroll"><span data-i18n-html="ns.nav.uak">Uavhengig kontroll</span> <span data-i18n-html="ns.nav.uak.pris">20 000 kr per fag</span></a>
+        <a href="/tjenester"><span data-i18n-html="ns.nav.rad.alt2">Alt om rådgivning</span> <span>→</span></a></div>
+      <div><h4>Software</h4>
+        <a href="/maps">Builtly Maps <span data-i18n-html="ns.nav.fase1">01 Finn</span></a>
+        <a href="/mulighetsstudie"><span data-i18n-html="ns.nav.ms">Mulighetsstudie</span> <span data-i18n-html="ns.nav.fase2">02 Vurder</span></a>
+        <a href="/prosjekthotell"><span data-i18n-html="ns.nav.ph">Prosjekthotell</span> <span data-i18n-html="ns.nav.fase3">03 Utvikle</span></a>
+        <a href="/salgskonsoll"><span data-i18n-html="ns.nav.sk">Salgskonsoll</span> <span data-i18n-html="ns.nav.fase4">04 Selg</span></a>
+        <a href="/software"><span data-i18n-html="ns.nav.sw.alt2">Hele løpet</span> <span>→</span></a></div>
+      <div><h4>Builtly</h4>
+        <a href="/about"><span data-i18n-html="ns.nav.om">Om Builtly</span> <span></span></a>
+        <a href="/contact"><span data-i18n-html="ns.nav.kontakt">Kontakt</span> <span data-i18n-html="ns.nav.ring">Ring eller skriv</span></a>
+        <a href="https://portal.builtly.ai"><span data-i18n-html="ns.nav.login">Logg inn</span> <span>portal.builtly.ai</span></a>
+        <a href="?lang=en&amp;lang_src=manual" data-sprak="en">English <span>EN</span></a>
+        <a href="?lang=no&amp;lang_src=manual" data-sprak="no">Norsk <span>NO</span></a></div>
+    </div>
+  </div>
+</header>
 <main>
-<section class="p-hero">
-<div class="wrap">
-<div class="p-hero-grid">
-<div>
-<div class="eyebrow"><span class="accent-dot"></span><span data-i18n="tj.felles.eyebrow">Builtly · Rådgivende ingeniører</span></div>
-<h1 class="dpy-1" data-i18n="tj.str.h1">Konstruksjon</h1>
-<p class="lead" data-i18n="tj.str.lede">Builtly tar ansvar for konstruksjonsteknisk prosjektering (RIB) — bæresystem, dimensjonering etter Eurokodene, tegninger og beregningsgrunnlag. Våre ingeniører prosjekterer, koordinerer mot arkitekt og øvrige fag, kvalitetssikrer og følger prosjektet gjennom utførelsen.</p>
-<div class="p-hero-actions">
-<a href="/bli-kunde.html" class="btn"><span data-i18n="tj.felles.cta_tilbud">Be om tilbud</span> <span class="arr">→</span></a>
-<a href="mailto:sales@builtly.ai?subject=Tilbudsforesp%C3%B8rsel%20%E2%80%94%20Konstruksjon" class="btn btn-ghost">sales@builtly.ai</a>
-</div>
-</div>
-<div class="p-side">
-<div class="row"><span class="k" data-i18n="tj.felles.fag_k">Fagområde</span><span class="v">RIB</span></div>
-<div class="row"><span class="k" data-i18n="tj.felles.regelverk_k">Regelverk</span><span class="v">Eurokodene NS-EN 1990–1999 + NA · TEK17 kap. 10</span></div>
-<div class="row"><span class="k" data-i18n="tj.felles.leveranse_k">Leveranse</span><span class="v" data-i18n="tj.felles.leveranse_v">Redigerbare fagformater + rapport</span></div>
-<div class="row"><span class="k" data-i18n="tj.felles.kontakt_k">Fagansvarlig</span><span class="v" data-i18n="tj.felles.kontakt_v">Navngis i tilbudet</span></div>
-<div class="row"><span class="k" data-i18n="tj.felles.svar_k">Svar på forespørsel</span><span class="v" data-i18n="tj.felles.svar_v">Innen én virkedag</span></div>
-</div>
-</div>
-</div>
+<section class="hero">
+  <div class="w">
+    <div class="to" style="align-items:end">
+      <div class="hero-in">
+        <div data-i18n-html="ns.konstruksjon.001" class="eyebrow"><a class="t" href="/tjenester">Rådgivning</a><span class="strek"></span><span>RIB</span></div>
+        <h1 data-i18n-html="ns.konstruksjon.002" class="h1">Konstruksjon.<br><span class="aks">I alle faser.</span></h1>
+        <p data-i18n-html="ns.konstruksjon.003" class="lede">Bæresystem, dimensjonering og konstruktive vurderinger, fra de første skissene til ferdig prosjektert bygg. Vi tar også uavhengig kontroll av konstruksjonssikkerheten.</p>
+        <div data-i18n-html="ns.konstruksjon.004" class="btns"><a class="btn" href="/contact">Send en forespørsel <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="/uavhengig-kontroll">Uavhengig kontroll</a></div>
+      </div>
+      <div class="rader">
+        <div data-i18n-html="ns.konstruksjon.005"><span class="k">Leveranse</span><span class="v">Rådgivning og prosjektering</span></div>
+        <div data-i18n-html="ns.konstruksjon.006"><span class="k">Pris</span><span class="v">Fast pris for leveransen</span></div>
+        <div data-i18n-html="ns.konstruksjon.007"><span class="k">Uavhengig kontroll</span><span class="v">20 000 kr per fag</span></div>
+        <div data-i18n-html="ns.konstruksjon.008"><span class="k">Svar på forespørsel</span><span class="v">Innen to virkedager</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sek-tett myk">
+  <div class="w">
+    <div class="sek-hode"><div data-i18n-html="ns.konstruksjon.009" class="eyebrow"><span>Det vi leverer</span></div><h2 data-i18n-html="ns.konstruksjon.010" class="h2">Dette gjør vi i konstruksjon.</h2></div>
+    <div class="lister"><ul><li data-i18n-html="ns.konstruksjon.011"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Bæresystem og konsept.</b> Spennvidder, stabilitet og føringsveier som premiss for arkitekturen.</span></li><li data-i18n-html="ns.konstruksjon.012"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Dimensjonering etter Eurokodene.</b> Betong-, stål- og trekonstruksjoner etter NS-EN 1990–1999.</span></li><li data-i18n-html="ns.konstruksjon.013"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Beregninger og rapporter.</b> Sporbart beregningsgrunnlag for hver konstruksjonsdel.</span></li><li data-i18n-html="ns.konstruksjon.014"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Tegninger og modell.</b> Konstruksjonstegninger og fagmodell til prosjekteringsgruppen.</span></li></ul><ul><li data-i18n-html="ns.konstruksjon.015"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Prosjektering av konstruksjonssikkerhet.</b> Prosjekterende i konstruksjon, med dokumentasjonen kommunen trenger.</span></li><li data-i18n-html="ns.konstruksjon.016"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Konstruktive vurderinger.</b> Notater om løsninger, endringer og eksisterende konstruksjoner.</span></li><li data-i18n-html="ns.konstruksjon.017"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Uavhengig kontroll av konstruksjonssikkerhet.</b> Tiltaksklasse 2, fast pris per fag.</span></li></ul></div>
+  </div>
 </section>
 
-<section class="section">
-<div class="wrap">
-<div class="smark"><span class="num">§ 01</span><span data-i18n="tj.felles.s01">Leveranser</span><span class="dash"></span><span data-i18n="tj.felles.s01tag">Dette tar vi ansvar for</span></div>
-<h2 class="dpy-3 rv" data-i18n="tj.felles.s01h2">Dette utfører Builtly.</h2>
-<ul class="dlist" style="margin-top:clamp(28px,4vh,44px)">
-<li class="rv"><span class="n">01</span><div><div class="t" data-i18n="tj.str.lev1.t">Bæresystem og konsept</div><div class="d" data-i18n="tj.str.lev1.d">Valg av bæresystem i tidligfase — spennvidder, stabilitet og føringsveier — som premiss for arkitektur og økonomi.</div></div></li>
-<li class="rv"><span class="n">02</span><div><div class="t" data-i18n="tj.str.lev2.t">Dimensjonering etter Eurokodene</div><div class="d" data-i18n="tj.str.lev2.d">Statiske beregninger av betong-, stål- og trekonstruksjoner etter NS-EN 1990–1999 med nasjonale tillegg.</div></div></li>
-<li class="rv"><span class="n">03</span><div><div class="t" data-i18n="tj.str.lev3.t">Beregningsrapporter og tegninger</div><div class="d" data-i18n="tj.str.lev3.d">Sporbart beregningsgrunnlag, arbeidstegninger og armeringstegninger — levert som redigerbare fagformater (IFC, DWG/DXF, PDF).</div></div></li>
-<li class="rv"><span class="n">04</span><div><div class="t" data-i18n="tj.str.lev4.t">BIM-kontroll og samordning</div><div class="d" data-i18n="tj.str.lev4.d">Kontroll av arkitektmodellen mot tegninger, fagmodell som IFC og avvik som BCF — modellen prosjekteres på, ikke rundt.</div></div></li>
-<li class="rv"><span class="n">05</span><div><div class="t" data-i18n="tj.str.lev5.t">Mengder etter NS 3420</div><div class="d" data-i18n="tj.str.lev5.d">Mengdeuttak med sporbarhet til kilde, som grunnlag for kalkyle og kontrahering.</div></div></li>
-<li class="rv"><span class="n">06</span><div><div class="t" data-i18n="tj.str.lev6.t">Kontroll og oppfølging</div><div class="d" data-i18n="tj.str.lev6.d">Uavhengig kontroll av prosjektering der prosjektet krever det, og oppfølging av utførelsen.</div></div></li>
-</ul>
-</div>
+<section class="sek-tett">
+  <div class="w modellband">
+    <div><div data-i18n-html="ns.konstruksjon.018" class="eyebrow"><span class="t">Slik jobber vi</span><span class="strek"></span><span>Bygget for KI fra første dag</span></div>
+      <p data-i18n-html="ns.konstruksjon.019" class="mb-tittel">Agentene leser. Verktøyene beregner. Ingeniøren signerer.</p></div>
+    <div><p data-i18n-html="ns.konstruksjon.020">I uavhengig kontroll leser kontrollagenten hele prosjekteringsgrunnlaget i hver runde og viser hvor hvert funn står. Ingeniøren i faget vurderer og signerer alt som går ut.</p><a data-i18n-html="ns.konstruksjon.021" class="pil" href="/#arbeidsmaten">Se arbeidsmåten <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>
+<section class="sek-tett">
+  <div class="w">
+    <div class="sek-hode"><div data-i18n-html="ns.konstruksjon.022" class="eyebrow"><span>Når i prosjektet</span></div><h2 data-i18n-html="ns.konstruksjon.023" class="h2">Fra tidligfase til ferdig bygg.</h2></div>
+    <div class="steg fire"><div><span class="n">01</span><b data-i18n-html="ns.konstruksjon.024">Tidligfase</b><p data-i18n-html="ns.konstruksjon.025">Bæresystem og konsept før skissene låses.</p></div><div><span class="n">02</span><b data-i18n-html="ns.konstruksjon.026">Forprosjekt</b><p data-i18n-html="ns.konstruksjon.027">Dimensjonerende valg og konstruktive premisser.</p></div><div><span class="n">03</span><b data-i18n-html="ns.konstruksjon.028">Detaljprosjektering</b><p data-i18n-html="ns.konstruksjon.029">Beregninger, tegninger og modell.</p></div><div><span class="n">04</span><b data-i18n-html="ns.konstruksjon.030">Byggetid</b><p data-i18n-html="ns.konstruksjon.031">Vurdering av endringer og avvik.</p></div></div>
+  </div>
 </section>
 
-<section class="section section-soft">
-<div class="wrap">
-<div class="smark"><span class="num">§ 02</span><span data-i18n="tj.felles.s02">Faser</span><span class="dash"></span><span data-i18n="tj.felles.s02tag">Når i prosjektet</span></div>
-<h2 class="dpy-3 rv" data-i18n="tj.felles.s02h2">Fra tidligfase til overtakelse.</h2>
-<div class="phases" style="margin-top:clamp(28px,4vh,44px)">
-<div class="phase rv"><div class="ix">Fase 01</div><div class="nm" data-i18n="tj.str.fase1.n">Tidligfase</div><div class="ds" data-i18n="tj.str.fase1.d">Bæresystem, spennvidder og kostnadsdrivere.</div></div>
-<div class="phase rv"><div class="ix">Fase 02</div><div class="nm" data-i18n="tj.str.fase2.n">Rammesøknad</div><div class="ds" data-i18n="tj.str.fase2.d">Konstruksjonsteknisk premissdokument.</div></div>
-<div class="phase rv"><div class="ix">Fase 03</div><div class="nm" data-i18n="tj.str.fase3.n">Detaljprosjekt</div><div class="ds" data-i18n="tj.str.fase3.d">Dimensjonering, tegninger, mengder.</div></div>
-<div class="phase rv"><div class="ix">Fase 04</div><div class="nm" data-i18n="tj.str.fase4.n">Utførelse</div><div class="ds" data-i18n="tj.str.fase4.d">Oppfølging, kontroll og as-built.</div></div>
-</div>
-</div>
-</section>
-
-<section class="quiet-strip">
-<div class="wrap">
-<div class="inner">
-<span class="mark" data-i18n="tj.felles.ansvar_mark">Fagansvaret</span>
-<p data-i18n="tj.felles.ansvar_p">Builtlys ingeniører har det faglige ansvaret og leverer oppdraget. Vår banebrytende software brukes som et verktøy i prosjekteringen der den gir bedre kvalitet, sporbarhet og arbeidsflyt — vurderingene, koordineringen og signaturen er ingeniørens.</p>
-</div>
-</div>
-</section>
-
-<section class="section">
-<div class="wrap">
-<div class="crosslink rv" lang="no" style="margin-bottom:24px">
-<div>
-<h3>Trenger tiltaket uavhengig kontroll av prosjekteringen?</h3>
-<p>Builtly tar uavhengig kontroll i konstruksjonssikkerhet i tiltaksklasse 2, til fast pris per fag med alle kontrollrunder.</p>
-</div>
-<a href="/uavhengig-kontroll.html" class="btn btn-ghost">Uavhengig kontroll <span class="arr">→</span></a>
-</div>
-<div class="crosslink rv">
-<div>
-<h3 data-i18n="tj.felles.sw_h">Er dere et rådgivermiljø som vil bruke teknologien selv?</h3>
-<p data-i18n="tj.str.sw_p">Builtlys konstruksjon-rådgivere benytter banebrytende teknologi til analyser, tegningsproduksjon og kvalitetssikring. Den samme teknologien er tilgjengelig som software for kunder og andre rådgivermiljøer.</p>
-</div>
-<a href="/software.html" class="btn btn-ghost"><span data-i18n="tj.felles.sw_cta">Se Builtly Software</span> <span class="arr">→</span></a>
-</div>
-</div>
-</section>
-
-<section class="section section-dark" id="tilbud">
-<div class="wrap">
-<div class="cta-grid">
-<div class="rv">
-<h2 class="dpy-2" data-i18n="tj.felles.cta_h2">Be om tilbud.</h2>
-<p class="lead on-dark" style="margin-top:24px;max-width:52ch" data-i18n="tj.felles.cta_lede">Beskriv prosjektet, så svarer vi innen én virkedag med hvem som tar oppdraget, hva leveransen omfatter og et konkret tilbud.</p>
-<div class="cta-actions">
-<a href="/bli-kunde.html" class="btn btn-light"><span data-i18n="tj.felles.cta_tilbud">Be om tilbud</span> <span class="arr">→</span></a>
-<a href="mailto:sales@builtly.ai" class="btn btn-dark-ghost">sales@builtly.ai</a>
-</div>
-</div>
-<div class="cta-side rv">
-<div class="row" style="border-top-color:var(--dark-paper)"><span class="k" style="color:rgba(247,244,237,0.6)" data-i18n="tj.felles.svar_k">Svar på forespørsel</span><span class="v" style="color:var(--dark-paper)" data-i18n="tj.felles.svar_v">Innen én virkedag</span></div>
-<div class="row" style="border-top-color:var(--line-dark)"><span class="k" style="color:rgba(247,244,237,0.6)" data-i18n="tj.felles.tilbud_k">Tilbudet navngir</span><span class="v" style="color:var(--dark-paper)" data-i18n="tj.felles.tilbud_v">Ansvarlig og fagansvarlig</span></div>
-<div class="row" style="border-top-color:var(--line-dark)"><span class="k" style="color:rgba(247,244,237,0.6)" data-i18n="tj.felles.omrade_k">Geografi</span><span class="v" style="color:var(--dark-paper)" data-i18n="tj.felles.omrade_v">Hele landet</span></div>
-</div>
-</div>
-</div>
+<section class="sek-tett myk">
+  <div class="w">
+    <div class="sek-hode"><div data-i18n-html="ns.konstruksjon.032" class="eyebrow"><span class="t">Kontakt</span></div><h2 data-i18n-html="ns.konstruksjon.033" class="h2">Ta kontakt.</h2></div>
+    <div class="personer" style="grid-template-columns:minmax(0,560px)"><div class="person"><img data-i18n-attr-alt="ns.konstruksjon.034" src="/photos/kristian-nossum.png" alt="Kristian Nossum" width="120" height="140">
+  <div><span data-i18n-html="ns.konstruksjon.035" class="rolle">Technical Director</span><h3 data-i18n-html="ns.konstruksjon.036">Kristian Nossum</h3></div></div></div>
+  </div>
 </section>
 </main>
-<footer>
-<div class="wrap">
-<div class="footer-top">
-<div>
-<div class="f-brand"><span class="lm"></span>Builtly</div>
-<div class="f-tag" data-i18n="f2.tag">Rådgivende ingeniører og egenutviklet software for bygg, anlegg og eiendom.</div>
-</div>
-<div class="f-col">
-<h5 data-i18n="f2.services.h">Tjenester</h5>
-<ul>
-<li><a href="/tjenester/geoteknikk.html" data-i18n="f2.services.geo">Geoteknikk</a></li>
-<li><a href="/tjenester/konstruksjon.html" data-i18n="f2.services.str">Konstruksjon</a></li>
-<li><a href="/tjenester/brannsikkerhet.html" data-i18n="f2.services.fire">Brannsikkerhet</a></li>
-<li><a href="/tjenester/akustikk.html" data-i18n="f2.services.aco">Akustikk</a></li>
-<li><a href="/tjenester/miljo.html" data-i18n="f2.services.env">Miljø og bærekraft</a></li>
-<li><a href="/uavhengig-kontroll.html">Uavhengig kontroll</a></li>
-<li><a href="/tjenester.html" data-i18n="f2.services.all">Alle tjenester →</a></li>
-</ul>
-</div>
-<div class="f-col">
-<h5 data-i18n="f2.software.h">Software</h5>
-<ul>
-<li><a href="/software.html" data-i18n="f2.software.overview">Softwareområdet</a></li>
-<li><a href="/prosjekthotell.html">Prosjekthotell</a></li>
-<li><a href="/maps.html" data-i18n="f2.software.maps">Builtly Maps</a></li>
-<li><a href="/salgskonsoll.html">Salgskonsoll</a></li>
-<li><a href="/mulighetsstudie.html">Mulighetsstudie</a></li>
-<li><a href="/render.html">Builtly Render</a></li>
-<li><a href="/control.html">Builtly Control</a></li>
-<li><a href="/bim-viewer.html" data-i18n="f2.software.bim">BIM Viewer</a></li>
-<li><a href="/platform.html" data-i18n="f2.software.platform">Plattformen</a></li>
-<li><a href="/verktoy.html" data-i18n="f2.software.tools">Verktøykassen</a></li>
-<li><a href="https://portal.builtly.ai" data-i18n="f2.software.portal">Logg inn i portalen</a></li>
-</ul>
-</div>
-<div class="f-col">
-<h5 data-i18n="f2.company.h">Selskapet</h5>
-<ul>
-<li><a href="/about.html" data-i18n="f2.company.about">Om Builtly</a></li>
-<li><a href="/slik-jobber-vi.html" data-i18n="f2.company.method">Slik jobber vi</a></li>
-<li><a href="/referanser.html" data-i18n="f2.company.references">Referanser</a></li>
-<li><a href="/careers.html" data-i18n="f2.company.careers">Karriere</a></li>
-<li><a href="/contact.html" data-i18n="f2.company.contact">Kontakt</a></li>
-<li><a href="/trust.html" data-i18n="f2.company.trust">Trust &amp; sikkerhet</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bot fbot2">
-<style>
-.fbot2{display:grid !important;grid-template-columns:1fr auto 1fr;gap:14px 24px;align-items:baseline}
-.fbot2 .fb-mid{text-align:center;color:var(--ink,#131820);opacity:.8}
-.fbot2 .fb-right{justify-self:end;opacity:.45;font-size:10px;letter-spacing:0.16em;text-transform:uppercase}
-.fbot2 .fb-legal{grid-column:1 / -1;margin-top:6px;padding-top:16px;border-top:1px solid rgba(19,24,32,.07);display:grid;grid-template-columns:1fr auto;gap:8px 24px}
-.fbot2 .fb-legal .footer-legal:last-child{text-align:right}
-@media (max-width:760px){
-.fbot2{grid-template-columns:1fr;text-align:center;gap:10px}
-.fbot2 .fb-right{justify-self:center}
-.fbot2 .fb-legal{grid-template-columns:1fr}
-.fbot2 .fb-legal .footer-legal:last-child{text-align:center}
-}
-</style>
-<span data-i18n="f2.bot.left">© 2026 Builtly Engineering</span>
-<span class="fb-mid" data-i18n="f2.bot.right">Fremtidens ingeniørselskap. Allerede her.</span>
-<a class="fb-right" href="/intern" title="Intern portal — styret og ansatte">Intern&nbsp;→</a>
-<div class="fb-legal">
-<span class="footer-legal">Builtly Engineering AS · Org.nr 837 694 892 · Bassengbakken 4, 7042 Trondheim</span>
-<span class="footer-legal"><a href="/privacy">Personvern</a> · <a href="/terms">Vilkår</a> · <a href="/cookies">Informasjonskapsler</a> · <a href="/etiske-retningslinjer.html">Etiske retningslinjer</a> · <a href="/apenhetsloven.html">Åpenhetsloven</a></span>
-</div>
-</div>
-</div>
+<footer class="fot">
+  <div class="w">
+    <div class="fot-topp">
+      <div>
+        <a class="logo" href="/"><span class="logo-mark"></span>Builtly</a>
+        <p class="tag" data-i18n-html="ns.fot.tag">Fremtidens ingeniørselskap. Allerede her.</p>
+      </div>
+      <div><h4 data-i18n-html="ns.fot.rad">Rådgivning</h4><ul>
+        <li><a href="/tjenester/geoteknikk" data-i18n-html="ns.nav.geo">Geoteknikk</a></li>
+        <li><a href="/tjenester/konstruksjon" data-i18n-html="ns.nav.rib">Konstruksjon</a></li>
+        <li><a href="/tjenester/bygningsfysikk" data-i18n-html="ns.nav.fy">Bygningsfysikk</a></li>
+        <li><a href="/uavhengig-kontroll" data-i18n-html="ns.nav.uak">Uavhengig kontroll</a></li></ul></div>
+      <div><h4>Software</h4><ul>
+        <li><a href="/maps">Builtly Maps</a></li>
+        <li><a href="/mulighetsstudie" data-i18n-html="ns.nav.ms">Mulighetsstudie</a></li>
+        <li><a href="/prosjekthotell" data-i18n-html="ns.nav.ph">Prosjekthotell</a></li>
+        <li><a href="/salgskonsoll" data-i18n-html="ns.nav.sk">Salgskonsoll</a></li>
+        <li class="grp" data-i18n-html="ns.fot.ogsaa">Også fra Builtly</li>
+        <li><a href="/render">Render</a> · <a href="/bim-viewer">BIM Viewer</a> · <a href="/control">Control</a></li></ul></div>
+      <div><h4>Builtly</h4><ul>
+        <li><a href="/about" data-i18n-html="ns.nav.om">Om Builtly</a></li>
+        <li><a href="/about#folkene" data-i18n-html="ns.fot.folkene">Folkene</a></li>
+        <li><a href="/referanser" data-i18n-html="ns.fot.referanser">Referanser</a></li>
+        <li><a href="/careers" data-i18n-html="ns.fot.karriere">Karriere</a></li>
+        <li><a href="/contact" data-i18n-html="ns.nav.kontakt">Kontakt</a></li>
+        <li><a href="https://portal.builtly.ai" data-i18n-html="ns.nav.login">Logg inn</a></li></ul></div>
+      <div><h4 data-i18n-html="ns.fot.selskapet">Selskapet</h4><ul>
+        <li><a href="/privacy" data-i18n-html="ns.fot.personvern">Personvern</a></li>
+        <li><a href="/terms" data-i18n-html="ns.fot.vilkar">Vilkår</a></li>
+        <li><a href="/cookies" data-i18n-html="ns.fot.cookies">Informasjonskapsler</a></li>
+        <li><a href="/trust" data-i18n-html="ns.fot.trust">Sikkerhet og data</a></li>
+        <li><a href="/etiske-retningslinjer" data-i18n-html="ns.fot.etikk">Etiske retningslinjer</a></li>
+        <li><a href="/apenhetsloven" data-i18n-html="ns.fot.apenhet">Åpenhetsloven</a></li></ul></div>
+    </div>
+    <div class="fot-bunn">
+      <span>Builtly Engineering AS · Org.nr 837 694 892 · Bassengbakken 4, 7042 Trondheim</span>
+      <span class="sprak"><a href="?lang=no&amp;lang_src=manual" data-sprak="no">Norsk</a> · <a href="?lang=en&amp;lang_src=manual" data-sprak="en">English</a> · <a href="/intern" title="Intern portal">Intern →</a></span>
+    </div>
+  </div>
 </footer>
-<script>
-(function(){
-  if(!('IntersectionObserver' in window)){document.querySelectorAll('.rv').forEach(function(e){e.classList.add('in')});return}
-  var obs=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('in');obs.unobserve(entry.target)}})},{threshold:0.12,rootMargin:'0px 0px -60px 0px'});
-  document.querySelectorAll('.rv').forEach(function(e){obs.observe(e)});
-})();
-document.querySelectorAll('a[href^="#"]').forEach(function(link){
-  link.addEventListener('click',function(e){
-    var t=document.querySelector(this.getAttribute('href'));
-    if(t){e.preventDefault();var top=t.getBoundingClientRect().top+window.pageYOffset-60;window.scrollTo({top:top,behavior:'smooth'});}
-  });
-});
-</script>
-<script src="/i18n.js?v=20260817-reposisjon" defer></script>
 </body>
 </html>
