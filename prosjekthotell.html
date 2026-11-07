@@ -1,758 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" data-i18n-attr-content="ph.metaDesc" content="Builtly Prosjekthotell — revision-controlled documents, BIM in the browser, a complete tender room, § 15 site check-in and FDV. One collaboration room from first upload to handover." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title data-i18n="ns.prosjekthotell._tittel">Prosjekthotell · Software · Builtly</title>
+<meta name="description" content="Hele prosjektet i ett rom: dokumenter med revisjoner, BIM i nettleseren, anbud og byggeplass." data-i18n-attr-content="ns.prosjekthotell._beskrivelse" />
 <meta name="theme-color" content="#FAFAF7" />
-<title data-i18n="ph.title">Builtly Prosjekthotell · The intelligent collaboration room for construction projects</title>
 <link rel="canonical" href="https://www.builtly.ai/prosjekthotell" />
 <meta property="og:type" content="website" />
+<meta property="og:locale" content="nb_NO" />
 <meta property="og:site_name" content="Builtly" />
 <meta property="og:url" content="https://www.builtly.ai/prosjekthotell" />
-<meta property="og:title" content="Builtly Prosjekthotell · The intelligent collaboration room for construction projects" />
-<meta property="og:description" content="Builtly Prosjekthotell — revision-controlled documents, BIM in the browser, a complete tender room, § 15 site check-in and FDV. One collaboration room from first upload to handover." />
-<meta property="og:image" content="https://www.builtly.ai/og/prosjekthotell.png" />
-<meta name="twitter:card" content="summary_large_image" />
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Builtly Prosjekthotell", "operatingSystem": "Web", "applicationCategory": "BusinessApplication", "url": "https://www.builtly.ai/prosjekthotell", "description": "Builtly Prosjekthotell — revision-controlled documents, BIM in the browser, a complete tender room, § 15 site check-in and FDV. One collaboration room from first upload to handover.", "publisher": {"@type": "Organization", "name": "Builtly Engineering AS", "url": "https://www.builtly.ai"}}</script>
+<meta property="og:title" content="Prosjekthotell · Software · Builtly" />
+<meta property="og:description" content="Hele prosjektet i ett rom: dokumenter med revisjoner, BIM i nettleseren, anbud og byggeplass." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet" />
-<style>
-
-:root{
-  --bg:#FAFAF7; --bg-soft:#F1EEE6; --bg-warm:#EDE9DF;
-  --ink:#131820; --ink-soft:#2A323C; --mid:#6A6E76; --grey:#B8B5AD;
-  --dark:#131820; --dark-soft:#1C232D; --dark-paper:#F7F4ED;
-  --line:rgba(19,24,32,0.10); --line-strong:rgba(19,24,32,0.22);
-  --line-dark:rgba(247,244,237,0.10); --line-dark-strong:rgba(247,244,237,0.20);
-  --accent:#14B8A6; --accent-bright:#2DD4BF; --accent-soft:#0D9488;
-  --font-display:'Manrope','Helvetica Neue',system-ui,sans-serif;
-  --font-body:'Manrope','Helvetica Neue',system-ui,sans-serif;
-  --font-serif:'Newsreader','Times New Roman',serif;
-  --font-mono:'JetBrains Mono',Menlo,monospace;
-  --max:1440px; --gutter:clamp(24px,4.5vw,72px);
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.55;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;font-feature-settings:"ss01","cv11"}
-::selection{background:var(--ink);color:var(--bg)}
-h1,h2,h3,h4,h5{font-family:var(--font-display);font-weight:600;color:inherit;margin:0;line-height:1.05;letter-spacing:-0.022em}
-.dpy-1{font-size:clamp(38px,5.2vw,74px);line-height:1.05;letter-spacing:-0.028em;font-weight:500}
-.dpy-2{font-size:clamp(30px,4vw,56px);line-height:1.1;letter-spacing:-0.024em;font-weight:500}
-.dpy-3{font-size:clamp(24px,3vw,38px);line-height:1.12;letter-spacing:-0.02em;font-weight:600}
-.dpy-4{font-size:clamp(19px,2.1vw,26px);line-height:1.2;letter-spacing:-0.015em;font-weight:600}
-.lead{font-size:clamp(16.5px,1.35vw,21px);line-height:1.55;color:var(--ink-soft);font-weight:400;letter-spacing:-0.005em}
-.lead.on-dark{color:var(--dark-paper)}
-.serif{font-family:var(--font-serif);font-style:italic;font-weight:400;letter-spacing:-0.005em}
-.eyebrow{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;font-weight:500;color:var(--mid)}
-.eyebrow .accent-dot{display:inline-block;width:6px;height:6px;background:var(--accent);margin-right:10px;vertical-align:1px}
-a{color:inherit;text-decoration:none}
-.link-line{position:relative;padding-bottom:1px;border-bottom:1px solid currentColor;transition:opacity .2s}
-.link-line:hover{opacity:.6}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter);position:relative}
-.section{position:relative;padding:clamp(64px,9vh,110px) 0}
-.section-dark{background:var(--dark);color:var(--dark-paper)}
-.section-dark h1,.section-dark h2,.section-dark h3,.section-dark h4{color:var(--dark-paper)}
-.section-soft{background:var(--bg-soft)}
-.smark{display:flex;align-items:baseline;gap:14px;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--mid);margin-bottom:clamp(34px,4.5vh,54px)}
-.section-dark .smark{color:rgba(247,244,237,0.55)}
-.smark .num{color:var(--accent);font-weight:600}
-.section-dark .smark .num{color:var(--accent-bright)}
-.smark .dash{flex:0 0 32px;height:1px;background:currentColor;opacity:.5}
-.nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.92);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);border-bottom:1px solid var(--line)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px var(--gutter);max-width:var(--max);margin:0 auto;gap:32px}
-.logo{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-0.018em;color:var(--ink)}
-.logo-mark{display:inline-flex;width:26px;height:26px;border:1.5px solid var(--ink);border-radius:5px;align-items:center;justify-content:center;position:relative}
-.logo-mark::before{content:"";position:absolute;top:5px;right:5px;width:6px;height:6px;background:var(--accent);border-radius:50%}
-.logo .sub{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--mid);font-weight:500;margin-left:4px}
-.nav-links{display:flex;gap:clamp(20px,2.2vw,32px);font-size:14px;font-weight:500;color:var(--ink-soft);letter-spacing:-0.005em}
-.nav-links a{position:relative;padding:6px 0;transition:color .18s}
-.nav-links a:hover{color:var(--accent)}
-.nav-links a.active{color:var(--accent-soft)}
-
-@media (max-width:1240px){.nav-links{gap:14px;font-size:13.5px}}
-@media (max-width:1140px){.nav-links{gap:9px;font-size:12.5px}}
-@media (max-width:1040px){.nav-links{display:none}}
-.nav-burger{display:none;width:38px;height:38px;flex:0 0 auto;border:1px solid var(--line-strong);background:none;cursor:pointer;position:relative;padding:0}
-.nav-burger span{display:block;width:16px;height:1.5px;background:var(--ink);position:absolute;left:50%;transform:translateX(-50%);transition:transform .22s ease,opacity .16s ease,top .22s ease}
-.nav-burger span:nth-child(1){top:13px}
-.nav-burger span:nth-child(2){top:18px}
-.nav-burger span:nth-child(3){top:23px}
-body.menu-open .nav-burger span:nth-child(1){top:18px;transform:translateX(-50%) rotate(45deg)}
-body.menu-open .nav-burger span:nth-child(2){opacity:0}
-body.menu-open .nav-burger span:nth-child(3){top:18px;transform:translateX(-50%) rotate(-45deg)}
-.mobile-menu{display:none;position:fixed;inset:0;z-index:90;background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch;padding:96px var(--gutter) 44px;flex-direction:column}
-body.menu-open .mobile-menu{display:flex}
-body.menu-open{overflow:hidden}
-.mobile-menu .mm-eyebrow{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.16em;color:var(--mid);padding-bottom:10px;border-bottom:1px solid var(--line-strong)}
-.mobile-menu .mm-link{display:flex;align-items:baseline;gap:16px;padding:17px 2px;border-bottom:1px solid var(--line);font-family:var(--font-display);font-size:23px;font-weight:500;letter-spacing:-0.015em;color:var(--ink)}
-.mobile-menu .mm-num{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;color:var(--mid)}
-.mobile-menu .mm-link.active .mm-lab{color:var(--accent-soft)}
-.mobile-menu .mm-cta{margin-top:30px;align-self:flex-start;padding:12px 22px;font-size:13px}
-@media (max-width:1040px){.nav-burger{display:block}}
-@media (max-width:640px){.nav .btn-ghost{display:none}}
-@media (min-width:1041px){body.menu-open .mobile-menu{display:none}body.menu-open{overflow:auto}}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;background:var(--ink);color:var(--bg);font-family:var(--font-display);font-size:13px;font-weight:600;letter-spacing:-0.005em;border:0;cursor:pointer;white-space:nowrap;transition:background .18s ease,transform .18s ease}
-.nav-cta{display:flex;align-items:center;gap:12px}
-.nav .btn{padding:8px 15px;font-size:12px}
-.nav .btn-ghost{padding:7px 14px}
-@media (max-width:400px){.nav-inner{gap:9px}.nav-cta{gap:7px}.nav .btn{padding:7px 11px;font-size:11.5px}}
-.btn:hover{background:var(--accent)}
-.btn .arr{transition:transform .18s ease;font-weight:400}
-.btn:hover .arr{transform:translateX(3px)}
-.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line-strong);padding:10px 17px}
-.btn-ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.btn-light{background:var(--dark-paper);color:var(--ink)}
-.btn-light:hover{background:var(--accent);color:var(--bg)}
-.btn-dark-ghost{background:transparent;color:var(--dark-paper);border:1px solid var(--line-dark-strong);padding:10px 17px}
-.btn-dark-ghost:hover{background:var(--dark-paper);color:var(--ink);border-color:var(--dark-paper)}
-@media (max-width:520px){.nav-inner{gap:14px;padding:14px var(--gutter)}.logo .sub{display:none}.btn{padding:9px 14px;font-size:12px}}
-.lang-picker{display:inline-flex;align-items:center;gap:7px;background:none;border:1px solid var(--line-strong);padding:8px 11px;cursor:pointer;font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;color:var(--ink);position:relative}
-.lang-picker:hover{border-color:var(--ink)}
-.lang-picker svg{width:13px;height:13px}
-.lang-menu{position:absolute;top:calc(100% + 8px);right:0;background:var(--bg);border:1px solid var(--line-strong);min-width:170px;z-index:120;box-shadow:0 16px 40px -18px rgba(19,24,32,0.28);padding:6px}
-.lang-menu[hidden]{display:none}
-.lang-option{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;background:none;border:0;text-align:left;padding:9px 10px;font-family:var(--font-body);font-size:13px;color:var(--ink-soft);cursor:pointer}
-.lang-option:hover{background:var(--bg-soft)}
-.lang-option .native{color:var(--mid);font-size:12px}
-.lang-option .check{width:11px;height:11px;stroke:var(--accent);fill:none;stroke-width:2;opacity:0}
-.lang-option.active .check{opacity:1}
-.lang-wrap{position:relative}
-/* småskjerm: nav-cta må få plass med «Be om tilbud» (sist i kaskaden med vilje) */
-@media (max-width:430px){
-  .nav-inner{gap:8px;padding:14px var(--gutter)}
-  .nav-cta{gap:7px}
-  .lang-picker{padding:6px 8px;gap:5px}
-  .lang-picker svg:last-child{display:none}
-  .nav .btn{padding:7px 10px;font-size:11.5px}
-  .nav .btn .arr{display:none}
-}
-/* hero for undersidene */
-.p-hero{padding:clamp(40px,7vh,84px) 0 clamp(36px,6vh,64px);border-bottom:1px solid var(--line)}
-.p-hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,0.9fr);gap:clamp(36px,5vw,90px);align-items:start}
-@media (max-width:1000px){.p-hero-grid{grid-template-columns:1fr}}
-/* 390 px: «samhandlingsrommet.» i H1 er bredere enn kolonnen, og et grid-spor vokser til min-content — barna må få krympe, og tittelen få brekke på smal skjerm (målt 420 px scrollbredde før) */
-.p-hero-grid>*{min-width:0}
-@media (max-width:480px){.p-hero h1{hyphens:manual;overflow-wrap:anywhere}} /* myke bindestreker (U+00AD) i de lange ordene i i18n gir det pene bruddet; anywhere er reserven */
-.p-hero h1{margin-top:18px;text-wrap:balance}
-.p-hero .lead{margin-top:24px;max-width:56ch}
-.p-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-.p-side{display:flex;flex-direction:column}
-.p-side .row{padding:15px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:baseline}
-.p-side .row:first-child{border-top:1px solid var(--ink)}
-.p-side .row .k{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--mid)}
-.p-side .row .v{font-family:var(--font-display);font-size:14px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;text-align:right;max-width:26ch}
-/* kortgrid (hairline-rutenett) */
-.cardgrid{display:grid;gap:1px;background:var(--line-strong);border:1px solid var(--line-strong)}
-.cardgrid.c2{grid-template-columns:repeat(2,1fr)}
-.cardgrid.c3{grid-template-columns:repeat(3,1fr)}
-@media (max-width:980px){.cardgrid.c3{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:700px){.cardgrid.c2,.cardgrid.c3{grid-template-columns:1fr}}
-.card{background:var(--bg);padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;min-height:200px;transition:background .18s ease;position:relative}
-.card:hover{background:var(--bg-soft)}
-.section-soft .card{background:var(--bg-soft)}
-.section-soft .card:hover{background:var(--bg)}
-.card .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);font-weight:600}
-.card .head .topic{color:var(--mid)}
-.card h3{margin-bottom:12px;font-size:clamp(19px,2vw,25px)}
-.card p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.55;flex-grow:1;max-width:56ch}
-.card .foot{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.14em;color:var(--mid)}
-.card .foot .v{font-family:var(--font-display);font-weight:600;color:var(--ink);font-size:13px;letter-spacing:-0.005em;text-transform:none}
-a.card .foot .go{color:var(--accent);font-weight:600}
-/* liste-rader (leveranser) */
-.dlist{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
-.dlist li{display:grid;grid-template-columns:clamp(40px,4vw,56px) 1fr;gap:clamp(16px,2.5vw,40px);padding:clamp(18px,2.6vh,26px) 0;border-bottom:1px solid var(--line);align-items:baseline}
-.dlist .n{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;color:var(--accent);font-weight:600}
-.dlist .t{font-family:var(--font-display);font-size:clamp(17px,1.8vw,21px);font-weight:600;letter-spacing:-0.012em;color:var(--ink)}
-.dlist .d{margin-top:6px;color:var(--ink-soft);font-size:15px;line-height:1.55;max-width:66ch}
-/* fase-rad */
-.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-strong);border:1px solid var(--line-strong)}
-@media (max-width:900px){.phases{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:540px){.phases{grid-template-columns:1fr}}
-.phase{background:var(--bg);padding:22px 20px 24px;min-height:150px}
-.section-soft .phase{background:var(--bg-soft)}
-.phase .ix{font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);font-weight:600;margin-bottom:8px}
-.phase .nm{font-family:var(--font-display);font-size:17px;font-weight:600;letter-spacing:-0.012em;color:var(--ink);margin-bottom:8px;line-height:1.15}
-.phase .ds{font-size:13.5px;color:var(--ink-soft);line-height:1.5}
-/* stille sitat/garanti-strip */
-.quiet-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-soft);padding:clamp(32px,5vh,48px) 0}
-.quiet-strip .inner{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,3vw,44px);align-items:start;max-width:980px}
-@media (max-width:700px){.quiet-strip .inner{grid-template-columns:1fr}}
-.quiet-strip .mark{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);font-weight:600;padding-top:4px;white-space:nowrap}
-.quiet-strip p{margin:0;font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:var(--ink-soft);max-width:72ch}
-/* kryss-lenkekort */
-.crosslink{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;border:1px solid var(--line-strong);background:var(--bg);padding:clamp(24px,3vw,36px)}
-@media (max-width:700px){.crosslink{grid-template-columns:1fr}}
-.crosslink h3{font-size:clamp(18px,1.9vw,23px);margin-bottom:8px}
-.crosslink p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.55;max-width:64ch}
-/* gratis-produkt-stripe (BIM Viewer) */
-.free-strip{border:1px solid var(--line-strong);background:var(--bg);padding:clamp(26px,3.4vw,42px);display:grid;grid-template-columns:minmax(0,1.4fr) auto;gap:clamp(24px,3vw,56px);align-items:center}
-@media (max-width:880px){.free-strip{grid-template-columns:1fr}}
-.free-strip .fs-badge{display:inline-block;font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.16em;font-weight:600;color:var(--bg);background:var(--accent);padding:4px 10px;margin-bottom:14px}
-.free-strip h3{font-size:clamp(19px,2.1vw,26px);margin-bottom:10px}
-.free-strip p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.6;max-width:66ch}
-.free-strip .fs-actions{display:flex;gap:12px;flex-wrap:wrap}
-/* Builtly Control — snutten mellom § 07 og § 08: crosslink i mørkt, merket «Nytt» følger språket */
-.ctl-x{background:var(--dark);color:var(--dark-paper);border-color:var(--dark)}
-.ctl-x h3{color:var(--dark-paper)}
-.ctl-x p{color:rgba(247,244,237,.78)}
-.ctl-x .btn{background:var(--dark-paper);color:var(--ink)}
-.ctl-x .btn:hover{background:var(--accent);color:var(--bg)}
-.pf-new{display:inline-block;background:var(--accent-bright);color:var(--dark);padding:3px 8px;font-weight:600;letter-spacing:.14em;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;vertical-align:3px;margin-left:12px;white-space:nowrap}
-/* CTA */
-.cta-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,5vw,96px);align-items:end}
-@media (max-width:900px){.cta-grid{grid-template-columns:1fr}}
-.cta-side .row{display:flex;justify-content:space-between;padding:16px 0;border-top:1px solid var(--line);align-items:baseline;font-family:var(--font-mono);font-size:13px}
-.cta-side .row:first-child{border-top:1px solid var(--ink)}
-.cta-side .row .k{color:var(--mid);text-transform:uppercase;letter-spacing:0.14em;font-size:11px}
-.cta-side .row .v{color:var(--ink);font-weight:500;letter-spacing:-0.005em;text-align:right}
-.cta-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:40px}
-/* footer */
-footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);border-top:1px solid var(--line)}
-.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid var(--line)}
-@media (max-width:800px){.footer-top{grid-template-columns:1fr 1fr;gap:32px}}
-@media (max-width:480px){.footer-top{grid-template-columns:1fr;gap:32px}}
-.f-brand{font-family:var(--font-display);font-size:22px;font-weight:600;letter-spacing:-0.018em;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.f-brand .lm{width:24px;height:24px;border:1.5px solid var(--ink);border-radius:5px;position:relative}
-.f-brand .lm::before{content:"";position:absolute;top:4px;right:4px;width:6px;height:6px;background:var(--accent);border-radius:50%}
-.f-tag{font-size:14px;line-height:1.6;color:var(--mid);max-width:36ch}
-.f-col h5{color:var(--ink);font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;font-weight:600;margin-bottom:18px}
-.f-col ul{list-style:none;margin:0;padding:0}
-.f-col li{padding:5px 0;font-size:14px;line-height:1.5}
-.f-col a:hover{color:var(--accent)}
-.footer-bot{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--mid)}
-.footer-legal{flex-basis:100%;margin-top:8px;text-transform:none;letter-spacing:0.04em;opacity:.7;font-size:11px}
-/* reveal */
-.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}}
-
-
-/* PRODUKT-MOCK — levende panel i heroen (delt av prosjekthotell/salgskonsoll) */
-.stage{margin-top:clamp(32px,5vh,52px);border:1px solid var(--line-strong);background:var(--bg);padding:clamp(18px,2.2vw,28px)}
-.st-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.16em;color:var(--mid);padding-bottom:14px;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.st-live{display:inline-flex;align-items:center;gap:8px;color:var(--ink);font-weight:600}
-.st-pulse{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;animation:stp 2.4s ease-in-out infinite}
-@keyframes stp{0%,100%{opacity:1}50%{opacity:.35}}
-.st-proj{color:var(--mid)}
-.st-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:0}
-@media (max-width:900px){.st-grid{grid-template-columns:1fr}}
-.st-block{background:var(--bg);padding:16px 18px 18px}
-.st-h{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);font-weight:600;margin-bottom:12px}
-.st-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.st-code{font-family:var(--font-mono);font-size:11px;letter-spacing:0.08em;color:var(--mid);border:1px solid var(--line-strong);padding:3px 7px;white-space:nowrap}
-.st-name{font-family:var(--font-display);font-size:14.5px;font-weight:600;letter-spacing:-0.01em;color:var(--ink)}
-.st-revs{display:inline-flex;gap:4px;margin-left:auto}
-.st-revs i{font-style:normal;font-family:var(--font-mono);font-size:10.5px;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line-strong);color:var(--mid)}
-.st-revs i.hot{border-color:var(--accent);color:var(--bg);background:var(--accent);font-weight:600;animation:strev 6s ease-in-out infinite}
-@keyframes strev{0%,7%{background:transparent;color:var(--mid);border-color:var(--line-strong)}14%,100%{background:var(--accent);color:var(--bg);border-color:var(--accent)}}
-.st-sub{margin-top:10px;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--mid)}
-.st-steps{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-top:2px}
-.st-sep{color:var(--grey);font-family:var(--font-mono);font-size:11px}
-.st-step{font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink);position:relative;padding-left:16px}
-.st-step::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:9px;height:9px;border:1.4px solid var(--accent);border-radius:50%}
-.st-step.s1{animation:ststep 9s linear infinite}
-.st-step.s2{animation:ststep 9s linear infinite 1.2s}
-.st-step.s3{animation:ststep 9s linear infinite 2.4s;color:var(--accent-soft);font-weight:600}
-@keyframes ststep{0%{opacity:.25}8%,100%{opacity:1}}
-.st-chip{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.12em;padding:4px 9px;border:1px solid var(--accent);color:var(--accent-soft);margin-left:auto;white-space:nowrap}
-/* Salgskonsoll-mocken */
-.sk-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-@media (max-width:640px){.sk-kpis{grid-template-columns:1fr}}
-.sk-kpi{background:var(--bg);padding:14px 18px}
-.sk-kpi .k{display:block;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.16em;color:var(--mid);margin-bottom:6px}
-.sk-kpi b{font-family:var(--font-display);font-size:clamp(18px,1.8vw,24px);font-weight:600;letter-spacing:-0.02em;color:var(--ink)}
-.sk-kpi b i{font-style:normal;font-size:13px;color:var(--mid);font-weight:500}
-.sk-kpi.good b{color:var(--accent-soft)}
-.sk-chart{border-top:1px solid var(--line);padding:16px 18px 8px;background:var(--bg)}
-.sk-chart svg{width:100%;height:96px;display:block;overflow:visible}
-.sk-chart .axis{stroke:var(--line-strong);stroke-width:1}
-.sk-chart .target{fill:none;stroke:var(--grey);stroke-width:1.4;stroke-dasharray:4 5}
-.sk-chart .actual{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-dasharray:520;stroke-dashoffset:0;animation:skdraw 8s ease-in-out infinite}
-@keyframes skdraw{0%{stroke-dashoffset:520}45%,100%{stroke-dashoffset:0}}
-.sk-legend{display:flex;gap:22px;margin-top:10px;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.14em;color:var(--mid)}
-.sk-legend span{display:inline-flex;align-items:center;gap:7px}
-.sk-legend i{width:14px;height:2px;display:inline-block}
-.sk-legend i.a{background:var(--accent)}
-.sk-legend i.t{background:var(--grey)}
-.sk-toast{margin-top:1px;border-top:1px solid var(--line);background:var(--bg);padding:12px 18px;display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink);animation:sktoast 9s ease-in-out infinite}
-@keyframes sktoast{0%,55%{opacity:.3}63%,100%{opacity:1}}
-
-/* SAMORDNINGSSCENEN — fagmodellene tegner seg inn, så røntgen (18 s loop) */
-.ph-scene{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,0.95fr);gap:clamp(20px,3vw,44px);align-items:center;padding-top:18px}
-@media (max-width:900px){.ph-scene{grid-template-columns:1fr}}
-.ph-scene svg{width:100%;max-width:460px;height:auto;display:block;margin:0 auto;overflow:visible}
-.i-ark{fill:none;stroke:var(--ink);stroke-width:1.1;stroke-linejoin:round;stroke-dasharray:900;stroke-dashoffset:0;animation:aark 18s linear infinite}
-.i-rib{fill:none;stroke:var(--ink-soft);stroke-width:1.7;stroke-linecap:round;opacity:.9;stroke-dasharray:900;stroke-dashoffset:0;animation:arib 18s linear infinite}
-.i-riv{fill:none;stroke:var(--accent);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:900;stroke-dashoffset:0;animation:ariv 18s linear infinite}
-.i-rie{fill:none;stroke:var(--accent-soft);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:900;stroke-dashoffset:0;animation:arie 18s linear infinite}
-@keyframes aark{0%{stroke-dashoffset:900}14%{stroke-dashoffset:0}68%{opacity:1}72%,86%{opacity:.14}90%,95%{opacity:1}98%,100%{opacity:0;stroke-dashoffset:0}}
-@keyframes arib{0%,17%{stroke-dashoffset:900}31%{stroke-dashoffset:0}68%{opacity:.9}72%,86%{opacity:.12}90%,95%{opacity:.9}98%,100%{opacity:0;stroke-dashoffset:0}}
-@keyframes ariv{0%,34%{stroke-dashoffset:900}47%{stroke-dashoffset:0}70%{filter:none}74%,86%{filter:drop-shadow(0 0 3.5px rgba(20,184,166,.85))}90%,95%{filter:none;opacity:1}98%,100%{opacity:0;stroke-dashoffset:0}}
-@keyframes arie{0%,50%{stroke-dashoffset:900}61%{stroke-dashoffset:0}70%{filter:none}74%,86%{filter:drop-shadow(0 0 2.5px rgba(13,148,136,.85))}90%,95%{filter:none;opacity:1}98%,100%{opacity:0;stroke-dashoffset:0}}
-.ph-hud{display:flex;flex-direction:column;gap:0;border-left:1px solid var(--line);padding-left:clamp(16px,2vw,28px)}
-@media (max-width:900px){.ph-hud{border-left:none;padding-left:0;border-top:1px solid var(--line);padding-top:14px}}
-.ph-hud-line{display:flex;align-items:baseline;gap:11px;padding:10px 0;border-bottom:1px solid var(--line);font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink);line-height:1.5}
-.ph-hud-line i{flex:0 0 7px;width:7px;height:7px;border-radius:50%;background:var(--accent);transform:translateY(-1px)}
-.ph-hud-line.n1{animation:ahud1 18s linear infinite}
-.ph-hud-line.n2{animation:ahud2 18s linear infinite}
-.ph-hud-line.n3{animation:ahud3 18s linear infinite}
-.ph-hud-line.n4{animation:ahud4 18s linear infinite}
-.ph-hud-line.n5{animation:ahud5 18s linear infinite}
-@keyframes ahud1{0%{opacity:.3}2%,4%{opacity:.3}7%,95%{opacity:1}98%,100%{opacity:.3}}
-@keyframes ahud2{0%,17%{opacity:.3}20%,95%{opacity:1}98%,100%{opacity:.3}}
-@keyframes ahud3{0%,34%{opacity:.3}37%,95%{opacity:1}98%,100%{opacity:.3}}
-@keyframes ahud4{0%,50%{opacity:.3}53%,95%{opacity:1}98%,100%{opacity:.3}}
-@keyframes ahud5{0%,70%{opacity:.3}73%,95%{opacity:1}98%,100%{opacity:.3}}
-.ph-hud-foot{margin-top:14px;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--mid);line-height:1.7}
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/nettsted.css?v=20261107-lansering" />
+<script src="/i18n.js?v=20261107-lansering" defer></script>
+<script src="/nettsted.js?v=20261107-lansering" defer></script>
 </head>
 <body>
-<nav class="nav">
-<div class="nav-inner">
-<a href="/" class="logo"><span class="logo-mark"></span>Builtly<span class="sub">Engineering</span></a>
-<div class="nav-links">
-<a href="/tjenester.html" data-i18n="nav.services">Tjenester</a>
-<a href="/software.html" class="active" data-i18n="nav.software">Software</a>
-<a href="/referanser.html" data-i18n="nav.references">Referanser</a>
-<a href="/slik-jobber-vi.html" data-i18n="nav.method">Slik jobber vi</a>
-<a href="/about.html" data-i18n="nav.aboutBuiltly">Om Builtly</a>
-<a href="/contact.html" data-i18n="nav.contact">Kontakt</a>
-</div>
-<div class="nav-cta">
-<div class="lang-wrap">
-<button class="lang-picker" id="langPicker" aria-haspopup="true" aria-expanded="false" aria-label="Velg språk" data-i18n-attr-aria-label="lang.selectLabel">
-<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="8" cy="8" r="6.4"/><path d="M1.6 8h12.8M8 1.6c1.8 1.7 2.8 4 2.8 6.4S9.8 12.7 8 14.4C6.2 12.7 5.2 10.4 5.2 8S6.2 3.3 8 1.6Z"/></svg>
-<span class="lang-code">NO</span>
-<svg viewBox="0 0 10 6" width="9" height="6" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
-</button>
-<div class="lang-menu" id="langMenu" role="menu" hidden>
-<button class="lang-option" data-lang="en" role="menuitem">English<span class="native">English</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="lang-option" data-lang="de" role="menuitem">German<span class="native">Deutsch</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="lang-option" data-lang="sv" role="menuitem">Swedish<span class="native">Svenska</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="lang-option active" data-lang="no" role="menuitem">Norwegian<span class="native">Norsk</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="lang-option" data-lang="fi" role="menuitem">Finnish<span class="native">Suomi</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="lang-option" data-lang="da" role="menuitem">Danish<span class="native">Dansk</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-</div>
-</div>
-<a href="https://portal.builtly.ai" class="btn"><span data-i18n="nav.openPortal">Åpne portalen</span> <span class="arr">→</span></a>
-<button class="nav-burger" id="navBurger" type="button" aria-label="Meny" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
-</div>
-</div>
-</nav>
-<div class="mobile-menu" id="mobileMenu" hidden>
-<div class="mm-eyebrow">Builtly · Meny</div>
-<nav class="mm-links" aria-label="Mobilnavigasjon"></nav>
-<a href="https://portal.builtly.ai" class="btn mm-cta"><span data-i18n="nav.openPortal">Åpne portalen</span> <span class="arr">→</span></a>
-<a href="/bli-kunde.html" class="btn btn-ghost mm-cta" style="margin-top:10px"><span data-i18n="nav.quote">Be om tilbud</span></a>
-</div>
-<script>
-(function(){
-  var burger=document.getElementById('navBurger'),menu=document.getElementById('mobileMenu');
-  if(!burger||!menu)return;
-  var links=document.querySelectorAll('.nav-links a'),mm=menu.querySelector('.mm-links');
-  links.forEach(function(a,i){
-    var c=document.createElement('a');c.href=a.getAttribute('href');c.className='mm-link'+(a.classList.contains('active')?' active':'');
-    var num=document.createElement('span');num.className='mm-num';num.textContent=(i+1<10?'0':'')+(i+1);
-    var lab=document.createElement('span');lab.className='mm-lab';lab.textContent=a.textContent;
-    var k=a.getAttribute('data-i18n');if(k)lab.setAttribute('data-i18n',k);
-    c.appendChild(num);c.appendChild(lab);mm.appendChild(c);
-  });
-  function close(){document.body.classList.remove('menu-open');menu.hidden=true;burger.setAttribute('aria-expanded','false')}
-  burger.addEventListener('click',function(){
-    var open=document.body.classList.toggle('menu-open');
-    menu.hidden=!open;burger.setAttribute('aria-expanded',open?'true':'false');
-  });
-  menu.addEventListener('click',function(e){if(e.target.closest('a'))close()});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
-  window.addEventListener('resize',function(){if(window.innerWidth>1040)close()});
-})();
-</script>
+<!-- Laget av tools/nettsted/lag.py fra tools/nettsted/sider/prosjekthotell.html. Rediger kilden, ikke denne fila. -->
+<header class="nav">
+  <div class="w nav-in">
+    <a class="logo" href="/" aria-label="Builtly"><span class="logo-mark"></span>Builtly</a>
+    <nav class="nav-links" aria-label="Hovedmeny" data-i18n-attr-aria-label="ns.nav.hovedmeny">
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-rad"><span data-i18n-html="ns.nav.rad">Rådgivning</span> <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
+        <div class="dd-panel" id="dd-rad">
+          <a class="dd-i" href="/tjenester/geoteknikk"><span class="k">RIG</span><b data-i18n-html="ns.nav.geo">Geoteknikk</b><span data-i18n-html="ns.nav.geo.t">Grunnforhold, fundamentering, stabilitet og rapportering</span></a>
+          <a class="dd-i" href="/tjenester/konstruksjon"><span class="k">RIB</span><b data-i18n-html="ns.nav.rib">Konstruksjon</b><span data-i18n-html="ns.nav.rib.t">Bæresystem, dimensjonering og konstruktive vurderinger</span></a>
+          <a class="dd-i" href="/tjenester/bygningsfysikk"><span class="k">RIBfy</span><b data-i18n-html="ns.nav.fy">Bygningsfysikk</b><span data-i18n-html="ns.nav.fy.t">Energi, fukt, lufttetthet og klimaskjerm</span></a>
+          <a class="dd-i" href="/uavhengig-kontroll"><span class="k">UAK</span><b><span data-i18n-html="ns.nav.uak">Uavhengig kontroll</span><i class="ny" data-i18n-html="ns.nav.ny">NY</i></b><span data-i18n-html="ns.nav.uak.t">Tiltaksklasse 2, fast pris 20 000 kr per fag</span></a>
+          <div class="dd-fot"><span data-i18n-html="ns.nav.rad.fot">Rådgivende ingeniører i Trondheim</span><a href="/tjenester" data-i18n-html="ns.nav.rad.alt">Alt om rådgivning →</a></div>
+        </div>
+      </div>
+      <div class="dd">
+        <button class="dd-btn on" type="button" aria-expanded="false" aria-controls="dd-sw">Software <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
+        <div class="dd-panel" id="dd-sw">
+          <a class="dd-i" href="/maps"><span class="k">01</span><b>Builtly Maps</b><span data-i18n-html="ns.nav.maps.t">Alt om eiendommen, på ett sted</span></a>
+          <a class="dd-i" href="/mulighetsstudie"><span class="k">02</span><b data-i18n-html="ns.nav.ms">Mulighetsstudie</b><span data-i18n-html="ns.nav.ms.t">Hva tomta tåler: alternativer, sol og økonomi</span></a>
+          <a class="dd-i" href="/prosjekthotell"><span class="k">03</span><b data-i18n-html="ns.nav.ph">Prosjekthotell</b><span data-i18n-html="ns.nav.ph.t">Hele prosjektet i ett rom</span></a>
+          <a class="dd-i" href="/salgskonsoll"><span class="k">04</span><b data-i18n-html="ns.nav.sk">Salgskonsoll</b><span data-i18n-html="ns.nav.sk.t">Fra første interessent til siste bolig solgt</span></a>
+          <div class="dd-fot"><span data-i18n-html="ns.nav.sw.fot">Også: Render · BIM Viewer · Control</span><a href="/software" data-i18n-html="ns.nav.sw.alt">Se hele løpet →</a></div>
+        </div>
+      </div>
+      <a href="/about" data-i18n-html="ns.nav.om">Om Builtly</a>
+      <a href="/contact" data-i18n-html="ns.nav.kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="lang"><a href="?lang=no&amp;lang_src=manual" data-sprak="no" hreflang="no">NO</a> · <a href="?lang=en&amp;lang_src=manual" data-sprak="en" hreflang="en">EN</a></span>
+      <a class="nav-login" href="https://portal.builtly.ai" data-i18n-html="ns.nav.login">Logg inn</a>
+      <a class="btn" href="/contact"><span data-i18n-html="ns.nav.cta">Ta kontakt</span> <span aria-hidden="true">→</span></a>
+      <button class="burger" type="button" aria-label="Meny" data-i18n-attr-aria-label="ns.nav.meny" aria-expanded="false" aria-controls="mm"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mm" id="mm">
+    <div class="w mm-in">
+      <div><h4 data-i18n-html="ns.nav.rad.h">Rådgivning</h4>
+        <a href="/tjenester/geoteknikk"><span data-i18n-html="ns.nav.geo">Geoteknikk</span> <span>RIG</span></a>
+        <a href="/tjenester/konstruksjon"><span data-i18n-html="ns.nav.rib">Konstruksjon</span> <span>RIB</span></a>
+        <a href="/tjenester/bygningsfysikk"><span data-i18n-html="ns.nav.fy">Bygningsfysikk</span> <span>RIBfy</span></a>
+        <a href="/uavhengig-kontroll"><span data-i18n-html="ns.nav.uak">Uavhengig kontroll</span> <span data-i18n-html="ns.nav.uak.pris">20 000 kr per fag</span></a>
+        <a href="/tjenester"><span data-i18n-html="ns.nav.rad.alt2">Alt om rådgivning</span> <span>→</span></a></div>
+      <div><h4>Software</h4>
+        <a href="/maps">Builtly Maps <span data-i18n-html="ns.nav.fase1">01 Finn</span></a>
+        <a href="/mulighetsstudie"><span data-i18n-html="ns.nav.ms">Mulighetsstudie</span> <span data-i18n-html="ns.nav.fase2">02 Vurder</span></a>
+        <a href="/prosjekthotell"><span data-i18n-html="ns.nav.ph">Prosjekthotell</span> <span data-i18n-html="ns.nav.fase3">03 Utvikle</span></a>
+        <a href="/salgskonsoll"><span data-i18n-html="ns.nav.sk">Salgskonsoll</span> <span data-i18n-html="ns.nav.fase4">04 Selg</span></a>
+        <a href="/software"><span data-i18n-html="ns.nav.sw.alt2">Hele løpet</span> <span>→</span></a></div>
+      <div><h4>Builtly</h4>
+        <a href="/about"><span data-i18n-html="ns.nav.om">Om Builtly</span> <span></span></a>
+        <a href="/contact"><span data-i18n-html="ns.nav.kontakt">Kontakt</span> <span data-i18n-html="ns.nav.ring">Ring eller skriv</span></a>
+        <a href="https://portal.builtly.ai"><span data-i18n-html="ns.nav.login">Logg inn</span> <span>portal.builtly.ai</span></a>
+        <a href="?lang=en&amp;lang_src=manual" data-sprak="en">English <span>EN</span></a>
+        <a href="?lang=no&amp;lang_src=manual" data-sprak="no">Norsk <span>NO</span></a></div>
+    </div>
+  </div>
+</header>
 <main>
-<section class="p-hero">
-<div class="wrap">
-<div class="p-hero-grid">
-<div>
-<div class="eyebrow"><span class="accent-dot"></span><span data-i18n="ph.eyebrow">Prosjekthotell · room.builtly.ai</span></div>
-<h1 class="dpy-1" data-i18n="ph.h1">The intelligent collaboration room for construction projects.</h1>
-<p class="lead" data-i18n="ph.lede">One place for every document with revision control, a standardised discipline structure, BIM straight in the browser and access control with full traceability — plus a complete tender room with AI-assisted control, anonymous Q&amp;A and bid submission. From the first upload, through the building site, all the way to handover and facility management — with Builtly Control for product documentation and compliance on the same project.</p>
-<div class="p-hero-actions">
-<a href="/bli-kunde.html" class="btn"><span data-i18n="ph.cta1">Request a demo</span> <span class="arr">→</span></a>
-<a href="https://room.builtly.ai" class="btn btn-ghost"><span data-i18n="ph.cta2">Open room.builtly.ai</span> <span class="arr">→</span></a>
-</div>
-</div>
-<div class="p-side">
-<div class="row"><span class="k" data-i18n="ph.side1k">Structure</span><span class="v" data-i18n="ph.side1v">One standard · 22 folders</span></div>
-<div class="row"><span class="k" data-i18n="ph.side2k">BIM</span><span class="v" data-i18n="ph.side2v">IFC in the browser · AR</span></div>
-<div class="row"><span class="k" data-i18n="ph.side3k">Transmittals</span><span class="v" data-i18n="ph.side3v">Frozen · receipted</span></div>
-<div class="row"><span class="k" data-i18n="ph.side4k">Site</span><span class="v" data-i18n="ph.side4v">§ 15 check-in · offline</span></div>
-<div class="row"><span class="k" data-i18n="ph.side5k">Control</span><span class="v" data-i18n="ph.side5v">Product documentation · one click</span></div>
-</div>
-</div>
-<div class="stage rv" aria-hidden="true">
-<div class="st-top"><span class="st-live"><i class="st-pulse"></i>room.builtly.ai</span><span class="st-proj">P-102 · SAGA PARK BT2</span></div>
-<div class="ph-scene">
-<svg viewBox="42 55 276 302" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="presentation">
-<path class="i-ark" d="M150.0,208.0 L297.2,293.0 L208.9,344.0 L61.7,259.0 Z"/>
-<path class="i-ark" d="M150.0,163.0 L297.2,248.0 L208.9,299.0 L61.7,214.0 Z"/>
-<path class="i-ark" d="M150.0,118.0 L297.2,203.0 L208.9,254.0 L61.7,169.0 Z"/>
-<path class="i-ark" d="M150.0,73.0 L297.2,158.0 L208.9,209.0 L61.7,124.0 Z"/>
-<path class="i-ark" d="M150.0,208.0 L150.0,73.0"/>
-<path class="i-ark" d="M297.2,293.0 L297.2,158.0"/>
-<path class="i-ark" d="M208.9,344.0 L208.9,209.0"/>
-<path class="i-ark" d="M61.7,259.0 L61.7,124.0"/>
-<path class="i-rib" d="M157.4,246.2 L157.4,111.2"/>
-<path class="i-rib" d="M127.9,263.2 L127.9,128.2"/>
-<path class="i-rib" d="M194.2,267.5 L194.2,132.5"/>
-<path class="i-rib" d="M164.7,284.5 L164.7,149.5"/>
-<path class="i-rib" d="M231.0,288.8 L231.0,153.8"/>
-<path class="i-rib" d="M201.5,305.8 L201.5,170.8"/>
-<path class="i-rib" d="M127.9,184.2 L260.4,260.8"/>
-<path class="i-rib" d="M98.5,201.2 L231.0,277.8"/>
-<path class="i-rib" d="M127.9,139.2 L260.4,215.8"/>
-<path class="i-rib" d="M98.5,156.2 L231.0,232.8"/>
-<path class="i-rib" d="M127.9,94.2 L260.4,170.8"/>
-<path class="i-rib" d="M98.5,111.2 L231.0,187.8"/>
-<path class="i-riv" d="M80.8,247.0 L80.8,184.0 L105.8,198.5 L164.7,164.5 L208.9,190.0 L150.0,224.0 L194.2,249.5 L253.1,215.5 L278.1,229.9"/>
-<path class="i-rie" d="M288.4,269.0 L233.9,237.6 L154.4,283.4 L88.2,245.2 L127.9,222.2 L110.2,212.0"/>
-</svg>
-<div class="ph-hud">
-<div class="ph-hud-line n1"><i></i><span data-i18n="ph.anim.l1">ARK · architect model uploaded</span></div>
-<div class="ph-hud-line n2"><i></i><span data-i18n="ph.anim.l2">RIB · load-bearing structure — new revision</span></div>
-<div class="ph-hud-line n3"><i></i><span data-i18n="ph.anim.l3">RIV · ventilation — federated model updated the same second</span></div>
-<div class="ph-hud-line n4"><i></i><span data-i18n="ph.anim.l4">RIE · electrical — access follows the folders</span></div>
-<div class="ph-hud-line n5"><i></i><span data-i18n="ph.anim.l5">X-ray — the shell goes transparent, the systems stay</span></div>
-<div class="ph-hud-foot" data-i18n="ph.anim.foot">The federated model is derived, never assembled — always every discipline's current revision</div>
-</div>
-</div>
-</div>
-</div>
+<section class="phero mork">
+  <div class="w">
+    <span data-i18n-html="ns.prosjekthotell.001" class="merke"><span class="ruten">3</span>Builtly Prosjekthotell</span>
+    <h1 data-i18n-html="ns.prosjekthotell.002" class="h1">Hele prosjektet.<br><span class="aks">I ett rom.</span></h1>
+    <p data-i18n-html="ns.prosjekthotell.003" class="lede">Dokumenter, revisjoner, BIM, frister og oversendelser samlet for alle som jobber i prosjektet, fra første tegning til overtakelse og drift.</p>
+    <div data-i18n-html="ns.prosjekthotell.004" class="btns"><a class="btn" href="/contact">Book en gjennomgang <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="/software">Se alle fire produktene</a></div>
+    <div class="steg"><div><span class="n">01</span><b data-i18n-html="ns.prosjekthotell.005">Struktur</b><p data-i18n-html="ns.prosjekthotell.006">Ferdig mappestruktur og navnestandard fra første dag.</p></div><div><span class="n">02</span><b data-i18n-html="ns.prosjekthotell.007">Dokumenter</b><p data-i18n-html="ns.prosjekthotell.008">En ny fil blir en ny revisjon, aldri en kopi.</p></div><div><span class="n">03</span><b data-i18n-html="ns.prosjekthotell.009">BIM</b><p data-i18n-html="ns.prosjekthotell.010">Fagenes IFC i nettleseren, i én fellesmodell.</p></div><div><span class="n">04</span><b data-i18n-html="ns.prosjekthotell.011">Frister og oversendelser</b><p data-i18n-html="ns.prosjekthotell.012">Purring på e-post og SMS, og kvittering på alt som sendes.</p></div><div><span class="n">05</span><b data-i18n-html="ns.prosjekthotell.013">Byggeplass og drift</b><p data-i18n-html="ns.prosjekthotell.014">Innsjekk, sjekklister og avvik, og FDV ved overtakelse.</p></div></div>
+  </div>
 </section>
-
-<section class="section">
-<div class="wrap">
-<div class="smark"><span class="num">§ 01</span><span data-i18n="ph.s01">The workday</span><span class="dash"></span><span data-i18n="ph.s01tag">Built for the first fifteen minutes of the morning</span></div>
-<h2 class="dpy-3 rv" data-i18n="ph.s01h2">Every project, one glance.</h2>
-<div class="cardgrid c3" style="margin-top:clamp(28px,4vh,44px)">
-<div class="card rv">
-<div class="head"><span>01</span><span class="topic" data-i18n="ph.k1.t">Morning overview</span></div>
-<h3 data-i18n="ph.k1.h">Which project needs you today?</h3>
-<p data-i18n="ph.k1.d">Every project on one line: status, phase, the latest file and the next deadline — with the projects that need attention on top. A red row always carries its reason: an overdue delivery, a deadline this week, or thirty silent days.</p>
+<section class="sek-tett myk">
+  <div class="w">
+    <div class="to i-bruk">
+      <div class="sek-hode" style="margin-bottom:0">
+        <div data-i18n-html="ns.prosjekthotell.015" class="eyebrow"><span class="t">03 · Utvikle</span><span class="strek"></span><span>Slik ser det ut</span></div>
+        <h2 data-i18n-html="ns.prosjekthotell.016" class="h2">Prosjekthotell i bruk.</h2>
+        <p data-i18n-html="ns.prosjekthotell.017" class="lede">For byggherrer, rådgivere og entreprenører.</p>
+        <p data-i18n-html="ns.prosjekthotell.018" class="liten">Bildet viser eksempeldata.</p>
+      </div>
+      
+<div data-i18n-attr-aria-label="ns.prosjekthotell.019" class="skjerm" role="img" aria-label="Eksempel: Prosjekthotell med mappestruktur, dokumentliste med revisjoner og en oversendelse med kvittering">
+  <div data-i18n-html="ns.prosjekthotell.020" class="skjerm-topp"><span class="prikk"></span><span class="url">room.builtly.ai · P-104 Eksempelprosjekt</span><span class="eks">Eksempeldata</span></div>
+  <div class="skjerm-kropp ph">
+    <div class="side">
+      <div data-i18n-html="ns.prosjekthotell.021">00 Administrasjon</div><div data-i18n-html="ns.prosjekthotell.022">10 Arkitekt</div><div data-i18n-html="ns.prosjekthotell.023">20 Konstruksjon</div><div data-i18n-html="ns.prosjekthotell.024" class="on">30 Geoteknikk</div><div data-i18n-html="ns.prosjekthotell.025">40 VVS</div><div data-i18n-html="ns.prosjekthotell.026">50 Elektro</div><div data-i18n-html="ns.prosjekthotell.027">80 Anbud</div><div data-i18n-html="ns.prosjekthotell.028">91 Overtakelse og FDV</div>
+    </div>
+    <div class="panel" style="padding:0">
+      <div data-i18n-html="ns.prosjekthotell.029" style="padding:12px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap"><b style="font-size:13px">30 Geoteknikk</b><span class="chip">4 dokumenter</span></div>
+      <div class="tbl"><table>
+        <thead><tr><th data-i18n-html="ns.prosjekthotell.030">Nr</th><th data-i18n-html="ns.prosjekthotell.031">Tittel</th><th data-i18n-html="ns.prosjekthotell.032">Rev</th><th data-i18n-html="ns.prosjekthotell.033">Status</th></tr></thead>
+        <tbody>
+          <tr><td data-i18n-html="ns.prosjekthotell.034" class="mono">RIG-001</td><td data-i18n-html="ns.prosjekthotell.035">Geoteknisk datarapport</td><td data-i18n-html="ns.prosjekthotell.036">C</td><td data-i18n-html="ns.prosjekthotell.037"><span class="chip ok">gjeldende</span></td></tr>
+          <tr><td data-i18n-html="ns.prosjekthotell.038" class="mono">RIG-002</td><td data-i18n-html="ns.prosjekthotell.039">Notat fundamentering</td><td data-i18n-html="ns.prosjekthotell.040">B</td><td data-i18n-html="ns.prosjekthotell.041"><span class="chip var">til kommentar</span></td></tr>
+          <tr><td data-i18n-html="ns.prosjekthotell.042" class="mono">RIG-010</td><td data-i18n-html="ns.prosjekthotell.043">Stabilitet byggegrop</td><td data-i18n-html="ns.prosjekthotell.044">A</td><td data-i18n-html="ns.prosjekthotell.045"><span class="chip ok">gjeldende</span></td></tr>
+          <tr><td data-i18n-html="ns.prosjekthotell.046" class="mono">RIG-011</td><td data-i18n-html="ns.prosjekthotell.047">Plantegning spunt</td><td data-i18n-html="ns.prosjekthotell.048">A</td><td data-i18n-html="ns.prosjekthotell.049"><span class="chip">oversendt</span></td></tr>
+        </tbody></table></div>
+      <div style="padding:12px 14px;display:grid;gap:8px">
+        <div data-i18n-html="ns.prosjekthotell.050" class="rad"><span>Oversendelse T-014</span><b>3 mottakere · 2 av 3 kvittert</b></div>
+        <div data-i18n-html="ns.prosjekthotell.051" class="rad"><span>Frist RIV, 14.11</span><b>Påminnelse sendt</b></div>
+        <div data-i18n-html="ns.prosjekthotell.052" class="rad" style="border:0"><span>Fellesmodell</span><b>ARK C · RIB D · RIV B</b></div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="card rv">
-<div class="head"><span>02</span><span class="topic" data-i18n="ph.k2.t">My page</span></div>
-<h3 data-i18n="ph.k2.h">What is on you — across everything.</h3>
-<p data-i18n="ph.k2.d">All open deadlines that concern you across every project, nearest first, with countdown. On fifteen projects, "what falls due this week" is one page — not fifteen tabs.</p>
-</div>
-<div class="card rv">
-<div class="head"><span>03</span><span class="topic" data-i18n="ph.k3.t">The inbox</span></div>
-<h3 data-i18n="ph.k3.h">Everything that happened, measured.</h3>
-<p data-i18n="ph.k3.d">Incoming bids, new tender questions, transmittal receipts and the disciplines' BIM uploads — read straight from the project registers, so the inbox is always in step with reality. One click lands you on the right section.</p>
-</div>
-</div>
-</div>
+    </div>
+  </div>
 </section>
-
-<section class="section section-soft">
-<div class="wrap">
-<div class="smark"><span class="num">§ 02</span><span data-i18n="ph.s02">Documents</span><span class="dash"></span><span data-i18n="ph.s02tag">Revision control that cannot be talked around</span></div>
-<h2 class="dpy-3 rv" data-i18n="ph.s02h2">Every upload passes the gate.</h2>
-<ul class="dlist" style="margin-top:clamp(28px,4vh,44px)">
-<li class="rv"><span class="n">01</span><div><div class="t" data-i18n="ph.d1.t">The naming standard is applied for you</div><div class="d" data-i18n="ph.d1.d">Discipline codes read from the folder's own catalogue entry, sequence numbers assigned per project — and a doorman that recognises when a file's content belongs to another discipline and suggests the right folder. You can always override.</div></div></li>
-<li class="rv"><span class="n">02</span><div><div class="t" data-i18n="ph.d2.t">A new file becomes a new revision — never a copy</div><div class="d" data-i18n="ph.d2.d">Same document number means same document: the full revision history lives on the document, and "where is the current fire concept?" always has exactly one answer.</div></div></li>
-<li class="rv"><span class="n">03</span><div><div class="t" data-i18n="ph.d3.t">One folder standard — and your own</div><div class="d" data-i18n="ph.d3.d">Every project is born with the discipline-based standard structure, so every project answers the same way. Prefer your own structure? Build the company template folder by folder — or upload a screenshot of the old project hotel and have it interpreted into a proposal you approve.</div></div></li>
-<li class="rv"><span class="n">04</span><div><div class="t" data-i18n="ph.d4.t">Moving in is one operation, not a week</div><div class="d" data-i18n="ph.d4.d">Drop the whole archive as a zip. Every file is classified by prioritised signals — naming standard, the folder it came from, conventions, then AI — with the source shown on every row, and nothing is uploaded before you have approved the review. A file without a trustworthy signal ends honestly in the "choose folder" pile.</div></div></li>
-<li class="rv"><span class="n">05</span><div><div class="t" data-i18n="ph.d5.t">The formal transmittal is the archive trail</div><div class="d" data-i18n="ph.d5.d">A transmittal freezes which documents, in which revisions, to whom, for what purpose — and can never be edited afterwards. Every recipient gets a personal link, downloads are verified against the fingerprint from the moment of sending, and the receipt has three honest levels: opened, downloaded, receipt confirmed.</div></div></li>
-</ul>
-</div>
+<section class="sek">
+  <div class="w">
+    <div class="sek-hode"><div data-i18n-html="ns.prosjekthotell.053" class="eyebrow"><span>Det du får</span></div><h2 data-i18n-html="ns.prosjekthotell.054" class="h2">Konkret, fra første dag.</h2></div>
+    <div class="faar"><div><span class="k">01</span><b data-i18n-html="ns.prosjekthotell.055">Revisjonskontroll</b><p data-i18n-html="ns.prosjekthotell.056">Disiplinkode og løpenummer settes for deg. Samme dokumentnummer har hele historikken sin.</p></div><div><span class="k">02</span><b data-i18n-html="ns.prosjekthotell.057">Oversendelser med kvittering</b><p data-i18n-html="ns.prosjekthotell.058">Pakken fryses slik den ble sendt. Hver mottaker får sin egen lenke, og du ser hvem som har åpnet, lastet ned og bekreftet.</p></div><div><span class="k">03</span><b data-i18n-html="ns.prosjekthotell.059">Frister som purrer selv</b><p data-i18n-html="ns.prosjekthotell.060">Påminnelse tre dager før, e-post og SMS på forfallsdagen og purring hver mandag til leveransen er meldt levert.</p></div><div><span class="k">04</span><b data-i18n-html="ns.prosjekthotell.061">BIM i nettleseren</b><p data-i18n-html="ns.prosjekthotell.062">Fellesmodellen er alltid fagenes gjeldende revisjon. Røntgensyn og arealanalyse uten å installere noe.</p></div><div><span class="k">05</span><b data-i18n-html="ns.prosjekthotell.063">Anbudsrom</b><p data-i18n-html="ns.prosjekthotell.064">Låst grunnlag fra mappene, anonym spørsmålsrunde og tilbud på personlige lenker, uten konto for tilbyderne.</p></div><div><span class="k">06</span><b data-i18n-html="ns.prosjekthotell.065">Byggeplass og FDV</b><p data-i18n-html="ns.prosjekthotell.066">Innsjekk etter byggherreforskriften § 15, sjekklister og avvik på mobil, og FDV-register ved overtakelse.</p></div></div>
+  </div>
 </section>
-
-<section class="section">
-<div class="wrap">
-<div class="smark"><span class="num">§ 03</span><span data-i18n="ph.s03">BIM</span><span class="dash"></span><span data-i18n="ph.s03tag">No software to install — same viewer on every device</span></div>
-<h2 class="dpy-3 rv" data-i18n="ph.s03h2">BIM straight in the browser.</h2>
-<div class="cardgrid c3" style="margin-top:clamp(28px,4vh,44px)">
-<div class="card rv">
-<div class="head"><span>01</span><span class="topic" data-i18n="ph.b1.t">Federated model</span></div>
-<h3 data-i18n="ph.b1.h">The common model updates itself.</h3>
-<p data-i18n="ph.b1.d">There is no assembly step: the coordination model is always the sum of every discipline's IFC in its current revision. When HVAC uploads a new revision, it is in the common model the same second — and the project lead is notified automatically.</p>
-</div>
-<div class="card rv">
-<div class="head"><span>02</span><span class="topic" data-i18n="ph.b2.t">X-ray vision</span></div>
-<h3 data-i18n="ph.b2.h">See through the wall. Stand in the room.</h3>
-<p data-i18n="ph.b2.d">Make the architect's model transparent and see the pipes, ducts and cables behind the wall. "Stand here" puts you at eye height where you clicked, the ceiling slides away — and Esc always returns exactly the camera you had.</p>
-</div>
-<div class="card rv">
-<div class="head"><span>03</span><span class="topic" data-i18n="ph.b3.t">AR on site</span></div>
-<h3 data-i18n="ph.b3.h">The model in the room in front of you.</h3>
-<p data-i18n="ph.b3.d">Every current IFC revision is automatically built for the phone's own AR view — placed in the room at true scale, nothing to install. What you see in AR is the same revision that lives in the project.</p>
-</div>
-<div class="card rv">
-<div class="head"><span>04</span><span class="topic" data-i18n="ph.b4.t">Area analysis</span></div>
-<h3 data-i18n="ph.b4.h">Honest numbers, measured from the model.</h3>
-<p data-i18n="ph.b4.d">Gross/net, BRA and sellable area with everything held outside housing shown as its own lines — and a sanity check that reads the model's own numbers and says when something cannot be right. What cannot be measured is shown as a gap, never a guess.</p>
-</div>
-<div class="card rv">
-<div class="head"><span>05</span><span class="topic" data-i18n="ph.b5.t">Units without room data</span></div>
-<h3 data-i18n="ph.b5.h">Counts homes even when the model has no rooms.</h3>
-<p data-i18n="ph.b5.d">When the architect's export carries no IfcSpace at all, units are counted from independent signals in the model — doors, kitchens, groups — with a confidence badge and the competing signals side by side. Your own figure from the prospectus always wins.</p>
-</div>
-<div class="card rv">
-<div class="head"><span>06</span><span class="topic" data-i18n="ph.b6.t">IFC check</span></div>
-<h3 data-i18n="ph.b6.h">Quality-check an export before it is shared.</h3>
-<p data-i18n="ph.b6.d">Run the exact same reading on any IFC from your own machine — area analysis, unit signal, confidence marks — without uploading anything: the model never leaves your computer. And once a model is read, the next opening of the same revision takes seconds.</p>
-</div>
-</div>
-</div>
+<section class="sek-tett myk">
+  <div class="w">
+    <div class="sek-hode"><div data-i18n-html="ns.prosjekthotell.067" class="eyebrow"><span class="t">Uten og med Prosjekthotell</span></div><h2 data-i18n-html="ns.prosjekthotell.068" class="h2">E-post, mapper og regneark blir ett rom.</h2></div>
+    <div class="utenmed">
+      <div class="uten"><span data-i18n-html="ns.prosjekthotell.069" class="l">I dag</span><h3 data-i18n-html="ns.prosjekthotell.070">Slik gjøres det ofte</h3><ol><li data-i18n-html="ns.prosjekthotell.071">Delte mapper med hver sin navnestandard.</li><li data-i18n-html="ns.prosjekthotell.072">Revisjoner som ligger i e-posttråder.</li><li data-i18n-html="ns.prosjekthotell.073">Tegningspakker på e-post, med manuell logg over mottakere.</li><li data-i18n-html="ns.prosjekthotell.074">Masing på frister, én e-post om gangen.</li><li data-i18n-html="ns.prosjekthotell.075">Tilbud sammenstilt i regneark.</li></ol><div data-i18n-html="ns.prosjekthotell.076" class="tid"><span>Resultat</span><b>Spredt i e-post, mapper og regneark</b></div></div>
+      <div class="med"><span data-i18n-html="ns.prosjekthotell.077" class="l">Med Prosjekthotell</span><h3 data-i18n-html="ns.prosjekthotell.078">Slik gjør du det her</h3><ol><li data-i18n-html="ns.prosjekthotell.079">Én struktur fra første dag.</li><li data-i18n-html="ns.prosjekthotell.080">Hver fil har revisjonene sine.</li><li data-i18n-html="ns.prosjekthotell.081">Oversendelser med kvittering per mottaker.</li><li data-i18n-html="ns.prosjekthotell.082">Systemet purrer for deg.</li><li data-i18n-html="ns.prosjekthotell.083">Tilbudene sammenstilles med kildefil.</li></ol><div data-i18n-html="ns.prosjekthotell.084" class="tid"><span>Resultat</span><b>Ett rom</b></div></div>
+    </div>
+    <p data-i18n-html="ns.prosjekthotell.085" class="liten mt-s">Svaret på «hvor ligger gjeldende revisjon?» er alltid ett dokument.</p>
+  </div>
 </section>
-
-<section class="section section-soft">
-<div class="wrap">
-<div class="smark"><span class="num">§ 04</span><span data-i18n="ph.s04">Ask Builtly AI</span><span class="dash"></span><span data-i18n="ph.s04tag">A project is thousands of pages</span></div>
-<h2 class="dpy-3 rv" data-i18n="ph.s04h2">Ask the project. Get the source.</h2>
-<div class="cardgrid c2" style="margin-top:clamp(28px,4vh,44px)">
-<div class="card rv">
-<div class="head"><span>01</span><span class="topic" data-i18n="ph.a1.t">Always with a source</span></div>
-<h3 data-i18n="ph.a1.h">Every answer cites its documents.</h3>
-<p data-i18n="ph.a1.d">Ask in your own words — "what is the sound class requirement between apartments?" — and the answer is read out of the project's own documents, with title, folder and revision. If the answer is not in the documents, it says so. It never guesses, and it never invents a number.</p>
-</div>
-<div class="card rv">
-<div class="head"><span>02</span><span class="topic" data-i18n="ph.a2.t">Straight to the page</span></div>
-<h3 data-i18n="ph.a2.h">Read the sentence yourself.</h3>
-<p data-i18n="ph.a2.d">The citation opens the PDF on the very page the answer was read from. An answer you cannot verify is not an answer.</p>
-</div>
-<div class="card rv">
-<div class="head"><span>03</span><span class="topic" data-i18n="ph.a3.t">Revision-aware</span></div>
-<h3 data-i18n="ph.a3.h">A right answer from rev. B is a wrong answer in rev. C.</h3>
-<p data-i18n="ph.a3.d">If a source document has received a new revision after the answer was given, the answer says so. And the assistant reads exactly the documents you have access to — a guest with one folder gets answers from that folder, never from the rest of the project.</p>
-</div>
-<div class="card rv">
-<div class="head"><span>04</span><span class="topic" data-i18n="ph.a4.t">Status report draft</span></div>
-<h3 data-i18n="ph.a4.h">The numbers are measured. The words are yours.</h3>
-<p data-i18n="ph.a4.d">Ask for a status report draft: the figures are measured from the project's own registers — documents, revisions, deviations, deadlines — the text is edited by a human, and the result is saved as a marked AI draft through the ordinary revision gate.</p>
-</div>
-</div>
-<div class="quiet-strip" style="margin-top:clamp(28px,4vh,44px);border:1px solid var(--line);background:var(--bg)">
-<div class="inner" style="padding:0 clamp(20px,3vw,36px)">
-<span class="mark" data-i18n="ph.rule_mark">The rule</span>
-<p data-i18n="ph.rule_p">The same rule everywhere AI is used in the Prosjekthotell: AI suggests — a human approves — the engine executes. There is no path from an AI suggestion to a registered fact without a person saying yes.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section">
-<div class="wrap">
-<div class="smark"><span class="num">§ 05</span><span data-i18n="ph.s05">Deadlines</span><span class="dash"></span><span data-i18n="ph.s05tag">Deadlines that do the nagging for you</span></div>
-<h2 class="dpy-3 rv" data-i18n="ph.s05h2">Nothing slips silently.</h2>
-<ul class="dlist" style="margin-top:clamp(28px,4vh,44px)">
-<li class="rv"><span class="n">01</span><div><div class="t" data-i18n="ph.f1.t">Delivery deadlines with a built-in reminder chain</div><div class="d" data-i18n="ph.f1.d">A deadline is set on a discipline role with what is to be delivered, a date and the delivery folder. The system takes the nagging: a friendly reminder three days ahead, e-mail and SMS on the due date, and a follow-up every Monday morning until the delivery is reported — measured against who is actually on the project at each send.</div></div></li>
-<li class="rv"><span class="n">02</span><div><div class="t" data-i18n="ph.f2.t">Two separated responsibilities</div><div class="d" data-i18n="ph.f2.d">The discipline delivers and reports delivered; the one who set the deadline reviews and closes. Nobody closes their own delivery — and a rejection requires a written reason, so the discipline knows exactly what is missing. The reviewer is reminded too.</div></div></li>
-<li class="rv"><span class="n">03</span><div><div class="t" data-i18n="ph.f3.t">The Monday report — always</div><div class="d" data-i18n="ph.f3.d">Every Monday morning, one e-mail per project to everyone involved: what happened last week, who did it, what was delivered, and what is coming — overdue deadlines first and in the subject line. Even a quiet week is a report, because a report that never came cannot be told apart from one that broke.</div></div></li>
-<li class="rv"><span class="n">04</span><div><div class="t" data-i18n="ph.f4.t">Nothing is stamped "sent" unless it went</div><div class="d" data-i18n="ph.f4.d">The notifications that actually went out sit on the deadline row, with time. A failed send is retried at the next run — never a silently skipped reminder.</div></div></li>
-</ul>
-</div>
-</section>
-
-<section class="section section-soft">
-<div class="wrap">
-<div class="smark"><span class="num">§ 06</span><span data-i18n="ph.s06">The tender room</span><span class="dash"></span><span data-i18n="ph.s06tag">Equal treatment as a system property</span></div>
-<h2 class="dpy-3 rv" data-i18n="ph.s06h2">The whole tender process, one room.</h2>
-<ul class="dlist" style="margin-top:clamp(28px,4vh,44px)">
-<li class="rv"><span class="n">01</span><div><div class="t" data-i18n="ph.t1.t">Build the basis from the folders you already have</div><div class="d" data-i18n="ph.t1.d">Pick "20 RIB", "10 ARK" or whole branches — everything counts in its current approved revision, and documents without an approved revision are held out by name. A hole in a tender basis is an informed choice, never a silence.</div></div></li>
-<li class="rv"><span class="n">02</span><div><div class="t" data-i18n="ph.t2.t">Locked at first share</div><div class="d" data-i18n="ph.t2.d">The moment the basis is shared with the first bidder, the room locks: basket and terms can no longer be changed — not from the interface, not through the API, not by an approved AI suggestion. The lock is enforced in the engine itself. Everyone competes on the same basis.</div></div></li>
-<li class="rv"><span class="n">03</span><div><div class="t" data-i18n="ph.t3.t">Anonymous Q&amp;A by design</div><div class="d" data-i18n="ph.t3.d">Bidders ask from their side — who asked is not stored at all. The answer is published to every bidder at the same time, so everyone prices the same information.</div></div></li>
-<li class="rv"><span class="n">04</span><div><div class="t" data-i18n="ph.t4.t">Bids on personal links, stamped honestly</div><div class="d" data-i18n="ph.t4.d">Bids are delivered on the bidder's personal link and registered with a timestamp. A late delivery is stamped late — never rejected, never hidden. No bidder ever sees another's files.</div></div></li>
-<li class="rv"><span class="n">05</span><div><div class="t" data-i18n="ph.t5.t">AI compilation that never invents a number</div><div class="d" data-i18n="ph.t5.d">When the bids are in, the AI reads and compiles: delivery per bidder, amounts quoted only with their source file, deviations and reservations to clarify. Decision support — it never picks a winner.</div></div></li>
-<li class="rv"><span class="n">06</span><div><div class="t" data-i18n="ph.t6.t">A bidder page that needs no account</div><div class="d" data-i18n="ph.t6.d">The personal link opens a work page with everything in four steps: confirm receipt, the documents grouped by discipline, Q&amp;A, and delivery. BIM models open straight in the browser — in the revision that was sent. For smaller trades, the light request gives the same basket without the full apparatus.</div></div></li>
-</ul>
-</div>
-</section>
-
-<section class="section">
-<div class="wrap">
-<div class="smark"><span class="num">§ 07</span><span data-i18n="ph.s07">Site &amp; operations</span><span class="dash"></span><span data-i18n="ph.s07tag">From the gate to facility management</span></div>
-<h2 class="dpy-3 rv" data-i18n="ph.s07h2">Out on the site — and into operations.</h2>
-<div class="cardgrid c2" style="margin-top:clamp(28px,4vh,44px)">
-<div class="card rv">
-<div class="head"><span>01</span><span class="topic" data-i18n="ph.p1.t">§ 15 check-in</span></div>
-<h3 data-i18n="ph.p1.h">A QR code in the gate. A statutory list out.</h3>
-<p data-i18n="ph.p1.d">Everyone checks in on their phone — no account, no app. The electronic register under the Norwegian client regulation § 15 is kept and checked daily, with a CSV export ready for the client, safety delegate and the Labour Inspection. Missing details never stop anyone in the gate — they are flagged for correction instead.</p>
-</div>
-<div class="card rv">
-<div class="head"><span>02</span><span class="topic" data-i18n="ph.p2.t">Site diary</span></div>
-<h3 data-i18n="ph.p2.h">Crewing measured in the gate.</h3>
-<p data-i18n="ph.p2.d">Crew per discipline proposed from the actual check-ins, weather, work and incidents — kept per day, next to the check-in list. Where the foreman's report differs from the gate, the gap is stated in plain text.</p>
-</div>
-<div class="card rv">
-<div class="head"><span>03</span><span class="topic" data-i18n="ph.p3.t">Checklists &amp; deviations</span></div>
-<h3 data-i18n="ph.p3.h">Works in the basement. Syncs when you are out.</h3>
-<p data-i18n="ph.p3.d">Safety rounds and inspections filled in as you walk, with a photo per item. Field deviations pinned on the drawing or straight in the BIM model — the pin freezes the revision it was set in and never moves by itself. Everything works without coverage and syncs when the net is back, exactly once.</p>
-</div>
-<div class="card rv">
-<div class="head"><span>04</span><span class="topic" data-i18n="ph.p4.t">FDV — into operations</span></div>
-<h3 data-i18n="ph.p4.h">The register that takes the building into its life.</h3>
-<p data-i18n="ph.p4.d">Components read out of the FDV documents by AI and approved one by one; maintenance deadlines derived from the last performed check plus the interval — never stored as dates that can drift. Every interval names its source, and expiring warranties become visible while you can still claim them.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section section-soft" style="padding-top:0">
-<div class="wrap">
-<div class="crosslink ctl-x rv">
-<div>
-<h3><span data-i18n="ph.ctl.h">Product documentation on the same project — Builtly Control</span><span class="pf-new" data-i18n="ph.ctl.tag">New · early access</span></h3>
-<p data-i18n="ph.ctl.p">Activate Builtly Control on the hotel project with one click: the building products, the declarations of performance, safety data sheets, EPDs and O&amp;M documentation behind them, and the requirements they must meet — measured from the documents at read time, never from a flag. Gaps get an owner and a deadline. Same project, same participants, same account.</p>
-</div>
-<a href="/control.html" class="btn"><span data-i18n="ph.ctl.cta">See Builtly Control</span> <span class="arr">→</span></a>
-</div>
-</div>
-</section>
-
-<section class="section section-soft">
-<div class="wrap">
-<div class="smark"><span class="num">§ 08</span><span data-i18n="ph.s08">Security</span><span class="dash"></span><span data-i18n="ph.s08tag">The properties everything else rests on</span></div>
-<h2 class="dpy-3 rv" data-i18n="ph.s08h2">Built to be audited.</h2>
-<div class="cardgrid c2" style="margin-top:clamp(28px,4vh,44px)">
-<div class="card rv" style="min-height:150px">
-<div class="head"><span>01</span><span class="topic" data-i18n="ph.g1.t">Separated companies</span></div>
-<p data-i18n="ph.g1.d">Every company's data is keyed on its organisation number in the storage itself — two companies with the same project code can never see each other's projects.</p>
-</div>
-<div class="card rv" style="min-height:150px">
-<div class="head"><span>02</span><span class="topic" data-i18n="ph.g2.t">Everything is logged</span></div>
-<p data-i18n="ph.g2.d">Uploads, downloads, moves, shares, phase changes and receipts are written to the activity log — on the project and on the individual document.</p>
-</div>
-<div class="card rv" style="min-height:150px">
-<div class="head"><span>03</span><span class="topic" data-i18n="ph.g3.t">Fail-closed</span></div>
-<p data-i18n="ph.g3.d">If an access is unclear, the answer is no. A withdrawn share goes dark immediately, expired links close themselves, and "does not exist" and "not yours" give the same answer — nobody can map the project by probing.</p>
-</div>
-<div class="card rv" style="min-height:150px">
-<div class="head"><span>04</span><span class="topic" data-i18n="ph.g4.t">Honesty as a principle</span></div>
-<p data-i18n="ph.g4.d">Numbers are shown with their source, AI suggests and a human approves, and what could not be done is reported — never a silent success that did not happen.</p>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section">
-<div class="wrap">
-<div class="crosslink rv">
-<div>
-<h3 data-i18n="ph.x_h">Selling the homes the project builds?</h3>
-<p data-i18n="ph.x_p">The Salgskonsoll takes over where the Prosjekthotell delivers: interest lists, newsletters, ads and a shareable sales console — measured against the sales target.</p>
-</div>
-<a href="/salgskonsoll.html" class="btn btn-ghost"><span data-i18n="ph.x_cta">See the Salgskonsoll</span> <span class="arr">→</span></a>
-</div>
-</div>
-</section>
-
-<section class="section section-dark">
-<div class="wrap">
-<div class="cta-grid">
-<div class="rv">
-<h2 class="dpy-2" data-i18n="ph.cta_h2">See it on your own project.</h2>
-<p class="lead on-dark" style="margin-top:24px;max-width:52ch" data-i18n="ph.cta_lede">Create the company, invite the colleagues and move the archive in — the folder structure stands ready the same second. Or ask for a demo on your own project data first.</p>
-<div class="cta-actions">
-<a href="/bli-kunde.html" class="btn btn-light"><span data-i18n="ph.cta1">Request a demo</span> <span class="arr">→</span></a>
-<a href="https://room.builtly.ai" class="btn btn-dark-ghost"><span data-i18n="ph.cta2">Open room.builtly.ai</span></a>
-</div>
-</div>
-<div class="cta-side rv">
-<div class="row" style="border-top-color:var(--dark-paper)"><span class="k" style="color:rgba(247,244,237,0.6)" data-i18n="ph.cr1k">Onboarding</span><span class="v" style="color:var(--dark-paper)" data-i18n="ph.cr1v">Same day</span></div>
-<div class="row" style="border-top-color:var(--line-dark)"><span class="k" style="color:rgba(247,244,237,0.6)" data-i18n="ph.cr2k">Moving in</span><span class="v" style="color:var(--dark-paper)" data-i18n="ph.cr2v">Zip — one operation</span></div>
-<div class="row" style="border-top-color:var(--line-dark)"><span class="k" style="color:rgba(247,244,237,0.6)" data-i18n="ph.cr3k">Mobile</span><span class="v" style="color:var(--dark-paper)" data-i18n="ph.cr3v">The whole surface</span></div>
-</div>
-</div>
-</div>
+<section class="sek">
+  <div class="w">
+    <div>
+      <div class="sek-hode" style="margin-bottom:0;max-width:860px">
+        <div data-i18n-html="ns.prosjekthotell.086" class="eyebrow"><span class="t">Tilpasset dere</span><span class="strek"></span><span>Ta kontakt for en gjennomgang</span></div>
+        <h2 data-i18n-html="ns.prosjekthotell.087" class="h2">Se Prosjekthotell på deres eget prosjekt.</h2>
+        <p data-i18n-html="ns.prosjekthotell.088" class="lede">Vi setter opp ett av prosjektene deres og viser hvordan dokumenter, frister og BIM henger sammen. Vi setter opp produktet med deres data og brukere, og prisen avtales etter hva dere trenger.</p>
+        <div data-i18n-html="ns.prosjekthotell.089" class="btns"><a class="btn" href="/contact">Book en gjennomgang <span aria-hidden="true">→</span></a></div>
+        <p data-i18n-html="ns.prosjekthotell.090" class="liten mt-s">Software: <b>Olav Aukan Stenersen</b> <span class="mono">+47 907 00 719</span> · <b>Sofie Thire</b> <span class="mono">+47 912 42 705</span></p>
+      </div>
+    </div>
+    <nav data-i18n-attr-aria-label="ns.prosjekthotell.091" class="lopnav mt-l" aria-label="Løpet"><a data-i18n-html="ns.prosjekthotell.092" href="/mulighetsstudie"><span class="k">← 02 · Vurder</span><b>Mulighetsstudie</b></a><a data-i18n-html="ns.prosjekthotell.093" href="/salgskonsoll"><span class="k">04 · Selg →</span><b>Salgskonsoll</b></a></nav>
+  </div>
 </section>
 </main>
-<footer>
-<div class="wrap">
-<div class="footer-top">
-<div>
-<div class="f-brand"><span class="lm"></span>Builtly</div>
-<div class="f-tag" data-i18n="f2.tag">Rådgivende ingeniører og egenutviklet software for bygg, anlegg og eiendom.</div>
-</div>
-<div class="f-col">
-<h5 data-i18n="f2.services.h">Tjenester</h5>
-<ul>
-<li><a href="/tjenester/geoteknikk.html" data-i18n="f2.services.geo">Geoteknikk</a></li>
-<li><a href="/tjenester/konstruksjon.html" data-i18n="f2.services.str">Konstruksjon</a></li>
-<li><a href="/tjenester/brannsikkerhet.html" data-i18n="f2.services.fire">Brannsikkerhet</a></li>
-<li><a href="/tjenester/akustikk.html" data-i18n="f2.services.aco">Akustikk</a></li>
-<li><a href="/tjenester/miljo.html" data-i18n="f2.services.env">Miljø og bærekraft</a></li>
-<li><a href="/uavhengig-kontroll.html">Uavhengig kontroll</a></li>
-<li><a href="/tjenester.html" data-i18n="f2.services.all">Alle tjenester →</a></li>
-</ul>
-</div>
-<div class="f-col">
-<h5 data-i18n="f2.software.h">Software</h5>
-<ul>
-<li><a href="/software.html" data-i18n="f2.software.overview">Softwareområdet</a></li>
-<li><a href="/prosjekthotell.html">Prosjekthotell</a></li>
-<li><a href="/maps.html" data-i18n="f2.software.maps">Builtly Maps</a></li>
-<li><a href="/salgskonsoll.html">Salgskonsoll</a></li>
-<li><a href="/mulighetsstudie.html">Mulighetsstudie</a></li>
-<li><a href="/render.html">Builtly Render</a></li>
-<li><a href="/control.html">Builtly Control</a></li>
-<li><a href="/bim-viewer.html" data-i18n="f2.software.bim">BIM Viewer</a></li>
-<li><a href="/platform.html" data-i18n="f2.software.platform">Plattformen</a></li>
-<li><a href="/verktoy.html" data-i18n="f2.software.tools">Verktøykassen</a></li>
-<li><a href="https://portal.builtly.ai" data-i18n="f2.software.portal">Logg inn i portalen</a></li>
-</ul>
-</div>
-<div class="f-col">
-<h5 data-i18n="f2.company.h">Selskapet</h5>
-<ul>
-<li><a href="/about.html" data-i18n="f2.company.about">Om Builtly</a></li>
-<li><a href="/slik-jobber-vi.html" data-i18n="f2.company.method">Slik jobber vi</a></li>
-<li><a href="/referanser.html" data-i18n="f2.company.references">Referanser</a></li>
-<li><a href="/careers.html" data-i18n="f2.company.careers">Karriere</a></li>
-<li><a href="/contact.html" data-i18n="f2.company.contact">Kontakt</a></li>
-<li><a href="/trust.html" data-i18n="f2.company.trust">Trust &amp; sikkerhet</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bot fbot2">
-<style>
-.fbot2{display:grid !important;grid-template-columns:1fr auto 1fr;gap:14px 24px;align-items:baseline}
-.fbot2 .fb-mid{text-align:center;color:var(--ink,#131820);opacity:.8}
-.fbot2 .fb-right{justify-self:end;opacity:.45;font-size:10px;letter-spacing:0.16em;text-transform:uppercase}
-.fbot2 .fb-legal{grid-column:1 / -1;margin-top:6px;padding-top:16px;border-top:1px solid rgba(19,24,32,.07);display:grid;grid-template-columns:1fr auto;gap:8px 24px}
-.fbot2 .fb-legal .footer-legal:last-child{text-align:right}
-@media (max-width:760px){
-.fbot2{grid-template-columns:1fr;text-align:center;gap:10px}
-.fbot2 .fb-right{justify-self:center}
-.fbot2 .fb-legal{grid-template-columns:1fr}
-.fbot2 .fb-legal .footer-legal:last-child{text-align:center}
-}
-</style>
-<span data-i18n="f2.bot.left">© 2026 Builtly Engineering</span>
-<span class="fb-mid" data-i18n="f2.bot.right">Fremtidens ingeniørselskap. Allerede her.</span>
-<a class="fb-right" href="/intern" title="Intern portal — styret og ansatte">Intern&nbsp;→</a>
-<div class="fb-legal">
-<span class="footer-legal">Builtly Engineering AS · Org.nr 837 694 892 · Bassengbakken 4, 7042 Trondheim</span>
-<span class="footer-legal"><a href="/privacy">Personvern</a> · <a href="/terms">Vilkår</a> · <a href="/cookies">Informasjonskapsler</a> · <a href="/etiske-retningslinjer.html">Etiske retningslinjer</a> · <a href="/apenhetsloven.html">Åpenhetsloven</a></span>
-</div>
-</div>
-</div>
+<footer class="fot">
+  <div class="w">
+    <div class="fot-topp">
+      <div>
+        <a class="logo" href="/"><span class="logo-mark"></span>Builtly</a>
+        <p class="tag" data-i18n-html="ns.fot.tag">Fremtidens ingeniørselskap. Allerede her.</p>
+      </div>
+      <div><h4 data-i18n-html="ns.fot.rad">Rådgivning</h4><ul>
+        <li><a href="/tjenester/geoteknikk" data-i18n-html="ns.nav.geo">Geoteknikk</a></li>
+        <li><a href="/tjenester/konstruksjon" data-i18n-html="ns.nav.rib">Konstruksjon</a></li>
+        <li><a href="/tjenester/bygningsfysikk" data-i18n-html="ns.nav.fy">Bygningsfysikk</a></li>
+        <li><a href="/uavhengig-kontroll" data-i18n-html="ns.nav.uak">Uavhengig kontroll</a></li></ul></div>
+      <div><h4>Software</h4><ul>
+        <li><a href="/maps">Builtly Maps</a></li>
+        <li><a href="/mulighetsstudie" data-i18n-html="ns.nav.ms">Mulighetsstudie</a></li>
+        <li><a href="/prosjekthotell" data-i18n-html="ns.nav.ph">Prosjekthotell</a></li>
+        <li><a href="/salgskonsoll" data-i18n-html="ns.nav.sk">Salgskonsoll</a></li>
+        <li class="grp" data-i18n-html="ns.fot.ogsaa">Også fra Builtly</li>
+        <li><a href="/render">Render</a> · <a href="/bim-viewer">BIM Viewer</a> · <a href="/control">Control</a></li></ul></div>
+      <div><h4>Builtly</h4><ul>
+        <li><a href="/about" data-i18n-html="ns.nav.om">Om Builtly</a></li>
+        <li><a href="/about#folkene" data-i18n-html="ns.fot.folkene">Folkene</a></li>
+        <li><a href="/referanser" data-i18n-html="ns.fot.referanser">Referanser</a></li>
+        <li><a href="/careers" data-i18n-html="ns.fot.karriere">Karriere</a></li>
+        <li><a href="/contact" data-i18n-html="ns.nav.kontakt">Kontakt</a></li>
+        <li><a href="https://portal.builtly.ai" data-i18n-html="ns.nav.login">Logg inn</a></li></ul></div>
+      <div><h4 data-i18n-html="ns.fot.selskapet">Selskapet</h4><ul>
+        <li><a href="/privacy" data-i18n-html="ns.fot.personvern">Personvern</a></li>
+        <li><a href="/terms" data-i18n-html="ns.fot.vilkar">Vilkår</a></li>
+        <li><a href="/cookies" data-i18n-html="ns.fot.cookies">Informasjonskapsler</a></li>
+        <li><a href="/trust" data-i18n-html="ns.fot.trust">Sikkerhet og data</a></li>
+        <li><a href="/etiske-retningslinjer" data-i18n-html="ns.fot.etikk">Etiske retningslinjer</a></li>
+        <li><a href="/apenhetsloven" data-i18n-html="ns.fot.apenhet">Åpenhetsloven</a></li></ul></div>
+    </div>
+    <div class="fot-bunn">
+      <span>Builtly Engineering AS · Org.nr 837 694 892 · Bassengbakken 4, 7042 Trondheim</span>
+      <span class="sprak"><a href="?lang=no&amp;lang_src=manual" data-sprak="no">Norsk</a> · <a href="?lang=en&amp;lang_src=manual" data-sprak="en">English</a> · <a href="/intern" title="Intern portal">Intern →</a></span>
+    </div>
+  </div>
 </footer>
-<script>
-(function(){
-  if(!('IntersectionObserver' in window)){document.querySelectorAll('.rv').forEach(function(e){e.classList.add('in')});return}
-  var obs=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('in');obs.unobserve(entry.target)}})},{threshold:0.12,rootMargin:'0px 0px -60px 0px'});
-  document.querySelectorAll('.rv').forEach(function(e){obs.observe(e)});
-})();
-document.querySelectorAll('a[href^="#"]').forEach(function(link){
-  link.addEventListener('click',function(e){
-    var t=document.querySelector(this.getAttribute('href'));
-    if(t){e.preventDefault();var top=t.getBoundingClientRect().top+window.pageYOffset-60;window.scrollTo({top:top,behavior:'smooth'});}
-  });
-});
-</script>
-<script src="/i18n.js?v=20260921-control2" defer></script>
 </body>
 </html>
