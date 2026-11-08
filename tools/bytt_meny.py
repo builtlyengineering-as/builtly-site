@@ -16,7 +16,7 @@ import re
 import sys
 
 ROT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VERSJON = "20261108-1"
+VERSJON = "20261108-2"
 
 SIDER = {
     "apenhetsloven.html": "",

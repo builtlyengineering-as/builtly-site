@@ -30,7 +30,7 @@ from html.parser import HTMLParser
 
 ROT = pathlib.Path(__file__).resolve().parents[2]
 HER = pathlib.Path(__file__).resolve().parent
-VERSJON = "20261108-1"
+VERSJON = "20261108-2"
 SITE = "https://www.builtly.ai"
 PORTAL = "https://portal.builtly.ai"
 
