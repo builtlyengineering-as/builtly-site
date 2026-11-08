@@ -311,6 +311,8 @@ def uak_side():
     for c in re.findall(r'class="([^"]+)"', topp + kontakt):
         klasser.update(c.split())
     klasser.add("nt")
+    # Klassene sløyfen får fra JS-en (ikke i HTML-en), ellers forsvinner reglene for aktivt og ferdig steg.
+    klasser.update({"aktiv", "ferdig"})
     film_js = (HER / "nettsted.js").read_text(encoding="utf-8")
     film_js = film_js[film_js.index("  // Sløyfen i toppen"):film_js.index("  // Språkvalget")]
     stil = f"<style>/* Laget av tools/nettsted/lag.py fra nettsted.css */{scoped_css(klasser)}</style>"
