@@ -4,7 +4,7 @@
  "ns.software.003": "Four products that follow the development project: find the site, assess what it can take, deliver the project and sell the homes. Use one of them or all four, set up for your company.",
  "ns.software.004": "<a class=\"btn\" href=\"/contact\">Book a walkthrough <span aria-hidden=\"true\">→</span></a><a class=\"btn btn-ghost\" href=\"#kap-1\">See the journey</a>",
  "ns.software.005": "01 · Find",
- "ns.software.006": "Builtly Maps",
+ "ns.software.006": "Maps",
  "ns.software.007": "Everything about the property, in one place.",
  "ns.software.008": "02 · Assess",
  "ns.software.009": "Mulighetsstudie",
@@ -23,7 +23,7 @@
  "ns.software.022": "<a href=\"#kap-4\">04 Salgskonsoll</a><span class=\"spor\"><i></i></span>",
  "ns.software.023": "<b>From site to handover</b><span>Four products</span>",
  "ns.software.024": "§ 01 · Find",
- "ns.software.025": "Builtly Maps",
+ "ns.software.025": "Maps",
  "ns.software.026": "Everything about the property, in one place. Look up an address and see owner, zoning, risk and market in one property card.",
  "ns.software.027": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg><span>Cadastral data, area, buildings and registered owner</span>",
  "ns.software.028": "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12.5l4.5 4.5L19 7.5\"/></svg><span>Over 60 map layers from NVE, NGU, DiBK and more</span>",
@@ -106,8 +106,8 @@
  "ns.software.172": "Walkthrough, setup and price for Maps, Mulighetsstudie, Prosjekthotell and Salgskonsoll.",
  "ns.software.173": "sofie@builtly.ai",
  "ns.software._tittel": "Software · Builtly",
- "ns.software._beskrivelse": "Four products that follow the development project: Builtly Maps, Mulighetsstudie, Prosjekthotell and Salgskonsoll.",
+ "ns.software._beskrivelse": "Four products that follow the development project: Maps, Mulighetsstudie, Prosjekthotell and Salgskonsoll.",
  "ns.software.bilde.alt": "Mulighetsstudie, the Property step: the site fetched from the cadastre, orthophoto with the site boundary and the preliminary building area",
  "ns.software.bilde.ph.alt": "Prosjekthotell, the project overview: folders, documents, coordination model, tasks and deadlines, and schedule",
- "ns.software.bilde.maps.alt": "Builtly Maps: a property in the 3D map with the property card and property details with value estimate, key data, zoning plan and risk profile"
+ "ns.software.bilde.maps.alt": "Maps: a property in the 3D map with the property card and property details with value estimate, key data, zoning plan and risk profile"
 }

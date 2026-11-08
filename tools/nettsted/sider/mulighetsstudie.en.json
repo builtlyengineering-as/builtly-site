@@ -1,5 +1,5 @@
 {
- "ns.mulighetsstudie.001": "<span class=\"ruten\">2</span>Builtly Mulighetsstudie",
+ "ns.mulighetsstudie.001": "<span class=\"ruten\">2</span>Mulighetsstudie",
  "ns.mulighetsstudie.002": "What can the site take?<br><span class=\"aks\">Three concepts, calculated.</span>",
  "ns.mulighetsstudie.003": "From property to decision basis: zoning, development alternatives with areas, sun and shadow, and project economics, with measured and traceable figures.",
  "ns.mulighetsstudie.004": "<a class=\"btn\" href=\"/contact\">Book a walkthrough <span aria-hidden=\"true\">→</span></a><a class=\"btn btn-ghost\" href=\"/software\">See all four products</a>",
@@ -56,7 +56,7 @@
  "ns.mulighetsstudie.072": "<a class=\"btn\" href=\"/contact\">Book a walkthrough <span aria-hidden=\"true\">→</span></a>",
  "ns.mulighetsstudie.073": "Software: <b>Olav Aukan Stenersen</b> <span class=\"mono\">+47 907 00 719</span> · <b>Sofie Thire</b> <span class=\"mono\">+47 912 42 705</span>",
  "ns.mulighetsstudie.074": "The flow",
- "ns.mulighetsstudie.075": "<span class=\"k\">← 01 · Find</span><b>Builtly Maps</b>",
+ "ns.mulighetsstudie.075": "<span class=\"k\">← 01 · Find</span><b>Maps</b>",
  "ns.mulighetsstudie.076": "<span class=\"k\">03 · Develop →</span><b>Prosjekthotell</b>",
  "ns.mulighetsstudie._tittel": "Mulighetsstudie · Software · Builtly",
  "ns.mulighetsstudie._beskrivelse": "What can the site take? Mulighetsstudie retrieves zoning, neighbours and terrain, and builds and ranks three concepts with areas, sun and economics.",

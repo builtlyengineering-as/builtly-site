@@ -1,5 +1,5 @@
 {
- "ns.maps.001": "<span class=\"ruten\">1</span>Builtly Maps",
+ "ns.maps.001": "<span class=\"ruten\">1</span>Maps",
  "ns.maps.002": "Everything about the property.<br><span class=\"aks\">In one place.</span>",
  "ns.maps.003": "Look up an address, a cadastral unit (gnr/bnr) or a company. Owner, zoning, risk and market are in one property card, and you can take the property straight on to a mulighetsstudie.",
  "ns.maps.004": "<a class=\"btn\" href=\"/contact\">Book a walkthrough <span aria-hidden=\"true\">→</span></a><a class=\"btn btn-ghost\" href=\"/software\">See all four products</a>",
@@ -16,7 +16,7 @@
  "ns.maps.015": "<span class=\"t\">01 · Find</span><span class=\"strek\"></span><span>What it looks like</span>",
  "ns.maps.016": "Maps in use.",
  "ns.maps.017": "For developers, property advisers, estate agents and architects.",
- "ns.maps.018": "The screenshot is from Builtly Maps, with a property in Trondheim.",
+ "ns.maps.018": "The screenshot is from Maps, with a property in Trondheim.",
  "ns.maps.035": "<span>What you get</span>",
  "ns.maps.036": "Concrete, from day one.",
  "ns.maps.037": "The property card",
@@ -58,7 +58,7 @@
  "ns.maps.073": "The journey",
  "ns.maps.074": "<span class=\"k\">← Software</span><b>The full journey</b>",
  "ns.maps.075": "<span class=\"k\">02 · Assess →</span><b>Mulighetsstudie</b>",
- "ns.maps._tittel": "Builtly Maps · Software · Builtly",
+ "ns.maps._tittel": "Maps · Software · Builtly",
  "ns.maps._beskrivelse": "Everything about the property in one place: property, owners, zoning and risk for any address.",
- "ns.maps.bilde.alt": "Builtly Maps: a property in the 3D map with the property card and property details with value estimate, key data, zoning plan and risk profile"
+ "ns.maps.bilde.alt": "Maps: a property in the 3D map with the property card and property details with value estimate, key data, zoning plan and risk profile"
 }
