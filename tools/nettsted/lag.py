@@ -122,7 +122,7 @@ def meny(aktiv):
       <div class="dd">
         <button class="dd-btn{' on' if aktiv == 'software' else ''}" type="button" aria-expanded="false" aria-controls="dd-sw">Software {CHEV}</button>
         <div class="dd-panel" id="dd-sw">
-          <a class="dd-i" href="/maps"><span class="k">01</span><b>Builtly Maps</b>{k('nav.maps.t', 'Alt om eiendommen, på ett sted')}</a>
+          <a class="dd-i" href="/maps"><span class="k">01</span><b>Maps</b>{k('nav.maps.t', 'Alt om eiendommen, på ett sted')}</a>
           <a class="dd-i" href="/mulighetsstudie"><span class="k">02</span>{k('nav.ms', 'Mulighetsstudie', 'b')}{k('nav.ms.t', 'Hva tomta tåler: alternativer, sol og økonomi')}</a>
           <a class="dd-i" href="/prosjekthotell"><span class="k">03</span>{k('nav.ph', 'Prosjekthotell', 'b')}{k('nav.ph.t', 'Hele prosjektet i ett rom')}</a>
           <a class="dd-i" href="/salgskonsoll"><span class="k">04</span>{k('nav.sk', 'Salgskonsoll', 'b')}{k('nav.sk.t', 'Fra første interessent til siste bolig solgt')}</a>
@@ -148,7 +148,7 @@ def meny(aktiv):
         <a href="/uavhengig-kontroll"><span data-i18n-html="ns.nav.uak">Uavhengig kontroll</span> <span data-i18n-html="ns.nav.uak.pris">20 000 kr per fag</span></a>
         <a href="/tjenester"><span data-i18n-html="ns.nav.rad.alt2">Alt om rådgivning</span> <span>→</span></a></div>
       <div><h4>Software</h4>
-        <a href="/maps">Builtly Maps <span data-i18n-html="ns.nav.fase1">01 Finn</span></a>
+        <a href="/maps">Maps <span data-i18n-html="ns.nav.fase1">01 Finn</span></a>
         <a href="/mulighetsstudie"><span data-i18n-html="ns.nav.ms">Mulighetsstudie</span> <span data-i18n-html="ns.nav.fase2">02 Vurder</span></a>
         <a href="/prosjekthotell"><span data-i18n-html="ns.nav.ph">Prosjekthotell</span> <span data-i18n-html="ns.nav.fase3">03 Utvikle</span></a>
         <a href="/salgskonsoll"><span data-i18n-html="ns.nav.sk">Salgskonsoll</span> <span data-i18n-html="ns.nav.fase4">04 Selg</span></a>
@@ -178,7 +178,7 @@ def bunntekst():
         <li><a href="/tjenester/bygningsfysikk" data-i18n-html="ns.nav.fy">Bygningsfysikk</a></li>
         <li><a href="/uavhengig-kontroll" data-i18n-html="ns.nav.uak">Uavhengig kontroll</a></li></ul></div>
       <div><h4>Software</h4><ul>
-        <li><a href="/maps">Builtly Maps</a></li>
+        <li><a href="/maps">Maps</a></li>
         <li><a href="/mulighetsstudie" data-i18n-html="ns.nav.ms">Mulighetsstudie</a></li>
         <li><a href="/prosjekthotell" data-i18n-html="ns.nav.ph">Prosjekthotell</a></li>
         <li><a href="/salgskonsoll" data-i18n-html="ns.nav.sk">Salgskonsoll</a></li>

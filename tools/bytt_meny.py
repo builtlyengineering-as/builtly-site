@@ -76,7 +76,7 @@ FOOTER_TOP_NY = """<div class="footer-top">
 <div class="f-col">
 <h5>Software</h5>
 <ul>
-<li><a href="/maps">Builtly Maps</a></li>
+<li><a href="/maps">Maps</a></li>
 <li><a href="/mulighetsstudie" data-i18n="ns.nav.ms">Mulighetsstudie</a></li>
 <li><a href="/prosjekthotell" data-i18n="ns.nav.ph">Prosjekthotell</a></li>
 <li><a href="/salgskonsoll" data-i18n="ns.nav.sk">Salgskonsoll</a></li>
