@@ -32,10 +32,6 @@
       "destination": "/referanser.html"
     },
     {
-      "source": "/slik-jobber-vi",
-      "destination": "/slik-jobber-vi.html"
-    },
-    {
       "source": "/kontakt",
       "destination": "/contact.html"
     },
@@ -48,20 +44,8 @@
       "destination": "/about.html"
     },
     {
-      "source": "/verktoy",
-      "destination": "/verktoy.html"
-    },
-    {
-      "source": "/platform",
-      "destination": "/platform.html"
-    },
-    {
       "source": "/maps",
       "destination": "/maps.html"
-    },
-    {
-      "source": "/industries",
-      "destination": "/industries.html"
     },
     {
       "source": "/careers",
@@ -149,6 +133,121 @@
         }
       ],
       "destination": "https://portal.builtly.ai/?vis=render",
+      "permanent": false
+    },
+    {
+      "source": "/slik-jobber-vi",
+      "destination": "/about#slik-jobber-vi",
+      "permanent": false
+    },
+    {
+      "source": "/slik-jobber-vi.html",
+      "destination": "/about#slik-jobber-vi",
+      "permanent": false
+    },
+    {
+      "source": "/verktoy",
+      "destination": "/software",
+      "permanent": false
+    },
+    {
+      "source": "/verktoy.html",
+      "destination": "/software",
+      "permanent": false
+    },
+    {
+      "source": "/platform",
+      "destination": "/software",
+      "permanent": false
+    },
+    {
+      "source": "/platform.html",
+      "destination": "/software",
+      "permanent": false
+    },
+    {
+      "source": "/industries",
+      "destination": "/software",
+      "permanent": false
+    },
+    {
+      "source": "/industries.html",
+      "destination": "/software",
+      "permanent": false
+    },
+    {
+      "source": "/tjenester/akustikk",
+      "destination": "/tjenester",
+      "permanent": false
+    },
+    {
+      "source": "/tjenester/akustikk.html",
+      "destination": "/tjenester",
+      "permanent": false
+    },
+    {
+      "source": "/tjenester/brannsikkerhet",
+      "destination": "/tjenester",
+      "permanent": false
+    },
+    {
+      "source": "/tjenester/brannsikkerhet.html",
+      "destination": "/tjenester",
+      "permanent": false
+    },
+    {
+      "source": "/tjenester/byggherrestotte",
+      "destination": "/tjenester",
+      "permanent": false
+    },
+    {
+      "source": "/tjenester/byggherrestotte.html",
+      "destination": "/tjenester",
+      "permanent": false
+    },
+    {
+      "source": "/tjenester/miljo",
+      "destination": "/tjenester",
+      "permanent": false
+    },
+    {
+      "source": "/tjenester/miljo.html",
+      "destination": "/tjenester",
+      "permanent": false
+    },
+    {
+      "source": "/tjenester/sha",
+      "destination": "/tjenester",
+      "permanent": false
+    },
+    {
+      "source": "/tjenester/sha.html",
+      "destination": "/tjenester",
+      "permanent": false
+    },
+    {
+      "source": "/tjenester/teknisk-dd",
+      "destination": "/tjenester",
+      "permanent": false
+    },
+    {
+      "source": "/tjenester/teknisk-dd.html",
+      "destination": "/tjenester",
+      "permanent": false
+    },
+    {
+      "source": "/tjenester/trafikk",
+      "destination": "/tjenester",
+      "permanent": false
+    },
+    {
+      "source": "/tjenester/trafikk.html",
+      "destination": "/tjenester",
+      "permanent": false
+    },
+    {
+      "source": "/radgivning",
+      "destination": "/tjenester",
       "permanent": false
     },
     {

@@ -1,1178 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" data-i18n-attr-content="trust.desc" content="Trust at Builtly Engineering — security architecture, data handling, audit and regulatory compliance for engineering deliverables." />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title data-i18n="ns.trust._tittel">Sikkerhet og data · Builtly</title>
+<meta name="description" content="Slik behandler Builtly data i softwaren og i rådgivningen: dere eier dataene, data i EU, ingen trening på kundedata, og hvilke KI-modeller vi bruker." data-i18n-attr-content="ns.trust._beskrivelse" />
 <meta name="theme-color" content="#FAFAF7" />
-<title data-i18n="trust.title">Trust · Builtly Engineering</title>
+<link rel="canonical" href="https://www.builtly.ai/trust" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="nb_NO" />
+<meta property="og:site_name" content="Builtly" />
+<meta property="og:url" content="https://www.builtly.ai/trust" />
+<meta property="og:title" content="Sikkerhet og data · Builtly" />
+<meta property="og:description" content="Slik behandler Builtly data i softwaren og i rådgivningen: dere eier dataene, data i EU, ingen trening på kundedata, og hvilke KI-modeller vi bruker." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=JetBrains+Mono:wght@400..600&display=swap" rel="stylesheet" />
-<style>
-:root{
-  --bg:#FAFAF7;
-  --bg-soft:#F1EEE6;
-  --bg-warm:#EDE9DF;
-  --ink:#131820;
-  --ink-soft:#2A323C;
-  --mid:#6A6E76;
-  --grey:#B8B5AD;
-  --dark:#131820;
-  --dark-soft:#1C232D;
-  --dark-paper:#F7F4ED;
-  --line:rgba(19,24,32,0.10);
-  --line-strong:rgba(19,24,32,0.22);
-  --line-dark:rgba(247,244,237,0.10);
-  --line-dark-strong:rgba(247,244,237,0.20);
-  --accent:#14B8A6;
-  --accent-bright:#2DD4BF;
-  --accent-soft:#0D9488;
-  --font-display:'Manrope','Helvetica Neue',system-ui,sans-serif;
-  --font-body:'Manrope','Helvetica Neue',system-ui,sans-serif;
-  --font-serif:'Newsreader','Times New Roman',serif;
-  --font-mono:'JetBrains Mono',Menlo,monospace;
-  --max:1440px;
-  --gutter:clamp(24px,4.5vw,72px);
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.55;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;font-feature-settings:"ss01","cv11"}
-::selection{background:var(--ink);color:var(--bg)}
-h1,h2,h3,h4,h5{font-family:var(--font-display);font-weight:600;color:inherit;margin:0;line-height:1.05;letter-spacing:-0.022em}
-.dpy-1{font-size:clamp(40px,5.8vw,84px);line-height:1.02;letter-spacing:-0.028em;font-weight:500}
-.dpy-2{font-size:clamp(32px,4.4vw,64px);line-height:1.05;letter-spacing:-0.024em;font-weight:500}
-.dpy-3{font-size:clamp(24px,2.8vw,36px);line-height:1.1;letter-spacing:-0.02em;font-weight:600}
-.dpy-4{font-size:clamp(20px,2.2vw,28px);line-height:1.18;letter-spacing:-0.015em;font-weight:600}
-.lead{font-size:clamp(17px,1.4vw,22px);line-height:1.5;color:var(--ink-soft);font-weight:400;letter-spacing:-0.005em}
-.serif{font-family:var(--font-serif);font-style:italic;font-weight:400}
-.eyebrow{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;font-weight:500;color:var(--mid)}
-.eyebrow .accent-dot{display:inline-block;width:6px;height:6px;background:var(--accent);margin-right:10px;vertical-align:1px}
-a{color:inherit;text-decoration:none}
-
-.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter);position:relative}
-.section{position:relative;padding:clamp(80px,12vh,140px) 0}
-.section-soft{background:var(--bg-soft)}
-.section-dark{background:var(--dark);color:var(--dark-paper)}
-
-.smark{display:flex;align-items:baseline;gap:14px;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--mid);margin-bottom:clamp(40px,5vh,64px)}
-.section-dark .smark{color:rgba(247,244,237,0.55)}
-.smark .num{color:var(--accent);font-weight:600}
-.section-dark .smark .num{color:var(--accent-bright)}
-.smark .dash{flex:0 0 32px;height:1px;background:currentColor;opacity:0.5}
-
-/* NAV */
-.nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,0.92);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);border-bottom:1px solid var(--line)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px var(--gutter);max-width:var(--max);margin:0 auto;gap:32px}
-.logo{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-0.018em;color:var(--ink)}
-.logo-mark{display:inline-flex;width:26px;height:26px;border:1.5px solid var(--ink);border-radius:5px;align-items:center;justify-content:center;position:relative}
-.logo-mark::before{content:"";position:absolute;top:5px;right:5px;width:6px;height:6px;background:var(--accent);border-radius:50%}
-.logo .sub{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--mid);font-weight:500;margin-left:4px}
-.nav-links{display:flex;gap:clamp(20px,2.2vw,32px);font-size:14px;font-weight:500;color:var(--ink-soft);letter-spacing:-0.005em}
-.nav-links a{position:relative;padding:6px 0;transition:color 0.18s}
-.nav-links a:hover{color:var(--accent)}
-.nav-links a.active{color:var(--accent)}
-
-@media (max-width:1240px){.nav-links{gap:14px;font-size:13.5px}}
-@media (max-width:1140px){.nav-links{gap:9px;font-size:12.5px}}
-@media (max-width:1040px){.nav-links{display:none}}
-/* MOBILE MENU */
-.nav-burger{display:none;width:38px;height:38px;flex:0 0 auto;border:1px solid var(--line-strong);background:none;cursor:pointer;position:relative;padding:0}
-.nav-burger span{display:block;width:16px;height:1.5px;background:var(--ink);position:absolute;left:50%;transform:translateX(-50%);transition:transform .22s ease,opacity .16s ease,top .22s ease}
-.nav-burger span:nth-child(1){top:13px}
-.nav-burger span:nth-child(2){top:18px}
-.nav-burger span:nth-child(3){top:23px}
-body.menu-open .nav-burger span:nth-child(1){top:18px;transform:translateX(-50%) rotate(45deg)}
-body.menu-open .nav-burger span:nth-child(2){opacity:0}
-body.menu-open .nav-burger span:nth-child(3){top:18px;transform:translateX(-50%) rotate(-45deg)}
-.mobile-menu{display:none;position:fixed;inset:0;z-index:90;background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch;padding:96px var(--gutter) 44px;flex-direction:column}
-body.menu-open .mobile-menu{display:flex}
-body.menu-open{overflow:hidden}
-.mobile-menu .mm-eyebrow{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:0.16em;color:var(--mid);padding-bottom:10px;border-bottom:1px solid var(--line-strong)}
-.mobile-menu .mm-link{display:flex;align-items:baseline;gap:16px;padding:17px 2px;border-bottom:1px solid var(--line);font-family:var(--font-display);font-size:23px;font-weight:500;letter-spacing:-0.015em;color:var(--ink)}
-.mobile-menu .mm-num{font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;color:var(--mid)}
-.mobile-menu .mm-link.active .mm-lab{color:var(--accent-soft)}
-.mobile-menu .mm-cta{margin-top:30px;align-self:flex-start;padding:12px 22px;font-size:13px}
-@media (max-width:1040px){.nav-burger{display:block}}
-@media (max-width:640px){.nav .btn-ghost{display:none}}
-@media (min-width:1041px){body.menu-open .mobile-menu{display:none}body.menu-open{overflow:auto}}
-@media (prefers-reduced-motion:no-preference){body.menu-open .mobile-menu{animation:mmIn .22s ease}@keyframes mmIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;background:var(--ink);color:var(--bg);font-family:var(--font-display);font-size:13px;font-weight:600;letter-spacing:-0.005em;border:0;cursor:pointer;white-space:nowrap;transition:background 0.18s ease}
-.nav-cta{display:flex;align-items:center;gap:12px}.nav .btn{padding:8px 15px;font-size:12px}.nav .btn-ghost{padding:7px 14px}.maps-icon{display:none;width:15px;height:15px}@media (max-width:640px){.nav-cta{gap:9px}.nav .btn-ghost{padding:8px 9px}.maps-label{display:none}.maps-icon{display:block}}@media (max-width:400px){.nav-inner{gap:9px}.nav-cta{gap:7px}.nav .btn{padding:7px 11px;font-size:11.5px}.nav .btn-ghost{padding:7px 8px}}
-.btn:hover{background:var(--accent)}
-.btn .arr{transition:transform 0.18s ease}
-.btn:hover .arr{transform:translateX(3px)}
-.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line-strong);padding:10px 17px}
-.btn-ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-@media (max-width:520px){.nav-inner{gap:14px;padding:14px var(--gutter)}.logo .sub{display:none}.btn{padding:9px 14px;font-size:12px}}
-
-/* HERO */
-.hero{padding:clamp(80px,12vh,140px) 0 clamp(56px,9vh,96px)}
-.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(40px,5vw,96px);align-items:end}
-@media (max-width:1000px){.hero-grid{grid-template-columns:1fr;gap:40px}}
-.hero h1{margin-top:20px}
-.hero .lead{margin-top:32px;max-width:50ch}
-.hero-meta{display:flex;flex-direction:column;align-self:end;padding-bottom:8px}
-.hero-meta .row{padding:16px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;align-items:baseline}
-.hero-meta .row:first-child{border-top:1px solid var(--ink)}
-.hero-meta .row .k{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--mid)}
-.hero-meta .row .v{font-family:var(--font-display);font-size:14px;font-weight:500;color:var(--ink);letter-spacing:-0.005em;text-align:right}
-.hero-meta .row .v .accent-text{color:var(--accent)}
-
-/* JUMP NAV */
-.jump-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
-.jump-inner{max-width:var(--max);margin:0 auto;padding:18px var(--gutter);display:flex;flex-wrap:wrap;align-items:center;gap:clamp(16px,2.4vw,32px);font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--mid)}
-.jump-inner .lbl{color:var(--ink-soft);font-weight:600}
-.jump-inner a{padding:6px 0;transition:color 0.18s;border-bottom:1px solid transparent}
-.jump-inner a:hover{color:var(--accent);border-bottom-color:var(--accent)}
-.jump-inner .sep{opacity:0.4}
-
-/* PRINCIPLES */
-.princ-section{background:var(--bg-soft)}
-.princ-top{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,5vw,96px);align-items:end;margin-bottom:clamp(48px,7vh,72px)}
-@media (max-width:900px){.princ-top{grid-template-columns:1fr}}
-.princ-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-strong);border:1px solid var(--line-strong)}
-@media (max-width:900px){.princ-grid{grid-template-columns:1fr}}
-.princ-cell{background:var(--bg-soft);padding:clamp(28px,3.6vw,40px);display:flex;flex-direction:column;min-height:240px}
-.princ-cell .ix{font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);font-weight:600;margin-bottom:18px}
-.princ-cell h4{font-size:clamp(20px,2.2vw,26px);font-weight:600;letter-spacing:-0.018em;color:var(--ink);margin-bottom:14px;line-height:1.15}
-.princ-cell p{margin:0;color:var(--ink-soft);font-size:14.5px;line-height:1.6;flex-grow:1}
-
-/* DOMAIN BLOCKS */
-.dom-section{background:var(--bg)}
-.dom-section.alt{background:var(--bg-soft)}
-.dom-section.dark{background:var(--dark);color:var(--dark-paper)}
-.dom-intro{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,5vw,96px);align-items:end;margin-bottom:clamp(48px,7vh,72px)}
-@media (max-width:900px){.dom-intro{grid-template-columns:1fr}}
-.dom-section.dark .dom-intro p{color:rgba(247,244,237,0.86)}
-
-.dom-block{display:grid;grid-template-columns:0.7fr 2fr 1.2fr;gap:clamp(24px,3.5vw,56px);padding:clamp(28px,4vh,44px) 0;border-top:1px solid var(--ink);align-items:start}
-.dom-section.dark .dom-block{border-top:1px solid var(--line-dark-strong)}
-@media (max-width:900px){.dom-block{grid-template-columns:1fr;gap:20px}}
-
-.dom-id .code{font-family:var(--font-display);font-size:clamp(28px,3.4vw,46px);font-weight:500;letter-spacing:-0.028em;color:var(--ink);line-height:1;margin-bottom:8px}
-.dom-section.dark .dom-id .code{color:var(--dark-paper)}
-.dom-id .nm{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;font-weight:600;color:var(--accent);line-height:1.5}
-.dom-section.dark .dom-id .nm{color:var(--accent-bright)}
-.dom-id .ix{font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.14em;color:var(--mid);margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
-.dom-section.dark .dom-id .ix{color:rgba(247,244,237,0.55);border-top-color:var(--line-dark)}
-
-.dom-body h4{font-size:clamp(20px,2.2vw,28px);font-weight:600;letter-spacing:-0.018em;color:var(--ink);margin-bottom:14px;line-height:1.15}
-.dom-section.dark .dom-body h4{color:var(--dark-paper)}
-.dom-body p{margin:0 0 14px 0;color:var(--ink-soft);font-size:14.5px;line-height:1.6;max-width:58ch}
-.dom-section.dark .dom-body p{color:rgba(247,244,237,0.82)}
-.dom-body p:last-child{margin-bottom:0}
-
-.dom-meta{display:flex;flex-direction:column;gap:0}
-.dom-meta .row{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:10px 0;border-top:1px solid var(--line);align-items:baseline;font-family:var(--font-mono);font-size:12px;line-height:1.55}
-.dom-section.dark .dom-meta .row{border-top-color:var(--line-dark)}
-.dom-meta .row:first-child{border-top:0;padding-top:0}
-.dom-meta .row .k{color:var(--mid);text-transform:uppercase;letter-spacing:0.14em;font-size:10.5px;white-space:nowrap}
-.dom-section.dark .dom-meta .row .k{color:rgba(247,244,237,0.55)}
-.dom-meta .row .v{color:var(--ink);font-weight:500;letter-spacing:-0.005em}
-.dom-section.dark .dom-meta .row .v{color:var(--dark-paper)}
-.dom-meta .level{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);font-weight:600}
-.dom-section.dark .dom-meta .level{border-top-color:var(--line-dark);color:var(--accent-bright)}
-
-/* DATA TABLE */
-.dt-section{background:var(--dark);color:var(--dark-paper)}
-.dt-top{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,5vw,96px);align-items:end;margin-bottom:clamp(48px,7vh,72px)}
-@media (max-width:900px){.dt-top{grid-template-columns:1fr}}
-.dt-top p{color:rgba(247,244,237,0.86)}
-.dt-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-dark-strong);border:1px solid var(--line-dark-strong)}
-@media (max-width:760px){.dt-grid{grid-template-columns:1fr}}
-.dt-cell{background:var(--dark);padding:clamp(24px,3vw,36px)}
-.dt-cell .ix{font-family:var(--font-mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent-bright);font-weight:600;margin-bottom:18px}
-.dt-cell h4{font-size:clamp(18px,2vw,22px);font-weight:600;letter-spacing:-0.015em;color:var(--dark-paper);margin-bottom:14px;line-height:1.2}
-.dt-cell .stack{font-family:var(--font-mono);font-size:12.5px;line-height:1.85;color:rgba(247,244,237,0.82)}
-.dt-cell .stack .r{display:flex;justify-content:space-between;gap:14px;padding:6px 0;border-bottom:1px solid var(--line-dark)}
-.dt-cell .stack .r:last-child{border-bottom:0}
-.dt-cell .stack .r .k{color:rgba(247,244,237,0.55);text-transform:uppercase;letter-spacing:0.14em;font-size:10.5px}
-.dt-cell .stack .r .v{color:var(--dark-paper);font-weight:500;letter-spacing:-0.005em;text-align:right}
-
-/* INSIGHT */
-.insight-section{background:var(--bg);padding:clamp(80px,12vh,140px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.insight-inner{max-width:1000px;margin:0 auto;padding:0 var(--gutter);text-align:center}
-.insight-quote{font-family:var(--font-serif);font-style:italic;font-weight:300;font-size:clamp(26px,3.6vw,46px);line-height:1.22;letter-spacing:-0.018em;color:var(--ink)}
-.insight-quote .accent{color:var(--accent);font-style:normal;font-family:var(--font-display);font-weight:500}
-.insight-attr{margin-top:32px;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.2em;color:var(--mid)}
-
-/* CTA */
-.cta-section{background:var(--bg);padding:clamp(80px,12vh,140px) 0}
-.cta-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(40px,5vw,96px);align-items:end}
-@media (max-width:900px){.cta-grid{grid-template-columns:1fr}}
-.cta-side .row{display:flex;justify-content:space-between;padding:16px 0;border-top:1px solid var(--line);align-items:baseline;font-family:var(--font-mono);font-size:13px}
-.cta-side .row:first-child{border-top:1px solid var(--ink)}
-.cta-side .row .k{color:var(--mid);text-transform:uppercase;letter-spacing:0.14em;font-size:11px}
-.cta-side .row .v{color:var(--ink);font-weight:500;text-align:right}
-.cta-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:48px}
-
-/* FOOTER */
-footer{background:var(--bg-soft);padding:64px 0 28px;color:var(--ink-soft);border-top:1px solid var(--line)}
-.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid var(--line)}
-@media (max-width:800px){.footer-top{grid-template-columns:1fr 1fr;gap:32px}}
-@media (max-width:480px){.footer-top{grid-template-columns:1fr;gap:32px}}
-.f-brand{font-family:var(--font-display);font-size:22px;font-weight:600;letter-spacing:-0.018em;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:10px}
-.f-brand .lm{width:24px;height:24px;border:1.5px solid var(--ink);border-radius:5px;position:relative}
-.f-brand .lm::before{content:"";position:absolute;top:4px;right:4px;width:6px;height:6px;background:var(--accent);border-radius:50%}
-.f-tag{font-size:14px;line-height:1.6;color:var(--mid);max-width:36ch}
-.f-col h5{color:var(--ink);font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;font-weight:600;margin-bottom:18px}
-.f-col ul{list-style:none;margin:0;padding:0}
-.f-col li{padding:5px 0;font-size:14px;line-height:1.5}
-.f-col a:hover{color:var(--accent)}
-.footer-bot{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--mid)}
-
-/* REVEAL */
-.rv{opacity:0;transform:translateY(20px);transition:opacity 0.8s cubic-bezier(0.2,0.7,0.2,1),transform 0.8s cubic-bezier(0.2,0.7,0.2,1)}
-.rv.in{opacity:1;transform:translateY(0)}
-.rvs > *{opacity:0;transform:translateY(18px);transition:opacity 0.65s cubic-bezier(0.2,0.7,0.2,1),transform 0.65s cubic-bezier(0.2,0.7,0.2,1)}
-.rvs.in > *:nth-child(1){opacity:1;transform:translateY(0);transition-delay:0.04s}
-.rvs.in > *:nth-child(2){opacity:1;transform:translateY(0);transition-delay:0.08s}
-.rvs.in > *:nth-child(3){opacity:1;transform:translateY(0);transition-delay:0.12s}
-.rvs.in > *:nth-child(4){opacity:1;transform:translateY(0);transition-delay:0.16s}
-.rvs.in > *:nth-child(5){opacity:1;transform:translateY(0);transition-delay:0.20s}
-.rvs.in > *:nth-child(6){opacity:1;transform:translateY(0);transition-delay:0.24s}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none !important;animation:none !important}.rv,.rvs > *{opacity:1 !important;transform:none !important}html{scroll-behavior:auto}}
-
-/* HERO AMBIENT FLOCKING SUPPORT */
-.hero{position:relative;overflow:hidden}
-.hero-bg-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.55}
-.hero > .wrap{position:relative;z-index:1}
-
-/* LANGUAGE PICKER */
-.lang-wrap{position:relative;display:flex;align-items:center}
-.lang-picker{display:flex;align-items:center;gap:6px;padding:7px 10px 7px 9px;background:transparent;border:1px solid var(--line-strong);color:var(--ink);font-family:var(--font-mono);font-size:11px;font-weight:600;letter-spacing:0.08em;cursor:pointer;transition:all 0.18s ease;line-height:1}
-.lang-picker:hover{background:var(--bg-soft);border-color:var(--ink)}
-.lang-picker .lang-globe{width:13px;height:13px;stroke:currentColor;stroke-width:1.5;fill:none;flex-shrink:0}
-.lang-picker .lang-code{letter-spacing:0.1em}
-.lang-picker .lang-chev{width:9px;height:9px;stroke:currentColor;stroke-width:1.8;fill:none;transition:transform 0.2s ease;margin-left:1px}
-.lang-picker[aria-expanded="true"] .lang-chev{transform:rotate(180deg)}
-.lang-menu{position:absolute;top:calc(100% + 6px);right:0;background:var(--bg);border:1px solid var(--line-strong);min-width:200px;padding:6px;display:flex;flex-direction:column;gap:2px;box-shadow:0 8px 24px rgba(19,24,32,0.08);z-index:120}
-.lang-menu[hidden]{display:none}
-.lang-option{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:9px 12px;background:transparent;border:none;font-family:var(--font-display);font-size:13px;font-weight:500;color:var(--ink);cursor:pointer;text-align:left;transition:background 0.14s ease;letter-spacing:-0.005em;border-radius:0}
-.lang-option:hover{background:var(--bg-soft)}
-.lang-option.active{background:var(--bg-soft)}
-.lang-option .native{font-family:var(--font-mono);font-size:10.5px;color:var(--mid);text-transform:uppercase;letter-spacing:0.1em;font-weight:500}
-.lang-option.active .native{color:var(--accent)}
-.lang-option .check{width:11px;height:11px;stroke:var(--accent);stroke-width:2;fill:none;opacity:0;flex-shrink:0;margin-left:auto}
-.lang-option.active .check{opacity:1}
-.lang-toast{position:fixed;top:0;left:0;right:0;background:var(--ink);color:var(--bg);padding:11px 24px;text-align:center;font-family:var(--font-mono);font-size:11.5px;letter-spacing:0.06em;z-index:200;transform:translateY(-100%);transition:transform 0.35s cubic-bezier(0.2,0.7,0.2,1);pointer-events:none}
-.lang-toast.show{transform:translateY(0);pointer-events:auto}
-.lang-toast .toast-accent{color:var(--accent-bright);font-weight:600}
-@media (max-width:640px){
-  .lang-picker .lang-globe{display:none}
-  .lang-picker{padding:7px 9px}
-  .lang-menu{min-width:180px;right:auto;left:0}
-}
-
-/* ===========================================================================
- * Cookie consent banner — bottom of viewport, dismissable
- * =========================================================================== */
-.cookie-banner {
-  position: fixed;
-  left: clamp(16px, 3vw, 32px);
-  right: clamp(16px, 3vw, 32px);
-  bottom: clamp(16px, 3vw, 32px);
-  background: var(--ink);
-  color: var(--bg);
-  border-radius: 4px;
-  box-shadow: 0 12px 40px rgba(19, 24, 32, 0.18);
-  z-index: 150;
-  transform: translateY(calc(100% + 40px));
-  opacity: 0;
-  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.4s ease;
-  max-width: 720px;
-  margin-left: auto;
-}
-.cookie-banner.show {
-  transform: translateY(0);
-  opacity: 1;
-}
-.cookie-inner {
-  display: flex;
-  align-items: center;
-  gap: clamp(16px, 2.5vw, 28px);
-  padding: 16px clamp(18px, 2.5vw, 24px);
-}
-.cookie-msg {
-  flex: 1;
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: 13px;
-  line-height: 1.5;
-  font-weight: 400;
-  color: rgba(250, 250, 247, 0.88);
-}
-.cookie-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-shrink: 0;
-}
-.cookie-link {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: rgba(250, 250, 247, 0.6);
-  text-decoration: none;
-  transition: color 0.15s ease;
-  white-space: nowrap;
-}
-.cookie-link:hover {
-  color: var(--accent);
-}
-.cookie-accept {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: var(--accent);
-  color: var(--ink);
-  border: none;
-  padding: 9px 18px;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background 0.15s ease, transform 0.1s ease;
-  white-space: nowrap;
-}
-.cookie-accept:hover {
-  background: #1FD2BA;
-}
-.cookie-accept:active {
-  transform: translateY(1px);
-}
-
-@media (max-width: 640px) {
-  .cookie-banner {
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-  }
-  .cookie-inner {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 14px;
-    padding: 16px 18px;
-  }
-  .cookie-actions {
-    justify-content: space-between;
-  }
-  .cookie-msg {
-    font-size: 12.5px;
-  }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/nettsted.css?v=20261107-lansering" />
+<script src="/i18n.js?v=20261107-lansering" defer></script>
+<script src="/nettsted.js?v=20261107-lansering" defer></script>
 </head>
 <body>
-
-<nav class="nav">
-<div class="nav-inner">
-<a href="/" class="logo"><span class="logo-mark"></span>Builtly<span class="sub">Engineering</span></a>
-<div class="nav-links">
-<a href="/tjenester.html" data-i18n="nav.services">Tjenester</a>
-<a href="/software.html" data-i18n="nav.software">Software</a>
-<a href="/referanser.html" data-i18n="nav.references">Referanser</a>
-<a href="/slik-jobber-vi.html" data-i18n="nav.method">Slik jobber vi</a>
-<a href="/about.html" data-i18n="nav.aboutBuiltly">Om Builtly</a>
-<a href="/contact.html" data-i18n="nav.contact">Kontakt</a>
-</div>
-<div class="nav-cta">
-<div class="lang-wrap">
-<button class="lang-picker" id="langPicker" aria-haspopup="true" aria-expanded="false" aria-label="Select language" data-i18n-attr-aria-label="lang.selectLabel">
-<svg class="lang-globe" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c2 2.2 2 10.8 0 13M8 1.5c-2 2.2-2 10.8 0 13"/></svg>
-<span class="lang-code">EN</span>
-<svg class="lang-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-</button>
-<div class="lang-menu" id="langMenu" role="menu" hidden>
-<button class="lang-option active" data-lang="en" role="menuitem">English<span class="native">English</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="lang-option" data-lang="de" role="menuitem">German<span class="native">Deutsch</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="lang-option" data-lang="sv" role="menuitem">Swedish<span class="native">Svenska</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="lang-option" data-lang="no" role="menuitem">Norwegian<span class="native">Norsk</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="lang-option" data-lang="fi" role="menuitem">Finnish<span class="native">Suomi</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-<button class="lang-option" data-lang="da" role="menuitem">Danish<span class="native">Dansk</span><svg class="check" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.5 2.5L9.5 3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-</div>
-</div>
-<a href="https://portal.builtly.ai" class="btn"><span data-i18n="nav.openPortal">Åpne portalen</span> <span class="arr">→</span></a>
-<button class="nav-burger" id="navBurger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
-</div>
-</div>
-</nav>
-<div class="mobile-menu" id="mobileMenu" hidden>
-<div class="mm-eyebrow">Builtly &middot; Meny</div>
-<nav class="mm-links" aria-label="Mobile navigation"></nav>
-<a href="https://portal.builtly.ai" class="btn mm-cta"><span data-i18n="nav.openPortal">Åpne portalen</span> <span class="arr">→</span></a>
-<a href="/bli-kunde.html" class="btn btn-ghost mm-cta" style="margin-top:10px"><span data-i18n="nav.quote">Be om tilbud</span></a>
-</div>
-<script>
-(function(){
-  var burger=document.getElementById('navBurger'),menu=document.getElementById('mobileMenu');
-  if(!burger||!menu)return;
-  menu.removeAttribute('hidden');
-  var wrap=menu.querySelector('.mm-links');
-  var links=document.querySelectorAll('.nav-links a');
-  function close(){document.body.classList.remove('menu-open');burger.setAttribute('aria-expanded','false');}
-  function open(){document.body.classList.add('menu-open');burger.setAttribute('aria-expanded','true');}
-  Array.prototype.forEach.call(links,function(a,i){
-    var c=document.createElement('a');
-    c.href=a.getAttribute('href');
-    c.className='mm-link'+(a.classList.contains('active')?' active':'');
-    var num=document.createElement('span');num.className='mm-num';num.textContent=('0'+(i+1)).slice(-2);
-    var lab=document.createElement('span');lab.className='mm-lab';
-    var k=a.getAttribute('data-i18n');if(k)lab.setAttribute('data-i18n',k);
-    lab.textContent=a.textContent;
-    c.appendChild(num);c.appendChild(lab);
-    c.addEventListener('click',close);
-    wrap.appendChild(c);
-  });
-  burger.addEventListener('click',function(){document.body.classList.contains('menu-open')?close():open();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
-  window.addEventListener('resize',function(){if(window.innerWidth>1040)close();});
-})();
-</script>
-
-<section class="hero" id="top">
-<canvas class="hero-bg-canvas" id="heroBgCanvas" aria-hidden="true"></canvas>
-<div class="wrap">
-<div class="hero-grid rv">
-<div>
-<div class="eyebrow"><span class="accent-dot"></span><span data-i18n="trust.hero.eyebrow">Trust at Builtly Engineering</span></div>
-<h1 class="dpy-1" data-i18n-html="trust.hero.h1">Built for regulated work.</h1>
-<p class="lead" data-i18n-html="trust.hero.lede">Builtly produces deliverables that an engineer signs under professional liability and that a client uses in court-defensible regulatory submissions. <span class="serif" data-i18n="trust.foundation">The platform is built to that standard from the foundation up — not as a feature bolted on for procurement.</span></p>
-</div>
-<div class="hero-meta">
-<div class="row"><span class="k" data-i18n="trust.meta.r1.k">Audit</span><span class="v" data-i18n="trust.meta.r1.v">SHA-256 · every version</span></div>
-<div class="row"><span class="k" data-i18n="trust.meta.r2.k">Auth</span><span class="v" data-i18n="trust.meta.r2.v">Enterprise SSO · RBAC</span></div>
-<div class="row"><span class="k" data-i18n="trust.meta.r3.k">Deployment</span><span class="v" data-i18n="trust.meta.r3.v">Container · edge</span></div>
-<div class="row"><span class="k" data-i18n="trust.meta.r4.k">Data residency</span><span class="v" data-i18n="trust.meta.r4.v">Regional · configurable</span></div>
-<div class="row"><span class="k" data-i18n="trust.meta.r5.k">Status</span><span class="v" data-i18n-html="trust.meta.r5.v"><span class="accent-text">●</span> &nbsp; Production</span></div>
-</div>
-</div>
-</div>
+<!-- Laget av tools/nettsted/lag.py fra tools/nettsted/sider/trust.html. Rediger kilden, ikke denne fila. -->
+<header class="nav">
+  <div class="w nav-in">
+    <a class="logo" href="/" aria-label="Builtly"><span class="logo-mark"></span>Builtly</a>
+    <nav class="nav-links" aria-label="Hovedmeny" data-i18n-attr-aria-label="ns.nav.hovedmeny">
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-rad"><span data-i18n-html="ns.nav.rad">Rådgivning</span> <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
+        <div class="dd-panel" id="dd-rad">
+          <a class="dd-i" href="/tjenester/geoteknikk"><span class="k">RIG</span><b data-i18n-html="ns.nav.geo">Geoteknikk</b><span data-i18n-html="ns.nav.geo.t">Grunnforhold, fundamentering, stabilitet og rapportering</span></a>
+          <a class="dd-i" href="/tjenester/konstruksjon"><span class="k">RIB</span><b data-i18n-html="ns.nav.rib">Konstruksjon</b><span data-i18n-html="ns.nav.rib.t">Bæresystem, dimensjonering og konstruktive vurderinger</span></a>
+          <a class="dd-i" href="/tjenester/bygningsfysikk"><span class="k">RIByfy</span><b data-i18n-html="ns.nav.fy">Bygningsfysikk</b><span data-i18n-html="ns.nav.fy.t">Energi, fukt, lufttetthet og klimaskjerm</span></a>
+          <a class="dd-i" href="/uavhengig-kontroll"><span class="k">UAK</span><b><span data-i18n-html="ns.nav.uak">Uavhengig kontroll</span><i class="ny" data-i18n-html="ns.nav.ny">NY</i></b><span data-i18n-html="ns.nav.uak.t">Tiltaksklasse 2, fast pris 20 000 kr per fag</span></a>
+          <div class="dd-fot"><span data-i18n-html="ns.nav.rad.fot">Rådgivende ingeniører i Trondheim</span><a href="/tjenester" data-i18n-html="ns.nav.rad.alt">Alt om rådgivning →</a></div>
+        </div>
+      </div>
+      <div class="dd">
+        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-sw">Software <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
+        <div class="dd-panel" id="dd-sw">
+          <a class="dd-i" href="/maps"><span class="k">01</span><b>Builtly Maps</b><span data-i18n-html="ns.nav.maps.t">Alt om eiendommen, på ett sted</span></a>
+          <a class="dd-i" href="/mulighetsstudie"><span class="k">02</span><b data-i18n-html="ns.nav.ms">Mulighetsstudie</b><span data-i18n-html="ns.nav.ms.t">Hva tomta tåler: alternativer, sol og økonomi</span></a>
+          <a class="dd-i" href="/prosjekthotell"><span class="k">03</span><b data-i18n-html="ns.nav.ph">Prosjekthotell</b><span data-i18n-html="ns.nav.ph.t">Hele prosjektet i ett rom</span></a>
+          <a class="dd-i" href="/salgskonsoll"><span class="k">04</span><b data-i18n-html="ns.nav.sk">Salgskonsoll</b><span data-i18n-html="ns.nav.sk.t">Fra første interessent til siste bolig solgt</span></a>
+          <div class="dd-fot"><span data-i18n-html="ns.nav.sw.fot">Også: Render · BIM Viewer · Control</span><a href="/software" data-i18n-html="ns.nav.sw.alt">Se hele løpet →</a></div>
+        </div>
+      </div>
+      <a href="/about" class="on" data-i18n-html="ns.nav.om">Om Builtly</a>
+      <a href="/contact" data-i18n-html="ns.nav.kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="lang"><a href="?lang=no&amp;lang_src=manual" data-sprak="no" hreflang="no">NO</a> · <a href="?lang=en&amp;lang_src=manual" data-sprak="en" hreflang="en">EN</a></span>
+      <a class="nav-login" href="https://portal.builtly.ai" data-i18n-html="ns.nav.login">Logg inn</a>
+      <a class="btn" href="/contact"><span data-i18n-html="ns.nav.cta">Ta kontakt</span> <span aria-hidden="true">→</span></a>
+      <button class="burger" type="button" aria-label="Meny" data-i18n-attr-aria-label="ns.nav.meny" aria-expanded="false" aria-controls="mm"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mm" id="mm">
+    <div class="w mm-in">
+      <div><h4 data-i18n-html="ns.nav.rad.h">Rådgivning</h4>
+        <a href="/tjenester/geoteknikk"><span data-i18n-html="ns.nav.geo">Geoteknikk</span> <span>RIG</span></a>
+        <a href="/tjenester/konstruksjon"><span data-i18n-html="ns.nav.rib">Konstruksjon</span> <span>RIB</span></a>
+        <a href="/tjenester/bygningsfysikk"><span data-i18n-html="ns.nav.fy">Bygningsfysikk</span> <span>RIByfy</span></a>
+        <a href="/uavhengig-kontroll"><span data-i18n-html="ns.nav.uak">Uavhengig kontroll</span> <span data-i18n-html="ns.nav.uak.pris">20 000 kr per fag</span></a>
+        <a href="/tjenester"><span data-i18n-html="ns.nav.rad.alt2">Alt om rådgivning</span> <span>→</span></a></div>
+      <div><h4>Software</h4>
+        <a href="/maps">Builtly Maps <span data-i18n-html="ns.nav.fase1">01 Finn</span></a>
+        <a href="/mulighetsstudie"><span data-i18n-html="ns.nav.ms">Mulighetsstudie</span> <span data-i18n-html="ns.nav.fase2">02 Vurder</span></a>
+        <a href="/prosjekthotell"><span data-i18n-html="ns.nav.ph">Prosjekthotell</span> <span data-i18n-html="ns.nav.fase3">03 Utvikle</span></a>
+        <a href="/salgskonsoll"><span data-i18n-html="ns.nav.sk">Salgskonsoll</span> <span data-i18n-html="ns.nav.fase4">04 Selg</span></a>
+        <a href="/software"><span data-i18n-html="ns.nav.sw.alt2">Hele løpet</span> <span>→</span></a></div>
+      <div><h4>Builtly</h4>
+        <a href="/about"><span data-i18n-html="ns.nav.om">Om Builtly</span> <span></span></a>
+        <a href="/contact"><span data-i18n-html="ns.nav.kontakt">Kontakt</span> <span data-i18n-html="ns.nav.ring">Ring eller skriv</span></a>
+        <a href="https://portal.builtly.ai"><span data-i18n-html="ns.nav.login">Logg inn</span> <span>portal.builtly.ai</span></a>
+        <a href="?lang=en&amp;lang_src=manual" data-sprak="en">English <span>EN</span></a>
+        <a href="?lang=no&amp;lang_src=manual" data-sprak="no">Norsk <span>NO</span></a></div>
+    </div>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="w">
+    <div class="hero-in">
+      <div class="eyebrow" data-i18n-html="ns.trust.001"><span class="t">Sikkerhet og data</span><span class="strek"></span><span>Software og rådgivning</span></div>
+      <h1 class="h1" data-i18n-html="ns.trust.002">Dere eier dataene.</h1>
+      <p class="lede" data-i18n-html="ns.trust.003">Slik behandler vi data i Builtlys software og i rådgivningen. Her står det vi gjør i dag.</p>
+    </div>
+    <div class="fakta mt-l">
+      <div><div class="k" data-i18n-html="ns.trust.004">Database og filer</div><div class="v" data-i18n-html="ns.trust.005">EU (Irland)</div></div>
+      <div><div class="k" data-i18n-html="ns.trust.006">Tilgang</div><div class="v" data-i18n-html="ns.trust.007">Hver kunde ser bare egne prosjekter</div></div>
+      <div><div class="k" data-i18n-html="ns.trust.008">KI-modeller</div><div class="v" data-i18n-html="ns.trust.032">Anthropic · OpenAI · Google · lokale modeller ved behov</div></div>
+      <div><div class="k" data-i18n-html="ns.trust.009">Trening på kundedata</div><div class="v" data-i18n-html="ns.trust.010">Nei</div></div>
+    </div>
+  </div>
 </section>
 
-<section class="jump-strip">
-<div class="jump-inner">
-<span class="lbl" data-i18n="jump.lbl">Jump to</span>
-<a href="#principles" data-i18n="trust.jump.i1">Principles</a>
-<span class="sep">·</span>
-<a href="#data" data-i18n="trust.jump.i2">Data &amp; privacy</a>
-<span class="sep">·</span>
-<a href="#security" data-i18n="trust.jump.i3">Security architecture</a>
-<span class="sep">·</span>
-<a href="#audit" data-i18n="trust.jump.i4">Audit &amp; traceability</a>
-<span class="sep">·</span>
-<a href="#compliance" data-i18n="trust.jump.i5">Regulatory</a>
-<span class="sep">·</span>
-<a href="#operations" data-i18n="trust.jump.i6">Operations</a>
-</div>
+<section class="sek-tett myk">
+  <div class="w">
+    <div class="sek-hode"><div class="eyebrow" data-i18n-html="ns.trust.011"><span>Det vi gjør</span></div><h2 class="h2" data-i18n-html="ns.trust.012">Seks ting som gjelder.</h2></div>
+    <div class="ruter">
+      <div><span class="l" data-i18n-html="ns.trust.013">Kundens data</span><b data-i18n-html="ns.trust.014">Dere eier dataene.</b><p data-i18n-html="ns.trust.015">Prosjektfiler, tegninger, modeller og leveranser dere laster opp, er deres. Dere kan be om å få alt utlevert, også når avtalen slutter.</p></div>
+      <div><span class="l" data-i18n-html="ns.trust.016">Rådgivning og software</span><b data-i18n-html="ns.trust.017">Rådgiverne ser ikke prosjektene deres.</b><p data-i18n-html="ns.trust.018">Builtly selger software og tar egne rådgivningsoppdrag. Rådgiverne har ingen tilgang til prosjektene til softwarekundene, med mindre kunden inviterer oss inn eller bestiller rådgivning.</p></div>
+      <div><span class="l" data-i18n-html="ns.trust.019">Lagring</span><b data-i18n-html="ns.trust.020">Data i EU.</b><p data-i18n-html="ns.trust.021">Databasen og filene ligger i EU (Irland). At hver kunde bare ser egne prosjekter, håndheves i databasen med radnivåsikkerhet.</p></div>
+    </div>
+    <div class="ruter" style="border-top:0;margin-top:0">
+      <div><span class="l" data-i18n-html="ns.trust.022">KI</span><b data-i18n-html="ns.trust.023">Ingen trening på kundedata.</b><p data-i18n-html="ns.trust.024">Builtly trener ingen modeller på kundedata. Agentene bruker Anthropic, OpenAI og Google. Ved behov bruker vi lokale open source-modeller på egen infrastruktur.</p></div>
+      <div><span class="l" data-i18n-html="ns.trust.025">Ansvar</span><b data-i18n-html="ns.trust.026">Ingeniøren signerer.</b><p data-i18n-html="ns.trust.027">I rådgivningen er det ingeniøren i faget som vurderer, signerer og har ansvaret for leveransen. Aldri programvaren.</p></div>
+      <div><span class="l" data-i18n-html="ns.trust.028">Sårbarheter</span><b data-i18n-html="ns.trust.029">Si fra til oss.</b><p data-i18n-html="ns.trust.030">Har du funnet en sårbarhet eller mistenker et brudd, skriv til oss.</p><span class="adr">security@builtly.ai</span></div>
+    </div>
+    <p class="liten mt-m" data-i18n-html="ns.trust.031">Mer om personopplysninger, databehandlere og lagringstid står i <a href="/privacy">personvernerklæringen</a>. Vilkårene for softwaren står i <a href="/terms">brukervilkårene</a>.</p>
+  </div>
 </section>
-
-<!-- ============== PRINCIPLES ============== -->
-<section class="section princ-section" id="principles">
-<div class="wrap">
-<div class="smark rv"><span class="num">§ 01</span><span data-i18n="trust.s01.label">Principles</span><span class="dash"></span><span data-i18n="trust.s01.tag">What does not change</span></div>
-<div class="princ-top rv">
-<div>
-<h2 class="dpy-2" data-i18n="trust.s01.h2">Three principles.</h2>
-</div>
-<p class="lead" data-i18n-html="trust.s01.lede">Trust on a platform that produces regulated engineering deliverables is not a feature — it is a precondition. Three principles govern every architectural decision below them.</p>
-</div>
-
-<div class="princ-grid rvs">
-<div class="princ-cell">
-<div class="ix">§ <span data-i18n="trust.smark.principle">Principle</span> 01</div>
-<h4 data-i18n="trust.c1.h">Customer data stays customer data.</h4>
-<p data-i18n="trust.c1.body">Project files, drawings, models and deliverables uploaded by a customer remain the customer's property and are not used to train any model. Data isolation is per-tenant at the storage layer.</p>
-</div>
-<div class="princ-cell">
-<div class="ix">§ <span data-i18n="trust.smark.principle">Principle</span> 02</div>
-<h4 data-i18n="trust.c2.h">Everything is auditable.</h4>
-<p data-i18n="trust.c2.body">Every deliverable can be traced back to the exact inputs, the exact compute, the exact model version, and the exact engineer who signed. Compliance forensics is a property of the architecture, not a feature.</p>
-</div>
-<div class="princ-cell">
-<div class="ix">§ <span data-i18n="trust.smark.principle">Principle</span> 03</div>
-<h4 data-i18n="trust.c3.h">The engineer signs.</h4>
-<p data-i18n="trust.c3.body">For deliverables that carry professional liability, a named engineer with regulatory authority is the signatory — never the platform, never the AI. The chain of responsibility is preserved end-to-end.</p>
-</div>
-</div>
-
-<style>
-.trust-garanti{margin-top:1px;border:1px solid var(--line-strong);border-top:0;background:var(--bg);padding:clamp(26px,3.4vw,40px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,44px);align-items:start}
-.trust-garanti .g-mark{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--accent);font-weight:600;padding-top:3px;white-space:nowrap}
-.trust-garanti h4{font-size:clamp(17px,1.8vw,21px);margin-bottom:10px}
-.trust-garanti p{margin:0;color:var(--ink-soft);font-size:15px;line-height:1.6;max-width:88ch}
-@media (max-width:700px){.trust-garanti{grid-template-columns:minmax(0,1fr)}.trust-garanti .g-mark{white-space:normal}}
-</style>
-<div class="rv trust-garanti">
-<span class="g-mark" data-i18n="trust.smark.guarantee">Organisational guarantee</span>
-<div>
-<h4 data-i18n="trust.c20.h">Builtly Engineering does not see software customers' projects.</h4>
-<p data-i18n="trust.c20.body">Builtly both sells software to consultancies and takes on consulting engagements of its own. The separation is therefore organisational and absolute: Builtly Engineering has no access to software customers' projects unless the customer explicitly invites Builtly into the project or orders a consulting service. Software customers' clients, project information and usage patterns are not used by Builtly's consulting practice for sales or competing bids.</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- ============== DATA & PRIVACY ============== -->
-<section class="section dom-section" id="data">
-<div class="wrap">
-<div class="smark rv"><span class="num">§ 02</span><span data-i18n="trust.s02.label">Data &amp; privacy</span><span class="dash"></span><span data-i18n="trust.s02.tag">How customer data is handled</span></div>
-<div class="dom-intro rv">
-<div>
-<h2 class="dpy-2" data-i18n="trust.s02.h2">Data &amp; privacy.</h2>
-</div>
-<p class="lead" data-i18n-html="trust.s02.lede">Engineering project data is among the most sensitive a firm holds — drawings under non-disclosure, client information under contract, and regulatory submissions where leakage carries real cost. Builtly handles it accordingly.</p>
-</div>
-
-<div class="dom-block">
-<div class="dom-id">
-<div class="code">01</div>
-<div class="nm" data-i18n="trust.label.ownership">Ownership</div>
-<div class="ix">§ <span data-i18n="trust.smark.customer_data">Customer data</span></div>
-</div>
-<div class="dom-body">
-<h4 data-i18n="trust.c4.h">The customer owns the data. Always.</h4>
-<p data-i18n="trust.c4.body">All project inputs, intermediate artefacts and final deliverables are the property of the customer who uploaded them. Builtly holds operational access to deliver the platform; ownership does not transfer. Data export is available on demand in the formats the platform already produces.</p>
-<p data-i18n="trust.p.termination">On contract termination the customer retains the right to export everything. Builtly retains operational logs and audit trails for the regulatory retention period agreed in the contract; everything beyond that is deleted.</p>
-</div>
-<div class="dom-meta">
-<div class="row"><span class="k" data-i18n="lbl.ownership">Ownership</span><span class="v" data-i18n="val.customer">Customer</span></div>
-<div class="row"><span class="k" data-i18n="lbl.export">Export</span><span class="v" data-i18n="trust.v.onDemand">On demand · open formats</span></div>
-<div class="row"><span class="k" data-i18n="lbl.retention">Retention</span><span class="v" data-i18n="trust.v.perContract">Per contract</span></div>
-<div class="row"><span class="k" data-i18n="lbl.termination">Termination</span><span class="v" data-i18n="trust.v.fullExport">Full export available</span></div>
-<div class="level"><span data-i18n="common.standard_prefix">Standard</span>: <span data-i18n="trust.standard.per_tenant_iso">Per-tenant isolation</span></div>
-</div>
-</div>
-
-<div class="dom-block">
-<div class="dom-id">
-<div class="code">02</div>
-<div class="nm" data-i18n="trust.label.model_training">Model training</div>
-<div class="ix">§ <span data-i18n="trust.smark.privacy">Privacy</span></div>
-</div>
-<div class="dom-body">
-<h4 data-i18n="trust.c5.h">Customer project data is not used to train models.</h4>
-<p data-i18n="trust.c5.body">Builtly operates a hybrid AI architecture. Proprietary engineering models are trained on engineering literature, public regulatory text and synthetic engineering datasets — never on customer project data. Third-party models from Anthropic (Claude) are invoked through their standard APIs under data-protection terms that prohibit training on customer inputs. In the feasibility-study module, Google Gemini is additionally used for image generation under the same terms. OpenAI is not used anywhere on the platform. Customers who want their de-identified data to contribute to model improvement may opt in under a separate addendum, but the default is no training, no exception, across every model in the stack.</p>
-<p data-i18n="trust.p.training">Customers who actively want their de-identified data to contribute to model improvement may opt in under a separate addendum — but the default and the practical operation is that customer data stays customer data.</p>
-</div>
-<div class="dom-meta">
-<div class="row"><span class="k" data-i18n="lbl.default">Default</span><span class="v" data-i18n="trust.v.noTraining">No training</span></div>
-<div class="row"><span class="k" data-i18n="lbl.optin">Opt-in</span><span class="v" data-i18n="trust.v.availAddendum">Available · addendum</span></div>
-<div class="row"><span class="k" data-i18n="lbl.deIdentification">De-identification</span><span class="v" data-i18n="trust.v.requiredOptin">Required if opted in</span></div>
-<div class="row"><span class="k" data-i18n="lbl.audit">Audit</span><span class="v" data-i18n="trust.v.trainingPipeline">Training pipeline logged</span></div>
-<div class="level"><span data-i18n="common.standard_prefix">Standard</span>: <span data-i18n="trust.standard.no_silent_training">No silent training</span></div>
-</div>
-</div>
-
-<div class="dom-block">
-<div class="dom-id">
-<div class="code">03</div>
-<div class="nm" data-i18n="trust.label.residency">Residency</div>
-<div class="ix">§ <span data-i18n="trust.smark.geographic">Geographic</span></div>
-</div>
-<div class="dom-body">
-<h4 data-i18n="trust.c6.h">Regional data residency, configurable per tenant.</h4>
-<p data-i18n="trust.c6.body">Customer data is stored and processed in the geographic region selected during onboarding. Cross-border processing happens only when explicitly enabled by the customer, and is logged in the audit trail. The default for customers in regulated industries is in-region storage and in-region processing.</p>
-<p data-i18n="trust.p.residency">For customers with disclosure obligations under climate, financial or public-procurement rules, the residency configuration becomes part of the regulatory record kept against each deliverable.</p>
-</div>
-<div class="dom-meta">
-<div class="row"><span class="k" data-i18n="lbl.default">Default</span><span class="v" data-i18n="val.inRegion">In-region</span></div>
-<div class="row"><span class="k" data-i18n="lbl.crossBorder">Cross-border</span><span class="v" data-i18n="trust.v.explicitOptin">Explicit opt-in</span></div>
-<div class="row"><span class="k" data-i18n="lbl.regions">Regions</span><span class="v" data-i18n="trust.v.multiJur">Multi-jurisdiction</span></div>
-<div class="row"><span class="k" data-i18n="lbl.audit">Audit</span><span class="v" data-i18n="trust.v.residencyLogged">Residency logged per request</span></div>
-<div class="level"><span data-i18n="common.standard_prefix">Standard</span>: <span data-i18n="trust.standard.config_residency">Configurable residency</span></div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- ============== SECURITY ARCHITECTURE ============== -->
-<section class="section dom-section alt" id="security">
-<div class="wrap">
-<div class="smark rv"><span class="num">§ 03</span><span data-i18n="trust.s03.label">Security architecture</span><span class="dash"></span><span data-i18n="trust.s03.tag">How the platform is built</span></div>
-<div class="dom-intro rv">
-<div>
-<h2 class="dpy-2" data-i18n="trust.s03.h2">Security architecture.</h2>
-</div>
-<p class="lead" data-i18n-html="trust.s03.lede">Security as a property of the architecture rather than a layer above it. Authentication, authorisation, encryption and isolation are built into the foundations on which the modules run — not configured after the fact.</p>
-</div>
-
-<div class="dom-block">
-<div class="dom-id">
-<div class="code">04</div>
-<div class="nm" data-i18n="trust.label.authentication">Authentication</div>
-<div class="ix">§ <span data-i18n="trust.smark.identity">Identity</span></div>
-</div>
-<div class="dom-body">
-<h4 data-i18n="trust.c7.h">Enterprise SSO. Role-based access. Hardware-key support.</h4>
-<p data-i18n="trust.c7.body">Authentication is delegated to enterprise SSO providers via SAML and OIDC. Local accounts are not the default in enterprise deployments. Role-based access controls determine what each authenticated user can see, do and sign. Hardware security keys are supported for high-assurance roles — particularly engineers authorised to attest deliverables.</p>
-<p data-i18n="trust.p.sessions">Session management follows enterprise norms: configurable session length, forced re-authentication for sensitive operations, and full audit logging of authentication events.</p>
-</div>
-<div class="dom-meta">
-<div class="row"><span class="k" data-i18n="lbl.sso">SSO</span><span class="v" data-i18n="trust.v.samlOidc">SAML · OIDC</span></div>
-<div class="row"><span class="k" data-i18n="lbl.rbac">RBAC</span><span class="v" data-i18n="trust.v.granularRoles">Granular roles</span></div>
-<div class="row"><span class="k" data-i18n="lbl.hardwareKeys">Hardware keys</span><span class="v" data-i18n="val.supported">Supported</span></div>
-<div class="row"><span class="k" data-i18n="lbl.sessions">Sessions</span><span class="v" data-i18n="trust.v.configurableLogged">Configurable · logged</span></div>
-<div class="level"><span data-i18n="common.standard_prefix">Standard</span>: <span data-i18n="trust.standard.enterprise_sso">Enterprise SSO</span></div>
-</div>
-</div>
-
-<div class="dom-block">
-<div class="dom-id">
-<div class="code">05</div>
-<div class="nm" data-i18n="trust.label.encryption">Encryption</div>
-<div class="ix">§ <span data-i18n="trust.smark.crypto">Crypto</span></div>
-</div>
-<div class="dom-body">
-<h4 data-i18n="trust.c8.h">Encryption at rest. Encryption in transit. Per-tenant keys.</h4>
-<p data-i18n="trust.c8.body">Customer data is encrypted at rest with per-tenant key isolation and in transit with TLS 1.3. Key rotation follows automated schedules. Bring-your-own-key arrangements are available for customers with regulatory or commercial requirements for KMS independence.</p>
-<p data-i18n="trust.p.signing">Signed deliverables carry SHA-256 cryptographic signatures bound to the platform version and the signing engineer's identity — making post-hoc tampering detectable on the document itself, not just in platform logs.</p>
-</div>
-<div class="dom-meta">
-<div class="row"><span class="k" data-i18n="lbl.atRest">At rest</span><span class="v" data-i18n="trust.v.aes256">AES-256 · per tenant</span></div>
-<div class="row"><span class="k" data-i18n="lbl.inTransit">In transit</span><span class="v" data-i18n="trust.v.tls13">TLS 1.3</span></div>
-<div class="row"><span class="k" data-i18n="lbl.byok">BYOK</span><span class="v" data-i18n="val.available">Available</span></div>
-<div class="row"><span class="k" data-i18n="lbl.signing">Signing</span><span class="v" data-i18n="trust.v.shaBound">SHA-256 · bound to version</span></div>
-<div class="level"><span data-i18n="common.standard_prefix">Standard</span>: <span data-i18n="trust.standard.per_tenant_keys">Per-tenant keys</span></div>
-</div>
-</div>
-
-<div class="dom-block">
-<div class="dom-id">
-<div class="code">06</div>
-<div class="nm" data-i18n="trust.label.isolation">Isolation</div>
-<div class="ix">§ <span data-i18n="trust.smark.tenant">Tenant</span></div>
-</div>
-<div class="dom-body">
-<h4 data-i18n="trust.c9.h">Logical isolation by default. Dedicated infrastructure on request.</h4>
-<p data-i18n="trust.c9.body">The default deployment model uses logical tenant isolation — separate data stores, separate access scopes, separate audit trails per customer, on shared infrastructure. For customers under elevated regulatory rules, dedicated single-tenant infrastructure is available as part of the platform-licence agreement.</p>
-<p data-i18n="trust.p.inference">AI inference is isolated per tenant: requests do not cross tenant boundaries, and model context is reset between requests. There is no shared inference state across customers.</p>
-</div>
-<div class="dom-meta">
-<div class="row"><span class="k" data-i18n="lbl.default">Default</span><span class="v" data-i18n="trust.v.logicalIso">Logical isolation</span></div>
-<div class="row"><span class="k" data-i18n="lbl.dedicated">Dedicated</span><span class="v" data-i18n="trust.v.availPerRequest">Available · per request</span></div>
-<div class="row"><span class="k" data-i18n="lbl.inference">Inference</span><span class="v" data-i18n="trust.v.perTenantStateless">Per-tenant · stateless</span></div>
-<div class="row"><span class="k" data-i18n="lbl.audit">Audit</span><span class="v" data-i18n="trust.v.perTenantTrail">Per-tenant trail</span></div>
-<div class="level"><span data-i18n="common.standard_prefix">Standard</span>: <span data-i18n="trust.standard.tenant_isolated">Tenant-isolated</span></div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- ============== AUDIT & TRACEABILITY ============== -->
-<section class="section dom-section dark" id="audit">
-<div class="wrap">
-<div class="smark rv"><span class="num">§ 04</span><span data-i18n="trust.s04.label">Audit &amp; traceability</span><span class="dash"></span><span data-i18n="trust.s04.tag">The chain of custody</span></div>
-<div class="dom-intro rv">
-<div>
-<h2 class="dpy-2" style="color:var(--dark-paper)" data-i18n="trust.s04.h2">Audit &amp; traceability.</h2>
-</div>
-<p class="lead" style="color:rgba(247,244,237,0.86)" data-i18n-html="trust.s04.lede">For deliverables that an engineer signs and a client submits to a regulator, the chain of custody matters as much as the result. Every claim in every signed deliverable is traceable to the data and the compute behind it.</p>
-</div>
-
-<div class="dom-block">
-<div class="dom-id">
-<div class="code">07</div>
-<div class="nm" data-i18n="trust.label.chain_custody">Chain of custody</div>
-<div class="ix">§ <span data-i18n="trust.smark.provenance">Provenance</span></div>
-</div>
-<div class="dom-body">
-<h4 data-i18n="trust.c10.h">From raw input to signed output, on one trail.</h4>
-<p data-i18n="trust.c10.body">Every deliverable carries a complete provenance record: the source files uploaded, the module version that processed them, the AI engine and model version used, the deterministic computations applied, the engineer who reviewed, and the timestamp at every step. The trail is immutable and can be re-run deterministically against the same inputs.</p>
-<p data-i18n="trust.p.audit">For regulatory examination, the trail is the answer to "how did this number get into this report?" — without requiring reconstruction or interpretation after the fact.</p>
-</div>
-<div class="dom-meta">
-<div class="row"><span class="k" data-i18n="lbl.coverage">Coverage</span><span class="v" data-i18n="trust.v.inputToSig">Input to signature</span></div>
-<div class="row"><span class="k" data-i18n="lbl.mutability">Mutability</span><span class="v" data-i18n="trust.v.immutable">Immutable · append-only</span></div>
-<div class="row"><span class="k" data-i18n="lbl.rerun">Re-run</span><span class="v" data-i18n="val.deterministic">Deterministic</span></div>
-<div class="row"><span class="k" data-i18n="lbl.format">Format</span><span class="v" data-i18n="trust.v.structuredMR">Structured · machine-readable</span></div>
-<div class="level"><span data-i18n="common.standard_prefix">Standard</span>: <span data-i18n="trust.standard.e2e_provenance">End-to-end provenance</span></div>
-</div>
-</div>
-
-<div class="dom-block">
-<div class="dom-id">
-<div class="code">08</div>
-<div class="nm" data-i18n="trust.label.signature_binding">Signature binding</div>
-<div class="ix">§ <span data-i18n="trust.smark.crypto">Crypto</span></div>
-</div>
-<div class="dom-body">
-<h4 data-i18n="trust.c11.h">Cryptographic binding between document and signer.</h4>
-<p data-i18n="trust.c11.body">When an engineer attests a deliverable, the signature is cryptographically bound to: the document content, the version of the platform that produced it, the inputs the platform consumed, and the engineer's identity. Any post-signature modification breaks the signature in a way that can be verified independently of the platform.</p>
-<p data-i18n="trust.p.signature">The signature artefact travels with the document — the receiving party can verify integrity without depending on Builtly remaining available. The verification mechanism is open-spec.</p>
-</div>
-<div class="dom-meta">
-<div class="row"><span class="k" data-i18n="lbl.algorithm">Algorithm</span><span class="v" data-i18n="trust.v.shaSignedTr">SHA-256 · signed</span></div>
-<div class="row"><span class="k" data-i18n="lbl.binding">Binding</span><span class="v" data-i18n="trust.v.docInputsVer">Document + inputs + version</span></div>
-<div class="row"><span class="k" data-i18n="lbl.verification">Verification</span><span class="v" data-i18n="trust.v.independentOpen">Independent · open spec</span></div>
-<div class="row"><span class="k" data-i18n="lbl.tamperDetection">Tamper detection</span><span class="v" data-i18n="trust.v.atDocLevel">At document level</span></div>
-<div class="level"><span data-i18n="common.standard_prefix">Standard</span>: <span data-i18n="trust.standard.indep_verifiable">Independently verifiable</span></div>
-</div>
-</div>
-
-<div class="dom-block">
-<div class="dom-id">
-<div class="code">09</div>
-<div class="nm" data-i18n="trust.label.forensic_export">Forensic export</div>
-<div class="ix">§ <span data-i18n="trust.smark.disputes">Disputes</span></div>
-</div>
-<div class="dom-body">
-<h4 data-i18n="trust.c12.h">Full forensic export available on request.</h4>
-<p data-i18n="trust.c12.body">If a deliverable is challenged — in court, in regulatory examination, or by an insurer following an incident — the customer can request the complete forensic record for that deliverable: provenance, signature, all intermediate artefacts, and the model versions involved. Builtly retains the relevant data for the regulatory retention period applicable to the deliverable type.</p>
-<p data-i18n="trust.p.export">The export is designed to be defensible: a third-party expert can examine the record, re-run the deterministic computations, and arrive at the same result. The audit trail is the answer, not just the supporting evidence for it.</p>
-</div>
-<div class="dom-meta">
-<div class="row"><span class="k" data-i18n="lbl.trigger">Trigger</span><span class="v" data-i18n="trust.v.custReq">Customer request</span></div>
-<div class="row"><span class="k" data-i18n="lbl.scope">Scope</span><span class="v" data-i18n="trust.v.fullForensic">Full forensic record</span></div>
-<div class="row"><span class="k" data-i18n="lbl.retention">Retention</span><span class="v" data-i18n="trust.v.regulatoryPeriod">Regulatory period</span></div>
-<div class="row"><span class="k" data-i18n="lbl.verifiability">Verifiability</span><span class="v" data-i18n="trust.v.thirdPartyRerun">Third-party · re-runnable</span></div>
-<div class="level"><span data-i18n="common.standard_prefix">Standard</span>: <span data-i18n="trust.standard.defensible_export">Defensible export</span></div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- ============== REGULATORY ============== -->
-<section class="section dom-section" id="compliance">
-<div class="wrap">
-<div class="smark rv"><span class="num">§ 05</span><span data-i18n="trust.s05.label">Regulatory compliance</span><span class="dash"></span><span data-i18n="trust.s05.tag">Where the platform sits in the regulatory chain</span></div>
-<div class="dom-intro rv">
-<div>
-<h2 class="dpy-2" data-i18n="trust.s05.h2">Regulatory compliance.</h2>
-</div>
-<p class="lead" data-i18n-html="trust.s05.lede">The platform is not the regulated party — the engineer who signs is. But the platform operates in close proximity to regulated work, and is built to support the compliance obligations that flow from that proximity.</p>
-</div>
-
-<div class="dom-block">
-<div class="dom-id">
-<div class="code">10</div>
-<div class="nm" data-i18n="trust.label.engineering_codes">Engineering codes</div>
-<div class="ix">§ <span data-i18n="trust.smark.standards">Standards</span></div>
-</div>
-<div class="dom-body">
-<h4 data-i18n="trust.c13.h">Building codes and engineering standards encoded as logic.</h4>
-<p data-i18n="trust.c13.body">The regulation engine encodes building codes, Eurocode-family standards, fire-safety regulations, environmental standards and acoustic-class requirements as machine-readable logic — not as free-text instructions for a model to interpret. When a standard updates, the rule pack updates, and the change propagates to every module that depends on it.</p>
-<p data-i18n="trust.p.rulepack">Each module's output specifies the exact code version and rule-pack version applied — so the regulatory basis of every deliverable is unambiguous on the document itself.</p>
-</div>
-<div class="dom-meta">
-<div class="row"><span class="k" data-i18n="lbl.encoding">Encoding</span><span class="v" data-i18n="trust.v.machineReadable">Machine-readable rules</span></div>
-<div class="row"><span class="k" data-i18n="lbl.versioning">Versioning</span><span class="v" data-i18n="trust.v.packVerOnOutput">Pack version on output</span></div>
-<div class="row"><span class="k" data-i18n="lbl.updates">Updates</span><span class="v" data-i18n="trust.v.propagatedAudited">Propagated · audited</span></div>
-<div class="row"><span class="k" data-i18n="lbl.jurisdictions">Jurisdictions</span><span class="v" data-i18n="trust.v.sevenExpanding">Seven · expanding</span></div>
-<div class="level"><span data-i18n="common.standard_prefix">Standard</span>: <span data-i18n="trust.standard.versioned_rule_packs">Versioned rule packs</span></div>
-</div>
-</div>
-
-<div class="dom-block">
-<div class="dom-id">
-<div class="code">11</div>
-<div class="nm" data-i18n="trust.label.data_protection">Data protection</div>
-<div class="ix">§ <span data-i18n="trust.smark.gdpr">GDPR &amp; equivalent</span></div>
-</div>
-<div class="dom-body">
-<h4 data-i18n="trust.c14.h">Data protection by design. DPA available.</h4>
-<p data-i18n="trust.c14.body">The platform handles personal data only where strictly required for the engineering function — typically engineer identifiers, contact information, and project-team metadata. Customer-personal data outside this scope should not reach the platform; the upload interface and API surface are scoped accordingly.</p>
-<p data-i18n="trust.p.dpa">A standard Data Processing Agreement is available for customers subject to GDPR or equivalent regional data-protection rules, and the platform supports the data-subject rights — access, correction, deletion — that those rules require.</p>
-</div>
-<div class="dom-meta">
-<div class="row"><span class="k" data-i18n="lbl.piiScope">PII scope</span><span class="v" data-i18n="trust.v.engineeringOnly">Engineering-function only</span></div>
-<div class="row"><span class="k" data-i18n="lbl.dpa">DPA</span><span class="v" data-i18n="trust.v.availStandard">Available · standard</span></div>
-<div class="row"><span class="k" data-i18n="lbl.subjectRights">Subject rights</span><span class="v" data-i18n="val.supported">Supported</span></div>
-<div class="row"><span class="k" data-i18n="lbl.dpoContact">DPO contact</span><span class="v">contact@builtly.ai</span></div>
-<div class="level"><span data-i18n="common.standard_prefix">Standard</span>: <span data-i18n="trust.standard.dp_by_design">Data-protection by design</span></div>
-</div>
-</div>
-
-<div class="dom-block">
-<div class="dom-id">
-<div class="code">12</div>
-<div class="nm" data-i18n="trust.label.procurement">Procurement</div>
-<div class="ix">§ <span data-i18n="trust.smark.vendor_onboarding">Vendor onboarding</span></div>
-</div>
-<div class="dom-body">
-<h4 data-i18n="trust.c15.h">Vendor onboarding ready for enterprise procurement.</h4>
-<p data-i18n="trust.c15.body">For customers running formal vendor-onboarding processes — security questionnaires, supplier-risk reviews, financial diligence — Builtly provides a standardised vendor-onboarding pack: the architecture summary, the security posture, the data-handling documentation, the certifications in progress, and named contacts for procurement diligence.</p>
-<p data-i18n="trust.p.pack">The pack is intended to compress vendor-onboarding from weeks to days. For deeper diligence, additional materials are made available under NDA. Certifications track the standard enterprise sequence: SOC 2 Type I and Type II are on the active roadmap.</p>
-</div>
-<div class="dom-meta">
-<div class="row"><span class="k" data-i18n="lbl.pack">Pack</span><span class="v" data-i18n="trust.v.standardisedOnReq">Standardised · on request</span></div>
-<div class="row"><span class="k" data-i18n="lbl.ndaMaterials">NDA materials</span><span class="v" data-i18n="trust.v.deeperDiligence">Deeper diligence</span></div>
-<div class="row"><span class="k" data-i18n="lbl.soc2">SOC 2</span><span class="v" data-i18n="trust.v.roadmapInProgress">Roadmap · in progress</span></div>
-<div class="row"><span class="k" data-i18n="lbl.contact">Contact</span><span class="v">contact@builtly.ai</span></div>
-<div class="level"><span data-i18n="common.standard_prefix">Standard</span>: <span data-i18n="trust.standard.enterprise_ready">Enterprise-ready onboarding</span></div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- ============== OPERATIONS ============== -->
-<section class="section dt-section" id="operations">
-<div class="wrap">
-<div class="smark rv"><span class="num">§ 06</span><span data-i18n="trust.s06.label">Operations</span><span class="dash"></span><span data-i18n="trust.s06.tag">Availability and incident response</span></div>
-<div class="dt-top rv">
-<div>
-<h2 class="dpy-2" style="color:var(--dark-paper)" data-i18n-html="trust.s06.h2">Operations<br/>&amp; availability.</h2>
-</div>
-<p class="lead" style="color:rgba(247,244,237,0.86)" data-i18n-html="trust.s06.lede">How the platform is operated, how incidents are handled, and what to expect on availability. Builtly is a production platform serving engineering consultancies — operational discipline is not optional.</p>
-</div>
-
-<div class="dt-grid rvs">
-<div class="dt-cell">
-<div class="ix">§ <span data-i18n="trust.smark.availability">Availability</span></div>
-<h4 data-i18n="trust.c16.h">Production uptime target.</h4>
-<div class="stack">
-<div class="r"><span class="k" data-i18n="lbl.target">Target</span><span class="v" data-i18n="trust.v.99_5">99.5% monthly</span></div>
-<div class="r"><span class="k" data-i18n="lbl.measurement">Measurement</span><span class="v" data-i18n="trust.v.externalThirdParty">External · third-party</span></div>
-<div class="r"><span class="k" data-i18n="lbl.statusPage">Status page</span><span class="v" data-i18n="trust.v.publicOperational">Public · operational</span></div>
-<div class="r"><span class="k" data-i18n="lbl.maintenance">Maintenance</span><span class="v" data-i18n="trust.v.scheduledAnnounced">Scheduled · announced</span></div>
-</div>
-</div>
-<div class="dt-cell">
-<div class="ix">§ <span data-i18n="trust.smark.incident">Incident response</span></div>
-<h4 data-i18n="trust.c17.h">How incidents are handled.</h4>
-<div class="stack">
-<div class="r"><span class="k" data-i18n="lbl.acknowledgement">Acknowledgement</span><span class="v" data-i18n="trust.v.30minBiz">≤ 30 min · business hours</span></div>
-<div class="r"><span class="k" data-i18n="lbl.customerComms">Customer comms</span><span class="v" data-i18n="trust.v.duringWritten">During · written summary after</span></div>
-<div class="r"><span class="k" data-i18n="lbl.postMortems">Post-mortems</span><span class="v" data-i18n="trust.v.sharedAffected">Shared with affected customers</span></div>
-<div class="r"><span class="k" data-i18n="lbl.rootCause">Root cause</span><span class="v" data-i18n="trust.v.within5biz">Within 5 business days</span></div>
-</div>
-</div>
-<div class="dt-cell">
-<div class="ix">§ <span data-i18n="trust.smark.backup">Backup &amp; recovery</span></div>
-<h4 data-i18n="trust.c18.h">Backups and disaster recovery.</h4>
-<div class="stack">
-<div class="r"><span class="k" data-i18n="lbl.backupCadence">Backup cadence</span><span class="v" data-i18n="val.daily30">Daily · encrypted</span></div>
-<div class="r"><span class="k" data-i18n="lbl.retention">Retention</span><span class="v" data-i18n="trust.v.30daysStd">30 days · standard</span></div>
-<div class="r"><span class="k" data-i18n="lbl.rto">RTO</span><span class="v" data-i18n="trust.v.4hTarget">≤ 4 hours · target</span></div>
-<div class="r"><span class="k" data-i18n="lbl.rpo">RPO</span><span class="v" data-i18n="trust.v.1hTarget">≤ 1 hour · target</span></div>
-</div>
-</div>
-<div class="dt-cell">
-<div class="ix">§ <span data-i18n="trust.smark.vuln">Vulnerability handling</span></div>
-<h4 data-i18n="trust.c19.h">How vulnerabilities are managed.</h4>
-<div class="stack">
-<div class="r"><span class="k" data-i18n="lbl.disclosure">Disclosure</span><span class="v">security@builtly.ai</span></div>
-<div class="r"><span class="k" data-i18n="lbl.acknowledgement">Acknowledgement</span><span class="v" data-i18n="trust.v.24h">≤ 24 hours</span></div>
-<div class="r"><span class="k" data-i18n="lbl.criticalPatches">Critical patches</span><span class="v" data-i18n="trust.v.72h">≤ 72 hours</span></div>
-<div class="r"><span class="k" data-i18n="lbl.coordinatedDisclosure">Coordinated disclosure</span><span class="v" data-i18n="val.supported">Supported</span></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<section class="insight-section">
-<div class="insight-inner rv">
-<div class="insight-quote" data-i18n-html="trust.insight.quote">"Compliance is not a feature. <span class="accent">It is a property of how the platform is built.</span>"</div>
-<div class="insight-attr" data-i18n="cta.trust_principle">— The trust principle</div>
-</div>
-</section>
-
-<section class="cta-section" id="contact">
-<div class="wrap">
-<div class="smark rv"><span class="num">§ 07</span><span data-i18n="trust.s07.label">Diligence</span><span class="dash"></span><span data-i18n="trust.s07.tag">For procurement and security teams</span></div>
-<div class="cta-grid">
-<div class="rv">
-<h2 class="dpy-1" style="font-size:clamp(36px,5vw,68px)" data-i18n="trust.s07.h2">Need the diligence pack?</h2>
-<p class="lead" style="margin-top:32px;max-width:48ch" data-i18n-html="trust.s07.lede">For procurement, vendor onboarding, security review and contracting, the standardised diligence pack is available on request. Security inquiries route to a dedicated inbox. Critical security disclosures get acknowledged within 24 hours.</p>
-<div class="cta-actions">
-<a href="mailto:security@builtly.ai?subject=Security%20%26%20diligence%20inquiry" class="btn">security@builtly.ai <span class="arr">→</span></a>
-<a href="/contact.html" class="btn btn-ghost"><span data-i18n="trust.btn.all_routes">All contact routes</span> <span class="arr">→</span></a>
-</div>
-</div>
-<div class="cta-side rv">
-<div class="row"><span class="k" data-i18n="lbl.security">Security</span><span class="v">security@builtly.ai</span></div>
-<div class="row"><span class="k" data-i18n="lbl.procurement">Procurement</span><span class="v">contact@builtly.ai</span></div>
-<div class="row"><span class="k" data-i18n="lbl.disclosure">Disclosure</span><span class="v" data-i18n="trust.v.24h">≤ 24 hours</span></div>
-<div class="row"><span class="k" data-i18n="lbl.pack">Pack</span><span class="v" data-i18n="trust.v.onReqNda">On request · NDA optional</span></div>
-</div>
-</div>
-</div>
-</section>
-
-<footer>
-<div class="wrap">
-<div class="footer-top">
-<div>
-<div class="f-brand"><span class="lm"></span>Builtly</div>
-<div class="f-tag" data-i18n="f2.tag">Rådgivende ingeniører og egenutviklet software for bygg, anlegg og eiendom.</div>
-</div>
-<div class="f-col">
-<h5 data-i18n="f2.services.h">Tjenester</h5>
-<ul>
-<li><a href="/tjenester/geoteknikk.html" data-i18n="f2.services.geo">Geoteknikk</a></li>
-<li><a href="/tjenester/konstruksjon.html" data-i18n="f2.services.str">Konstruksjon</a></li>
-<li><a href="/tjenester/brannsikkerhet.html" data-i18n="f2.services.fire">Brannsikkerhet</a></li>
-<li><a href="/tjenester/akustikk.html" data-i18n="f2.services.aco">Akustikk</a></li>
-<li><a href="/tjenester/miljo.html" data-i18n="f2.services.env">Miljø og bærekraft</a></li>
-<li><a href="/uavhengig-kontroll.html">Uavhengig kontroll</a></li>
-<li><a href="/tjenester.html" data-i18n="f2.services.all">Alle tjenester →</a></li>
-</ul>
-</div>
-<div class="f-col">
-<h5 data-i18n="f2.software.h">Software</h5>
-<ul>
-<li><a href="/software.html" data-i18n="f2.software.overview">Softwareområdet</a></li>
-<li><a href="/prosjekthotell.html">Prosjekthotell</a></li>
-<li><a href="/maps.html" data-i18n="f2.software.maps">Builtly Maps</a></li>
-<li><a href="/salgskonsoll.html">Salgskonsoll</a></li>
-<li><a href="/mulighetsstudie.html">Mulighetsstudie</a></li>
-<li><a href="/render.html">Builtly Render</a></li>
-<li><a href="/control.html">Builtly Control</a></li>
-<li><a href="/bim-viewer.html" data-i18n="f2.software.bim">BIM Viewer</a></li>
-<li><a href="/platform.html" data-i18n="f2.software.platform">Plattformen</a></li>
-<li><a href="/verktoy.html" data-i18n="f2.software.tools">Verktøykassen</a></li>
-<li><a href="https://portal.builtly.ai" data-i18n="f2.software.portal">Logg inn i portalen</a></li>
-</ul>
-</div>
-<div class="f-col">
-<h5 data-i18n="f2.company.h">Selskapet</h5>
-<ul>
-<li><a href="/about.html" data-i18n="f2.company.about">Om Builtly</a></li>
-<li><a href="/slik-jobber-vi.html" data-i18n="f2.company.method">Slik jobber vi</a></li>
-<li><a href="/referanser.html" data-i18n="f2.company.references">Referanser</a></li>
-<li><a href="/careers.html" data-i18n="f2.company.careers">Karriere</a></li>
-<li><a href="/contact.html" data-i18n="f2.company.contact">Kontakt</a></li>
-<li><a href="/trust.html" data-i18n="f2.company.trust">Trust &amp; sikkerhet</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bot fbot2">
-<style>
-.fbot2{display:grid !important;grid-template-columns:1fr auto 1fr;gap:14px 24px;align-items:baseline}
-.fbot2 .fb-mid{text-align:center;color:var(--ink,#131820);opacity:.8}
-.fbot2 .fb-right{justify-self:end;opacity:.45;font-size:10px;letter-spacing:0.16em;text-transform:uppercase}
-.fbot2 .fb-legal{grid-column:1 / -1;margin-top:6px;padding-top:16px;border-top:1px solid rgba(19,24,32,.07);display:grid;grid-template-columns:1fr auto;gap:8px 24px}
-.fbot2 .fb-legal .footer-legal:last-child{text-align:right}
-@media (max-width:760px){
-.fbot2{grid-template-columns:1fr;text-align:center;gap:10px}
-.fbot2 .fb-right{justify-self:center}
-.fbot2 .fb-legal{grid-template-columns:1fr}
-.fbot2 .fb-legal .footer-legal:last-child{text-align:center}
-}
-</style>
-<span data-i18n="f2.bot.left">© 2026 Builtly Engineering</span>
-<span class="fb-mid" data-i18n="f2.bot.right">Fremtidens ingeniørselskap. Allerede her.</span>
-<a class="fb-right" href="/intern" title="Intern portal — styret og ansatte">Intern&nbsp;→</a>
-<div class="fb-legal">
-<span class="footer-legal">Builtly Engineering AS · Org.nr 837 694 892 · Bassengbakken 4, 7042 Trondheim</span>
-<span class="footer-legal"><a href="/privacy">Personvern</a> · <a href="/terms">Vilkår</a> · <a href="/cookies">Informasjonskapsler</a> · <a href="/etiske-retningslinjer.html">Etiske retningslinjer</a> · <a href="/apenhetsloven.html">Åpenhetsloven</a></span>
-</div>
-</div>
-</div>
+</main>
+<footer class="fot">
+  <div class="w">
+    <div class="fot-topp">
+      <div>
+        <a class="logo" href="/"><span class="logo-mark"></span>Builtly</a>
+        <p class="tag" data-i18n-html="ns.fot.tag">Fremtidens ingeniørselskap. Allerede her.</p>
+      </div>
+      <div><h4 data-i18n-html="ns.fot.rad">Rådgivning</h4><ul>
+        <li><a href="/tjenester/geoteknikk" data-i18n-html="ns.nav.geo">Geoteknikk</a></li>
+        <li><a href="/tjenester/konstruksjon" data-i18n-html="ns.nav.rib">Konstruksjon</a></li>
+        <li><a href="/tjenester/bygningsfysikk" data-i18n-html="ns.nav.fy">Bygningsfysikk</a></li>
+        <li><a href="/uavhengig-kontroll" data-i18n-html="ns.nav.uak">Uavhengig kontroll</a></li></ul></div>
+      <div><h4>Software</h4><ul>
+        <li><a href="/maps">Builtly Maps</a></li>
+        <li><a href="/mulighetsstudie" data-i18n-html="ns.nav.ms">Mulighetsstudie</a></li>
+        <li><a href="/prosjekthotell" data-i18n-html="ns.nav.ph">Prosjekthotell</a></li>
+        <li><a href="/salgskonsoll" data-i18n-html="ns.nav.sk">Salgskonsoll</a></li>
+        <li class="grp" data-i18n-html="ns.fot.ogsaa">Også fra Builtly</li>
+        <li><a href="/render">Render</a> · <a href="/bim-viewer">BIM Viewer</a> · <a href="/control">Control</a></li></ul></div>
+      <div><h4>Builtly</h4><ul>
+        <li><a href="/about" data-i18n-html="ns.nav.om">Om Builtly</a></li>
+        <li><a href="/about#folkene" data-i18n-html="ns.fot.folkene">Folkene</a></li>
+        <li><a href="/referanser" data-i18n-html="ns.fot.referanser">Referanser</a></li>
+        <li><a href="/careers" data-i18n-html="ns.fot.karriere">Karriere</a></li>
+        <li><a href="/contact" data-i18n-html="ns.nav.kontakt">Kontakt</a></li>
+        <li><a href="https://portal.builtly.ai" data-i18n-html="ns.nav.login">Logg inn</a></li></ul></div>
+      <div><h4 data-i18n-html="ns.fot.selskapet">Selskapet</h4><ul>
+        <li><a href="/privacy" data-i18n-html="ns.fot.personvern">Personvern</a></li>
+        <li><a href="/terms" data-i18n-html="ns.fot.vilkar">Vilkår</a></li>
+        <li><a href="/cookies" data-i18n-html="ns.fot.cookies">Informasjonskapsler</a></li>
+        <li><a href="/trust" data-i18n-html="ns.fot.trust">Sikkerhet og data</a></li>
+        <li><a href="/etiske-retningslinjer" data-i18n-html="ns.fot.etikk">Etiske retningslinjer</a></li>
+        <li><a href="/apenhetsloven" data-i18n-html="ns.fot.apenhet">Åpenhetsloven</a></li></ul></div>
+    </div>
+    <div class="fot-bunn">
+      <span>Builtly Engineering AS · Org.nr 837 694 892 · Bassengbakken 4, 7042 Trondheim</span>
+      <span class="sprak"><a href="?lang=no&amp;lang_src=manual" data-sprak="no">Norsk</a> · <a href="?lang=en&amp;lang_src=manual" data-sprak="en">English</a> · <a href="/intern" title="Intern portal">Intern →</a></span>
+    </div>
+  </div>
 </footer>
-
-<script>
-(function(){
-  if(!('IntersectionObserver' in window)){
-    document.querySelectorAll('.rv, .rvs').forEach(e=>e.classList.add('in'));
-    return;
-  }
-  const obs=new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){entry.target.classList.add('in');obs.unobserve(entry.target);}
-    });
-  },{threshold:0.12,rootMargin:'0px 0px -60px 0px'});
-  document.querySelectorAll('.rv, .rvs').forEach(e=>obs.observe(e));
-})();
-document.querySelectorAll('a[href^="#"]').forEach(link=>{
-  link.addEventListener('click',function(e){
-    const t=document.querySelector(this.getAttribute('href'));
-    if(t){e.preventDefault();const top=t.getBoundingClientRect().top+window.pageYOffset-60;window.scrollTo({top,behavior:'smooth'});}
-  });
-});
-</script>
-<script>
-/* ============== HERO AMBIENT FLOCKING ==============
-   Small "structural element" line-segments drift with boid rules.
-   ~18% render in teal accent, scattering visual sparks through the flock.
-   Proximity triggers transient teal triangulation lines — FEM mesh /
-   truss assembly / structural connectivity references.
-   ==================================================== */
-(function(){
-  const canvas = document.getElementById('heroBgCanvas');
-  if (!canvas) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-  const ctx = canvas.getContext('2d');
-  let w = 0, h = 0;
-  const dpr = Math.min(window.devicePixelRatio || 1, 2);
-
-  function resize(){
-    const r = canvas.parentElement.getBoundingClientRect();
-    w = r.width; h = r.height;
-    canvas.width  = Math.floor(w * dpr);
-    canvas.height = Math.floor(h * dpr);
-    canvas.style.width = w + 'px';
-    canvas.style.height = h + 'px';
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-  resize();
-  window.addEventListener('resize', () => {
-    resize();
-    for (const p of agents) {
-      if (p.x > w) p.x = w * Math.random();
-      if (p.y > h) p.y = h * Math.random();
-    }
-  });
-
-  // Denser agent count for more activity
-  function targetCount(){
-    return Math.max(50, Math.min(140, Math.round((w*h)/11500)));
-  }
-
-  const VISION = 95;
-  const SEPARATION = 22;
-  const CONNECT_DIST = 70;
-  const MAX_SPEED = 0.6;
-  const MIN_SPEED = 0.18;
-
-  class Agent {
-    constructor(){
-      this.x = Math.random() * w;
-      this.y = Math.random() * h;
-      const a = Math.random() * Math.PI * 2;
-      const s = MIN_SPEED + Math.random() * 0.3;
-      this.vx = Math.cos(a) * s;
-      this.vy = Math.sin(a) * s;
-      this.len = 6 + Math.random() * 12;
-      this.tealAccent = Math.random() < 0.18;
-    }
-    step(others){
-      let cohX=0, cohY=0, cohN=0;
-      let aliX=0, aliY=0, aliN=0;
-      let sepX=0, sepY=0, sepN=0;
-
-      for (const o of others){
-        if (o === this) continue;
-        const dx = o.x - this.x;
-        const dy = o.y - this.y;
-        const d2 = dx*dx + dy*dy;
-        if (d2 < VISION*VISION){
-          cohX += o.x; cohY += o.y; cohN++;
-          aliX += o.vx; aliY += o.vy; aliN++;
-          if (d2 < SEPARATION*SEPARATION && d2 > 0){
-            const d = Math.sqrt(d2);
-            sepX -= dx/d; sepY -= dy/d; sepN++;
-          }
-        }
-      }
-
-      if (cohN > 0){
-        cohX = cohX/cohN - this.x;
-        cohY = cohY/cohN - this.y;
-        this.vx += cohX * 0.0006;
-        this.vy += cohY * 0.0006;
-      }
-      if (aliN > 0){
-        aliX /= aliN; aliY /= aliN;
-        this.vx += (aliX - this.vx) * 0.025;
-        this.vy += (aliY - this.vy) * 0.025;
-      }
-      if (sepN > 0){
-        this.vx += sepX * 0.04;
-        this.vy += sepY * 0.04;
-      }
-
-      this.vx += (Math.random() - 0.5) * 0.006;
-      this.vy += (Math.random() - 0.5) * 0.006;
-
-      const sp = Math.hypot(this.vx, this.vy);
-      if (sp > MAX_SPEED){
-        this.vx = this.vx/sp * MAX_SPEED;
-        this.vy = this.vy/sp * MAX_SPEED;
-      } else if (sp < MIN_SPEED && sp > 0){
-        this.vx = this.vx/sp * MIN_SPEED;
-        this.vy = this.vy/sp * MIN_SPEED;
-      }
-
-      this.x += this.vx;
-      this.y += this.vy;
-
-      const m = 20;
-      if (this.x < -m) this.x = w + m;
-      if (this.x > w + m) this.x = -m;
-      if (this.y < -m) this.y = h + m;
-      if (this.y > h + m) this.y = -m;
-    }
-  }
-
-  const agents = [];
-  function rebuild(){
-    const target = targetCount();
-    while (agents.length < target) agents.push(new Agent());
-    while (agents.length > target) agents.pop();
-  }
-  rebuild();
-  let lastResizeCheck = 0;
-
-  let running = true;
-  const obs = new IntersectionObserver(entries => {
-    running = entries[0].isIntersecting;
-  }, { threshold: 0.01 });
-  obs.observe(canvas);
-
-  const cd2 = CONNECT_DIST * CONNECT_DIST;
-
-  function frame(now){
-    requestAnimationFrame(frame);
-    if (!running) return;
-
-    if (now - lastResizeCheck > 2000){
-      rebuild();
-      lastResizeCheck = now;
-    }
-
-    ctx.clearRect(0, 0, w, h);
-
-    for (const p of agents) p.step(agents);
-
-    // Connections — drawn behind agents
-    ctx.lineCap = 'round';
-    ctx.lineWidth = 0.7;
-    for (let i = 0; i < agents.length; i++){
-      const a = agents[i];
-      for (let j = i+1; j < agents.length; j++){
-        const b = agents[j];
-        const dx = b.x - a.x;
-        const dy = b.y - a.y;
-        const d2 = dx*dx + dy*dy;
-        if (d2 < cd2){
-          const k = 1 - Math.sqrt(d2)/CONNECT_DIST;
-          ctx.strokeStyle = 'rgba(20, 184, 166, ' + (k * 0.38).toFixed(3) + ')';
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.stroke();
-        }
-      }
-    }
-
-    // Agents — mix of ink (82%) and teal (18%)
-    for (const p of agents){
-      const sp = Math.hypot(p.vx, p.vy) || 1;
-      const dx = (p.vx / sp) * p.len;
-      const dy = (p.vy / sp) * p.len;
-      if (p.tealAccent){
-        ctx.strokeStyle = 'rgba(20, 184, 166, 0.55)';
-        ctx.lineWidth = 1.3;
-      } else {
-        ctx.strokeStyle = 'rgba(19, 24, 32, 0.36)';
-        ctx.lineWidth = 1.05;
-      }
-      ctx.beginPath();
-      ctx.moveTo(p.x - dx*0.5, p.y - dy*0.5);
-      ctx.lineTo(p.x + dx*0.5, p.y + dy*0.5);
-      ctx.stroke();
-    }
-  }
-
-  requestAnimationFrame(frame);
-})();
-</script>
-
-<script src="/i18n.js?v=20260816-bimnav" defer></script>
 </body>
 </html>
