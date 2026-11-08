@@ -3,10 +3,10 @@
  "ns.trust.002": "You own the data.",
  "ns.trust.003": "This is how we handle data in Builtly's software and in our consulting work. It describes what we do today.",
  "ns.trust.004": "Database and files",
- "ns.trust.005": "Supabase in the EU (Ireland)",
+ "ns.trust.005": "EU (Ireland)",
  "ns.trust.006": "Access",
  "ns.trust.007": "Each customer sees only its own projects",
- "ns.trust.008": "AI providers",
+ "ns.trust.008": "AI models",
  "ns.trust.009": "Training on customer data",
  "ns.trust.010": "No",
  "ns.trust.011": "<span>What we do</span>",
@@ -19,10 +19,10 @@
  "ns.trust.018": "Builtly sells software and takes on its own consulting work. The consultants have no access to software customers' projects unless the customer invites us in or orders consulting.",
  "ns.trust.019": "Storage",
  "ns.trust.020": "Data in the EU.",
- "ns.trust.021": "The database and files are hosted by Supabase in the EU (Ireland). That each customer sees only its own projects is enforced in the database with row-level security.",
+ "ns.trust.021": "The database and files are hosted in the EU (Ireland). That each customer sees only its own projects is enforced in the database with row-level security.",
  "ns.trust.022": "AI",
  "ns.trust.023": "No training on customer data.",
- "ns.trust.024": "Builtly trains no models on customer data. The agents use Claude from Anthropic. Render uses OpenAI for images, Konstruksjon has OpenAI as a fallback, and Mulighetsstudie uses Google Gemini for images. The providers only receive data when an AI feature is used.",
+ "ns.trust.024": "Builtly trains no models on customer data. The agents use Claude, OpenAI and Google. When needed, we use local open-source models on our own infrastructure.",
  "ns.trust.025": "Responsibility",
  "ns.trust.026": "The engineer signs.",
  "ns.trust.027": "In consulting, the engineer in the discipline assesses, signs and is responsible for the deliverable. Never the software.",
@@ -31,5 +31,6 @@
  "ns.trust.030": "If you have found a vulnerability or suspect a breach, write to us.",
  "ns.trust.031": "More about personal data, processors and retention is in the <a href=\"/privacy\">privacy statement</a>. The terms for the software are in the <a href=\"/terms\">terms of use</a>.",
  "ns.trust._tittel": "Security and data · Builtly",
- "ns.trust._beskrivelse": "How Builtly handles data in the software and in consulting: you own the data, data in the EU, no training on customer data, and which AI providers we use."
+ "ns.trust._beskrivelse": "How Builtly handles data in the software and in consulting: you own the data, data in the EU, no training on customer data, and which AI models we use.",
+ "ns.trust.032": "Claude · OpenAI · Google · local models when needed"
 }
