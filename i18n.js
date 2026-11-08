@@ -9341,7 +9341,7 @@
   "ns.trust.021": "The database and files are hosted in the EU (Ireland). That each customer sees only its own projects is enforced in the database with row-level security.",
   "ns.trust.022": "AI",
   "ns.trust.023": "No training on customer data.",
-  "ns.trust.024": "Builtly trains no models on customer data. The agents use Claude, OpenAI and Google. When needed, we use local open-source models on our own infrastructure.",
+  "ns.trust.024": "Builtly trains no models on customer data. The agents use Anthropic, OpenAI and Google. When needed, we use local open-source models on our own infrastructure.",
   "ns.trust.025": "Responsibility",
   "ns.trust.026": "The engineer signs.",
   "ns.trust.027": "In consulting, the engineer in the discipline assesses, signs and is responsible for the deliverable. Never the software.",
@@ -9349,7 +9349,7 @@
   "ns.trust.029": "Tell us.",
   "ns.trust.030": "If you have found a vulnerability or suspect a breach, write to us.",
   "ns.trust.031": "More about personal data, processors and retention is in the <a href=\"/privacy\">privacy statement</a>. The terms for the software are in the <a href=\"/terms\">terms of use</a>.",
-  "ns.trust.032": "Claude · OpenAI · Google · local models when needed",
+  "ns.trust.032": "Anthropic · OpenAI · Google · local models when needed",
   "ns.trust._beskrivelse": "How Builtly handles data in the software and in consulting: you own the data, data in the EU, no training on customer data, and which AI models we use.",
   "ns.trust._tittel": "Security and data · Builtly"
  },
@@ -10308,7 +10308,7 @@
   "ns.trust.021": "Databasen og filene ligger i EU (Irland). At hver kunde bare ser egne prosjekter, håndheves i databasen med radnivåsikkerhet.",
   "ns.trust.022": "KI",
   "ns.trust.023": "Ingen trening på kundedata.",
-  "ns.trust.024": "Builtly trener ingen modeller på kundedata. Agentene bruker Claude, OpenAI og Google. Ved behov bruker vi lokale open source-modeller på egen infrastruktur.",
+  "ns.trust.024": "Builtly trener ingen modeller på kundedata. Agentene bruker Anthropic, OpenAI og Google. Ved behov bruker vi lokale open source-modeller på egen infrastruktur.",
   "ns.trust.025": "Ansvar",
   "ns.trust.026": "Ingeniøren signerer.",
   "ns.trust.027": "I rådgivningen er det ingeniøren i faget som vurderer, signerer og har ansvaret for leveransen. Aldri programvaren.",
@@ -10316,7 +10316,7 @@
   "ns.trust.029": "Si fra til oss.",
   "ns.trust.030": "Har du funnet en sårbarhet eller mistenker et brudd, skriv til oss.",
   "ns.trust.031": "Mer om personopplysninger, databehandlere og lagringstid står i <a href=\"/privacy\">personvernerklæringen</a>. Vilkårene for softwaren står i <a href=\"/terms\">brukervilkårene</a>.",
-  "ns.trust.032": "Claude · OpenAI · Google · lokale modeller ved behov",
+  "ns.trust.032": "Anthropic · OpenAI · Google · lokale modeller ved behov",
   "ns.trust._beskrivelse": "Slik behandler Builtly data i softwaren og i rådgivningen: dere eier dataene, data i EU, ingen trening på kundedata, og hvilke KI-modeller vi bruker.",
   "ns.trust._tittel": "Sikkerhet og data · Builtly"
  }

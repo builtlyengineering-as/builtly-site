@@ -22,7 +22,7 @@
  "ns.trust.021": "The database and files are hosted in the EU (Ireland). That each customer sees only its own projects is enforced in the database with row-level security.",
  "ns.trust.022": "AI",
  "ns.trust.023": "No training on customer data.",
- "ns.trust.024": "Builtly trains no models on customer data. The agents use Claude, OpenAI and Google. When needed, we use local open-source models on our own infrastructure.",
+ "ns.trust.024": "Builtly trains no models on customer data. The agents use Anthropic, OpenAI and Google. When needed, we use local open-source models on our own infrastructure.",
  "ns.trust.025": "Responsibility",
  "ns.trust.026": "The engineer signs.",
  "ns.trust.027": "In consulting, the engineer in the discipline assesses, signs and is responsible for the deliverable. Never the software.",
@@ -32,5 +32,5 @@
  "ns.trust.031": "More about personal data, processors and retention is in the <a href=\"/privacy\">privacy statement</a>. The terms for the software are in the <a href=\"/terms\">terms of use</a>.",
  "ns.trust._tittel": "Security and data · Builtly",
  "ns.trust._beskrivelse": "How Builtly handles data in the software and in consulting: you own the data, data in the EU, no training on customer data, and which AI models we use.",
- "ns.trust.032": "Claude · OpenAI · Google · local models when needed"
+ "ns.trust.032": "Anthropic · OpenAI · Google · local models when needed"
 }
