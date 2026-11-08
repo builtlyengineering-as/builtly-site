@@ -647,6 +647,9 @@ h1,h2,h3,h4{margin:0;text-wrap:balance}
 .topp-en .lede{max-width:62ch;font-size:clamp(16px,1.3vw,19px)}
 .topp-en .punch{margin-top:18px}
 .flere-fag{margin-top:18px;color:var(--mid);font-size:15px}
+.tk-note{margin-top:22px;padding:14px 20px;border-left:3px solid var(--accent);background:var(--bg-soft);font-size:15px;line-height:1.6;color:var(--ink-soft);max-width:78ch}
+.tk-note b{color:var(--ink);font-weight:600}
+.tk-note+.flere-fag{margin-top:14px}
 
 /* ---------- språkvalget i menyen ---------- */
 .lang a{color:inherit;padding:2px 1px}

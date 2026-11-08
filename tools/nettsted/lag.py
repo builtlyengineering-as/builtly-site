@@ -114,7 +114,7 @@ def meny(aktiv):
         <div class="dd-panel" id="dd-rad">
           <a class="dd-i" href="/tjenester/geoteknikk"><span class="k">RIG</span>{k('nav.geo', 'Geoteknikk', 'b')}{k('nav.geo.t', 'Grunnforhold, fundamentering, stabilitet og rapportering')}</a>
           <a class="dd-i" href="/tjenester/konstruksjon"><span class="k">RIB</span>{k('nav.rib', 'Konstruksjon', 'b')}{k('nav.rib.t', 'Bæresystem, dimensjonering og konstruktive vurderinger')}</a>
-          <a class="dd-i" href="/tjenester/bygningsfysikk"><span class="k">RIBfy</span>{k('nav.fy', 'Bygningsfysikk', 'b')}{k('nav.fy.t', 'Energi, fukt, lufttetthet og klimaskjerm')}</a>
+          <a class="dd-i" href="/tjenester/bygningsfysikk"><span class="k">RIByfy</span>{k('nav.fy', 'Bygningsfysikk', 'b')}{k('nav.fy.t', 'Energi, fukt, lufttetthet og klimaskjerm')}</a>
           <a class="dd-i" href="/uavhengig-kontroll"><span class="k">UAK</span><b><span data-i18n-html="ns.nav.uak">Uavhengig kontroll</span><i class="ny" data-i18n-html="ns.nav.ny">NY</i></b>{k('nav.uak.t', 'Tiltaksklasse 2, fast pris 20 000 kr per fag')}</a>
           <div class="dd-fot">{k('nav.rad.fot', 'Rådgivende ingeniører i Trondheim')}<a href="/tjenester" data-i18n-html="ns.nav.rad.alt">Alt om rådgivning →</a></div>
         </div>
@@ -144,7 +144,7 @@ def meny(aktiv):
       <div>{k('nav.rad.h', 'Rådgivning', 'h4')}
         <a href="/tjenester/geoteknikk"><span data-i18n-html="ns.nav.geo">Geoteknikk</span> <span>RIG</span></a>
         <a href="/tjenester/konstruksjon"><span data-i18n-html="ns.nav.rib">Konstruksjon</span> <span>RIB</span></a>
-        <a href="/tjenester/bygningsfysikk"><span data-i18n-html="ns.nav.fy">Bygningsfysikk</span> <span>RIBfy</span></a>
+        <a href="/tjenester/bygningsfysikk"><span data-i18n-html="ns.nav.fy">Bygningsfysikk</span> <span>RIByfy</span></a>
         <a href="/uavhengig-kontroll"><span data-i18n-html="ns.nav.uak">Uavhengig kontroll</span> <span data-i18n-html="ns.nav.uak.pris">20 000 kr per fag</span></a>
         <a href="/tjenester"><span data-i18n-html="ns.nav.rad.alt2">Alt om rådgivning</span> <span>→</span></a></div>
       <div><h4>Software</h4>

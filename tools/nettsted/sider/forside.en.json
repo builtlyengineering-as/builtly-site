@@ -1,7 +1,7 @@
 {
  "ns.forside.001": "<span class=\"t\">■</span><span>Consulting engineers</span><span class=\"strek\"></span><span>Trondheim · founded 2026</span>",
  "ns.forside.002": "The engineering firm of the future.<br><span class=\"aks\">Already here.</span>",
- "ns.forside.003": "Builtly started with a blank sheet. We rebuilt engineering work around our own AI agents, verified calculations and engineers who assess and sign. That gives faster answers, a fixed price and deliverables you can verify.",
+ "ns.forside.003": "Builtly started with a blank sheet. We rebuilt engineering work around our own AI agents, verified calculations and engineers who assess and sign.",
  "ns.forside.004": "<b>The agents read. The tools calculate. The engineer signs.</b>",
  "ns.forside.005": "<a class=\"btn\" href=\"#arbeidsmaten\">See how we work <span aria-hidden=\"true\">↓</span></a><a class=\"btn btn-ghost\" href=\"/contact\">Get in touch</a>",
  "ns.forside.006": "<span>Our business areas</span>",
@@ -10,7 +10,7 @@
  "ns.forside.009": "Consulting engineers in three disciplines, with our own agents and calculations in production. Independent control at a fixed price.",
  "ns.forside.010": "Geotechnics <span class=\"v\">RIG</span>",
  "ns.forside.011": "Structural engineering <span class=\"v\">RIB</span>",
- "ns.forside.012": "Building physics <span class=\"v\">RIBfy</span>",
+ "ns.forside.012": "Building physics <span class=\"v\">RIByfy</span>",
  "ns.forside.013": "Independent control <span class=\"v t\">NOK 20,000 per discipline</span>",
  "ns.forside.014": "<span class=\"pil\">See consulting <span aria-hidden=\"true\">→</span></span>",
  "ns.forside.015": "<span class=\"eyebrow\"><span class=\"t\">Software</span></span>",
