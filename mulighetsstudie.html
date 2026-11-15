@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title data-i18n="ns.mulighetsstudie._tittel">Mulighetsstudie · Software · Builtly</title>
-<meta name="description" content="Hva tåler tomten? Mulighetsstudie henter regulering, naboer og terreng, og bygger og rangerer tre konsepter med arealer, sol og økonomi." data-i18n-attr-content="ns.mulighetsstudie._beskrivelse" />
+<meta name="description" content="Hva tåler tomten? Fra eiendom til beslutningsgrunnlag: regulering, utbyggingsalternativer, arealregnskap, sol og skygge og prosjektøkonomi." data-i18n-attr-content="ns.mulighetsstudie._beskrivelse" />
 <meta name="theme-color" content="#FAFAF7" />
 <link rel="canonical" href="https://www.builtly.ai/mulighetsstudie" />
 <meta property="og:type" content="website" />
@@ -12,13 +12,19 @@
 <meta property="og:site_name" content="Builtly" />
 <meta property="og:url" content="https://www.builtly.ai/mulighetsstudie" />
 <meta property="og:title" content="Mulighetsstudie · Software · Builtly" />
-<meta property="og:description" content="Hva tåler tomten? Mulighetsstudie henter regulering, naboer og terreng, og bygger og rangerer tre konsepter med arealer, sol og økonomi." />
+<meta property="og:description" content="Hva tåler tomten? Fra eiendom til beslutningsgrunnlag: regulering, utbyggingsalternativer, arealregnskap, sol og skygge og prosjektøkonomi." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/nettsted.css?v=20261108-2" />
-<script src="/i18n.js?v=20261108-2" defer></script>
-<script src="/nettsted.js?v=20261108-2" defer></script>
+<link rel="stylesheet" href="/nettsted.css?v=20261115-1" />
+<link rel="stylesheet" href="/software.css?v=20261115-1" />
+<script src="/i18n.js?v=20261115-1" defer></script>
+<script src="/nettsted.js?v=20261115-1" defer></script>
+<script src="/tomt.js?v=20261115-1" defer onerror="document.documentElement.classList.add('uten-skript')"></script>
+<script src="/kart.js?v=20261115-1" defer onerror="document.documentElement.classList.add('uten-skript')"></script>
+<script src="/vindu.js?v=20261115-1" defer onerror="document.documentElement.classList.add('uten-skript')"></script>
+<script src="/studie.js?v=20261115-1" defer onerror="document.documentElement.classList.add('uten-skript')"></script>
+<noscript><style>[data-kartlag],.kun-js,.prov,.modlinje{display:none}</style></noscript>
 </head>
 <body>
 <!-- Laget av tools/nettsted/lag.py fra tools/nettsted/sider/mulighetsstudie.html. Rediger kilden, ikke denne fila. -->
@@ -27,7 +33,7 @@
     <a class="logo" href="/" aria-label="Builtly"><span class="logo-mark"></span>Builtly</a>
     <nav class="nav-links" aria-label="Hovedmeny" data-i18n-attr-aria-label="ns.nav.hovedmeny">
       <div class="dd">
-        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-rad"><span data-i18n-html="ns.nav.rad">Rådgivning</span> <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
+        <a class="dd-lenke" href="/tjenester" data-i18n-html="ns.nav.rad">Rådgivning</a><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-rad" aria-label="Vis fagene" data-i18n-attr-aria-label="ns.nav.rad.vis"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
         <div class="dd-panel" id="dd-rad">
           <a class="dd-i" href="/tjenester/geoteknikk"><span class="k">RIG</span><b data-i18n-html="ns.nav.geo">Geoteknikk</b><span data-i18n-html="ns.nav.geo.t">Grunnforhold, fundamentering, stabilitet og rapportering</span></a>
           <a class="dd-i" href="/tjenester/konstruksjon"><span class="k">RIB</span><b data-i18n-html="ns.nav.rib">Konstruksjon</b><span data-i18n-html="ns.nav.rib.t">Bæresystem, dimensjonering og konstruktive vurderinger</span></a>
@@ -37,13 +43,13 @@
         </div>
       </div>
       <div class="dd">
-        <button class="dd-btn on" type="button" aria-expanded="false" aria-controls="dd-sw">Software <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
+        <a class="dd-lenke on" href="/software">Software</a><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-sw" aria-label="Vis modulene" data-i18n-attr-aria-label="ns.nav.sw.vis"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
         <div class="dd-panel" id="dd-sw">
           <a class="dd-i" href="/maps"><span class="k">01</span><b>Maps</b><span data-i18n-html="ns.nav.maps.t">Alt om eiendommen, på ett sted</span></a>
-          <a class="dd-i" href="/mulighetsstudie"><span class="k">02</span><b data-i18n-html="ns.nav.ms">Mulighetsstudie</b><span data-i18n-html="ns.nav.ms.t">Hva tomta tåler: alternativer, sol og økonomi</span></a>
+          <a class="dd-i" href="/mulighetsstudie"><span class="k">02</span><b data-i18n-html="ns.nav.ms">Mulighetsstudie</b><span data-i18n-html="ns.nav.ms.t">Hva tåler tomten?</span></a>
           <a class="dd-i" href="/prosjekthotell"><span class="k">03</span><b data-i18n-html="ns.nav.ph">Prosjekthotell</b><span data-i18n-html="ns.nav.ph.t">Hele prosjektet i ett rom</span></a>
-          <a class="dd-i" href="/salgskonsoll"><span class="k">04</span><b data-i18n-html="ns.nav.sk">Salgskonsoll</b><span data-i18n-html="ns.nav.sk.t">Fra første interessent til siste bolig solgt</span></a>
-          <div class="dd-fot"><span data-i18n-html="ns.nav.sw.fot">Også: Render · BIM Viewer · Control</span><a href="/software" data-i18n-html="ns.nav.sw.alt">Se hele løpet →</a></div>
+          <a class="dd-i" href="/salgskonsoll"><span class="k">04</span><b data-i18n-html="ns.nav.sk">Salgskonsoll</b><span data-i18n-html="ns.nav.sk.t">Fra prosjekt til siste bolig solgt</span></a>
+          <div class="dd-fot"><span data-i18n-html="ns.nav.sw.fot">Én plattform, fire moduler</span><a href="/software" data-i18n-html="ns.nav.sw.alt">Se hele løpet →</a></div>
         </div>
       </div>
       <a href="/about" data-i18n-html="ns.nav.om">Om Builtly</a>
@@ -65,11 +71,12 @@
         <a href="/uavhengig-kontroll"><span data-i18n-html="ns.nav.uak">Uavhengig kontroll</span> <span data-i18n-html="ns.nav.uak.pris">20 000 kr per fag</span></a>
         <a href="/tjenester"><span data-i18n-html="ns.nav.rad.alt2">Alt om rådgivning</span> <span>→</span></a></div>
       <div><h4>Software</h4>
+        <a href="/software"><span data-i18n-html="ns.nav.sw.alt2">Hele løpet</span> <span data-i18n-html="ns.nav.sw.fire">Fire moduler</span></a>
         <a href="/maps">Maps <span data-i18n-html="ns.nav.fase1">01 Finn</span></a>
         <a href="/mulighetsstudie"><span data-i18n-html="ns.nav.ms">Mulighetsstudie</span> <span data-i18n-html="ns.nav.fase2">02 Vurder</span></a>
         <a href="/prosjekthotell"><span data-i18n-html="ns.nav.ph">Prosjekthotell</span> <span data-i18n-html="ns.nav.fase3">03 Utvikle</span></a>
         <a href="/salgskonsoll"><span data-i18n-html="ns.nav.sk">Salgskonsoll</span> <span data-i18n-html="ns.nav.fase4">04 Selg</span></a>
-        <a href="/software"><span data-i18n-html="ns.nav.sw.alt2">Hele løpet</span> <span>→</span></a></div>
+        <a href="/bli-kunde"><span data-i18n-html="ns.nav.demo">Book en demo</span> <span>→</span></a></div>
       <div><h4>Builtly</h4>
         <a href="/about"><span data-i18n-html="ns.nav.om">Om Builtly</span> <span></span></a>
         <a href="/contact"><span data-i18n-html="ns.nav.kontakt">Kontakt</span> <span data-i18n-html="ns.nav.ring">Ring eller skriv</span></a>
@@ -80,57 +87,128 @@
   </div>
 </header>
 <main>
-<section class="phero mork">
+<section class="phero mork sw-topp">
   <div class="w">
-    <span data-i18n-html="ns.mulighetsstudie.001" class="merke"><span class="ruten">2</span>Mulighetsstudie</span>
-    <h1 data-i18n-html="ns.mulighetsstudie.002" class="h1">Hva tåler tomten?<br><span class="aks">Tre konsepter, regnet ut.</span></h1>
-    <p data-i18n-html="ns.mulighetsstudie.003" class="lede">Fra eiendom til beslutningsgrunnlag: regulering, utbyggingsalternativer med arealer, sol og skygge og prosjektøkonomi, med målte og sporbare tall.</p>
-    <div data-i18n-html="ns.mulighetsstudie.004" class="btns"><a class="btn" href="/contact">Book en gjennomgang <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="/software">Se alle fire produktene</a></div>
-    <div class="steg"><div><span class="n">01</span><b data-i18n-html="ns.mulighetsstudie.005">Eiendom</b><p data-i18n-html="ns.mulighetsstudie.006">Gnr/bnr. Tomt, regulering, naboer og terreng hentes inn.</p></div><div><span class="n">02</span><b data-i18n-html="ns.mulighetsstudie.007">Byggbart areal</b><p data-i18n-html="ns.mulighetsstudie.008">Byggegrenser og hindringer tegnes på ortofoto.</p></div><div><span class="n">03</span><b data-i18n-html="ns.mulighetsstudie.009">Alternativer</b><p data-i18n-html="ns.mulighetsstudie.010">Tre konsepter med areal, boliger, sol og økonomi.</p></div><div><span class="n">04</span><b data-i18n-html="ns.mulighetsstudie.011">Anbefaling</b><p data-i18n-html="ns.mulighetsstudie.012">Rangert etter en åpen poengmodell du kan justere.</p></div><div><span class="n">05</span><b data-i18n-html="ns.mulighetsstudie.013">Leveranse</b><p data-i18n-html="ns.mulighetsstudie.014">A3-rapport og en enkel teaser som PDF.</p></div></div>
-  </div>
-</section>
-<section class="sek-tett myk">
-  <div class="w">
-    <div class="to i-bruk">
-      <div class="sek-hode" style="margin-bottom:0">
-        <div data-i18n-html="ns.mulighetsstudie.015" class="eyebrow"><span class="t">02 · Vurder</span><span class="strek"></span><span>Slik ser det ut</span></div>
-        <h2 data-i18n-html="ns.mulighetsstudie.016" class="h2">Mulighetsstudie i bruk.</h2>
-        <p data-i18n-html="ns.mulighetsstudie.017" class="lede">For eiendomsutviklere, eiendomseiere og arkitekter.</p>
-        <p data-i18n-html="ns.mulighetsstudie.018" class="liten">Bildet er fra Mulighetsstudie, med et demoprosjekt i Trondheim.</p>
+    <div class="sw-hode">
+      <div class="sw-navn langt">
+        <div data-i18n-html="ns.mulighetsstudie.001" class="eyebrow"><span class="t">Software</span><span class="strek"></span><span>02 · Vurder</span></div>
+        <h1 class="h1">Mulighetsstudie</h1>
       </div>
-      
-<figure class="skjerm ekte"><img src="/bilder/produkter/mulighetsstudie-eiendom.jpg" width="1440" height="847" loading="lazy" alt="Mulighetsstudie, trinnet Eiendom: tomta hentet fra matrikkelen, ortofoto med tomtegrense og foreløpig byggeområde" data-i18n-attr-alt="ns.mulighetsstudie.bilde.alt"></figure>
+      <div class="sw-om">
+        <p data-i18n-html="ns.mulighetsstudie.002" class="sw-slag">Hva tåler tomten? <span class="aks">Analyser prosjektet ditt.</span></p>
+        <p data-i18n-html="ns.mulighetsstudie.003" class="lede">Fra eiendom til beslutningsgrunnlag: regulering, utbyggingsalternativer, arealregnskap, sol og skygge og prosjektøkonomi, med målte og sporbare tall.</p>
+        <div data-i18n-html="ns.mulighetsstudie.004" class="btns"><a class="btn" href="#interesse">Book en demo <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="#demo">Prøv en studie</a></div>
+      </div>
     </div>
+    <nav class="moduler" aria-label="Modulene" data-i18n-attr-aria-label="ns.sw.moduler">
+  <a href="/maps"><span class="n" data-i18n-html="ns.sw.m1.f">01 · Finn</span><b>Maps</b><span class="s" data-i18n-html="ns.sw.m1.s">Alt om eiendommen, på ett sted.</span></a>
+  <a href="/mulighetsstudie" class="pa" aria-current="page"><span class="n" data-i18n-html="ns.sw.m2.f">02 · Vurder</span><b>Mulighetsstudie</b><span class="s" data-i18n-html="ns.sw.m2.s">Hva tåler tomten?</span></a>
+  <a href="/prosjekthotell"><span class="n" data-i18n-html="ns.sw.m3.f">03 · Utvikle</span><b>Prosjekthotell</b><span class="s" data-i18n-html="ns.sw.m3.s">Hele prosjektet i ett rom.</span></a>
+  <a href="/salgskonsoll"><span class="n" data-i18n-html="ns.sw.m4.f">04 · Selg</span><b>Salgskonsoll</b><span class="s" data-i18n-html="ns.sw.m4.s">Fra prosjekt til siste bolig solgt.</span></a>
+</nav>
   </div>
 </section>
+<div class="modlinje" data-modlinje inert>
+  <div class="w modlinje-in">
+    <a class="hvem" href="/software">Builtly <i>Software</i></a>
+    <ol>
+      <li data-modul="maps"><a href="/maps">01 Maps</a><span class="spor"><i></i></span></li>
+      <li class="on" data-modul="mulighetsstudie"><a href="/mulighetsstudie" aria-current="page">02 Mulighetsstudie</a><span class="spor"><i></i></span></li>
+      <li data-modul="prosjekthotell"><a href="/prosjekthotell">03 Prosjekthotell</a><span class="spor"><i></i></span></li>
+      <li data-modul="salgskonsoll"><a href="/salgskonsoll">04 Salgskonsoll</a><span class="spor"><i></i></span></li>
+    </ol>
+    <a class="btn btn-liten" href="#interesse"><span data-i18n-html="ns.sw.demo">Book en demo</span> <span aria-hidden="true">→</span></a>
+  </div>
+</div>
+
+<section class="mork demo-sek" id="demo" style="border-top:1px solid var(--line-dark)">
+  <div class="w">
+    <div class="demo-hode">
+      <div>
+        <div data-i18n-html="ns.mulighetsstudie.005" class="eyebrow"><span class="t">02 · Vurder</span><span class="strek"></span><span>Prøv selv</span></div>
+        <h2 data-i18n-html="ns.mulighetsstudie.006" class="h2">Mulighetsstudie <span class="aks">i bruk.</span></h2>
+      </div>
+      <div>
+        <p data-i18n-html="ns.mulighetsstudie.007" class="lede">Gå gjennom en studie fra eiendom til rapport. Vinduet har studiens åtte trinn, og regner tre utbyggingsgrep, sol og skygge, poeng og tomteverdi på en eksempeltomt.</p>
+        <p data-i18n-html="ns.mulighetsstudie.008" class="prov">Prøv: trykk «Fortsett til eiendom» i vinduet under</p>
+      </div>
+    </div>
+    <div class="vindu studie stor">
+      <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">app.builtly.ai · Mulighetsstudie · Eksempeltunet</span><span class="eks">Eksempeldata</span></div>
+      <div data-studie data-demo="#interesse"><figure class="ap-reserve"><img src="/bilder/demo/studie.png" width="1312" height="780" loading="lazy" alt="Mulighetsstudie: trinnene til venstre, resultatene i midten og alternativet i kartet" data-i18n-attr-alt="ns.mulighetsstudie.009"><figcaption data-i18n-html="ns.mulighetsstudie.010">Demoen trenger JavaScript. Bildet viser resultatene med tre alternativer på eksempeltomten.</figcaption></figure></div>
+    </div>
+    <p data-i18n-html="ns.mulighetsstudie.011" class="demo-note">Demoen regner i nettleseren med studiens regler og standardverdier: geometrien, sola, poengmodellen og byggherrens regnestykke. Den er forenklet. Naboer, terreng og planens egne felt er ikke med, og arkitekturen måles enklere. Tomten, planen og bestemmelsene er oppdiktet.</p>
+  </div>
+</section>
+
 <section class="sek">
   <div class="w">
-    <div class="sek-hode"><div data-i18n-html="ns.mulighetsstudie.036" class="eyebrow"><span>Det du får</span></div><h2 data-i18n-html="ns.mulighetsstudie.037" class="h2">Konkret, fra første dag.</h2></div>
-    <div class="faar"><div><span class="k">01</span><b data-i18n-html="ns.mulighetsstudie.038">A3-rapporten</b><p data-i18n-html="ns.mulighetsstudie.039">Regulering, byggbart areal, alternativene med plan og nøkkeltall, arealregnskap med BTA, BRA og BRA-i, sol og skygge og tomteverdi.</p></div><div><span class="k">02</span><b data-i18n-html="ns.mulighetsstudie.040">Tre konsepter på samme tomt</b><p data-i18n-html="ns.mulighetsstudie.041">Lineært, kvartal med gårdsrom og klynger, bygget av lamell, punkthus, karré og rekkehus. Antall boliger følger av arealet.</p></div><div><span class="k">03</span><b data-i18n-html="ns.mulighetsstudie.042">Åpen rangering</b><p data-i18n-html="ns.mulighetsstudie.043">Standardvektene står i rapporten: arkitektur 50, måloppnåelse 20, uterom 14, sol 10 og BYA 6. Dere kan endre dem.</p></div><div><span class="k">04</span><b data-i18n-html="ns.mulighetsstudie.044">Sol og skygge</b><p data-i18n-html="ns.mulighetsstudie.045">Skygger for vårjevndøgn, sommer og vinter på flere klokkeslett, og soltimer på uterommet.</p></div><div><span class="k">05</span><b data-i18n-html="ns.mulighetsstudie.046">Tomteverdi</b><p data-i18n-html="ns.mulighetsstudie.047">Residual tomteverdi med alle forutsetninger synlige. En tidligfase-kalkyle, ikke en takst.</p></div><div><span class="k">06</span><b data-i18n-html="ns.mulighetsstudie.048">Også næring</b><p data-i18n-html="ns.mulighetsstudie.049">Kontor, lager og logistikk, hotell og handel, med egne etasjehøyder, byggdybder og parkeringsnormer.</p></div></div>
+    <div class="sek-hode"><div data-i18n-html="ns.mulighetsstudie.012" class="eyebrow"><span>Det du får</span></div><h2 data-i18n-html="ns.mulighetsstudie.013" class="h2">Seks deler i hver studie.</h2></div>
+    <div class="faar">
+      <div><span class="k">01</span><b data-i18n-html="ns.mulighetsstudie.014">Tomt, plan og rammer</b><p data-i18n-html="ns.mulighetsstudie.015">Tomten hentes fra matrikkelen med kommune og gnr/bnr. Du kontrollerer planstatus og bestemmelser, og rammene for analysen står med kilde.</p></div>
+      <div><span class="k">02</span><b data-i18n-html="ns.mulighetsstudie.016">Byggbart areal</b><p data-i18n-html="ns.mulighetsstudie.017">Du tegner forbudssoner og byggbare soner rett i kartet. Inntrekket fra tomtegrensen står på 4 m som standard.</p></div>
+      <div><span class="k">03</span><b data-i18n-html="ns.mulighetsstudie.018">Utbyggingsgrep</b><p data-i18n-html="ns.mulighetsstudie.019">Tre grep på samme tomt: lineært, kvartal med gårdsrom og klynger rundt et grønt fellesrom, med areal, boliger og solscore for hvert.</p></div>
+      <div><span class="k">04</span><b data-i18n-html="ns.mulighetsstudie.020">Åpen poengmodell</b><p data-i18n-html="ns.mulighetsstudie.021">Arkitektur, måloppnåelse, uterom, sol og BYA vektes åpent. Standardvektene er 50, 20, 14, 10 og 6 ved normalt uteromskrav, og dere kan flytte på dem.</p></div>
+      <div><span class="k">05</span><b data-i18n-html="ns.mulighetsstudie.022">Marked og økonomi</b><p data-i18n-html="ns.mulighetsstudie.023">Byggherrens regnestykke gir residual tomteverdi med alle forutsetninger synlige. En tidligfase-kalkyle, ikke en takst.</p></div>
+      <div><span class="k">06</span><b data-i18n-html="ns.mulighetsstudie.024">A3-rapport og teaser</b><p data-i18n-html="ns.mulighetsstudie.025">Rapporten samler grepene, arealregnskapet, sol og skygge og økonomien i A3. Teaseren er en kortversjon til tidlig dialog.</p></div>
+    </div>
+    <p data-i18n-html="ns.mulighetsstudie.026" class="liten mt-s">Også for næring: kontor, lager og logistikk, hotell og handel har egne spor i studien.</p>
   </div>
 </section>
+
 <section class="sek-tett myk">
   <div class="w">
-    <div class="sek-hode"><div data-i18n-html="ns.mulighetsstudie.050" class="eyebrow"><span class="t">Uten og med Mulighetsstudie</span></div><h2 data-i18n-html="ns.mulighetsstudie.051" class="h2">Fem steg i én flyt.</h2></div>
+    <div class="sek-hode"><div data-i18n-html="ns.mulighetsstudie.027" class="eyebrow"><span class="t">Uten og med Mulighetsstudie</span></div><h2 data-i18n-html="ns.mulighetsstudie.028" class="h2">Fem steg i én flyt.</h2></div>
     <div class="utenmed">
-      <div class="uten"><span data-i18n-html="ns.mulighetsstudie.052" class="l">I dag</span><h3 data-i18n-html="ns.mulighetsstudie.053">Slik gjøres det ofte</h3><ol><li data-i18n-html="ns.mulighetsstudie.054">Hent tomt og areal fra matrikkelen.</li><li data-i18n-html="ns.mulighetsstudie.055">Les reguleringsbestemmelsene for BYA, etasjer og høyde.</li><li data-i18n-html="ns.mulighetsstudie.056">Tegn byggegrenser og hensynssoner i CAD.</li><li data-i18n-html="ns.mulighetsstudie.057">Bygg volumstudier for hånd, ett alternativ om gangen.</li><li data-i18n-html="ns.mulighetsstudie.058">Regn arealer, sol og skygge og tomteverdi i hvert sitt verktøy.</li></ol><div data-i18n-html="ns.mulighetsstudie.059" class="tid"><span>Verktøy</span><b>Flere, ofte med arkitekt og rådgiver</b></div></div>
-      <div class="med"><span data-i18n-html="ns.mulighetsstudie.060" class="l">Med Mulighetsstudie</span><h3 data-i18n-html="ns.mulighetsstudie.061">Slik gjør du det her</h3><ol><li data-i18n-html="ns.mulighetsstudie.062">Velg tomta med gnr/bnr.</li><li data-i18n-html="ns.mulighetsstudie.063">Regulering, naboer og terreng hentes inn.</li><li data-i18n-html="ns.mulighetsstudie.064">Tegn det som ikke kan bebygges, rett på ortofotoet.</li><li data-i18n-html="ns.mulighetsstudie.065">Tre konsepter bygges og rangeres.</li><li data-i18n-html="ns.mulighetsstudie.066">Last ned A3-rapporten og teaseren.</li></ol><div data-i18n-html="ns.mulighetsstudie.067" class="tid"><span>Verktøy</span><b>Ett, med A3-rapport til slutt</b></div></div>
+      <div class="uten"><span data-i18n-html="ns.mulighetsstudie.029" class="l">I dag</span><h3 data-i18n-html="ns.mulighetsstudie.030">Slik gjøres det ofte</h3><ol><li data-i18n-html="ns.mulighetsstudie.031">Hent tomt og areal fra matrikkelen.</li><li data-i18n-html="ns.mulighetsstudie.032">Les reguleringsbestemmelsene for BYA, etasjer og høyde.</li><li data-i18n-html="ns.mulighetsstudie.033">Tegn byggegrenser og hensynssoner i CAD.</li><li data-i18n-html="ns.mulighetsstudie.034">Bygg volumstudier for hånd, ett alternativ om gangen.</li><li data-i18n-html="ns.mulighetsstudie.035">Regn arealer, sol og skygge og tomteverdi i hvert sitt verktøy.</li></ol><div data-i18n-html="ns.mulighetsstudie.036" class="tid"><span>Verktøy</span><b>Flere, ofte med arkitekt og rådgiver</b></div></div>
+      <div class="med"><span data-i18n-html="ns.mulighetsstudie.037" class="l">Med Mulighetsstudie</span><h3 data-i18n-html="ns.mulighetsstudie.038">Slik gjør du det her</h3><ol><li data-i18n-html="ns.mulighetsstudie.039">Velg tomten med gnr/bnr.</li><li data-i18n-html="ns.mulighetsstudie.040">Plan og rammer hentes inn, og du kontrollerer dem.</li><li data-i18n-html="ns.mulighetsstudie.041">Tegn det som ikke kan bebygges, rett i kartet.</li><li data-i18n-html="ns.mulighetsstudie.042">Tre utbyggingsgrep bygges og rangeres.</li><li data-i18n-html="ns.mulighetsstudie.043">Last ned A3-rapporten og teaseren.</li></ol><div data-i18n-html="ns.mulighetsstudie.044" class="tid"><span>Verktøy</span><b>Ett, med A3-rapport til slutt</b></div></div>
     </div>
-    <p data-i18n-html="ns.mulighetsstudie.068" class="liten mt-s">Studien er ingen prosjektering, ingen dagslysberegning etter TEK17 og ingen takst.</p>
   </div>
 </section>
-<section class="sek">
+
+<section class="sek skj-sek">
   <div class="w">
-    <div>
-      <div class="sek-hode" style="margin-bottom:0;max-width:860px">
-        <div data-i18n-html="ns.mulighetsstudie.069" class="eyebrow"><span class="t">Tilpasset dere</span><span class="strek"></span><span>Ta kontakt for en gjennomgang</span></div>
-        <h2 data-i18n-html="ns.mulighetsstudie.070" class="h2">Se Mulighetsstudie på deres eget prosjekt.</h2>
-        <p data-i18n-html="ns.mulighetsstudie.071" class="lede">Velg en eiendom dere allerede vurderer, så viser vi tre konsepter på den samme tomta. Vi setter opp produktet med deres data og brukere, og prisen avtales etter hva dere trenger.</p>
-        <div data-i18n-html="ns.mulighetsstudie.072" class="btns"><a class="btn" href="/contact">Book en gjennomgang <span aria-hidden="true">→</span></a></div>
-        <p data-i18n-html="ns.mulighetsstudie.073" class="liten mt-s">Software: <b>Olav Aukan Stenersen</b> <span class="mono">+47 907 00 719</span> · <b>Sofie Thire</b> <span class="mono">+47 912 42 705</span></p>
+    <div class="to">
+      <div class="skj-side">
+        <div data-i18n-html="ns.mulighetsstudie.046" class="eyebrow"><span class="t">Kom i gang</span><span class="strek"></span><span>Tilpasset dere</span></div>
+        <h2 data-i18n-html="ns.mulighetsstudie.047" class="h2" style="margin-top:18px">Se mulighetene på ditt prosjekt.</h2>
+        <p data-i18n-html="ns.mulighetsstudie.048" class="lede">Velg en eiendom dere allerede vurderer, så viser vi utbyggingsgrepene på den samme tomten. Vi setter opp Mulighetsstudie med deres data og brukere, og prisen avtales etter det dere trenger.</p>
+        <div class="kontakter">
+          <span data-i18n-html="ns.mulighetsstudie.049" class="l">Eller ring oss</span>
+          <div class="kontakt"><img src="/photos/olav.jpg" alt="" width="56" height="64" loading="lazy"><div><b>Olav Aukan Stenersen</b><span><a href="tel:+4790700719">+47 907 00 719</a> · <a href="mailto:olav@builtly.ai">olav@builtly.ai</a></span></div></div>
+          <div class="kontakt"><img src="/photos/sofie.jpg" alt="" width="56" height="64" loading="lazy"><div><b>Sofie Thire</b><span><a href="tel:+4791242705">+47 912 42 705</a> · <a href="mailto:sofie@builtly.ai">sofie@builtly.ai</a></span></div></div>
+        </div>
       </div>
+      <div class="skj-ramme" id="interesse">
+<form class="skj" data-skjema data-intake="https://app.builtly.ai/" data-liste="l_19fe041ff6232371164" novalidate>
+  <fieldset>
+    <legend data-i18n-html="ns.sw.skj.mod">Hvilke moduler gjelder det?</legend>
+    <div class="brikker"><label class="brikke"><input type="checkbox" name="mod" value="Builtly Maps (eiendomskart)" data-modul="maps"><span>Maps</span></label><label class="brikke"><input type="checkbox" name="mod" value="Mulighetsstudie (ARK)" data-modul="mulighetsstudie" checked><span>Mulighetsstudie</span></label><label class="brikke"><input type="checkbox" name="mod" value="Prosjekthotell / datarom" data-modul="prosjekthotell"><span>Prosjekthotell</span></label><label class="brikke"><input type="checkbox" name="mod" value="Salgskonsoll" data-modul="salgskonsoll"><span>Salgskonsoll</span></label></div>
+  </fieldset>
+  <fieldset>
+    <legend data-i18n-html="ns.sw.skj.onske">Hva ønsker dere?</legend>
+    <div class="brikker">
+      <label class="brikke"><input type="radio" name="onske" value="Demo"><span data-i18n-html="ns.sw.skj.o1">Demo</span></label>
+      <label class="brikke"><input type="radio" name="onske" value="Tilbud"><span data-i18n-html="ns.sw.skj.o2">Tilbud</span></label>
+      <label class="brikke"><input type="radio" name="onske" value="Demo + tilbud" checked><span data-i18n-html="ns.sw.skj.o3">Demo og tilbud</span></label>
     </div>
-    <nav data-i18n-attr-aria-label="ns.mulighetsstudie.074" class="lopnav mt-l" aria-label="Løpet"><a data-i18n-html="ns.mulighetsstudie.075" href="/maps"><span class="k">← 01 · Finn</span><b>Maps</b></a><a data-i18n-html="ns.mulighetsstudie.076" href="/prosjekthotell"><span class="k">03 · Utvikle →</span><b>Prosjekthotell</b></a></nav>
+  </fieldset>
+  <div class="felt-rad">
+    <label class="felt"><span data-i18n-html="ns.sw.skj.firma">Firma</span><input type="text" name="firma" required autocomplete="organization"></label>
+    <label class="felt"><span data-i18n-html="ns.sw.skj.navn">Navn</span><input type="text" name="navn" required autocomplete="name"></label>
+    <label class="felt"><span data-i18n-html="ns.sw.skj.epost">E-post</span><input type="email" name="epost" required autocomplete="email"></label>
+    <label class="felt"><span data-i18n-html="ns.sw.skj.tlf">Telefon <i>valgfritt</i></span><input type="tel" name="tlf" autocomplete="tel"></label>
+  </div>
+  <label class="felt"><span data-i18n-html="ns.sw.skj.melding">Noe vi bør vite om prosjektet? <i>valgfritt</i></span><textarea name="melding" rows="3" maxlength="600"></textarea></label>
+  <div class="skj-felle" aria-hidden="true"><label>Nettside <input type="text" name="nettside" tabindex="-1" autocomplete="off"></label></div>
+  <label class="samtykke"><input type="checkbox" name="samtykke" required><span data-i18n-html="ns.sw.skj.samtykke">Jeg samtykker i at Builtly kontakter meg om henvendelsen og lagrer opplysningene mine til det formålet. Se <a href="/privacy">personvernerklæringen</a>.</span></label>
+  <p class="skj-feil" role="alert" hidden data-i18n-html="ns.sw.skj.feil">Fyll ut firma, navn og e-post, og kryss av for samtykke.</p>
+  <div class="skj-send"><button class="btn" type="submit"><span data-i18n-html="ns.sw.skj.send">Send forespørsel</span> <span aria-hidden="true">→</span></button><span class="liten" data-i18n-html="ns.sw.skj.svar">Vi svarer innen én virkedag.</span></div>
+</form>
+<div class="skj-takk" role="status" hidden><b data-i18n-html="ns.sw.skj.takk">Takk. Forespørselen er sendt.</b><p data-i18n-html="ns.sw.skj.takk2">Vi tar kontakt innen én virkedag. Hører dere ikke fra oss, ring Olav eller Sofie.</p></div>
+</div>
+    </div>
+    <nav data-i18n-attr-aria-label="ns.mulighetsstudie.050" class="lopnav mt-l" aria-label="Løpet"><a data-i18n-html="ns.mulighetsstudie.051" href="/maps"><span class="k">← 01 · Finn</span><b>Maps</b></a><a data-i18n-html="ns.mulighetsstudie.052" href="/prosjekthotell"><span class="k">03 · Utvikle →</span><b>Prosjekthotell</b></a></nav>
   </div>
 </section>
 </main>
