@@ -1,54 +1,258 @@
-<!-- ut: prosjekthotell.html | meny: software | kanonisk: /prosjekthotell | tittel: Prosjekthotell · Software · Builtly | beskrivelse: Hele prosjektet i ett rom: dokumenter med revisjoner, BIM i nettleseren, anbud og byggeplass. -->
-<section class="phero mork">
+<!-- ut: prosjekthotell.html | meny: software | kanonisk: /prosjekthotell | tittel: Prosjekthotell · Software · Builtly | stil: software | skript: vindu | beskrivelse: Hele prosjektet i ett rom: dokumenter og revisjoner, samordningsmodell, frister, oversendelser, anbudsrom, byggeplass og FDV. -->
+<section class="phero mork sw-topp">
   <div class="w">
-    <span data-i18n-html="ns.prosjekthotell.001" class="merke"><span class="ruten">3</span>Prosjekthotell</span>
-    <h1 data-i18n-html="ns.prosjekthotell.002" class="h1">Hele prosjektet.<br><span class="aks">I ett rom.</span></h1>
-    <p data-i18n-html="ns.prosjekthotell.003" class="lede">Dokumenter, revisjoner, BIM, frister og oversendelser samlet for alle som jobber i prosjektet, fra første tegning til overtakelse og drift.</p>
-    <div data-i18n-html="ns.prosjekthotell.004" class="btns"><a class="btn" href="/contact">Book en gjennomgang <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="/software">Se alle fire produktene</a></div>
-    <div class="steg"><div><span class="n">01</span><b data-i18n-html="ns.prosjekthotell.005">Struktur</b><p data-i18n-html="ns.prosjekthotell.006">Ferdig mappestruktur og navnestandard fra første dag.</p></div><div><span class="n">02</span><b data-i18n-html="ns.prosjekthotell.007">Dokumenter</b><p data-i18n-html="ns.prosjekthotell.008">En ny fil blir en ny revisjon, aldri en kopi.</p></div><div><span class="n">03</span><b data-i18n-html="ns.prosjekthotell.009">BIM</b><p data-i18n-html="ns.prosjekthotell.010">Fagenes IFC i nettleseren, i én fellesmodell.</p></div><div><span class="n">04</span><b data-i18n-html="ns.prosjekthotell.011">Frister og oversendelser</b><p data-i18n-html="ns.prosjekthotell.012">Purring på e-post og SMS, og kvittering på alt som sendes.</p></div><div><span class="n">05</span><b data-i18n-html="ns.prosjekthotell.013">Byggeplass og drift</b><p data-i18n-html="ns.prosjekthotell.014">Innsjekk, sjekklister og avvik, og FDV ved overtakelse.</p></div></div>
+    <div class="sw-hode">
+      <div class="sw-navn langt">
+        <div data-i18n-html="ns.prosjekthotell.001" class="eyebrow"><span class="t">Software</span><span class="strek"></span><span>03 · Utvikle</span></div>
+        <h1 class="h1">Prosjekthotell</h1>
+      </div>
+      <div class="sw-om">
+        <p data-i18n-html="ns.prosjekthotell.002" class="sw-slag">Hele prosjektet <span class="aks">i ett rom.</span></p>
+        <p data-i18n-html="ns.prosjekthotell.003" class="lede">Dokumenter, revisjoner, BIM, frister og oversendelser samlet for alle som jobber i prosjektet, fra første tegning til overtakelse og drift.</p>
+        <div data-i18n-html="ns.prosjekthotell.004" class="btns"><a class="btn" href="#interesse">Book en demo <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="#i-bruk">Se det i bruk</a></div>
+      </div>
+    </div>
+    {{MODULER:prosjekthotell}}
   </div>
 </section>
-<section class="sek-tett myk">
+{{MODLINJE:prosjekthotell}}
+
+<section class="sek" id="i-bruk">
   <div class="w">
-    <div class="to i-bruk">
-      <div class="sek-hode" style="margin-bottom:0">
-        <div data-i18n-html="ns.prosjekthotell.015" class="eyebrow"><span class="t">03 · Utvikle</span><span class="strek"></span><span>Slik ser det ut</span></div>
-        <h2 data-i18n-html="ns.prosjekthotell.016" class="h2">Prosjekthotell i bruk.</h2>
-        <p data-i18n-html="ns.prosjekthotell.017" class="lede">For byggherrer, rådgivere og entreprenører.</p>
-        <p data-i18n-html="ns.prosjekthotell.018" class="liten">Bildet er fra Prosjekthotell. Navn og adresser er anonymisert.</p>
-      </div>
-      
-<figure class="skjerm ekte"><img src="/bilder/produkter/prosjekthotell-oversikt.jpg" width="1440" height="729" loading="lazy" alt="Prosjekthotell, prosjektoversikten: mapper, dokumenter, samordningsmodell, oppgaver og frister, og fremdriftsplan" data-i18n-attr-alt="ns.prosjekthotell.bilde.alt"></figure>
+    <div class="sek-hode">
+      <div data-i18n-html="ns.prosjekthotell.005" class="eyebrow"><span class="t">03 · Utvikle</span><span class="strek"></span><span>Slik ser det ut</span></div>
+      <h2 data-i18n-html="ns.prosjekthotell.006" class="h2">Prosjekthotell i bruk.</h2>
+      <p data-i18n-html="ns.prosjekthotell.007" class="lede">For byggherrer, rådgivere og entreprenører. Vinduene under er bygget etter Prosjekthotell og kan klikkes i. De viser eksempeldata.</p>
+    </div>
+    <div class="trekk">
+
+      <article class="trekk-rad">
+        <div class="trekk-tekst">
+          <span class="k">01</span>
+          <h3 data-i18n-html="ns.prosjekthotell.008">Struktur</h3>
+          <p data-i18n-html="ns.prosjekthotell.009">Ferdig mappestruktur fra første dag: fagbasert, fasebasert eller selskapets egen mal. Fagrollene styrer hvor hver enkelt kan skrive.</p>
+          <ul>
+            <li data-i18n-html="ns.prosjekthotell.010"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Fagbasert eller fasebasert mal, eller deres egen</span></li>
+            <li data-i18n-html="ns.prosjekthotell.011"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Egen filnavnstandard per prosjekt</span></li>
+            <li data-i18n-html="ns.prosjekthotell.012"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Roller for byggherre, rådgivere og entreprenører</span></li>
+          </ul>
+          <p data-i18n-html="ns.prosjekthotell.013" class="prov">Prøv: bytt mellom fagbasert og fasebasert</p>
+        </div>
+        <div class="vindu hotell" data-vindu>
+          <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">room.builtly.ai · P-01 Eksempeltunet</span><span class="eks">Eksempeldata</span></div>
+          <div class="pv">
+            <div class="pv-faner" role="tablist" aria-label="Mappestruktur" data-faner="mal">
+              <button type="button" role="tab" aria-selected="true" data-fane="fag">Fagbasert mappestruktur</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="fase">Fasebasert mappestruktur</button>
+            </div>
+            <div class="pv-to">
+              <div class="pv-kort" data-for="mal" data-rute="fag"><span class="pv-eyebrow">Fag på nivå 1</span><ul class="ph-tre"><li><span class="ph-mappe"></span>00 Administrasjon</li><li><span class="ph-mappe"></span>01 Styring og fremdrift</li><li><span class="ph-mappe"></span>02 Møtereferat</li><li><span class="ph-mappe"></span>03 Myndigheter</li><li><span class="ph-mappe"></span>04 Grunnlag</li><li><span class="ph-mappe"></span>05 BIM og tverrfaglig</li><li class="pa"><span class="ph-mappe"></span>10 ARK</li><li><span class="ph-mappe"></span>20 RIB</li><li><span class="ph-mappe"></span>21 RIV</li><li><span class="ph-mappe"></span>22 RIE</li><li><span class="ph-mappe"></span>25 RIG</li><li><span class="ph-mappe"></span>90 KS og kontroll</li><li><span class="ph-mappe"></span>91 Overtakelse og FDV</li></ul></div>
+              <div class="pv-kort" data-for="mal" data-rute="fase" hidden><span class="pv-eyebrow">Livsløpsfase på nivå 1</span><ul class="ph-tre"><li><span class="ph-mappe"></span>00 Prosjektadministrasjon</li><li><span class="ph-mappe"></span>01 Møter</li><li><span class="ph-mappe"></span>02 SHA og HMS</li><li><span class="ph-mappe"></span>03 Myndigheter</li><li><span class="ph-mappe"></span>04 Tomt og eiendomsforhold</li><li><span class="ph-mappe"></span>05 Salg og marked</li><li><span class="ph-mappe"></span>10 Grunnlag og regulering</li><li><span class="ph-mappe"></span>20 Tidligfase</li><li class="pa"><span class="ph-mappe"></span>30 Prosjektering</li><li><span class="ph-mappe"></span>40 Utførelse</li><li><span class="ph-mappe"></span>50 Overlevering og FDV</li><li><span class="ph-mappe"></span>90 KS og kontroll</li></ul></div>
+              <div class="pv-kort">
+                <span class="pv-eyebrow">10 ARK · 14 dokumenter</span>
+                <ul class="pv-liste">
+                  <li><span>A-20-101 Plan 1. etasje<small>PDF · 2,4 MB</small></span><span class="pv-chip ok">Rev. C</span></li>
+                  <li><span>A-20-102 Plan 2. etasje<small>PDF · 2,1 MB</small></span><span class="pv-chip ok">Rev. B</span></li>
+                  <li><span>A-40-201 Fasade sør<small>PDF · 3,0 MB</small></span><span class="pv-chip ok">Rev. B</span></li>
+                  <li><span>ARK-modell<small>IFC · 48 MB</small></span><span class="pv-chip ok">Rev. D</span></li>
+                </ul>
+                <p class="pv-note">Har prosjektet en filnavnstandard, kontrolleres filnavnet ved opplasting, og du får forslag til riktig navn.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="trekk-rad">
+        <div class="trekk-tekst">
+          <span class="k">02</span>
+          <h3 data-i18n-html="ns.prosjekthotell.014">Dokumenter</h3>
+          <p data-i18n-html="ns.prosjekthotell.015">En ny fil på samme dokument blir en ny revisjon, aldri en kopi. Historikken ligger på dokumentet, og alle ser hvilken revisjon som gjelder.</p>
+          <ul>
+            <li data-i18n-html="ns.prosjekthotell.016"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Samme filnavn i samme mappe gir ny revisjon, og du bekrefter</span></li>
+            <li data-i18n-html="ns.prosjekthotell.017"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Spør prosjektet, og få svar med kilde og revisjon</span></li>
+            <li data-i18n-html="ns.prosjekthotell.018"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Last opp mange filer og få forslag til mappe for hver</span></li>
+          </ul>
+          <p data-i18n-html="ns.prosjekthotell.019" class="prov">Prøv: last opp en ny revisjon</p>
+        </div>
+        <div class="vindu hotell" data-vindu>
+          <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">room.builtly.ai · Dokumenter</span><span class="eks">Eksempeldata</span></div>
+          <div class="pv">
+            <div class="pv-kort">
+              <div class="ph-dokhode"><div><span class="pv-eyebrow">10 ARK</span><div class="pv-tittel">A-20-101 Plan 1. etasje</div></div><span class="pv-chip ok" data-revteller="ph-rev">Rev. C</span></div>
+              <ul class="ph-rev" id="ph-rev">
+                <li class="gjeldende"><b>Rev. C</b><span>12. nov. 2026 · Kari Arkitekt</span><span class="pv-chip ok">Gjeldende</span></li>
+                <li><b>Rev. B</b><span>28. okt. 2026 · Kari Arkitekt</span></li>
+                <li><b>Rev. A</b><span>9. okt. 2026 · Kari Arkitekt</span></li>
+              </ul>
+              <div class="pv-knapper"><button type="button" class="pv-knapp" data-revisjon="ph-rev">Last opp ny revisjon</button></div>
+            </div>
+            <div class="pv-kort ph-ai">
+              <span class="pv-eyebrow">Spør Builtly AI</span>
+              <p class="ph-sporsmaal">Hvilken høyde har himlingen i plan 1?</p>
+              <p class="ph-svar">Himlingen i plan 1 er 2,70 m i oppholdsrom og 2,40 m i korridor.</p>
+              <div class="pv-knapper"><span class="pv-chip">A-20-101 Plan 1. etasje · Rev. C · s. 1</span><span class="pv-chip">Romskjema · Rev. B · s. 4</span></div>
+              <p class="pv-note">Svar med kildehenvisninger, fra dokumentene du selv har tilgang til.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="trekk-rad">
+        <div class="trekk-tekst">
+          <span class="k">03</span>
+          <h3 data-i18n-html="ns.prosjekthotell.020">BIM</h3>
+          <p data-i18n-html="ns.prosjekthotell.021">Fagenes IFC-modeller vises i nettleseren som én samordningsmodell. Modellen er alltid fagenes gjeldende revisjon, uten at noen må installere noe.</p>
+          <ul>
+            <li data-i18n-html="ns.prosjekthotell.022"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Røntgensyn og arealanalyse</span></li>
+            <li data-i18n-html="ns.prosjekthotell.023"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Avvik festes med nål i modellen eller på planarket</span></li>
+            <li data-i18n-html="ns.prosjekthotell.024"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>IFC-kontroll av modellene</span></li>
+          </ul>
+          <p data-i18n-html="ns.prosjekthotell.025" class="prov">Prøv: slå fagmodellene av og på</p>
+        </div>
+        <div class="vindu hotell pa-ark pa-rib pa-riv" data-vindu>
+          <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">room.builtly.ai · Samordningsmodell</span><span class="eks">Eksempeldata</span></div>
+          <div class="pv">
+            <div class="pv-kort">
+              <div class="ph-dokhode"><b>Samordningsmodell (BIM)</b><span class="pv-chip">3 fagmodeller · oppdatert 12. nov. 2026</span></div>
+              <div class="ph-modell"><svg viewBox="0 0 250 200" role="img" aria-label="Samordningsmodell: fire etasjer med fagmodellene ARK, RIB og RIV"><g class="bim-ark"><polygon points="100.0,84.0 215.2,150.5 149.4,188.5 34.2,122.0" fill="#e7efe9" stroke="#7fa596" stroke-width="1" fill-opacity=".55"/><polygon points="100.0,69.0 215.2,135.5 149.4,173.5 34.2,107.0" fill="#e7efe9" stroke="#7fa596" stroke-width="1" fill-opacity=".55"/><polygon points="100.0,54.0 215.2,120.5 149.4,158.5 34.2,92.0" fill="#e7efe9" stroke="#7fa596" stroke-width="1" fill-opacity=".55"/><polygon points="100.0,39.0 215.2,105.5 149.4,143.5 34.2,77.0" fill="#e7efe9" stroke="#7fa596" stroke-width="1" fill-opacity=".55"/><polygon points="100.0,24.0 215.2,90.5 149.4,128.5 34.2,62.0" fill="#d5e4dc" stroke="#7fa596" stroke-width="1" fill-opacity=".55"/><line x1="34.2" y1="117.8" x2="34.2" y2="111.2" stroke="#5f8576" stroke-width="1.6"/><line x1="50.6" y1="127.3" x2="50.6" y2="120.7" stroke="#5f8576" stroke-width="1.6"/><line x1="67.1" y1="136.8" x2="67.1" y2="130.2" stroke="#5f8576" stroke-width="1.6"/><line x1="83.5" y1="146.3" x2="83.5" y2="139.7" stroke="#5f8576" stroke-width="1.6"/><line x1="100.0" y1="155.8" x2="100.0" y2="149.2" stroke="#5f8576" stroke-width="1.6"/><line x1="116.5" y1="165.3" x2="116.5" y2="158.7" stroke="#5f8576" stroke-width="1.6"/><line x1="132.9" y1="174.8" x2="132.9" y2="168.2" stroke="#5f8576" stroke-width="1.6"/><line x1="149.4" y1="184.3" x2="149.4" y2="177.7" stroke="#5f8576" stroke-width="1.6"/><line x1="34.2" y1="102.8" x2="34.2" y2="96.2" stroke="#5f8576" stroke-width="1.6"/><line x1="50.6" y1="112.3" x2="50.6" y2="105.7" stroke="#5f8576" stroke-width="1.6"/><line x1="67.1" y1="121.8" x2="67.1" y2="115.2" stroke="#5f8576" stroke-width="1.6"/><line x1="83.5" y1="131.3" x2="83.5" y2="124.7" stroke="#5f8576" stroke-width="1.6"/><line x1="100.0" y1="140.8" x2="100.0" y2="134.2" stroke="#5f8576" stroke-width="1.6"/><line x1="116.5" y1="150.3" x2="116.5" y2="143.7" stroke="#5f8576" stroke-width="1.6"/><line x1="132.9" y1="159.8" x2="132.9" y2="153.2" stroke="#5f8576" stroke-width="1.6"/><line x1="149.4" y1="169.3" x2="149.4" y2="162.7" stroke="#5f8576" stroke-width="1.6"/><line x1="34.2" y1="87.8" x2="34.2" y2="81.2" stroke="#5f8576" stroke-width="1.6"/><line x1="50.6" y1="97.3" x2="50.6" y2="90.7" stroke="#5f8576" stroke-width="1.6"/><line x1="67.1" y1="106.8" x2="67.1" y2="100.2" stroke="#5f8576" stroke-width="1.6"/><line x1="83.5" y1="116.3" x2="83.5" y2="109.7" stroke="#5f8576" stroke-width="1.6"/><line x1="100.0" y1="125.8" x2="100.0" y2="119.2" stroke="#5f8576" stroke-width="1.6"/><line x1="116.5" y1="135.3" x2="116.5" y2="128.7" stroke="#5f8576" stroke-width="1.6"/><line x1="132.9" y1="144.8" x2="132.9" y2="138.2" stroke="#5f8576" stroke-width="1.6"/><line x1="149.4" y1="154.3" x2="149.4" y2="147.7" stroke="#5f8576" stroke-width="1.6"/><line x1="34.2" y1="72.8" x2="34.2" y2="66.2" stroke="#5f8576" stroke-width="1.6"/><line x1="50.6" y1="82.3" x2="50.6" y2="75.7" stroke="#5f8576" stroke-width="1.6"/><line x1="67.1" y1="91.8" x2="67.1" y2="85.2" stroke="#5f8576" stroke-width="1.6"/><line x1="83.5" y1="101.3" x2="83.5" y2="94.7" stroke="#5f8576" stroke-width="1.6"/><line x1="100.0" y1="110.8" x2="100.0" y2="104.2" stroke="#5f8576" stroke-width="1.6"/><line x1="116.5" y1="120.3" x2="116.5" y2="113.7" stroke="#5f8576" stroke-width="1.6"/><line x1="132.9" y1="129.8" x2="132.9" y2="123.2" stroke="#5f8576" stroke-width="1.6"/><line x1="149.4" y1="139.3" x2="149.4" y2="132.7" stroke="#5f8576" stroke-width="1.6"/></g><g class="bim-rib"><line x1="100.0" y1="84.0" x2="100.0" y2="69.0" stroke="#c2412d" stroke-width="2.2"/><line x1="67.1" y1="103.0" x2="67.1" y2="88.0" stroke="#c2412d" stroke-width="2.2"/><line x1="34.2" y1="122.0" x2="34.2" y2="107.0" stroke="#c2412d" stroke-width="2.2"/><line x1="128.8" y1="100.6" x2="128.8" y2="85.6" stroke="#c2412d" stroke-width="2.2"/><line x1="95.9" y1="119.6" x2="95.9" y2="104.6" stroke="#c2412d" stroke-width="2.2"/><line x1="63.0" y1="138.6" x2="63.0" y2="123.6" stroke="#c2412d" stroke-width="2.2"/><line x1="157.6" y1="117.2" x2="157.6" y2="102.2" stroke="#c2412d" stroke-width="2.2"/><line x1="124.7" y1="136.2" x2="124.7" y2="121.2" stroke="#c2412d" stroke-width="2.2"/><line x1="91.8" y1="155.2" x2="91.8" y2="140.2" stroke="#c2412d" stroke-width="2.2"/><line x1="186.4" y1="133.9" x2="186.4" y2="118.9" stroke="#c2412d" stroke-width="2.2"/><line x1="153.5" y1="152.9" x2="153.5" y2="137.9" stroke="#c2412d" stroke-width="2.2"/><line x1="120.6" y1="171.9" x2="120.6" y2="156.9" stroke="#c2412d" stroke-width="2.2"/><line x1="215.2" y1="150.5" x2="215.2" y2="135.5" stroke="#c2412d" stroke-width="2.2"/><line x1="182.3" y1="169.5" x2="182.3" y2="154.5" stroke="#c2412d" stroke-width="2.2"/><line x1="149.4" y1="188.5" x2="149.4" y2="173.5" stroke="#c2412d" stroke-width="2.2"/><line x1="100.0" y1="69.0" x2="215.2" y2="135.5" stroke="#c2412d" stroke-width="1.3"/><line x1="67.1" y1="88.0" x2="182.3" y2="154.5" stroke="#c2412d" stroke-width="1.3"/><line x1="34.2" y1="107.0" x2="149.4" y2="173.5" stroke="#c2412d" stroke-width="1.3"/><line x1="100.0" y1="69.0" x2="100.0" y2="54.0" stroke="#c2412d" stroke-width="2.2"/><line x1="67.1" y1="88.0" x2="67.1" y2="73.0" stroke="#c2412d" stroke-width="2.2"/><line x1="34.2" y1="107.0" x2="34.2" y2="92.0" stroke="#c2412d" stroke-width="2.2"/><line x1="128.8" y1="85.6" x2="128.8" y2="70.6" stroke="#c2412d" stroke-width="2.2"/><line x1="95.9" y1="104.6" x2="95.9" y2="89.6" stroke="#c2412d" stroke-width="2.2"/><line x1="63.0" y1="123.6" x2="63.0" y2="108.6" stroke="#c2412d" stroke-width="2.2"/><line x1="157.6" y1="102.2" x2="157.6" y2="87.2" stroke="#c2412d" stroke-width="2.2"/><line x1="124.7" y1="121.2" x2="124.7" y2="106.2" stroke="#c2412d" stroke-width="2.2"/><line x1="91.8" y1="140.2" x2="91.8" y2="125.2" stroke="#c2412d" stroke-width="2.2"/><line x1="186.4" y1="118.9" x2="186.4" y2="103.9" stroke="#c2412d" stroke-width="2.2"/><line x1="153.5" y1="137.9" x2="153.5" y2="122.9" stroke="#c2412d" stroke-width="2.2"/><line x1="120.6" y1="156.9" x2="120.6" y2="141.9" stroke="#c2412d" stroke-width="2.2"/><line x1="215.2" y1="135.5" x2="215.2" y2="120.5" stroke="#c2412d" stroke-width="2.2"/><line x1="182.3" y1="154.5" x2="182.3" y2="139.5" stroke="#c2412d" stroke-width="2.2"/><line x1="149.4" y1="173.5" x2="149.4" y2="158.5" stroke="#c2412d" stroke-width="2.2"/><line x1="100.0" y1="54.0" x2="215.2" y2="120.5" stroke="#c2412d" stroke-width="1.3"/><line x1="67.1" y1="73.0" x2="182.3" y2="139.5" stroke="#c2412d" stroke-width="1.3"/><line x1="34.2" y1="92.0" x2="149.4" y2="158.5" stroke="#c2412d" stroke-width="1.3"/><line x1="100.0" y1="54.0" x2="100.0" y2="39.0" stroke="#c2412d" stroke-width="2.2"/><line x1="67.1" y1="73.0" x2="67.1" y2="58.0" stroke="#c2412d" stroke-width="2.2"/><line x1="34.2" y1="92.0" x2="34.2" y2="77.0" stroke="#c2412d" stroke-width="2.2"/><line x1="128.8" y1="70.6" x2="128.8" y2="55.6" stroke="#c2412d" stroke-width="2.2"/><line x1="95.9" y1="89.6" x2="95.9" y2="74.6" stroke="#c2412d" stroke-width="2.2"/><line x1="63.0" y1="108.6" x2="63.0" y2="93.6" stroke="#c2412d" stroke-width="2.2"/><line x1="157.6" y1="87.2" x2="157.6" y2="72.2" stroke="#c2412d" stroke-width="2.2"/><line x1="124.7" y1="106.2" x2="124.7" y2="91.2" stroke="#c2412d" stroke-width="2.2"/><line x1="91.8" y1="125.2" x2="91.8" y2="110.2" stroke="#c2412d" stroke-width="2.2"/><line x1="186.4" y1="103.9" x2="186.4" y2="88.9" stroke="#c2412d" stroke-width="2.2"/><line x1="153.5" y1="122.9" x2="153.5" y2="107.9" stroke="#c2412d" stroke-width="2.2"/><line x1="120.6" y1="141.9" x2="120.6" y2="126.9" stroke="#c2412d" stroke-width="2.2"/><line x1="215.2" y1="120.5" x2="215.2" y2="105.5" stroke="#c2412d" stroke-width="2.2"/><line x1="182.3" y1="139.5" x2="182.3" y2="124.5" stroke="#c2412d" stroke-width="2.2"/><line x1="149.4" y1="158.5" x2="149.4" y2="143.5" stroke="#c2412d" stroke-width="2.2"/><line x1="100.0" y1="39.0" x2="215.2" y2="105.5" stroke="#c2412d" stroke-width="1.3"/><line x1="67.1" y1="58.0" x2="182.3" y2="124.5" stroke="#c2412d" stroke-width="1.3"/><line x1="34.2" y1="77.0" x2="149.4" y2="143.5" stroke="#c2412d" stroke-width="1.3"/><line x1="100.0" y1="39.0" x2="100.0" y2="24.0" stroke="#c2412d" stroke-width="2.2"/><line x1="67.1" y1="58.0" x2="67.1" y2="43.0" stroke="#c2412d" stroke-width="2.2"/><line x1="34.2" y1="77.0" x2="34.2" y2="62.0" stroke="#c2412d" stroke-width="2.2"/><line x1="128.8" y1="55.6" x2="128.8" y2="40.6" stroke="#c2412d" stroke-width="2.2"/><line x1="95.9" y1="74.6" x2="95.9" y2="59.6" stroke="#c2412d" stroke-width="2.2"/><line x1="63.0" y1="93.6" x2="63.0" y2="78.6" stroke="#c2412d" stroke-width="2.2"/><line x1="157.6" y1="72.2" x2="157.6" y2="57.2" stroke="#c2412d" stroke-width="2.2"/><line x1="124.7" y1="91.2" x2="124.7" y2="76.2" stroke="#c2412d" stroke-width="2.2"/><line x1="91.8" y1="110.2" x2="91.8" y2="95.2" stroke="#c2412d" stroke-width="2.2"/><line x1="186.4" y1="88.9" x2="186.4" y2="73.9" stroke="#c2412d" stroke-width="2.2"/><line x1="153.5" y1="107.9" x2="153.5" y2="92.9" stroke="#c2412d" stroke-width="2.2"/><line x1="120.6" y1="126.9" x2="120.6" y2="111.9" stroke="#c2412d" stroke-width="2.2"/><line x1="215.2" y1="105.5" x2="215.2" y2="90.5" stroke="#c2412d" stroke-width="2.2"/><line x1="182.3" y1="124.5" x2="182.3" y2="109.5" stroke="#c2412d" stroke-width="2.2"/><line x1="149.4" y1="143.5" x2="149.4" y2="128.5" stroke="#c2412d" stroke-width="2.2"/><line x1="100.0" y1="24.0" x2="215.2" y2="90.5" stroke="#c2412d" stroke-width="1.3"/><line x1="67.1" y1="43.0" x2="182.3" y2="109.5" stroke="#c2412d" stroke-width="1.3"/><line x1="34.2" y1="62.0" x2="149.4" y2="128.5" stroke="#c2412d" stroke-width="1.3"/></g><g class="bim-riv"><line x1="90.1" y1="86.9" x2="188.9" y2="143.9" stroke="#2f6fb5" stroke-width="3" stroke-linecap="round"/><line x1="106.6" y1="96.4" x2="72.0" y2="116.4" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="131.3" y1="110.6" x2="96.7" y2="130.6" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="155.9" y1="124.9" x2="121.4" y2="144.8" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="180.6" y1="139.1" x2="146.1" y2="159.1" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="90.1" y1="71.9" x2="188.9" y2="128.9" stroke="#2f6fb5" stroke-width="3" stroke-linecap="round"/><line x1="106.6" y1="81.4" x2="72.0" y2="101.4" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="131.3" y1="95.6" x2="96.7" y2="115.6" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="155.9" y1="109.9" x2="121.4" y2="129.9" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="180.6" y1="124.1" x2="146.1" y2="144.1" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="90.1" y1="56.9" x2="188.9" y2="113.9" stroke="#2f6fb5" stroke-width="3" stroke-linecap="round"/><line x1="106.6" y1="66.4" x2="72.0" y2="86.4" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="131.3" y1="80.6" x2="96.7" y2="100.6" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="155.9" y1="94.9" x2="121.4" y2="114.9" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="180.6" y1="109.1" x2="146.1" y2="129.1" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="90.1" y1="41.9" x2="188.9" y2="98.9" stroke="#2f6fb5" stroke-width="3" stroke-linecap="round"/><line x1="106.6" y1="51.4" x2="72.0" y2="71.4" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="131.3" y1="65.6" x2="96.7" y2="85.6" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="155.9" y1="79.9" x2="121.4" y2="99.9" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="180.6" y1="94.1" x2="146.1" y2="114.1" stroke="#2f6fb5" stroke-width="1.6" stroke-linecap="round"/><line x1="90.1" y1="86.9" x2="90.1" y2="30.2" stroke="#2f6fb5" stroke-width="3.4" stroke-linecap="round"/></g></svg></div>
+              <div class="pv-knapper" role="group" aria-label="Fagmodeller">
+                <button type="button" class="ph-fag ark" data-bryter="ark" aria-pressed="true">ARK</button>
+                <button type="button" class="ph-fag rib" data-bryter="rib" aria-pressed="true">RIB</button>
+                <button type="button" class="ph-fag riv" data-bryter="riv" aria-pressed="true">RIV</button>
+              </div>
+              <p class="pv-note">Samordningsmodellen bygges av fagenes gjeldende IFC-revisjoner.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="trekk-rad">
+        <div class="trekk-tekst">
+          <span class="k">04</span>
+          <h3 data-i18n-html="ns.prosjekthotell.026">Frister og oversendelser</h3>
+          <p data-i18n-html="ns.prosjekthotell.027">Hver frist ligger på en fagrolle, og systemet purrer for deg. Oversendelser fryses slik de ble sendt, og du ser hvem som har åpnet, lastet ned og bekreftet mottak.</p>
+          <ul>
+            <li data-i18n-html="ns.prosjekthotell.028"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Purring på e-post og SMS</span></li>
+            <li data-i18n-html="ns.prosjekthotell.029"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Kvittering per mottaker på oversendelser</span></li>
+            <li data-i18n-html="ns.prosjekthotell.030"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Anbudsrom: grunnlaget låses, og spørsmål fra tilbyderne besvares anonymt</span></li>
+          </ul>
+          <p data-i18n-html="ns.prosjekthotell.031" class="prov">Prøv: bytt mellom frister, oversendelser og anbudsrom</p>
+        </div>
+        <div class="vindu hotell" data-vindu>
+          <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">room.builtly.ai · Frister og oversendelser</span><span class="eks">Eksempeldata</span></div>
+          <div class="pv">
+            <div class="pv-faner" role="tablist" aria-label="Frister og oversendelser" data-faner="frist">
+              <button type="button" role="tab" aria-selected="true" data-fane="oppgaver">Oppgaver og frister</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="oversendelser">Oversendelser</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="anbud">Anbudsrom</button>
+            </div>
+            <div class="pv-kort" data-for="frist" data-rute="oppgaver">
+              <ul class="pv-liste">
+                <li><span>Armeringstegninger dekke 2<small>RIB · frist 14. nov.</small></span><span class="pv-chip var">Til gjennomgang</span></li>
+                <li><span>Ventilasjonsplan plan 1–4<small>RIV · frist 10. nov. · purret mandag kl. 09</small></span><span class="pv-chip rod">Forfalt</span></li>
+                <li><span>Fasadetegninger sør og vest<small>ARK · levert 6. nov.</small></span><span class="pv-chip ok">Godkjent</span></li>
+                <li><span>Geoteknisk notat, fundamentering<small>RIG · frist 21. nov.</small></span><span class="pv-chip">Åpen</span></li>
+              </ul>
+              <p class="pv-note">E-post tre dager før fristen, e-post og SMS på forfallsdagen, og purring hver mandag til leveransen er meldt levert.</p>
+            </div>
+            <div class="pv-kort" data-for="frist" data-rute="oversendelser" hidden>
+              <b>OVS-P01-014 Tegningspakke til entreprenør</b>
+              <p class="pv-note">Sendt 11. nov. 2026 · 12 dokumenter · pakken er fryst slik den ble sendt</p>
+              <ul class="pv-liste">
+                <li><span>Eksempel Entreprenør AS<small>prosjektleder</small></span><span class="pv-chip ok">Mottak bekreftet</span></li>
+                <li><span>Eksempel Rør AS<small>underentreprenør</small></span><span class="pv-chip">Dokument lastet ned</span></li>
+                <li><span>Eksempel Elektro AS<small>underentreprenør</small></span><span class="pv-chip">Lenken åpnet</span></li>
+              </ul>
+            </div>
+            <div class="pv-kort" data-for="frist" data-rute="anbud" hidden>
+              <b>Anbudsrom · Grunn- og betongarbeider</b>
+              <div class="pv-fakta tre"><div><span>Grunnlag</span><b>38 dokumenter</b></div><div><span>Spørsmål</span><b>7 besvart</b></div><div><span>Tilbud</span><b>3 mottatt</b></div></div>
+              <p class="pv-note">Grunnlaget låses etter første deling. Spørsmålsrunden er anonym, og tilbudene leveres på personlige lenker.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="trekk-rad">
+        <div class="trekk-tekst">
+          <span class="k">05</span>
+          <h3 data-i18n-html="ns.prosjekthotell.032">Byggeplass og drift</h3>
+          <p data-i18n-html="ns.prosjekthotell.033">Innsjekk etter byggherreforskriften § 15, sjekklister og avvik på mobil, og FDV-register når prosjektet går til overlevering. Byggeplass og feltarbeid slås på for prosjektene som trenger det.</p>
+          <ul>
+            <li data-i18n-html="ns.prosjekthotell.034"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Oversiktsliste over alle på byggeplassen</span></li>
+            <li data-i18n-html="ns.prosjekthotell.035"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Vernerunde, mottakskontroll og stillaskontroll</span></li>
+            <li data-i18n-html="ns.prosjekthotell.036"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Overtakelsesprotokoll, reklamasjonsfrister og vedlikeholdskalender</span></li>
+          </ul>
+          <p data-i18n-html="ns.prosjekthotell.037" class="prov">Prøv: bytt mellom innsjekk, sjekklister og FDV</p>
+        </div>
+        <div class="vindu hotell" data-vindu>
+          <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">room.builtly.ai · Byggeplass og feltarbeid</span><span class="eks">Eksempeldata</span></div>
+          <div class="pv">
+            <div class="pv-faner" role="tablist" aria-label="Byggeplass og drift" data-faner="plass">
+              <button type="button" role="tab" aria-selected="true" data-fane="innsjekk">Innsjekk</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="sjekk">Sjekklister og avvik</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="fdv">Drift og vedlikehold (FDV)</button>
+            </div>
+            <div class="pv-kort" data-for="plass" data-rute="innsjekk">
+              <div class="pv-fakta tre"><div><span>På plassen nå</span><b class="stor">14</b></div><div><span>Firmaer</span><b class="stor">5</b></div><div><span>Dato</span><b>13. nov. 2026</b></div></div>
+              <ul class="pv-liste">
+                <li><span>Eksempel Entreprenør AS<small>6 personer · inn 06:52</small></span><span class="pv-chip ok">Sjekket inn</span></li>
+                <li><span>Eksempel Rør AS<small>3 personer · inn 07:05</small></span><span class="pv-chip ok">Sjekket inn</span></li>
+                <li><span>Eksempel Elektro AS<small>2 personer · inn 07:10</small></span><span class="pv-chip ok">Sjekket inn</span></li>
+              </ul>
+              <span class="pv-knapp lys">Merk dagens liste som kontrollert</span>
+            </div>
+            <div class="pv-kort" data-for="plass" data-rute="sjekk" hidden>
+              <ul class="pv-liste">
+                <li><span>Vernerunde uke 46<small>14 punkter · 2 avvik</small></span><span class="pv-chip var">2 avvik</span></li>
+                <li><span>Mottakskontroll, betongelementer<small>9 punkter</small></span><span class="pv-chip ok">Uten avvik</span></li>
+                <li><span>Avvik: manglende rekkverk, plan 3<small>festet med nål på planarket · frist i dag</small></span><span class="pv-chip rod">Åpent</span></li>
+              </ul>
+              <p class="pv-note">Sjekklister og avvik føres på mobil, også uten nett.</p>
+            </div>
+            <div class="pv-kort" data-for="plass" data-rute="fdv" hidden>
+              <b>Vedlikeholdskalender</b>
+              <ul class="pv-liste">
+                <li><span>Ventilasjonsaggregat, filterbytte<small>hver 6. måned</small></span><span class="pv-chip">mai 2027</span></li>
+                <li><span>Heis, periodisk sikkerhetskontroll<small>hvert 2. år</small></span><span class="pv-chip">nov. 2028</span></li>
+                <li><span>Ettårsbefaring<small>regnet fra overtakelsesdatoen</small></span><span class="pv-chip">nov. 2027</span></li>
+              </ul>
+              <p class="pv-note">Komponentregisteret foreslås av AI og godkjennes av et menneske.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
-<section class="sek">
-  <div class="w">
-    <div class="sek-hode"><div data-i18n-html="ns.prosjekthotell.053" class="eyebrow"><span>Det du får</span></div><h2 data-i18n-html="ns.prosjekthotell.054" class="h2">Konkret, fra første dag.</h2></div>
-    <div class="faar"><div><span class="k">01</span><b data-i18n-html="ns.prosjekthotell.055">Revisjonskontroll</b><p data-i18n-html="ns.prosjekthotell.056">Disiplinkode og løpenummer settes for deg. Samme dokumentnummer har hele historikken sin.</p></div><div><span class="k">02</span><b data-i18n-html="ns.prosjekthotell.057">Oversendelser med kvittering</b><p data-i18n-html="ns.prosjekthotell.058">Pakken fryses slik den ble sendt. Hver mottaker får sin egen lenke, og du ser hvem som har åpnet, lastet ned og bekreftet.</p></div><div><span class="k">03</span><b data-i18n-html="ns.prosjekthotell.059">Frister som purrer selv</b><p data-i18n-html="ns.prosjekthotell.060">Påminnelse tre dager før, e-post og SMS på forfallsdagen og purring hver mandag til leveransen er meldt levert.</p></div><div><span class="k">04</span><b data-i18n-html="ns.prosjekthotell.061">BIM i nettleseren</b><p data-i18n-html="ns.prosjekthotell.062">Fellesmodellen er alltid fagenes gjeldende revisjon. Røntgensyn og arealanalyse uten å installere noe.</p></div><div><span class="k">05</span><b data-i18n-html="ns.prosjekthotell.063">Anbudsrom</b><p data-i18n-html="ns.prosjekthotell.064">Låst grunnlag fra mappene, anonym spørsmålsrunde og tilbud på personlige lenker, uten konto for tilbyderne.</p></div><div><span class="k">06</span><b data-i18n-html="ns.prosjekthotell.065">Byggeplass og FDV</b><p data-i18n-html="ns.prosjekthotell.066">Innsjekk etter byggherreforskriften § 15, sjekklister og avvik på mobil, og FDV-register ved overtakelse.</p></div></div>
-  </div>
-</section>
+
 <section class="sek-tett myk">
   <div class="w">
-    <div class="sek-hode"><div data-i18n-html="ns.prosjekthotell.067" class="eyebrow"><span class="t">Uten og med Prosjekthotell</span></div><h2 data-i18n-html="ns.prosjekthotell.068" class="h2">E-post, mapper og regneark blir ett rom.</h2></div>
+    <div class="sek-hode"><div data-i18n-html="ns.prosjekthotell.038" class="eyebrow"><span class="t">Uten og med Prosjekthotell</span></div><h2 data-i18n-html="ns.prosjekthotell.039" class="h2">E-post, mapper og regneark blir ett rom.</h2></div>
     <div class="utenmed">
-      <div class="uten"><span data-i18n-html="ns.prosjekthotell.069" class="l">I dag</span><h3 data-i18n-html="ns.prosjekthotell.070">Slik gjøres det ofte</h3><ol><li data-i18n-html="ns.prosjekthotell.071">Delte mapper med hver sin navnestandard.</li><li data-i18n-html="ns.prosjekthotell.072">Revisjoner som ligger i e-posttråder.</li><li data-i18n-html="ns.prosjekthotell.073">Tegningspakker på e-post, med manuell logg over mottakere.</li><li data-i18n-html="ns.prosjekthotell.074">Masing på frister, én e-post om gangen.</li><li data-i18n-html="ns.prosjekthotell.075">Tilbud sammenstilt i regneark.</li></ol><div data-i18n-html="ns.prosjekthotell.076" class="tid"><span>Resultat</span><b>Spredt i e-post, mapper og regneark</b></div></div>
-      <div class="med"><span data-i18n-html="ns.prosjekthotell.077" class="l">Med Prosjekthotell</span><h3 data-i18n-html="ns.prosjekthotell.078">Slik gjør du det her</h3><ol><li data-i18n-html="ns.prosjekthotell.079">Én struktur fra første dag.</li><li data-i18n-html="ns.prosjekthotell.080">Hver fil har revisjonene sine.</li><li data-i18n-html="ns.prosjekthotell.081">Oversendelser med kvittering per mottaker.</li><li data-i18n-html="ns.prosjekthotell.082">Systemet purrer for deg.</li><li data-i18n-html="ns.prosjekthotell.083">Tilbudene sammenstilles med kildefil.</li></ol><div data-i18n-html="ns.prosjekthotell.084" class="tid"><span>Resultat</span><b>Ett rom</b></div></div>
+      <div class="uten"><span data-i18n-html="ns.prosjekthotell.040" class="l">I dag</span><h3 data-i18n-html="ns.prosjekthotell.041">Slik gjøres det ofte</h3><ol><li data-i18n-html="ns.prosjekthotell.042">Delte mapper med hver sin navnestandard.</li><li data-i18n-html="ns.prosjekthotell.043">Revisjoner som ligger i e-posttråder.</li><li data-i18n-html="ns.prosjekthotell.044">Tegningspakker på e-post, med manuell logg over mottakere.</li><li data-i18n-html="ns.prosjekthotell.045">Masing på frister, én e-post om gangen.</li><li data-i18n-html="ns.prosjekthotell.046">Tilbud sammenstilt i regneark.</li></ol><div data-i18n-html="ns.prosjekthotell.047" class="tid"><span>Resultat</span><b>Flere systemer og e-posttråder</b></div></div>
+      <div class="med"><span data-i18n-html="ns.prosjekthotell.048" class="l">Med Prosjekthotell</span><h3 data-i18n-html="ns.prosjekthotell.049">Slik gjør du det her</h3><ol><li data-i18n-html="ns.prosjekthotell.050">Én struktur fra første dag.</li><li data-i18n-html="ns.prosjekthotell.051">Hver fil har revisjonene sine.</li><li data-i18n-html="ns.prosjekthotell.052">Oversendelser med kvittering per mottaker.</li><li data-i18n-html="ns.prosjekthotell.053">Systemet purrer for deg.</li><li data-i18n-html="ns.prosjekthotell.054">Tilbudene sammenstilles med kildefil.</li></ol><div data-i18n-html="ns.prosjekthotell.055" class="tid"><span>Resultat</span><b>Gjeldende revisjon ligger ett sted</b></div></div>
     </div>
-    <p data-i18n-html="ns.prosjekthotell.085" class="liten mt-s">Svaret på «hvor ligger gjeldende revisjon?» er alltid ett dokument.</p>
   </div>
 </section>
-<section class="sek">
+
+<section class="sek skj-sek">
   <div class="w">
-    <div>
-      <div class="sek-hode" style="margin-bottom:0;max-width:860px">
-        <div data-i18n-html="ns.prosjekthotell.086" class="eyebrow"><span class="t">Tilpasset dere</span><span class="strek"></span><span>Ta kontakt for en gjennomgang</span></div>
-        <h2 data-i18n-html="ns.prosjekthotell.087" class="h2">Se Prosjekthotell på deres eget prosjekt.</h2>
-        <p data-i18n-html="ns.prosjekthotell.088" class="lede">Vi setter opp ett av prosjektene deres og viser hvordan dokumenter, frister og BIM henger sammen. Vi setter opp produktet med deres data og brukere, og prisen avtales etter hva dere trenger.</p>
-        <div data-i18n-html="ns.prosjekthotell.089" class="btns"><a class="btn" href="/contact">Book en gjennomgang <span aria-hidden="true">→</span></a></div>
-        <p data-i18n-html="ns.prosjekthotell.090" class="liten mt-s">Software: <b>Olav Aukan Stenersen</b> <span class="mono">+47 907 00 719</span> · <b>Sofie Thire</b> <span class="mono">+47 912 42 705</span></p>
+    <div class="to">
+      <div class="skj-side">
+        <div data-i18n-html="ns.prosjekthotell.056" class="eyebrow"><span class="t">Kom i gang</span><span class="strek"></span><span>Tilpasset dere</span></div>
+        <h2 data-i18n-html="ns.prosjekthotell.057" class="h2" style="margin-top:18px">Samle all data og utvikle prosjektet deres.</h2>
+        <p data-i18n-html="ns.prosjekthotell.058" class="lede">Vi setter opp ett av prosjektene deres og viser hvordan dokumenter, frister og BIM henger sammen. Vi setter opp Prosjekthotell med deres data og brukere, og prisen avtales etter det dere trenger.</p>
+        <div class="kontakter">
+          <span data-i18n-html="ns.prosjekthotell.059" class="l">Eller ring oss</span>
+          <div class="kontakt"><img src="/photos/olav.jpg" alt="" width="56" height="64" loading="lazy"><div><b>Olav Aukan Stenersen</b><span><a href="tel:+4790700719">+47 907 00 719</a> · <a href="mailto:olav@builtly.ai">olav@builtly.ai</a></span></div></div>
+          <div class="kontakt"><img src="/photos/sofie.jpg" alt="" width="56" height="64" loading="lazy"><div><b>Sofie Thire</b><span><a href="tel:+4791242705">+47 912 42 705</a> · <a href="mailto:sofie@builtly.ai">sofie@builtly.ai</a></span></div></div>
+        </div>
       </div>
+      {{INTERESSE:prosjekthotell}}
     </div>
-    <nav data-i18n-attr-aria-label="ns.prosjekthotell.091" class="lopnav mt-l" aria-label="Løpet"><a data-i18n-html="ns.prosjekthotell.092" href="/mulighetsstudie"><span class="k">← 02 · Vurder</span><b>Mulighetsstudie</b></a><a data-i18n-html="ns.prosjekthotell.093" href="/salgskonsoll"><span class="k">04 · Selg →</span><b>Salgskonsoll</b></a></nav>
+    <nav data-i18n-attr-aria-label="ns.prosjekthotell.060" class="lopnav mt-l" aria-label="Løpet"><a data-i18n-html="ns.prosjekthotell.061" href="/mulighetsstudie"><span class="k">← 02 · Vurder</span><b>Mulighetsstudie</b></a><a data-i18n-html="ns.prosjekthotell.062" href="/salgskonsoll"><span class="k">04 · Selg →</span><b>Salgskonsoll</b></a></nav>
   </div>
 </section>

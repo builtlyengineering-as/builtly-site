@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title data-i18n="ns.software._tittel">Software · Builtly</title>
-<meta name="description" content="Fire produkter som følger utbyggingsprosjektet: Maps, Mulighetsstudie, Prosjekthotell og Salgskonsoll." data-i18n-attr-content="ns.software._beskrivelse" />
+<meta name="description" content="Én plattform, fire moduler som følger utbyggingsprosjektet: Maps, Mulighetsstudie, Prosjekthotell og Salgskonsoll." data-i18n-attr-content="ns.software._beskrivelse" />
 <meta name="theme-color" content="#FAFAF7" />
 <link rel="canonical" href="https://www.builtly.ai/software" />
 <meta property="og:type" content="website" />
@@ -12,13 +12,18 @@
 <meta property="og:site_name" content="Builtly" />
 <meta property="og:url" content="https://www.builtly.ai/software" />
 <meta property="og:title" content="Software · Builtly" />
-<meta property="og:description" content="Fire produkter som følger utbyggingsprosjektet: Maps, Mulighetsstudie, Prosjekthotell og Salgskonsoll." />
+<meta property="og:description" content="Én plattform, fire moduler som følger utbyggingsprosjektet: Maps, Mulighetsstudie, Prosjekthotell og Salgskonsoll." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/nettsted.css?v=20261108-2" />
-<script src="/i18n.js?v=20261108-2" defer></script>
-<script src="/nettsted.js?v=20261108-2" defer></script>
+<link rel="stylesheet" href="/nettsted.css?v=20261115-1" />
+<link rel="stylesheet" href="/software.css?v=20261115-1" />
+<script src="/i18n.js?v=20261115-1" defer></script>
+<script src="/nettsted.js?v=20261115-1" defer></script>
+<script src="/tomt.js?v=20261115-1" defer onerror="document.documentElement.classList.add('uten-skript')"></script>
+<script src="/kart.js?v=20261115-1" defer onerror="document.documentElement.classList.add('uten-skript')"></script>
+<script src="/vindu.js?v=20261115-1" defer onerror="document.documentElement.classList.add('uten-skript')"></script>
+<noscript><style>[data-kartlag],.kun-js,.prov,.modlinje{display:none}</style></noscript>
 </head>
 <body>
 <!-- Laget av tools/nettsted/lag.py fra tools/nettsted/sider/software.html. Rediger kilden, ikke denne fila. -->
@@ -27,7 +32,7 @@
     <a class="logo" href="/" aria-label="Builtly"><span class="logo-mark"></span>Builtly</a>
     <nav class="nav-links" aria-label="Hovedmeny" data-i18n-attr-aria-label="ns.nav.hovedmeny">
       <div class="dd">
-        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-rad"><span data-i18n-html="ns.nav.rad">Rådgivning</span> <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
+        <a class="dd-lenke" href="/tjenester" data-i18n-html="ns.nav.rad">Rådgivning</a><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-rad" aria-label="Vis fagene" data-i18n-attr-aria-label="ns.nav.rad.vis"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
         <div class="dd-panel" id="dd-rad">
           <a class="dd-i" href="/tjenester/geoteknikk"><span class="k">RIG</span><b data-i18n-html="ns.nav.geo">Geoteknikk</b><span data-i18n-html="ns.nav.geo.t">Grunnforhold, fundamentering, stabilitet og rapportering</span></a>
           <a class="dd-i" href="/tjenester/konstruksjon"><span class="k">RIB</span><b data-i18n-html="ns.nav.rib">Konstruksjon</b><span data-i18n-html="ns.nav.rib.t">Bæresystem, dimensjonering og konstruktive vurderinger</span></a>
@@ -37,13 +42,13 @@
         </div>
       </div>
       <div class="dd">
-        <button class="dd-btn on" type="button" aria-expanded="false" aria-controls="dd-sw">Software <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
+        <a class="dd-lenke on" href="/software">Software</a><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-sw" aria-label="Vis modulene" data-i18n-attr-aria-label="ns.nav.sw.vis"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
         <div class="dd-panel" id="dd-sw">
           <a class="dd-i" href="/maps"><span class="k">01</span><b>Maps</b><span data-i18n-html="ns.nav.maps.t">Alt om eiendommen, på ett sted</span></a>
-          <a class="dd-i" href="/mulighetsstudie"><span class="k">02</span><b data-i18n-html="ns.nav.ms">Mulighetsstudie</b><span data-i18n-html="ns.nav.ms.t">Hva tomta tåler: alternativer, sol og økonomi</span></a>
+          <a class="dd-i" href="/mulighetsstudie"><span class="k">02</span><b data-i18n-html="ns.nav.ms">Mulighetsstudie</b><span data-i18n-html="ns.nav.ms.t">Hva tåler tomten?</span></a>
           <a class="dd-i" href="/prosjekthotell"><span class="k">03</span><b data-i18n-html="ns.nav.ph">Prosjekthotell</b><span data-i18n-html="ns.nav.ph.t">Hele prosjektet i ett rom</span></a>
-          <a class="dd-i" href="/salgskonsoll"><span class="k">04</span><b data-i18n-html="ns.nav.sk">Salgskonsoll</b><span data-i18n-html="ns.nav.sk.t">Fra første interessent til siste bolig solgt</span></a>
-          <div class="dd-fot"><span data-i18n-html="ns.nav.sw.fot">Også: Render · BIM Viewer · Control</span><a href="/software" data-i18n-html="ns.nav.sw.alt">Se hele løpet →</a></div>
+          <a class="dd-i" href="/salgskonsoll"><span class="k">04</span><b data-i18n-html="ns.nav.sk">Salgskonsoll</b><span data-i18n-html="ns.nav.sk.t">Fra prosjekt til siste bolig solgt</span></a>
+          <div class="dd-fot"><span data-i18n-html="ns.nav.sw.fot">Én plattform, fire moduler</span><a href="/software" data-i18n-html="ns.nav.sw.alt">Se hele løpet →</a></div>
         </div>
       </div>
       <a href="/about" data-i18n-html="ns.nav.om">Om Builtly</a>
@@ -65,11 +70,12 @@
         <a href="/uavhengig-kontroll"><span data-i18n-html="ns.nav.uak">Uavhengig kontroll</span> <span data-i18n-html="ns.nav.uak.pris">20 000 kr per fag</span></a>
         <a href="/tjenester"><span data-i18n-html="ns.nav.rad.alt2">Alt om rådgivning</span> <span>→</span></a></div>
       <div><h4>Software</h4>
+        <a href="/software"><span data-i18n-html="ns.nav.sw.alt2">Hele løpet</span> <span data-i18n-html="ns.nav.sw.fire">Fire moduler</span></a>
         <a href="/maps">Maps <span data-i18n-html="ns.nav.fase1">01 Finn</span></a>
         <a href="/mulighetsstudie"><span data-i18n-html="ns.nav.ms">Mulighetsstudie</span> <span data-i18n-html="ns.nav.fase2">02 Vurder</span></a>
         <a href="/prosjekthotell"><span data-i18n-html="ns.nav.ph">Prosjekthotell</span> <span data-i18n-html="ns.nav.fase3">03 Utvikle</span></a>
         <a href="/salgskonsoll"><span data-i18n-html="ns.nav.sk">Salgskonsoll</span> <span data-i18n-html="ns.nav.fase4">04 Selg</span></a>
-        <a href="/software"><span data-i18n-html="ns.nav.sw.alt2">Hele løpet</span> <span>→</span></a></div>
+        <a href="/bli-kunde"><span data-i18n-html="ns.nav.demo">Book en demo</span> <span>→</span></a></div>
       <div><h4>Builtly</h4>
         <a href="/about"><span data-i18n-html="ns.nav.om">Om Builtly</span> <span></span></a>
         <a href="/contact"><span data-i18n-html="ns.nav.kontakt">Kontakt</span> <span data-i18n-html="ns.nav.ring">Ring eller skriv</span></a>
@@ -80,162 +86,215 @@
   </div>
 </header>
 <main>
-<section class="phero mork">
+<section class="phero mork sw-topp">
   <div class="w">
-    <div data-i18n-html="ns.software.001" class="eyebrow"><span class="t">Software</span><span class="strek"></span><span>For utbyggere og eiendomsutviklere</span></div>
-    <h1 data-i18n-html="ns.software.002" class="h1">Fra tomt<br><span class="aks">til overlevering.</span></h1>
-    <p data-i18n-html="ns.software.003" class="lede">Fire produkter som følger utbyggingsprosjektet: finn tomta, vurder hva den tåler, gjennomfør prosjektet og selg boligene. Bruk ett av dem eller alle fire, satt opp for bedriften din.</p>
-    <div data-i18n-html="ns.software.004" class="btns"><a class="btn" href="/contact">Book en gjennomgang <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="#kap-1">Se løpet</a></div>
-    <div class="steg fire">
-      <div><span data-i18n-html="ns.software.005" class="n">01 · Finn</span><b data-i18n-html="ns.software.006">Maps</b><p data-i18n-html="ns.software.007">Alt om eiendommen, på ett sted.</p></div>
-      <div><span data-i18n-html="ns.software.008" class="n">02 · Vurder</span><b data-i18n-html="ns.software.009">Mulighetsstudie</b><p data-i18n-html="ns.software.010">Hva tåler tomten?</p></div>
-      <div><span data-i18n-html="ns.software.011" class="n">03 · Utvikle</span><b data-i18n-html="ns.software.012">Prosjekthotell</b><p data-i18n-html="ns.software.013">Hele prosjektet i ett rom.</p></div>
-      <div><span data-i18n-html="ns.software.014" class="n">04 · Selg</span><b data-i18n-html="ns.software.015">Salgskonsoll</b><p data-i18n-html="ns.software.016">Fra første interessent til siste bolig solgt.</p></div>
+    <div class="sw-hode">
+      <div class="sw-navn langt">
+        <div data-i18n-html="ns.software.001" class="eyebrow"><span class="t">Software</span><span class="strek"></span><span>For utbyggere og eiendomsutviklere</span></div>
+        <h1 data-i18n-html="ns.software.002" class="h1">Fra tomt<br><span class="aks">til overlevering.</span></h1>
+      </div>
+      <div class="sw-om">
+        <p data-i18n-html="ns.software.003" class="sw-slag">Én plattform, fire moduler.</p>
+        <p data-i18n-html="ns.software.004" class="lede">Modulene følger utbyggingsprosjektet: finn den riktige tomten, vurder potensialet, gjennomfør prosjektet med alle data på ett sted, og selg boligene. Bruk én av dem eller alle fire, satt opp for nettopp din bedrift.</p>
+        <div data-i18n-html="ns.software.005" class="btns"><a class="btn" href="#interesse">Book en demo <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="#kap-1">Se hele løpet</a></div>
+      </div>
     </div>
+    <nav class="moduler" aria-label="Modulene" data-i18n-attr-aria-label="ns.sw.moduler">
+  <a href="/maps"><span class="n" data-i18n-html="ns.sw.m1.f">01 · Finn</span><b>Maps</b><span class="s" data-i18n-html="ns.sw.m1.s">Alt om eiendommen, på ett sted.</span></a>
+  <a href="/mulighetsstudie"><span class="n" data-i18n-html="ns.sw.m2.f">02 · Vurder</span><b>Mulighetsstudie</b><span class="s" data-i18n-html="ns.sw.m2.s">Hva tåler tomten?</span></a>
+  <a href="/prosjekthotell"><span class="n" data-i18n-html="ns.sw.m3.f">03 · Utvikle</span><b>Prosjekthotell</b><span class="s" data-i18n-html="ns.sw.m3.s">Hele prosjektet i ett rom.</span></a>
+  <a href="/salgskonsoll"><span class="n" data-i18n-html="ns.sw.m4.f">04 · Selg</span><b>Salgskonsoll</b><span class="s" data-i18n-html="ns.sw.m4.s">Fra prosjekt til siste bolig solgt.</span></a>
+</nav>
   </div>
 </section>
-
-<div data-i18n-attr-aria-label="ns.software.017" class="losbar" aria-label="Framdrift i løpet">
-  <div class="w losbar-in">
-    <span data-i18n-html="ns.software.018" class="hvem">Builtly <i>Software</i></span>
+<div class="modlinje" data-modlinje inert>
+  <div class="w modlinje-in">
+    <a class="hvem" href="/software">Builtly <i>Software</i></a>
     <ol>
-      <li data-i18n-html="ns.software.019"><a href="#kap-1">01 Maps</a><span class="spor"><i></i></span></li>
-      <li data-i18n-html="ns.software.020"><a href="#kap-2">02 Mulighetsstudie</a><span class="spor"><i></i></span></li>
-      <li data-i18n-html="ns.software.021"><a href="#kap-3">03 Prosjekthotell</a><span class="spor"><i></i></span></li>
-      <li data-i18n-html="ns.software.022"><a href="#kap-4">04 Salgskonsoll</a><span class="spor"><i></i></span></li>
+      <li data-modul="maps"><a href="/maps">01 Maps</a><span class="spor"><i></i></span></li>
+      <li data-modul="mulighetsstudie"><a href="/mulighetsstudie">02 Mulighetsstudie</a><span class="spor"><i></i></span></li>
+      <li data-modul="prosjekthotell"><a href="/prosjekthotell">03 Prosjekthotell</a><span class="spor"><i></i></span></li>
+      <li data-modul="salgskonsoll"><a href="/salgskonsoll">04 Salgskonsoll</a><span class="spor"><i></i></span></li>
     </ol>
-    <span data-i18n-html="ns.software.023" class="her"><b>Fra tomt til overlevering</b><span>Fire produkter</span></span>
+    <a class="btn btn-liten" href="#interesse"><span data-i18n-html="ns.sw.demo">Book en demo</span> <span aria-hidden="true">→</span></a>
   </div>
 </div>
 
 <section class="kap" id="kap-1" data-kap="1" data-navn="Maps" data-fase="Finn">
   <div class="w"><div class="kap-in">
     <div>
-      <span data-i18n-html="ns.software.024" class="fase">§ 01 · Finn</span>
-      <h2 data-i18n-html="ns.software.025" class="navn">Maps</h2>
-      <p data-i18n-html="ns.software.026" class="lede">Alt om eiendommen, på ett sted. Søk opp en adresse og se eier, regulering, risiko og marked i ett eiendomskort.</p>
+      <span data-i18n-html="ns.software.006" class="fase">§ 01 · Finn</span>
+      <h2 class="navn">Maps</h2>
+      <p data-i18n-html="ns.software.007" class="lede">Alt om eiendommen, på ett sted. Søk opp en adresse og se eier, regulering, risiko, marked og økonomi i ett eiendomskort.</p>
       <ul>
-        <li data-i18n-html="ns.software.027"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Matrikkel, areal, bygg og hjemmelshaver</span></li>
-        <li data-i18n-html="ns.software.028"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Over 60 kartlag fra NVE, NGU, DiBK og flere</span></li>
-        <li data-i18n-html="ns.software.029"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Eier, regnskap og verdiindikasjon med spenn</span></li>
-        <li data-i18n-html="ns.software.030"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Eiendoms- og områderapport som PDF</span></li>
+        <li data-i18n-html="ns.software.008"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Matrikkel, areal, bygg og hjemmelshaver</span></li>
+        <li data-i18n-html="ns.software.009"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Over 40 kartlag fra NVE, NGU, DiBK og flere</span></li>
+        <li data-i18n-html="ns.software.010"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Eier, regnskap og verdiestimat med spenn</span></li>
+        <li data-i18n-html="ns.software.011"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Autoplan tegner en situasjonsplan på tomten</span></li>
       </ul>
-      <a data-i18n-html="ns.software.031" class="pil" href="/maps">Les mer om Maps <span aria-hidden="true">→</span></a>
+      <a data-i18n-html="ns.software.012" class="pil" href="/maps">Les mer om Maps <span aria-hidden="true">→</span></a>
     </div>
-    
-<figure class="skjerm ekte"><img src="/bilder/produkter/maps-eiendom.jpg" width="1440" height="722" loading="lazy" alt="Maps: en eiendom i 3D-kartet med eiendomskortet og eiendomsdetaljer med verdiestimat, nøkkeldata, plan og risikoprofil" data-i18n-attr-alt="ns.software.bilde.maps.alt"></figure>
+    <div class="vindu maps" data-vindu data-kartlag data-start3d>
+      <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">maps.builtly.ai</span><span class="eks">Eksempeldata</span></div>
+      <div class="pv-kart">
+        <svg role="img" aria-label="Kart i 3D over et eksempelnabolag med en valgt eiendom"></svg>
+        <div class="pv-lagpanel">
+          <b>Kartlag</b>
+          <label><input type="checkbox" data-lag="flom" checked><span>Flomsoner (10–1000 år)</span></label>
+          <label><input type="checkbox" data-lag="regulering"><span>Reguleringsplan (arealformål)</span></label>
+          <label><input type="checkbox" data-lag="stoy"><span>Støysoner (veg/bane/fly)</span></label>
+        </div>
+        <div class="ap-seg liten ap-visning" role="group" aria-label="Perspektiv"><button type="button" data-perspektiv="0" aria-pressed="false">2D</button><button type="button" data-perspektiv="1" aria-pressed="true">3D</button></div>
+        <div class="pv-kort pv-eiekort" data-eiendomskort>
+          <span class="pv-eyebrow">Eiendom</span>
+          <div class="pv-tittel">Eksempelgata 12</div>
+          <div class="pv-fakta"><div><span>Gnr / bnr</span><b>100/415</b></div><div><span>Tomteareal</span><b>5 869 m²</b></div></div>
+          <div class="pv-rad"><span>Verdiestimat</span><b>30–38 mill. kr</b></div>
+        </div>
+      </div>
+    </div>
   </div></div>
 </section>
 
 <section class="kap" id="kap-2" data-kap="2" data-navn="Mulighetsstudie" data-fase="Vurder">
   <div class="w"><div class="kap-in">
     <div>
-      <span data-i18n-html="ns.software.048" class="fase">§ 02 · Vurder</span>
-      <h2 data-i18n-html="ns.software.049" class="navn">Mulighetsstudie</h2>
-      <p data-i18n-html="ns.software.050" class="lede">Hva tåler tomten? Tre konsepter på samme tomt, med arealer, boliger, sol og skygge og tomteverdi.</p>
+      <span data-i18n-html="ns.software.013" class="fase">§ 02 · Vurder</span>
+      <h2 class="navn">Mulighetsstudie</h2>
+      <p data-i18n-html="ns.software.014" class="lede">Hva tåler tomten? Tomt, plan og rammer, analyser, utbyggingsgrep, marked og økonomi.</p>
       <ul>
-        <li data-i18n-html="ns.software.051"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Tomt, regulering, naboer og terreng hentes inn</span></li>
-        <li data-i18n-html="ns.software.052"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Byggegrenser og hindringer tegnes på ortofoto</span></li>
-        <li data-i18n-html="ns.software.053"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Rangert etter en åpen poengmodell</span></li>
-        <li data-i18n-html="ns.software.054"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>A3-rapport til styret og banken, og en teaser</span></li>
+        <li data-i18n-html="ns.software.015"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Tomten hentes fra matrikkelen, og du kontrollerer planen</span></li>
+        <li data-i18n-html="ns.software.016"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Tre utbyggingsgrep på samme tomt, med areal, boliger og sol</span></li>
+        <li data-i18n-html="ns.software.017"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Poeng med vekter du kan flytte, og residual tomteverdi</span></li>
+        <li data-i18n-html="ns.software.018"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>A3-rapport som beslutningsgrunnlag, og en teaser til tidlig dialog</span></li>
       </ul>
-      <a data-i18n-html="ns.software.055" class="pil" href="/mulighetsstudie">Les mer om Mulighetsstudie <span aria-hidden="true">→</span></a>
+      <a data-i18n-html="ns.software.019" class="pil" href="/mulighetsstudie">Les mer om Mulighetsstudie <span aria-hidden="true">→</span></a>
     </div>
-    
-<figure class="skjerm ekte"><img src="/bilder/produkter/mulighetsstudie-eiendom.jpg" width="1440" height="847" loading="lazy" alt="Mulighetsstudie, trinnet Eiendom: tomta hentet fra matrikkelen, ortofoto med tomtegrense og foreløpig byggeområde" data-i18n-attr-alt="ns.software.bilde.alt"></figure>
+    <div class="vindu studie kun-js" data-vindu>
+      <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">app.builtly.ai · Mulighetsstudie · Resultater</span><span class="eks">Eksempeldata</span></div>
+      <div class="mini" data-ministudie></div>
+    </div>
   </div></div>
 </section>
 
 <section class="kap" id="kap-3" data-kap="3" data-navn="Prosjekthotell" data-fase="Utvikle">
   <div class="w"><div class="kap-in">
     <div>
-      <span data-i18n-html="ns.software.073" class="fase">§ 03 · Utvikle</span>
-      <h2 data-i18n-html="ns.software.074" class="navn">Prosjekthotell</h2>
-      <p data-i18n-html="ns.software.075" class="lede">Hele prosjektet i ett rom. Dokumenter, revisjoner, BIM, frister og oversendelser for alle som jobber i prosjektet.</p>
+      <span data-i18n-html="ns.software.020" class="fase">§ 03 · Utvikle</span>
+      <h2 class="navn">Prosjekthotell</h2>
+      <p data-i18n-html="ns.software.021" class="lede">Hele prosjektet i ett rom. Dokumenter, revisjoner, BIM, frister og oversendelser for alle som jobber i prosjektet.</p>
       <ul>
-        <li data-i18n-html="ns.software.076"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Ferdig mappestruktur og revisjonskontroll</span></li>
-        <li data-i18n-html="ns.software.077"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Oversendelser med kvittering per mottaker</span></li>
-        <li data-i18n-html="ns.software.078"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Frister med purring på e-post og SMS</span></li>
-        <li data-i18n-html="ns.software.079"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>BIM i nettleseren, anbudsrom og FDV</span></li>
+        <li data-i18n-html="ns.software.022"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Ferdig mappestruktur og revisjonskontroll</span></li>
+        <li data-i18n-html="ns.software.023"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Integrert BIM, anbudsrom og FDV</span></li>
+        <li data-i18n-html="ns.software.024"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Oversendelser med kvittering per mottaker</span></li>
+        <li data-i18n-html="ns.software.025"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Frister med purring på e-post og SMS</span></li>
       </ul>
-      <a data-i18n-html="ns.software.080" class="pil" href="/prosjekthotell">Les mer om Prosjekthotell <span aria-hidden="true">→</span></a>
+      <a data-i18n-html="ns.software.026" class="pil" href="/prosjekthotell">Les mer om Prosjekthotell <span aria-hidden="true">→</span></a>
     </div>
-    
-<figure class="skjerm ekte"><img src="/bilder/produkter/prosjekthotell-oversikt.jpg" width="1440" height="729" loading="lazy" alt="Prosjekthotell, prosjektoversikten: mapper, dokumenter, samordningsmodell, oppgaver og frister, og fremdriftsplan" data-i18n-attr-alt="ns.software.bilde.ph.alt"></figure>
+    <div class="vindu hotell" data-vindu>
+      <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">room.builtly.ai · P-01 Eksempeltunet</span><span class="eks">Eksempeldata</span></div>
+      <div class="pv">
+        <div class="ph-dokhode"><div><span class="pv-eyebrow">Detaljprosjektering</span><div class="pv-tittel">P-01 Eksempeltunet</div></div><span class="pv-chip ok">Aktiv</span></div>
+        <div class="sk-kpi lys"><div><span>Mapper</span><b>23</b></div><div><span>Dokumenter</span><b data-tell="412">412</b></div><div><span>Oppfølging</span><b>3</b></div><div><span>Neste milepæl</span><b>21. nov.</b></div><div><span>Prosjektmedlemmer</span><b>18</b></div></div>
+        <div class="pv-to">
+          <div class="pv-kort"><b>Oppgaver og frister</b>
+            <ul class="pv-liste">
+              <li><span>Armeringstegninger dekke 2<small>RIB · frist 14. nov.</small></span><span class="pv-chip var">Til gjennomgang</span></li>
+              <li><span>Ventilasjonsplan plan 1–4<small>RIV · purret mandag</small></span><span class="pv-chip rod">Forfalt</span></li>
+              <li><span>Fasadetegninger sør og vest<small>ARK</small></span><span class="pv-chip ok">Godkjent</span></li>
+            </ul></div>
+          <div class="pv-kort"><b>Siste aktivitet</b>
+            <ul class="pv-liste">
+              <li><span>A-20-101 Plan 1. etasje<small>ny revisjon · Rev. C</small></span><span class="pv-chip">12. nov.</span></li>
+              <li><span>OVS-P01-014 Tegningspakke<small>mottak bekreftet</small></span><span class="pv-chip">11. nov.</span></li>
+              <li><span>RIB-modell<small>ny IFC i samordningsmodellen</small></span><span class="pv-chip">10. nov.</span></li>
+            </ul></div>
+        </div>
+      </div>
+    </div>
   </div></div>
 </section>
 
 <section class="kap" id="kap-4" data-kap="4" data-navn="Salgskonsoll" data-fase="Selg">
   <div class="w"><div class="kap-in">
     <div>
-      <span data-i18n-html="ns.software.115" class="fase">§ 04 · Selg</span>
-      <h2 data-i18n-html="ns.software.116" class="navn">Salgskonsoll</h2>
-      <p data-i18n-html="ns.software.117" class="lede">Fra første interessent til siste bolig solgt. Interessenter, nyhetsbrev, landingssider, annonser og salgsstatus i én konsoll.</p>
+      <span data-i18n-html="ns.software.027" class="fase">§ 04 · Selg</span>
+      <h2 class="navn">Salgskonsoll</h2>
+      <p data-i18n-html="ns.software.028" class="lede">Samle hele salget på ett sted, fra første interessent til siste bolig solgt. Interessenter, landingssider, oppfølging og salgsstatus i én konsoll.</p>
       <ul>
-        <li data-i18n-html="ns.software.118"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Én interessentliste med samtykke og kilde</span></li>
-        <li data-i18n-html="ns.software.119"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Nyhetsbrev og SMS av ferdige fasebrev</span></li>
-        <li data-i18n-html="ns.software.120"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Annonser til Meta og Snapchat, publisert pauset</span></li>
-        <li data-i18n-html="ns.software.121"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Salget mot målet, rapportert hver fredag</span></li>
+        <li data-i18n-html="ns.software.029"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Én interessentliste med samtykke og kilde</span></li>
+        <li data-i18n-html="ns.software.030"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Nyhetsbrev og SMS med ferdige brev per salgsfase</span></li>
+        <li data-i18n-html="ns.software.031"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Annonser til Meta og Snapchat, pauset til dere slår dem på</span></li>
+        <li data-i18n-html="ns.software.032"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Salget mot målet i en ukerapport hver fredag</span></li>
       </ul>
-      <a data-i18n-html="ns.software.122" class="pil" href="/salgskonsoll">Les mer om Salgskonsoll <span aria-hidden="true">→</span></a>
+      <a data-i18n-html="ns.software.033" class="pil" href="/salgskonsoll">Les mer om Salgskonsoll <span aria-hidden="true">→</span></a>
     </div>
-    
-<div data-i18n-attr-aria-label="ns.software.123" class="skjerm" role="img" aria-label="Eksempel: Salgskonsoll med salgsstatus mot mål, salgskurve og interessenter i arbeidsrekkefølge">
-  <div data-i18n-html="ns.software.124" class="skjerm-topp"><span class="prikk"></span><span class="url">sales.builtly.ai · Eksempeltunet</span><span class="eks">Eksempeldata</span></div>
-  <div class="kpi"><div data-i18n-html="ns.software.125"><span>Solgt</span><b>24 av 39</b></div><div data-i18n-html="ns.software.126"><span>Salgsgrad</span><b>62 %</b></div><div data-i18n-html="ns.software.127"><span>Takt</span><b style="color:var(--accent-ink)">Foran mål</b></div></div>
-  <div class="skjerm-kropp" style="min-height:0">
-    <div class="kart" style="background:#fff;min-height:230px">
-      <svg viewBox="0 0 400 240" preserveAspectRatio="none" aria-hidden="true">
-        <g stroke="#E6E3DA" stroke-width="1"><path d="M30 30 H390"/><path d="M30 90 H390"/><path d="M30 150 H390"/><path d="M30 210 H390"/></g>
-        <g font-family="JetBrains Mono, monospace" font-size="9" fill="#5F646C"><text x="2" y="33">39</text><text x="2" y="213">0</text><text x="30" y="232">Mar</text><text x="200" y="232">Jul</text><text x="360" y="232">Nov</text></g>
-        <path d="M30 210 L390 30" stroke="#B8B5AD" stroke-width="1.5" stroke-dasharray="5 4" fill="none"/>
-        <path d="M30 210 L80 196 L120 170 L160 150 L200 128 L240 116 L280 100 L320 92 L350 84" stroke="#0D9488" stroke-width="2.5" fill="none"/>
-        <circle cx="350" cy="84" r="4" fill="#0D9488"/>
-        <g font-family="JetBrains Mono, monospace" font-size="9.5"><text x="300" y="72" fill="#0B7A70">24 solgt</text><text x="250" y="48" fill="#5F646C">mål</text></g>
-      </svg>
+    <div class="vindu salg" data-vindu>
+      <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">sales.builtly.ai · Eksempeltunet</span><span class="eks">Eksempeldata</span></div>
+      <div class="pv">
+        <div class="sk-kpi"><div><span>Solgt</span><b><span data-tell="24">24</span> av 39</b></div><div><span>Salgsgrad</span><b><span data-tell="62" data-etter=" %">62 %</span></b></div><div><span>Interessenter</span><b data-tell="214">214</b></div><div><span>Salgstakt</span><b class="gronn">Foran skjema</b></div></div>
+        <div class="pv-kort">
+          <svg class="sk-kurve" viewBox="0 0 400 170" role="img" aria-label="Salgskurve: 24 solgte boliger, foran målet">
+            <g stroke="rgba(233,235,238,.1)" stroke-width="1"><path d="M34 16H392"/><path d="M34 62H392"/><path d="M34 108H392"/><path d="M34 152H392"/></g>
+            <g font-family="JetBrains Mono, monospace" font-size="9" fill="#9aa3ad"><text x="6" y="20">39</text><text x="12" y="156">0</text><text x="34" y="167">Mar</text><text x="200" y="167">Jul</text><text x="366" y="167">Nov</text></g>
+            <path d="M34 152 L392 16" stroke="#6b7480" stroke-width="1.5" stroke-dasharray="5 4" fill="none"/>
+            <path d="M34 152 L82 141 L122 122 L162 106 L202 90 L242 81 L282 68 L322 62 L352 55" stroke="#3fbfa2" stroke-width="2.5" fill="none"/>
+            <circle cx="352" cy="55" r="4" fill="#3fbfa2"/>
+            <g font-family="JetBrains Mono, monospace" font-size="9.5"><text x="300" y="45" fill="#3fbfa2">24 solgt</text><text x="250" y="30" fill="#9aa3ad">mål</text></g>
+          </svg>
+        </div>
+        <div class="pv-kort"><ul class="pv-liste">
+          <li><span>Kari Nordmann<small>Landingsside · 3-roms, 2. etasje</small></span><span class="pv-chip var">Veldig aktuell</span></li>
+          <li><span>Siri Berg<small>Interesseskjema · 4-roms, toppetasje</small></span><span class="pv-chip ok">Reservert</span></li>
+          <li><span>Ola Hansen<small>FINN.no · 2-roms</small></span><span class="pv-chip rod">Ikke fulgt opp</span></li>
+        </ul></div>
+      </div>
     </div>
-    <div class="panel" style="padding:0">
-      <div class="tbl"><table>
-        <thead><tr><th data-i18n-html="ns.software.128">Interessent</th><th data-i18n-html="ns.software.129">Kilde</th><th data-i18n-html="ns.software.130">Status</th></tr></thead>
-        <tbody>
-          <tr><td data-i18n-html="ns.software.131">Kari N.</td><td data-i18n-html="ns.software.132">Landingsside</td><td data-i18n-html="ns.software.133"><span class="chip ok">veldig aktuell</span></td></tr>
-          <tr><td data-i18n-html="ns.software.134">Ola H.</td><td data-i18n-html="ns.software.135">QR, byggegjerde</td><td data-i18n-html="ns.software.136"><span class="chip">visning</span></td></tr>
-          <tr><td data-i18n-html="ns.software.137">Siri B.</td><td data-i18n-html="ns.software.138">Meta-annonse</td><td data-i18n-html="ns.software.139"><span class="chip var">reservert</span></td></tr>
-          <tr><td data-i18n-html="ns.software.140">Per L.</td><td data-i18n-html="ns.software.141">Nyhetsbrev</td><td data-i18n-html="ns.software.142"><span class="chip">aktuell</span></td></tr>
-        </tbody></table></div>
-      <div style="padding:10px 14px"><div data-i18n-html="ns.software.143" class="rad" style="border:0"><span>Fredagsrapport</span><b>Fre kl. 08:00</b></div></div>
-    </div>
-  </div>
-</div>
   </div></div>
 </section>
 
-<section class="sek-tett">
+<section class="sek myk skj-sek">
   <div class="w">
-    <div class="sek-hode"><div data-i18n-html="ns.software.144" class="eyebrow"><span>Også fra Builtly</span></div><h2 data-i18n-html="ns.software.145" class="h2">Tre verktøy til.</h2></div>
-    <div class="ruter" style="margin-top:0">
-      <div><span data-i18n-html="ns.software.146" class="l">Gratis</span><b data-i18n-html="ns.software.147">BIM Viewer</b><p data-i18n-html="ns.software.148">Dra en IFC-fil inn i nettleseren og mål, snitt og les arealer. Filen leses på din maskin og lastes aldri opp.</p><a data-i18n-html="ns.software.149" class="pil" href="/bim-viewer" style="font-size:14px">Åpne BIM Viewer</a></div>
-      <div><span data-i18n-html="ns.software.150" class="l">Visualisering</span><b data-i18n-html="ns.software.151">Render</b><p data-i18n-html="ns.software.152">Fotorealistiske bilder fra arkitektens IFC eller fra et bilde du har, med materialer fra virkelige leverandører.</p><a data-i18n-html="ns.software.153" class="pil" href="/render" style="font-size:14px">Les mer</a></div>
-      <div><span data-i18n-html="ns.software.154" class="l">Tidlig tilgang</span><b data-i18n-html="ns.software.155">Control</b><p data-i18n-html="ns.software.156">Byggevarene i prosjektet og dokumentasjonen bak dem: ytelseserklæringer, sikkerhetsdatablad, EPD og FDV.</p><a data-i18n-html="ns.software.157" class="pil" href="/control" style="font-size:14px">Les mer</a></div>
-    </div>
-  </div>
-</section>
-
-<section class="sek myk">
-  <div class="w">
-    <div class="to" style="align-items:start">
-      <div class="sek-hode" style="margin-bottom:0">
-        <div data-i18n-html="ns.software.158" class="eyebrow"><span class="t">Slik kjøper du</span><span class="strek"></span><span>Tilpasset bedriften</span></div>
-        <h2 data-i18n-html="ns.software.159" class="h2">Vi starter med en gjennomgang.</h2>
-        <p data-i18n-html="ns.software.160" class="lede">Ta med en tomt, et prosjekt eller et område dere jobber med. Vi viser produktene på det, setter dem opp med deres data og brukere, og prisen avtales etter hva dere trenger.</p>
-        <div class="lister" style="grid-template-columns:minmax(0,1fr);margin-top:22px"><ul><li data-i18n-html="ns.software.161"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Dere eier dataene.</b> Rådgiverne våre ser ikke prosjektene deres uten at dere inviterer oss.</span></li><li data-i18n-html="ns.software.162"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Bruk softwaren uten rådgivning</b>, eller rådgivningen uten software.</span></li></ul></div>
-        <div data-i18n-html="ns.software.163" class="btns mt-m"><a class="btn" href="/contact">Book en gjennomgang <span aria-hidden="true">→</span></a></div>
+    <div class="to">
+      <div class="skj-side">
+        <div data-i18n-html="ns.software.034" class="eyebrow"><span class="t">Slik kjøper du</span><span class="strek"></span><span>Tilpasset din bedrift</span></div>
+        <h2 data-i18n-html="ns.software.035" class="h2" style="margin-top:18px">Vi starter med en demo.</h2>
+        <p data-i18n-html="ns.software.036" class="lede">Vi tar en tomt, et prosjekt eller et område dere er interessert i, demonstrerer modulene på det og setter dem opp for deres data og brukere. Prisen avtales etter det dere trenger.</p>
+        <div class="lister" style="grid-template-columns:minmax(0,1fr)"><ul><li data-i18n-html="ns.software.037"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Dere eier dataene.</b> Vi ser ikke prosjektene deres uten at dere inviterer oss.</span></li><li data-i18n-html="ns.software.038"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><b>Bruk softwaren med eller uten rådgivning.</b></span></li></ul></div>
+        <div class="kontakter">
+          <span data-i18n-html="ns.software.039" class="l">Eller ring oss</span>
+          <div class="kontakt"><img src="/photos/olav.jpg" alt="" width="56" height="64" loading="lazy"><div><b>Olav Aukan Stenersen</b><span><a href="tel:+4790700719">+47 907 00 719</a> · <a href="mailto:olav@builtly.ai">olav@builtly.ai</a></span></div></div>
+          <div class="kontakt"><img src="/photos/sofie.jpg" alt="" width="56" height="64" loading="lazy"><div><b>Sofie Thire</b><span><a href="tel:+4791242705">+47 912 42 705</a> · <a href="mailto:sofie@builtly.ai">sofie@builtly.ai</a></span></div></div>
+        </div>
       </div>
-      <div class="personer"><div class="person"><img data-i18n-attr-alt="ns.software.164" src="/photos/olav.jpg" alt="Olav Aukan Stenersen" width="120" height="140">
-  <div><span data-i18n-html="ns.software.165" class="rolle">Account Executive</span><h3 data-i18n-html="ns.software.166">Olav Aukan Stenersen</h3><p data-i18n-html="ns.software.167" class="for">Gjennomgang, oppsett og pris for Maps, Mulighetsstudie, Prosjekthotell og Salgskonsoll.</p>
-  <a class="tlf" href="tel:+4790700719">+47 907 00 719</a><a data-i18n-html="ns.software.168" class="epost" href="mailto:olav@builtly.ai">olav@builtly.ai</a></div></div><div class="person"><img data-i18n-attr-alt="ns.software.169" src="/photos/sofie.jpg" alt="Sofie Thire" width="120" height="140">
-  <div><span data-i18n-html="ns.software.170" class="rolle">Account Executive</span><h3 data-i18n-html="ns.software.171">Sofie Thire</h3><p data-i18n-html="ns.software.172" class="for">Gjennomgang, oppsett og pris for Maps, Mulighetsstudie, Prosjekthotell og Salgskonsoll.</p>
-  <a class="tlf" href="tel:+4791242705">+47 912 42 705</a><a data-i18n-html="ns.software.173" class="epost" href="mailto:sofie@builtly.ai">sofie@builtly.ai</a></div></div></div>
+      <div class="skj-ramme" id="interesse">
+<form class="skj" data-skjema data-intake="https://app.builtly.ai/" data-liste="l_19fe041ff6232371164" novalidate>
+  <fieldset>
+    <legend data-i18n-html="ns.sw.skj.mod">Hvilke moduler gjelder det?</legend>
+    <div class="brikker"><label class="brikke"><input type="checkbox" name="mod" value="Builtly Maps (eiendomskart)" data-modul="maps"><span>Maps</span></label><label class="brikke"><input type="checkbox" name="mod" value="Mulighetsstudie (ARK)" data-modul="mulighetsstudie"><span>Mulighetsstudie</span></label><label class="brikke"><input type="checkbox" name="mod" value="Prosjekthotell / datarom" data-modul="prosjekthotell"><span>Prosjekthotell</span></label><label class="brikke"><input type="checkbox" name="mod" value="Salgskonsoll" data-modul="salgskonsoll"><span>Salgskonsoll</span></label></div>
+  </fieldset>
+  <fieldset>
+    <legend data-i18n-html="ns.sw.skj.onske">Hva ønsker dere?</legend>
+    <div class="brikker">
+      <label class="brikke"><input type="radio" name="onske" value="Demo"><span data-i18n-html="ns.sw.skj.o1">Demo</span></label>
+      <label class="brikke"><input type="radio" name="onske" value="Tilbud"><span data-i18n-html="ns.sw.skj.o2">Tilbud</span></label>
+      <label class="brikke"><input type="radio" name="onske" value="Demo + tilbud" checked><span data-i18n-html="ns.sw.skj.o3">Demo og tilbud</span></label>
+    </div>
+  </fieldset>
+  <div class="felt-rad">
+    <label class="felt"><span data-i18n-html="ns.sw.skj.firma">Firma</span><input type="text" name="firma" required autocomplete="organization"></label>
+    <label class="felt"><span data-i18n-html="ns.sw.skj.navn">Navn</span><input type="text" name="navn" required autocomplete="name"></label>
+    <label class="felt"><span data-i18n-html="ns.sw.skj.epost">E-post</span><input type="email" name="epost" required autocomplete="email"></label>
+    <label class="felt"><span data-i18n-html="ns.sw.skj.tlf">Telefon <i>valgfritt</i></span><input type="tel" name="tlf" autocomplete="tel"></label>
+  </div>
+  <label class="felt"><span data-i18n-html="ns.sw.skj.melding">Noe vi bør vite om prosjektet? <i>valgfritt</i></span><textarea name="melding" rows="3" maxlength="600"></textarea></label>
+  <div class="skj-felle" aria-hidden="true"><label>Nettside <input type="text" name="nettside" tabindex="-1" autocomplete="off"></label></div>
+  <label class="samtykke"><input type="checkbox" name="samtykke" required><span data-i18n-html="ns.sw.skj.samtykke">Jeg samtykker i at Builtly kontakter meg om henvendelsen og lagrer opplysningene mine til det formålet. Se <a href="/privacy">personvernerklæringen</a>.</span></label>
+  <p class="skj-feil" role="alert" hidden data-i18n-html="ns.sw.skj.feil">Fyll ut firma, navn og e-post, og kryss av for samtykke.</p>
+  <div class="skj-send"><button class="btn" type="submit"><span data-i18n-html="ns.sw.skj.send">Send forespørsel</span> <span aria-hidden="true">→</span></button><span class="liten" data-i18n-html="ns.sw.skj.svar">Vi svarer innen én virkedag.</span></div>
+</form>
+<div class="skj-takk" role="status" hidden><b data-i18n-html="ns.sw.skj.takk">Takk. Forespørselen er sendt.</b><p data-i18n-html="ns.sw.skj.takk2">Vi tar kontakt innen én virkedag. Hører dere ikke fra oss, ring Olav eller Sofie.</p></div>
+</div>
     </div>
   </div>
 </section>

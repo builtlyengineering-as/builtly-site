@@ -12,6 +12,17 @@ Kildene ligger her i tools/nettsted/:
   sider/<navn>.en.json   engelsk for hver nøkkel på siden, og _tittel og _beskrivelse.
   felles.en.json         engelsk for menyen og bunnteksten.
   nettsted.css, .js      kopieres til /nettsted.css og /nettsted.js.
+  software.css           stilen for softwaresidene (meta: stil: software), kopieres til /software.css.
+  vindu.js               modullinja, produktvinduene og interesseskjemaet på softwaresidene.
+  tomt.js                regnemotoren bak produktdemoene. Test: node tools/nettsted/test_tomt.mjs
+  kart.js                det tegnede eksempelkartet demoene bruker, i 2D og 3D.
+  autoplan.js, studie.js demoene av Autoplan (Maps) og Mulighetsstudie. De bruker tomt.js og kart.js.
+
+Softwaresidene deler tre biter som lages her, så de er like på alle sidene:
+  {{MODULER:<modul>}}    modullinja i toppen, med den aktive modulen markert (tom = ingen aktiv).
+  {{MODLINJE:<modul>}}   den smale linja som kommer fram når toppen er rullet forbi.
+  {{INTERESSE:<modul>}}  interesseskjemaet, med modulen haket av på forhånd.
+Tekstene i dem har nøkler under ns.sw. og engelsk i felles.en.json.
 
 Tekst som skal oversettes, har data-i18n-html="ns.<side>.<nr>". Norsk står inline i
 HTML-en og hentes derfra, så norsk finnes bare ett sted. i18n.js faller tilbake til
@@ -30,7 +41,7 @@ from html.parser import HTMLParser
 
 ROT = pathlib.Path(__file__).resolve().parents[2]
 HER = pathlib.Path(__file__).resolve().parent
-VERSJON = "20261108-2"
+VERSJON = "20261115-1"
 SITE = "https://www.builtly.ai"
 PORTAL = "https://portal.builtly.ai"
 
@@ -110,7 +121,7 @@ def meny(aktiv):
     <a class="logo" href="/" aria-label="Builtly"><span class="logo-mark"></span>Builtly</a>
     <nav class="nav-links" aria-label="Hovedmeny" data-i18n-attr-aria-label="ns.nav.hovedmeny">
       <div class="dd">
-        <button class="dd-btn{' on' if aktiv == 'radgivning' else ''}" type="button" aria-expanded="false" aria-controls="dd-rad">{k('nav.rad', 'Rådgivning')} {CHEV}</button>
+        <a class="dd-lenke{' on' if aktiv == 'radgivning' else ''}" href="/tjenester" data-i18n-html="ns.nav.rad">Rådgivning</a><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-rad" aria-label="Vis fagene" data-i18n-attr-aria-label="ns.nav.rad.vis">{CHEV}</button>
         <div class="dd-panel" id="dd-rad">
           <a class="dd-i" href="/tjenester/geoteknikk"><span class="k">RIG</span>{k('nav.geo', 'Geoteknikk', 'b')}{k('nav.geo.t', 'Grunnforhold, fundamentering, stabilitet og rapportering')}</a>
           <a class="dd-i" href="/tjenester/konstruksjon"><span class="k">RIB</span>{k('nav.rib', 'Konstruksjon', 'b')}{k('nav.rib.t', 'Bæresystem, dimensjonering og konstruktive vurderinger')}</a>
@@ -120,13 +131,13 @@ def meny(aktiv):
         </div>
       </div>
       <div class="dd">
-        <button class="dd-btn{' on' if aktiv == 'software' else ''}" type="button" aria-expanded="false" aria-controls="dd-sw">Software {CHEV}</button>
+        <a class="dd-lenke{' on' if aktiv == 'software' else ''}" href="/software">Software</a><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-sw" aria-label="Vis modulene" data-i18n-attr-aria-label="ns.nav.sw.vis">{CHEV}</button>
         <div class="dd-panel" id="dd-sw">
           <a class="dd-i" href="/maps"><span class="k">01</span><b>Maps</b>{k('nav.maps.t', 'Alt om eiendommen, på ett sted')}</a>
-          <a class="dd-i" href="/mulighetsstudie"><span class="k">02</span>{k('nav.ms', 'Mulighetsstudie', 'b')}{k('nav.ms.t', 'Hva tomta tåler: alternativer, sol og økonomi')}</a>
+          <a class="dd-i" href="/mulighetsstudie"><span class="k">02</span>{k('nav.ms', 'Mulighetsstudie', 'b')}{k('nav.ms.t', 'Hva tåler tomten?')}</a>
           <a class="dd-i" href="/prosjekthotell"><span class="k">03</span>{k('nav.ph', 'Prosjekthotell', 'b')}{k('nav.ph.t', 'Hele prosjektet i ett rom')}</a>
-          <a class="dd-i" href="/salgskonsoll"><span class="k">04</span>{k('nav.sk', 'Salgskonsoll', 'b')}{k('nav.sk.t', 'Fra første interessent til siste bolig solgt')}</a>
-          <div class="dd-fot">{k('nav.sw.fot', 'Også: Render · BIM Viewer · Control')}<a href="/software" data-i18n-html="ns.nav.sw.alt">Se hele løpet →</a></div>
+          <a class="dd-i" href="/salgskonsoll"><span class="k">04</span>{k('nav.sk', 'Salgskonsoll', 'b')}{k('nav.sk.t', 'Fra prosjekt til siste bolig solgt')}</a>
+          <div class="dd-fot">{k('nav.sw.fot', 'Én plattform, fire moduler')}<a href="/software" data-i18n-html="ns.nav.sw.alt">Se hele løpet →</a></div>
         </div>
       </div>
       <a href="/about"{on('om')} data-i18n-html="ns.nav.om">Om Builtly</a>
@@ -148,11 +159,12 @@ def meny(aktiv):
         <a href="/uavhengig-kontroll"><span data-i18n-html="ns.nav.uak">Uavhengig kontroll</span> <span data-i18n-html="ns.nav.uak.pris">20 000 kr per fag</span></a>
         <a href="/tjenester"><span data-i18n-html="ns.nav.rad.alt2">Alt om rådgivning</span> <span>→</span></a></div>
       <div><h4>Software</h4>
+        <a href="/software"><span data-i18n-html="ns.nav.sw.alt2">Hele løpet</span> <span data-i18n-html="ns.nav.sw.fire">Fire moduler</span></a>
         <a href="/maps">Maps <span data-i18n-html="ns.nav.fase1">01 Finn</span></a>
         <a href="/mulighetsstudie"><span data-i18n-html="ns.nav.ms">Mulighetsstudie</span> <span data-i18n-html="ns.nav.fase2">02 Vurder</span></a>
         <a href="/prosjekthotell"><span data-i18n-html="ns.nav.ph">Prosjekthotell</span> <span data-i18n-html="ns.nav.fase3">03 Utvikle</span></a>
         <a href="/salgskonsoll"><span data-i18n-html="ns.nav.sk">Salgskonsoll</span> <span data-i18n-html="ns.nav.fase4">04 Selg</span></a>
-        <a href="/software"><span data-i18n-html="ns.nav.sw.alt2">Hele løpet</span> <span>→</span></a></div>
+        <a href="/bli-kunde"><span data-i18n-html="ns.nav.demo">Book en demo</span> <span>→</span></a></div>
       <div><h4>Builtly</h4>
         <a href="/about"><span data-i18n-html="ns.nav.om">Om Builtly</span> <span></span></a>
         <a href="/contact"><span data-i18n-html="ns.nav.kontakt">Kontakt</span> <span data-i18n-html="ns.nav.ring">Ring eller skriv</span></a>
@@ -207,12 +219,120 @@ def bunntekst():
 </footer>"""
 
 
+# ---------------------------------------------------------------------------
+# Softwaresidene: modullinja, den smale linja og interesseskjemaet (like på alle sidene)
+# ---------------------------------------------------------------------------
+MODULER = [  # (nøkkel, nr, fase, navn, slagord, adresse, verdien salgets mottak kjenner modulen på)
+    ("maps", "01", "Finn", "Maps", "Alt om eiendommen, på ett sted.", "/maps", "Builtly Maps (eiendomskart)"),
+    ("mulighetsstudie", "02", "Vurder", "Mulighetsstudie", "Hva tåler tomten?", "/mulighetsstudie", "Mulighetsstudie (ARK)"),
+    ("prosjekthotell", "03", "Utvikle", "Prosjekthotell", "Hele prosjektet i ett rom.", "/prosjekthotell", "Prosjekthotell / datarom"),
+    ("salgskonsoll", "04", "Selg", "Salgskonsoll", "Fra prosjekt til siste bolig solgt.", "/salgskonsoll", "Salgskonsoll"),
+]
+# Mottaket er det samme som det gamle skjemaet på /bli-kunde brukte: interessentlista «Builtly — Bli kunde» i
+# Salgskonsoll, som varsler salg og gir oppfølging i CRM. Modulverdiene over må stå ordrett, tilbudsbrevet leser dem.
+INTAKE = "https://app.builtly.ai/"
+INTAKE_LISTE = "l_19fe041ff6232371164"
+
+
+def moduler(aktiv):
+    ut = ['<nav class="moduler" aria-label="Modulene" data-i18n-attr-aria-label="ns.sw.moduler">']
+    for i, (nk, nr, fase, navn, slag, href, _) in enumerate(MODULER, 1):
+        her = ' class="pa" aria-current="page"' if nk == aktiv else ""
+        ut.append(
+            f'  <a href="{href}"{her}><span class="n" data-i18n-html="ns.sw.m{i}.f">{nr} · {fase}</span>'
+            f'<b>{navn}</b><span class="s" data-i18n-html="ns.sw.m{i}.s">{slag}</span></a>'
+        )
+    ut.append("</nav>")
+    return "\n".join(ut)
+
+
+def modlinje(aktiv):
+    ut = ['<div class="modlinje" data-modlinje inert>', '  <div class="w modlinje-in">',
+          '    <a class="hvem" href="/software">Builtly <i>Software</i></a>', "    <ol>"]
+    for i, (nk, nr, fase, navn, slag, href, _) in enumerate(MODULER, 1):
+        her = ' class="on"' if nk == aktiv else ""
+        na = ' aria-current="page"' if nk == aktiv else ""
+        ut.append(f'      <li{her} data-modul="{nk}"><a href="{href}"{na}>{nr} {navn}</a><span class="spor"><i></i></span></li>')
+    ut += ["    </ol>",
+           '    <a class="btn btn-liten" href="#interesse"><span data-i18n-html="ns.sw.demo">Book en demo</span> <span aria-hidden="true">→</span></a>',
+           "  </div>", "</div>"]
+    return "\n".join(ut)
+
+
+def interesse(forvalgt):
+    valg = []
+    for i, (nk, nr, fase, navn, slag, href, verdi) in enumerate(MODULER, 1):
+        paa = " checked" if nk == forvalgt else ""
+        valg.append(f'<label class="brikke"><input type="checkbox" name="mod" value="{html.escape(verdi)}" data-modul="{nk}"{paa}><span>{navn}</span></label>')
+    return f"""<div class="skj-ramme" id="interesse">
+<form class="skj" data-skjema data-intake="{INTAKE}" data-liste="{INTAKE_LISTE}" novalidate>
+  <fieldset>
+    <legend data-i18n-html="ns.sw.skj.mod">Hvilke moduler gjelder det?</legend>
+    <div class="brikker">{''.join(valg)}</div>
+  </fieldset>
+  <fieldset>
+    <legend data-i18n-html="ns.sw.skj.onske">Hva ønsker dere?</legend>
+    <div class="brikker">
+      <label class="brikke"><input type="radio" name="onske" value="Demo"><span data-i18n-html="ns.sw.skj.o1">Demo</span></label>
+      <label class="brikke"><input type="radio" name="onske" value="Tilbud"><span data-i18n-html="ns.sw.skj.o2">Tilbud</span></label>
+      <label class="brikke"><input type="radio" name="onske" value="Demo + tilbud" checked><span data-i18n-html="ns.sw.skj.o3">Demo og tilbud</span></label>
+    </div>
+  </fieldset>
+  <div class="felt-rad">
+    <label class="felt"><span data-i18n-html="ns.sw.skj.firma">Firma</span><input type="text" name="firma" required autocomplete="organization"></label>
+    <label class="felt"><span data-i18n-html="ns.sw.skj.navn">Navn</span><input type="text" name="navn" required autocomplete="name"></label>
+    <label class="felt"><span data-i18n-html="ns.sw.skj.epost">E-post</span><input type="email" name="epost" required autocomplete="email"></label>
+    <label class="felt"><span data-i18n-html="ns.sw.skj.tlf">Telefon <i>valgfritt</i></span><input type="tel" name="tlf" autocomplete="tel"></label>
+  </div>
+  <label class="felt"><span data-i18n-html="ns.sw.skj.melding">Noe vi bør vite om prosjektet? <i>valgfritt</i></span><textarea name="melding" rows="3" maxlength="600"></textarea></label>
+  <div class="skj-felle" aria-hidden="true"><label>Nettside <input type="text" name="nettside" tabindex="-1" autocomplete="off"></label></div>
+  <label class="samtykke"><input type="checkbox" name="samtykke" required><span data-i18n-html="ns.sw.skj.samtykke">Jeg samtykker i at Builtly kontakter meg om henvendelsen og lagrer opplysningene mine til det formålet. Se <a href="/privacy">personvernerklæringen</a>.</span></label>
+  <p class="skj-feil" role="alert" hidden data-i18n-html="ns.sw.skj.feil">Fyll ut firma, navn og e-post, og kryss av for samtykke.</p>
+  <div class="skj-send"><button class="btn" type="submit"><span data-i18n-html="ns.sw.skj.send">Send forespørsel</span> <span aria-hidden="true">→</span></button><span class="liten" data-i18n-html="ns.sw.skj.svar">Vi svarer innen én virkedag.</span></div>
+</form>
+<div class="skj-takk" role="status" hidden><b data-i18n-html="ns.sw.skj.takk">Takk. Forespørselen er sendt.</b><p data-i18n-html="ns.sw.skj.takk2">Vi tar kontakt innen én virkedag. Hører dere ikke fra oss, ring Olav eller Sofie.</p></div>
+</div>"""
+
+
+def software_deler():
+    """Alle de delte bitene samlet, så nøklene under ns.sw. kan hentes ut og sjekkes mot felles.en.json."""
+    return moduler("") + modlinje("") + interesse("")
+
+
+def utvid(innhold, fil):
+    """Bytter {{MODULER:x}}, {{MODLINJE:x}} og {{INTERESSE:x}} med de delte bitene."""
+    kjente = {m[0] for m in MODULER} | {""}
+    lagere = {"MODULER": moduler, "MODLINJE": modlinje, "INTERESSE": interesse}
+
+    def bytt(m):
+        hva, modul = m.group(1), m.group(2)
+        if modul not in kjente:
+            sys.exit(f"{fil}: ukjent modul i {{{{{hva}:{modul}}}}}")
+        return lagere[hva](modul)
+
+    return re.sub(r"\{\{(MODULER|MODLINJE|INTERESSE):([a-z]*)\}\}", bytt, innhold)
+
+
 def side(meta, innhold):
     ut = meta["ut"]
     kanon = SITE + meta.get("kanonisk", "/")
     tittel = html.escape(meta["tittel"])
     beskr = html.escape(meta["beskrivelse"])
     navn = meta["navn"]
+    # Softwaresidene laster egne skript og egen stil i tillegg (meta: skript: tomt,kart,vindu og stil: software).
+    ekstra = "".join(
+        f'\n<script src="/{s.strip()}.js?v={VERSJON}" defer onerror="document.documentElement.classList.add(\'uten-skript\')"></script>'
+        for s in meta.get("skript", "").split(",") if s.strip()
+    )
+    stiler = "".join(
+        f'\n<link rel="stylesheet" href="/{s.strip()}.css?v={VERSJON}" />'
+        for s in meta.get("stil", "").split(",") if s.strip()
+    )
+    # Uten JavaScript vises reservebildene, og det som bare virker med skript, skjules.
+    uten_js = (
+        '\n<noscript><style>[data-kartlag],.kun-js,.prov,.modlinje{display:none}</style></noscript>'
+        if ekstra else ""
+    )
     return f"""<!DOCTYPE html>
 <html lang="no">
 <head>
@@ -231,9 +351,9 @@ def side(meta, innhold):
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/nettsted.css?v={VERSJON}" />
+<link rel="stylesheet" href="/nettsted.css?v={VERSJON}" />{stiler}
 <script src="/i18n.js?v={VERSJON}" defer></script>
-<script src="/nettsted.js?v={VERSJON}" defer></script>
+<script src="/nettsted.js?v={VERSJON}" defer></script>{ekstra}{uten_js}
 </head>
 <body>
 <!-- Laget av tools/nettsted/lag.py fra tools/nettsted/sider/{navn}.html. Rediger kilden, ikke denne fila. -->
@@ -386,8 +506,8 @@ def main():
     alle_no, alle_en = {}, {}
 
     felles_en = json.loads((HER / "felles.en.json").read_text(encoding="utf-8"))
-    skall = meny("") + bunntekst()
-    felles_no = nokler(skall, "meny og bunntekst")
+    skall = meny("") + bunntekst() + software_deler()
+    felles_no = nokler(skall, "meny, bunntekst og de delte bitene på softwaresidene")
     mangler = sorted(set(felles_no) - set(felles_en))
     ubrukt = sorted(set(felles_en) - set(felles_no))
     if mangler or ubrukt:
@@ -400,7 +520,13 @@ def main():
         navn = fil.stem
         meta, innhold = les_meta(fil.read_text(encoding="utf-8"), fil.name)
         meta["navn"] = navn
-        no = nokler(innhold, fil.name)
+        innhold = utvid(innhold, fil.name)
+        # Nøklene under ns.sw. hører til de delte bitene og er alt sjekket mot felles.en.json.
+        alle_nokler = nokler(innhold, fil.name)
+        ukjente = sorted(n for n in alle_nokler if n.startswith("ns.sw.") and n not in felles_no)
+        if ukjente:
+            sys.exit(f"{fil.name}: nøkler under ns.sw. som ikke finnes i de delte bitene: {', '.join(ukjente)}")
+        no = {n: v for n, v in alle_nokler.items() if not n.startswith("ns.sw.")}
         enfil = fil.with_suffix(".en.json")
         en = json.loads(enfil.read_text(encoding="utf-8")) if enfil.exists() else {}
         feil_prefiks = [n for n in no if not n.startswith(f"ns.{navn}.")]
@@ -433,6 +559,8 @@ def main():
     print("skrev uavhengig-kontroll.html (ny topp og kontakt)")
     (ROT / "nettsted.css").write_text((HER / "nettsted.css").read_text(encoding="utf-8"), encoding="utf-8")
     (ROT / "nettsted.js").write_text((HER / "nettsted.js").read_text(encoding="utf-8"), encoding="utf-8")
+    for navn in ("software.css", "vindu.js", "tomt.js", "kart.js", "autoplan.js", "studie.js"):
+        (ROT / navn).write_text((HER / navn).read_text(encoding="utf-8"), encoding="utf-8")
     print(f"i18n.js: {len(alle_no)} nøkler i NETTSTED-2026")
 
 

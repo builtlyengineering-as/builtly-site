@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title data-i18n="ns.maps._tittel">Maps · Software · Builtly</title>
-<meta name="description" content="Alt om eiendommen på ett sted: eiendom, eiere, regulering og risiko for enhver adresse." data-i18n-attr-content="ns.maps._beskrivelse" />
+<meta name="description" content="Alt om eiendommen på ett sted: søk, eiendomskort, over 40 kartlag, marked og radarer, og Autoplan som tegner en situasjonsplan på tomta." data-i18n-attr-content="ns.maps._beskrivelse" />
 <meta name="theme-color" content="#FAFAF7" />
 <link rel="canonical" href="https://www.builtly.ai/maps" />
 <meta property="og:type" content="website" />
@@ -12,13 +12,19 @@
 <meta property="og:site_name" content="Builtly" />
 <meta property="og:url" content="https://www.builtly.ai/maps" />
 <meta property="og:title" content="Maps · Software · Builtly" />
-<meta property="og:description" content="Alt om eiendommen på ett sted: eiendom, eiere, regulering og risiko for enhver adresse." />
+<meta property="og:description" content="Alt om eiendommen på ett sted: søk, eiendomskort, over 40 kartlag, marked og radarer, og Autoplan som tegner en situasjonsplan på tomta." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/nettsted.css?v=20261108-2" />
-<script src="/i18n.js?v=20261108-2" defer></script>
-<script src="/nettsted.js?v=20261108-2" defer></script>
+<link rel="stylesheet" href="/nettsted.css?v=20261115-1" />
+<link rel="stylesheet" href="/software.css?v=20261115-1" />
+<script src="/i18n.js?v=20261115-1" defer></script>
+<script src="/nettsted.js?v=20261115-1" defer></script>
+<script src="/tomt.js?v=20261115-1" defer onerror="document.documentElement.classList.add('uten-skript')"></script>
+<script src="/kart.js?v=20261115-1" defer onerror="document.documentElement.classList.add('uten-skript')"></script>
+<script src="/vindu.js?v=20261115-1" defer onerror="document.documentElement.classList.add('uten-skript')"></script>
+<script src="/autoplan.js?v=20261115-1" defer onerror="document.documentElement.classList.add('uten-skript')"></script>
+<noscript><style>[data-kartlag],.kun-js,.prov,.modlinje{display:none}</style></noscript>
 </head>
 <body>
 <!-- Laget av tools/nettsted/lag.py fra tools/nettsted/sider/maps.html. Rediger kilden, ikke denne fila. -->
@@ -27,7 +33,7 @@
     <a class="logo" href="/" aria-label="Builtly"><span class="logo-mark"></span>Builtly</a>
     <nav class="nav-links" aria-label="Hovedmeny" data-i18n-attr-aria-label="ns.nav.hovedmeny">
       <div class="dd">
-        <button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-rad"><span data-i18n-html="ns.nav.rad">Rådgivning</span> <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
+        <a class="dd-lenke" href="/tjenester" data-i18n-html="ns.nav.rad">Rådgivning</a><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-rad" aria-label="Vis fagene" data-i18n-attr-aria-label="ns.nav.rad.vis"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
         <div class="dd-panel" id="dd-rad">
           <a class="dd-i" href="/tjenester/geoteknikk"><span class="k">RIG</span><b data-i18n-html="ns.nav.geo">Geoteknikk</b><span data-i18n-html="ns.nav.geo.t">Grunnforhold, fundamentering, stabilitet og rapportering</span></a>
           <a class="dd-i" href="/tjenester/konstruksjon"><span class="k">RIB</span><b data-i18n-html="ns.nav.rib">Konstruksjon</b><span data-i18n-html="ns.nav.rib.t">Bæresystem, dimensjonering og konstruktive vurderinger</span></a>
@@ -37,13 +43,13 @@
         </div>
       </div>
       <div class="dd">
-        <button class="dd-btn on" type="button" aria-expanded="false" aria-controls="dd-sw">Software <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
+        <a class="dd-lenke on" href="/software">Software</a><button class="dd-btn" type="button" aria-expanded="false" aria-controls="dd-sw" aria-label="Vis modulene" data-i18n-attr-aria-label="ns.nav.sw.vis"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3"/></svg></button>
         <div class="dd-panel" id="dd-sw">
           <a class="dd-i" href="/maps"><span class="k">01</span><b>Maps</b><span data-i18n-html="ns.nav.maps.t">Alt om eiendommen, på ett sted</span></a>
-          <a class="dd-i" href="/mulighetsstudie"><span class="k">02</span><b data-i18n-html="ns.nav.ms">Mulighetsstudie</b><span data-i18n-html="ns.nav.ms.t">Hva tomta tåler: alternativer, sol og økonomi</span></a>
+          <a class="dd-i" href="/mulighetsstudie"><span class="k">02</span><b data-i18n-html="ns.nav.ms">Mulighetsstudie</b><span data-i18n-html="ns.nav.ms.t">Hva tåler tomten?</span></a>
           <a class="dd-i" href="/prosjekthotell"><span class="k">03</span><b data-i18n-html="ns.nav.ph">Prosjekthotell</b><span data-i18n-html="ns.nav.ph.t">Hele prosjektet i ett rom</span></a>
-          <a class="dd-i" href="/salgskonsoll"><span class="k">04</span><b data-i18n-html="ns.nav.sk">Salgskonsoll</b><span data-i18n-html="ns.nav.sk.t">Fra første interessent til siste bolig solgt</span></a>
-          <div class="dd-fot"><span data-i18n-html="ns.nav.sw.fot">Også: Render · BIM Viewer · Control</span><a href="/software" data-i18n-html="ns.nav.sw.alt">Se hele løpet →</a></div>
+          <a class="dd-i" href="/salgskonsoll"><span class="k">04</span><b data-i18n-html="ns.nav.sk">Salgskonsoll</b><span data-i18n-html="ns.nav.sk.t">Fra prosjekt til siste bolig solgt</span></a>
+          <div class="dd-fot"><span data-i18n-html="ns.nav.sw.fot">Én plattform, fire moduler</span><a href="/software" data-i18n-html="ns.nav.sw.alt">Se hele løpet →</a></div>
         </div>
       </div>
       <a href="/about" data-i18n-html="ns.nav.om">Om Builtly</a>
@@ -65,11 +71,12 @@
         <a href="/uavhengig-kontroll"><span data-i18n-html="ns.nav.uak">Uavhengig kontroll</span> <span data-i18n-html="ns.nav.uak.pris">20 000 kr per fag</span></a>
         <a href="/tjenester"><span data-i18n-html="ns.nav.rad.alt2">Alt om rådgivning</span> <span>→</span></a></div>
       <div><h4>Software</h4>
+        <a href="/software"><span data-i18n-html="ns.nav.sw.alt2">Hele løpet</span> <span data-i18n-html="ns.nav.sw.fire">Fire moduler</span></a>
         <a href="/maps">Maps <span data-i18n-html="ns.nav.fase1">01 Finn</span></a>
         <a href="/mulighetsstudie"><span data-i18n-html="ns.nav.ms">Mulighetsstudie</span> <span data-i18n-html="ns.nav.fase2">02 Vurder</span></a>
         <a href="/prosjekthotell"><span data-i18n-html="ns.nav.ph">Prosjekthotell</span> <span data-i18n-html="ns.nav.fase3">03 Utvikle</span></a>
         <a href="/salgskonsoll"><span data-i18n-html="ns.nav.sk">Salgskonsoll</span> <span data-i18n-html="ns.nav.fase4">04 Selg</span></a>
-        <a href="/software"><span data-i18n-html="ns.nav.sw.alt2">Hele løpet</span> <span>→</span></a></div>
+        <a href="/bli-kunde"><span data-i18n-html="ns.nav.demo">Book en demo</span> <span>→</span></a></div>
       <div><h4>Builtly</h4>
         <a href="/about"><span data-i18n-html="ns.nav.om">Om Builtly</span> <span></span></a>
         <a href="/contact"><span data-i18n-html="ns.nav.kontakt">Kontakt</span> <span data-i18n-html="ns.nav.ring">Ring eller skriv</span></a>
@@ -80,57 +87,398 @@
   </div>
 </header>
 <main>
-<section class="phero mork">
+<section class="phero mork sw-topp">
   <div class="w">
-    <span data-i18n-html="ns.maps.001" class="merke"><span class="ruten">1</span>Maps</span>
-    <h1 data-i18n-html="ns.maps.002" class="h1">Alt om eiendommen.<br><span class="aks">På ett sted.</span></h1>
-    <p data-i18n-html="ns.maps.003" class="lede">Søk opp en adresse, et gnr/bnr eller et selskap. Eier, regulering, risiko og marked står i ett eiendomskort, og du kan ta eiendommen rett videre til en mulighetsstudie.</p>
-    <div data-i18n-html="ns.maps.004" class="btns"><a class="btn" href="/contact">Book en gjennomgang <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="/software">Se alle fire produktene</a></div>
-    <div class="steg"><div><span class="n">01</span><b data-i18n-html="ns.maps.005">Søk</b><p data-i18n-html="ns.maps.006">Adresse, gnr/bnr, eier eller selskap.</p></div><div><span class="n">02</span><b data-i18n-html="ns.maps.007">Eiendomskortet</b><p data-i18n-html="ns.maps.008">Matrikkel, areal, bygg, hjemmelshaver og energiattest.</p></div><div><span class="n">03</span><b data-i18n-html="ns.maps.009">Kartlag</b><p data-i18n-html="ns.maps.010">Regulering, flom, skred, kvikkleire, radon og støy i samme kart.</p></div><div><span class="n">04</span><b data-i18n-html="ns.maps.011">Eier og marked</b><p data-i18n-html="ns.maps.012">Regnskap, konserntre og en verdiindikasjon med spenn.</p></div><div><span class="n">05</span><b data-i18n-html="ns.maps.013">Rapport</b><p data-i18n-html="ns.maps.014">Eiendoms-, område- eller selskapsrapport som PDF.</p></div></div>
+    <div class="sw-hode">
+      <div class="sw-navn">
+        <div data-i18n-html="ns.maps.001" class="eyebrow"><span class="t">Software</span><span class="strek"></span><span>01 · Finn</span></div>
+        <h1 class="h1">Maps</h1>
+      </div>
+      <div class="sw-om">
+        <p data-i18n-html="ns.maps.002" class="sw-slag">Alt om eiendommen, <span class="aks">på ett sted.</span></p>
+        <p data-i18n-html="ns.maps.003" class="lede">Søk opp en adresse og se eier, regulering, risiko, marked og økonomi i ett eiendomskort.</p>
+        <div data-i18n-html="ns.maps.004" class="btns"><a class="btn" href="#interesse">Book en demo <span aria-hidden="true">→</span></a><a class="btn btn-ghost" href="#autoplan">Prøv Autoplan</a></div>
+      </div>
+    </div>
+    <nav class="moduler" aria-label="Modulene" data-i18n-attr-aria-label="ns.sw.moduler">
+  <a href="/maps" class="pa" aria-current="page"><span class="n" data-i18n-html="ns.sw.m1.f">01 · Finn</span><b>Maps</b><span class="s" data-i18n-html="ns.sw.m1.s">Alt om eiendommen, på ett sted.</span></a>
+  <a href="/mulighetsstudie"><span class="n" data-i18n-html="ns.sw.m2.f">02 · Vurder</span><b>Mulighetsstudie</b><span class="s" data-i18n-html="ns.sw.m2.s">Hva tåler tomten?</span></a>
+  <a href="/prosjekthotell"><span class="n" data-i18n-html="ns.sw.m3.f">03 · Utvikle</span><b>Prosjekthotell</b><span class="s" data-i18n-html="ns.sw.m3.s">Hele prosjektet i ett rom.</span></a>
+  <a href="/salgskonsoll"><span class="n" data-i18n-html="ns.sw.m4.f">04 · Selg</span><b>Salgskonsoll</b><span class="s" data-i18n-html="ns.sw.m4.s">Fra prosjekt til siste bolig solgt.</span></a>
+</nav>
   </div>
 </section>
-<section class="sek-tett myk">
+<div class="modlinje" data-modlinje inert>
+  <div class="w modlinje-in">
+    <a class="hvem" href="/software">Builtly <i>Software</i></a>
+    <ol>
+      <li class="on" data-modul="maps"><a href="/maps" aria-current="page">01 Maps</a><span class="spor"><i></i></span></li>
+      <li data-modul="mulighetsstudie"><a href="/mulighetsstudie">02 Mulighetsstudie</a><span class="spor"><i></i></span></li>
+      <li data-modul="prosjekthotell"><a href="/prosjekthotell">03 Prosjekthotell</a><span class="spor"><i></i></span></li>
+      <li data-modul="salgskonsoll"><a href="/salgskonsoll">04 Salgskonsoll</a><span class="spor"><i></i></span></li>
+    </ol>
+    <a class="btn btn-liten" href="#interesse"><span data-i18n-html="ns.sw.demo">Book en demo</span> <span aria-hidden="true">→</span></a>
+  </div>
+</div>
+
+<section class="sek" id="i-bruk">
   <div class="w">
-    <div class="to i-bruk">
-      <div class="sek-hode" style="margin-bottom:0">
-        <div data-i18n-html="ns.maps.015" class="eyebrow"><span class="t">01 · Finn</span><span class="strek"></span><span>Slik ser det ut</span></div>
-        <h2 data-i18n-html="ns.maps.016" class="h2">Maps i bruk.</h2>
-        <p data-i18n-html="ns.maps.017" class="lede">For utbyggere, eiendomsrådgivere, meglere og arkitekter.</p>
-        <p data-i18n-html="ns.maps.018" class="liten">Bildet er fra Maps, med en eiendom i Trondheim.</p>
-      </div>
-      
-<figure class="skjerm ekte"><img src="/bilder/produkter/maps-eiendom.jpg" width="1440" height="722" loading="lazy" alt="Maps: en eiendom i 3D-kartet med eiendomskortet og eiendomsdetaljer med verdiestimat, nøkkeldata, plan og risikoprofil" data-i18n-attr-alt="ns.maps.bilde.alt"></figure>
+    <div class="sek-hode">
+      <div data-i18n-html="ns.maps.005" class="eyebrow"><span class="t">01 · Finn</span><span class="strek"></span><span>Slik ser det ut</span></div>
+      <h2 data-i18n-html="ns.maps.006" class="h2">Maps i bruk.</h2>
+      <p data-i18n-html="ns.maps.007" class="lede">For utbyggere, eiendomsrådgivere, meglere og arkitekter. Vinduene under er bygget etter Maps og kan klikkes i. De viser eksempeldata.</p>
+    </div>
+    <div class="trekk">
+
+      <article class="trekk-rad">
+        <div class="trekk-tekst">
+          <span class="k">01</span>
+          <h3 data-i18n-html="ns.maps.008">Kart og kartlag</h3>
+          <p data-i18n-html="ns.maps.009">Over 40 kartlag i samme kart: regulering, flom, skred, kvikkleire, radon, støy og kulturminner. Hvert lag viser kilden, og temalagene har tegnforklaring.</p>
+          <ul>
+            <li data-i18n-html="ns.maps.010"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Risiko fra NVE, løsmasser og radon fra NGU</span></li>
+            <li data-i18n-html="ns.maps.011"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Reguleringsplan og kommuneplan med arealformål</span></li>
+            <li data-i18n-html="ns.maps.012"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Kart, hybrid og flyfoto, i 2D og 3D</span></li>
+          </ul>
+          <p data-i18n-html="ns.maps.013" class="prov">Prøv: slå på et kartlag, eller bytt til 3D</p>
+        </div>
+        <div class="vindu maps" data-vindu data-kartlag>
+          <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">maps.builtly.ai · Kartlag</span><span class="eks">Eksempeldata</span></div>
+          <div class="pv-kart">
+            <svg role="img" aria-label="Kart over et eksempelnabolag med valgte kartlag"></svg>
+            <div class="pv-lagpanel">
+              <b>Kartlag</b>
+              <span class="g">Risiko</span>
+              <label><input type="checkbox" data-lag="flom" checked><span>Flomsoner (10–1000 år)</span></label>
+              <label><input type="checkbox" data-lag="kvikkleire"><span>Kvikkleire (aktsomhet)</span></label>
+              <span class="g">Plan &amp; regulering</span>
+              <label><input type="checkbox" data-lag="regulering"><span>Reguleringsplan (arealformål)</span></label>
+              <span class="g">Støy &amp; forurensning</span>
+              <label><input type="checkbox" data-lag="stoy"><span>Støysoner (veg/bane/fly)</span></label>
+            </div>
+            <div class="ap-seg liten ap-visning" role="group" aria-label="Perspektiv"><button type="button" data-perspektiv="0" aria-pressed="true">2D</button><button type="button" data-perspektiv="1" aria-pressed="false">3D</button></div>
+            <div class="pv-kort pv-eiekort" data-eiendomskort>
+              <span class="pv-eyebrow">Eiendom</span>
+              <div class="pv-tittel">Eksempelgata 12</div>
+              <div class="pv-fakta"><div><span>Gnr / bnr</span><b>100/415</b></div><div><span>Tomteareal</span><b>5 869 m²</b></div></div>
+            </div>
+            <div class="pv-forklaring"><b>Tegnforklaring</b>
+              <span data-forklaring="flom"><i style="background:#3b82c4"></i>200-årsflom</span>
+              <span data-forklaring="kvikkleire" hidden><i style="background:#9b6fc4"></i>Kvikkleire, aktsomhet</span>
+              <span data-forklaring="regulering" hidden><i style="background:#f5d94e"></i>Bolig <i style="background:#e8928c"></i>Offentlig <i style="background:#7fc77f"></i>Friområde</span>
+              <span data-forklaring="stoy" hidden><i style="background:#f2c94c"></i>Gul sone <i style="background:#e25c4a"></i>Rød sone</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="trekk-rad">
+        <div class="trekk-tekst">
+          <span class="k">02</span>
+          <h3 data-i18n-html="ns.maps.014">Søk og eiendomskort</h3>
+          <p data-i18n-html="ns.maps.015">Søk på adresse, gnr/bnr, eier, selskap eller sted. Eiendomskortet viser tomt, bygninger og hjemmelshaver, og Eiendomsdetaljer samler resten i faner.</p>
+          <ul>
+            <li data-i18n-html="ns.maps.016"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Eier, regnskap og konsernstruktur</span></li>
+            <li data-i18n-html="ns.maps.017"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Plan og område, saker og tinglyste dokumenter</span></li>
+            <li data-i18n-html="ns.maps.018"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Rett videre til hurtiganalyse eller mulighetsstudie</span></li>
+          </ul>
+          <p data-i18n-html="ns.maps.019" class="prov">Prøv: bla i fanene i Eiendomsdetaljer</p>
+        </div>
+        <div class="vindu maps" data-vindu>
+          <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">maps.builtly.ai · Eiendom</span><span class="eks">Eksempeldata</span></div>
+          <div class="pv">
+            <div class="pv-sok"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span>Eksempelgata 12</span><span class="pv-chip">Adresse</span></div>
+            <div class="pv-kort">
+              <span class="pv-eyebrow">Eiendom</span>
+              <div class="pv-tittel">Eksempelgata 12</div>
+              <div class="pv-fakta"><div><span>Gnr / bnr</span><b>100/415</b></div><div><span>Tomteareal</span><b>5 869 m²</b></div><div><span>BRA (est.)</span><b>–</b></div><div><span>Bygning(er)</span><b>0</b></div></div>
+              <div class="pv-knapper"><span class="pv-knapp">Start hurtiganalyse</span><span class="pv-knapp mork">Start ny mulighetsstudie</span><span class="pv-knapp lys">Følg eiendom</span><span class="pv-knapp lys">Rapport</span></div>
+            </div>
+            <div class="pv-kort">
+              <b>Eiendomsdetaljer</b>
+              <div class="pv-faner" role="tablist" aria-label="Eiendomsdetaljer" data-faner="detalj">
+                <button type="button" role="tab" aria-selected="true" data-fane="oversikt">Oversikt</button>
+                <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="eier">Eier</button>
+                <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="plan">Plan og område</button>
+                <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="marked">Marked</button>
+                <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="risiko">Risiko og taksonomi</button>
+              </div>
+              <div data-for="detalj" data-rute="oversikt">
+                <div class="pv-rad"><span>Verdiestimat</span><b>30–38 mill. kr</b></div>
+                <div class="pv-spenn" aria-hidden="true"><i></i></div>
+                <p class="pv-note">Tomtemodell · middels sikkerhet · Ikke takst.</p>
+                <div class="pv-rad"><span>Arealtype</span><b>Ubebygd tomt</b></div>
+                <div class="pv-rad"><span>Kommune</span><b>Eksempelby</b></div>
+              </div>
+              <div data-for="detalj" data-rute="eier" hidden>
+                <div class="pv-rad"><span>Eier (hjemmelshaver)</span><b>Eksempel Eiendom AS</b></div>
+                <div class="pv-rad"><span>Driftsinntekter</span><b>12,4 mill. kr</b></div>
+                <div class="pv-rad"><span>Driftsresultat</span><b>3,1 mill. kr</b></div>
+                <div class="pv-rad"><span>Egenkapital</span><b>18,7 mill. kr</b></div>
+                <p class="pv-note">Eier &amp; økonomi fra siste årsregnskap. Åpne registre, ikke en kredittscore.</p>
+              </div>
+              <div data-for="detalj" data-rute="plan" hidden>
+                <div class="pv-rad"><span>Reguleringsplan</span><b>r2019 Eksempelgata</b></div>
+                <div class="pv-rad"><span>Arealformål</span><b>Boligbebyggelse</b></div>
+                <div class="pv-rad"><span>Hensynssoner</span><b>Flomfare i øst</b></div>
+                <div class="pv-rad"><span>Naboliste</span><b>14 naboer og gjenboere</b></div>
+              </div>
+              <div data-for="detalj" data-rute="marked" hidden>
+                <div class="pv-rad"><span>Kvadratmeterpris i Eksempelby</span><b>58 400 kr/m²</b></div>
+                <div class="pv-rad"><span>Nybygg-marked</span><b>6 prosjekter · 41 ledige</b></div>
+                <div class="pv-rad"><span>Median fra-pris</span><b>4,9 mill. kr</b></div>
+                <p class="pv-note">Kilder: SSB og Builtlys egen innhenting av nybygg.</p>
+              </div>
+              <div data-for="detalj" data-rute="risiko" hidden>
+                <div class="pv-rad"><span>Flom</span><b><span class="pv-chip var">Aktsomhet i øst</span></b></div>
+                <div class="pv-rad"><span>Kvikkleire</span><b><span class="pv-chip ok">Ingen treff</span></b></div>
+                <div class="pv-rad"><span>Støy</span><b><span class="pv-chip var">Gul sone mot gata</span></b></div>
+                <p class="pv-note">Screening av målte forhold. Det som ikke er målt, står som ikke målt.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="trekk-rad">
+        <div class="trekk-tekst">
+          <span class="k">03</span>
+          <h3 data-i18n-html="ns.maps.020">Marked og radarer</h3>
+          <p data-i18n-html="ns.maps.021">Verdiestimat som et spenn, med metode og sikkerhet. Radarene følger markedet: konkurser, offentlige anbud, rettsmøter og eiendomsnyheter.</p>
+          <ul>
+            <li data-i18n-html="ns.maps.022"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Følg eiendommer, eiere og kommuner</span></li>
+            <li data-i18n-html="ns.maps.023"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Konkursvakt og transaksjonsvakt med varsel på e-post</span></li>
+            <li data-i18n-html="ns.maps.024"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Tinglyste salg og nybygg i området</span></li>
+          </ul>
+          <p data-i18n-html="ns.maps.025" class="prov">Prøv: bytt radar</p>
+        </div>
+        <div class="vindu maps" data-vindu>
+          <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">maps.builtly.ai · Radarer</span><span class="eks">Eksempeldata</span></div>
+          <div class="pv-delt">
+            <div class="pv-side" aria-hidden="true"><span class="g">Radarer</span><span class="pa">Konkurs</span><span>Anbud</span><span>Domstol</span><span>Nyhetsradar</span><span>Fagnytt</span><span class="g">Mitt</span><span>Dashboard</span><span>Følger</span><span>Datarom</span></div>
+            <div class="pv">
+              <div class="pv-faner" role="tablist" aria-label="Radarer" data-faner="radar">
+                <button type="button" role="tab" aria-selected="true" data-fane="konkurs">Konkurs</button>
+                <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="anbud">Anbud</button>
+                <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="domstol">Domstol</button>
+                <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="nyhet">Nyhetsradar</button>
+                <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="fag">Fagnytt</button>
+              </div>
+              <div class="pv-kort" data-for="radar" data-rute="konkurs">
+                <b>Konkurser i Eksempelby, siste 90 dager</b>
+                <ul class="pv-liste">
+                  <li><span>Eksempel Bygg AS<small>Oppføring av bygninger · eier 2 eiendommer</small></span><span class="pv-chip var">Konkursbo med eiendom</span></li>
+                  <li><span>Nordre Utvikling AS<small>Utvikling og salg av egen fast eiendom</small></span><span class="pv-chip">12 dager siden</span></li>
+                  <li><span>Eksempel Rør og Varme AS<small>Rørleggerarbeid</small></span><span class="pv-chip">31 dager siden</span></li>
+                </ul>
+                <span class="pv-knapp lys">Varsle: Eksempelby</span>
+              </div>
+              <div class="pv-kort" data-for="radar" data-rute="anbud" hidden>
+                <b>Offentlige anbud (Doffin)</b>
+                <ul class="pv-liste">
+                  <li><span>Ny barnehage, totalentreprise<small>Eksempelby kommune · frist 12. des.</small></span><span class="pv-chip ok">Åpen</span></li>
+                  <li><span>Rehabilitering av skole<small>Eksempelby kommune · frist 4. jan.</small></span><span class="pv-chip ok">Åpen</span></li>
+                  <li><span>Rammeavtale rådgivende ingeniør<small>Fylkeskommunen · tildelt</small></span><span class="pv-chip">Avsluttet</span></li>
+                </ul>
+              </div>
+              <div class="pv-kort" data-for="radar" data-rute="domstol" hidden>
+                <b>Rettsmøter i nærings- og eiendomssaker</b>
+                <ul class="pv-liste">
+                  <li><span>Eksempel Eiendom AS mot Eksempel Entreprenør AS<small>Tingretten · tvist om entreprise</small></span><span class="pv-chip">14. jan.</span></li>
+                  <li><span>Sameiet Eksempeltunet mot Utbygger AS<small>Tingretten · mangler ved eiendom</small></span><span class="pv-chip">2. feb.</span></li>
+                </ul>
+                <p class="pv-note">Kun virksomheter vises som parter.</p>
+              </div>
+              <div class="pv-kort" data-for="radar" data-rute="nyhet" hidden>
+                <b>Nyhetsradar for Eksempelby</b>
+                <ul class="pv-liste">
+                  <li><span>Næringseiendom i Kaiveien solgt<small>Tinglyst salg · 84 mill. kr</small></span><span class="pv-chip">Salg</span></li>
+                  <li><span>Priskutt i Parkkvartalet<small>Nybygg · 6 boliger satt ned</small></span><span class="pv-chip">Priskutt</span></li>
+                  <li><span>Rammetillatelse i Elvegata 3<small>Byggesak · 42 boliger</small></span><span class="pv-chip">Vedtak</span></li>
+                </ul>
+              </div>
+              <div class="pv-kort" data-for="radar" data-rute="fag" hidden>
+                <b>Fagnytt</b>
+                <ul class="pv-liste">
+                  <li><span>Høring om endringer i byggteknisk forskrift<small>Regjeringen.no</small></span><span class="pv-chip">Høring</span></li>
+                  <li><span>Byggekostnadsindeks for boliger<small>SSB</small></span><span class="pv-chip">Statistikk</span></li>
+                </ul>
+                <p class="pv-note">Regelverk, høringer, rundskriv og statistikk fra staten.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="trekk-rad">
+        <div class="trekk-tekst">
+          <span class="k">04</span>
+          <h3 data-i18n-html="ns.maps.026">Fagpaneler</h3>
+          <p data-i18n-html="ns.maps.027">Egne paneler for det du leter etter. Tomteradaren finner tomter etter areal, formål og utnyttelse. Leietakerradaren finner selskaper som kan trenge nye lokaler. Saksinnsyn søker i bygge- og plansaker i kommunene som er indeksert.</p>
+          <ul>
+            <li data-i18n-html="ns.maps.028"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Tomteradar med eksport til Excel</span></li>
+            <li data-i18n-html="ns.maps.029"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Saksinnsyn med søk i dokumentene</span></li>
+            <li data-i18n-html="ns.maps.030"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Områdeprofil med befolkning, boligpris og nybygg</span></li>
+          </ul>
+          <p data-i18n-html="ns.maps.031" class="prov">Prøv: bytt panel</p>
+        </div>
+        <div class="vindu maps" data-vindu>
+          <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">maps.builtly.ai · Fagpaneler</span><span class="eks">Eksempeldata</span></div>
+          <div class="pv">
+            <div class="pv-faner" role="tablist" aria-label="Fagpaneler" data-faner="panel">
+              <button type="button" role="tab" aria-selected="true" data-fane="tomter">Tomter</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="leietaker">Leietaker</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="saker">Saker</button>
+              <button type="button" role="tab" aria-selected="false" tabindex="-1" data-fane="rapport">Rapport</button>
+            </div>
+            <div class="pv-kort" data-for="panel" data-rute="tomter">
+              <b>Tomteradar — finn tomter segmentert på tomteareal</b>
+              <div class="pv-fakta tre"><div><span>Størrelse</span><b>Utbyggingsfelt</b></div><div><span>Formål</span><b>Bolig</b></div><div><span>Maks utnyttelse</span><b>BYA 35 %</b></div></div>
+              <ul class="pv-liste">
+                <li><span>Eksempelgata 12<small>100/415 · ubebygd · Eksempel Eiendom AS</small></span><span class="tall">5 869 m²</span></li>
+                <li><span>Elvegata 3<small>100/212 · lager fra 1974</small></span><span class="tall">4 210 m²</span></li>
+                <li><span>Parkveien 20<small>101/88 · parkeringsplass</small></span><span class="tall">3 480 m²</span></li>
+              </ul>
+              <span class="pv-knapp lys">Eksporter til Excel</span>
+            </div>
+            <div class="pv-kort" data-for="panel" data-rute="leietaker" hidden>
+              <b>Leietakerradar</b>
+              <ul class="pv-liste">
+                <li><span>Eksempel Regnskap AS<small>38 ansatte · vokser</small></span><span class="pv-chip var">Flyttesignal 78</span></li>
+                <li><span>Nordre Arkitekter AS<small>21 ansatte</small></span><span class="pv-chip">Flyttesignal 54</span></li>
+                <li><span>Eksempel Tannklinikk AS<small>12 ansatte</small></span><span class="pv-chip">Flyttesignal 31</span></li>
+              </ul>
+              <p class="pv-note">En prospektliste, ikke en bekreftelse på flytting. Leieforhold er ikke offentlige.</p>
+            </div>
+            <div class="pv-kort" data-for="panel" data-rute="saker" hidden>
+              <b>Saksinnsyn</b>
+              <ul class="pv-liste">
+                <li><span>Rammesøknad, Elvegata 3<small>Byggesak · innkommet 3. nov.</small></span><span class="pv-chip var">Under behandling</span></li>
+                <li><span>Detaljregulering, Parkkvartalet<small>Plansak · offentlig ettersyn</small></span><span class="pv-chip">Høring</span></li>
+                <li><span>Ferdigattest, Kaiveien 8<small>Byggesak</small></span><span class="pv-chip ok">Vedtatt</span></li>
+              </ul>
+              <p class="pv-note">Kilde: kommunens postliste, indeksert av Builtly.</p>
+            </div>
+            <div class="pv-kort" data-for="panel" data-rute="rapport" hidden>
+              <b>Områdeprofil · Eksempelby</b>
+              <div class="pv-fakta tre"><div><span>Befolkning</span><b class="stor">24 180</b></div><div><span>Boligpris</span><b class="stor">58 400</b></div><div><span>Nybygg til salgs</span><b class="stor">41</b></div></div>
+              <p class="pv-note">Befolkning, demografi, boligpris og næringsliv. Kan lagres som PDF.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="trekk-rad">
+        <div class="trekk-tekst">
+          <span class="k">05</span>
+          <h3 data-i18n-html="ns.maps.032">Rapporter</h3>
+          <p data-i18n-html="ns.maps.033">Eiendomsrapport, kommunerapport, selskapsrapport, porteføljerapport og rapporten om klimarisiko og EU-taksonomi. Rapportene åpnes som egne ark og lagres som PDF fra utskriftsdialogen.</p>
+          <ul>
+            <li data-i18n-html="ns.maps.034"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Nøkkeltall, eier og hjemmel, transaksjoner og heftelser</span></li>
+            <li data-i18n-html="ns.maps.035"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Risiko og regulering fra de samme kartlagene</span></li>
+            <li data-i18n-html="ns.maps.036"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Kommunerapport med befolkning, boligpriser og nybyggmarked</span></li>
+          </ul>
+          <p data-i18n-html="ns.maps.037" class="prov">Prøv: velg en rapport</p>
+        </div>
+        <div class="vindu maps" data-vindu>
+          <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">maps.builtly.ai · Rapport</span><span class="eks">Eksempeldata</span></div>
+          <div class="pv pv-to">
+            <div class="pv-velg" role="group" aria-label="Rapporter" data-faner="rapport">
+              <button type="button" aria-pressed="true" data-fane="eiendom">Eiendomsrapport <span class="pv-chip">Ark</span></button>
+              <button type="button" aria-pressed="false" data-fane="klima">Klimarisiko og EU-taksonomi <span class="pv-chip">Ark</span></button>
+              <button type="button" aria-pressed="false" data-fane="kommune">Kommunerapport <span class="pv-chip">Ark</span></button>
+              <button type="button" aria-pressed="false" data-fane="selskap">Selskapsrapport <span class="pv-chip">Ark</span></button>
+              <button type="button" aria-pressed="false" data-fane="portefolje">Porteføljerapport <span class="pv-chip">Ark</span></button>
+            </div>
+            <div>
+              <div class="pv-a4" data-for="rapport" data-rute="eiendom"><div class="hode"><span>Builtly Maps</span><span>Eiendomsrapport</span></div><h5>Eksempelgata 12</h5><div class="pv-fakta tre"><div><span>Tomteareal</span><b>5 869 m²</b></div><div><span>Gnr / bnr</span><b>100/415</b></div><div><span>Verdiestimat</span><b>30–38 mill.</b></div></div><b>Eiendom &amp; hjemmel</b><div class="linjer"><i></i><i style="width:82%"></i><i style="width:64%"></i></div><b>Risiko &amp; regulering</b><div class="linjer"><i style="width:90%"></i><i style="width:70%"></i></div></div>
+              <div class="pv-a4" data-for="rapport" data-rute="klima" hidden><div class="hode"><span>Builtly Maps</span><span>Klimarisiko og EU-taksonomi</span></div><h5>Eksempelgata 12</h5><div class="pv-rad"><span>Flom</span><b><span class="pv-chip var">Aktsomhet</span></b></div><div class="pv-rad"><span>Skred</span><b><span class="pv-chip ok">Ingen treff</span></b></div><div class="pv-rad"><span>Stormflo og havnivå</span><b><span class="pv-chip ok">Ingen treff</span></b></div><p class="pv-note">Screening av målte forhold, ikke en dom om forenlighet med taksonomien.</p></div>
+              <div class="pv-a4" data-for="rapport" data-rute="kommune" hidden><div class="hode"><span>Builtly Maps</span><span>Kommunerapport</span></div><h5>Eksempelby</h5><div class="pv-fakta tre"><div><span>Befolkning</span><b>24 180</b></div><div><span>Boligpris</span><b>58 400</b></div><div><span>Nybygg</span><b>6 prosjekter</b></div></div><b>Demografi</b><div class="linjer"><i></i><i style="width:76%"></i></div><b>Boligpriser og nybyggmarked</b><div class="linjer"><i style="width:88%"></i><i style="width:58%"></i></div></div>
+              <div class="pv-a4" data-for="rapport" data-rute="selskap" hidden><div class="hode"><span>Builtly Maps</span><span>Selskapsrapport</span></div><h5>Eksempel Eiendom AS</h5><div class="pv-fakta tre"><div><span>Driftsinntekter</span><b>12,4 mill.</b></div><div><span>Egenkapital</span><b>18,7 mill.</b></div><div><span>Resultat</span><b>2,1 mill.</b></div></div><b>Eierrisiko, konsernøkonomi og roller</b><div class="linjer"><i></i><i style="width:68%"></i><i style="width:80%"></i></div></div>
+              <div class="pv-a4" data-for="rapport" data-rute="portefolje" hidden><div class="hode"><span>Builtly Maps</span><span>Porteføljerapport</span></div><h5>Det du følger</h5><div class="pv-fakta tre"><div><span>Eiendommer</span><b>23</b></div><div><span>Eiere</span><b>9</b></div><div><span>Kommuner</span><b>3</b></div></div><b>Dealflow per fase og fulgte eiendommer</b><div class="linjer"><i></i><i style="width:84%"></i><i style="width:60%"></i></div></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
-<section class="sek">
+
+<section class="mork demo-sek" id="autoplan">
   <div class="w">
-    <div class="sek-hode"><div data-i18n-html="ns.maps.035" class="eyebrow"><span>Det du får</span></div><h2 data-i18n-html="ns.maps.036" class="h2">Konkret, fra første dag.</h2></div>
-    <div class="faar"><div><span class="k">01</span><b data-i18n-html="ns.maps.037">Eiendomskortet</b><p data-i18n-html="ns.maps.038">Matrikkel og teigareal, bygg med BYA og BRA, hjemmelshaver, energiattest og plangrunnlag for eiendommen.</p></div><div><span class="k">02</span><b data-i18n-html="ns.maps.039">Over 60 kartlag</b><p data-i18n-html="ns.maps.040">Regulering, NVEs flom- og skredsoner, kvikkleire, NGUs løsmasser og radon, kulturminner og støy. Fra offentlige kilder, med tegnforklaring.</p></div><div><span class="k">03</span><b data-i18n-html="ns.maps.041">Eier og selskap</b><p data-i18n-html="ns.maps.042">Regnskap og nøkkeltall, konserntre og hvilke eiendommer selskapet eier.</p></div><div><span class="k">04</span><b data-i18n-html="ns.maps.043">Verdiindikasjon</b><p data-i18n-html="ns.maps.044">Et spenn med sikkerhet og metode, regnet fra tinglyste salg og markedsdata. Den er en indikasjon og ingen takst.</p></div><div><span class="k">05</span><b data-i18n-html="ns.maps.045">Radarer og varsler</b><p data-i18n-html="ns.maps.046">Finn ubebygde tomter etter areal og regulering. Følg eiendommer, eiere og kommuner, og få varsel om konkurs og anbud.</p></div><div><span class="k">06</span><b data-i18n-html="ns.maps.047">Rapporter</b><p data-i18n-html="ns.maps.048">Eiendoms-, område-, selskaps-, portefølje- og klimarisikorapport, klar til å sende videre som PDF.</p></div></div>
+    <div class="demo-hode">
+      <div>
+        <div data-i18n-html="ns.maps.038" class="eyebrow"><span class="t">Nytt i Maps</span><span class="strek"></span><span>Prøv selv</span></div>
+        <h2 data-i18n-html="ns.maps.039" class="h2">Autoplan tegner <span class="aks">situasjonsplanen.</span></h2>
+      </div>
+      <div>
+        <p data-i18n-html="ns.maps.040" class="lede">Velg tomten, sett målet og dra i gliderne. Autoplan legger bygg og uterom på tomten mens du justerer, og viser boliger, areal og parkering for hvert grep.</p>
+        <p data-i18n-html="ns.maps.041" class="prov">Prøv: trykk «Aktiver» i vinduet under</p>
+      </div>
+    </div>
+    <div class="vindu maps stor">
+      <div class="vindu-topp"><span class="prikker"><i></i><i></i><i></i></span><span class="adr">maps.builtly.ai · Analyse · Autoplan</span><span class="eks">Eksempeldata</span></div>
+      <div data-autoplan data-studielenke="/mulighetsstudie#demo"><figure class="ap-reserve"><img src="/bilder/demo/autoplan.png" width="1312" height="760" loading="lazy" alt="Autoplan i Maps: panelet med glidere til venstre og kartet med situasjonsplanen til høyre" data-i18n-attr-alt="ns.maps.042"><figcaption data-i18n-html="ns.maps.043">Demoen trenger JavaScript. Bildet viser Autoplan med tre forslag på eksempeltomten.</figcaption></figure></div>
+    </div>
+    <p data-i18n-html="ns.maps.044" class="demo-note">Demoen regner i nettleseren etter reglene i live-skissen i Maps: rader i byggbart areal mot målet du setter. Tomten og nabolaget er oppdiktet. I Maps hentes tomten fra matrikkelen, og studiens motor regner variantene.</p>
   </div>
 </section>
+
 <section class="sek-tett myk">
   <div class="w">
-    <div class="sek-hode"><div data-i18n-html="ns.maps.049" class="eyebrow"><span class="t">Uten og med Maps</span></div><h2 data-i18n-html="ns.maps.050" class="h2">Fem nettsteder blir ett søk.</h2></div>
+    <div class="sek-hode"><div data-i18n-html="ns.maps.045" class="eyebrow"><span class="t">Uten og med Maps</span></div><h2 data-i18n-html="ns.maps.046" class="h2">Sju nettsteder blir ett søk.</h2></div>
     <div class="utenmed">
-      <div class="uten"><span data-i18n-html="ns.maps.051" class="l">I dag</span><h3 data-i18n-html="ns.maps.052">Slik gjøres det ofte</h3><ol><li data-i18n-html="ns.maps.053">Slå opp eiendom og eier i Se eiendom og i Brønnøysundregistrene.</li><li data-i18n-html="ns.maps.054">Finn reguleringsplanen i kommunens planinnsyn og les bestemmelsene.</li><li data-i18n-html="ns.maps.055">Sjekk flom, skred og kvikkleire hos NVE, og løsmasser og radon hos NGU.</li><li data-i18n-html="ns.maps.056">Let etter byggesaker i postlister og eInnsyn.</li><li data-i18n-html="ns.maps.057">Sett sammen områdeprofilen fra SSB i et regneark.</li></ol><div data-i18n-html="ns.maps.058" class="tid"><span>Resultat</span><b>Fem nettsteder, én eiendom om gangen</b></div></div>
-      <div class="med"><span data-i18n-html="ns.maps.059" class="l">Med Maps</span><h3 data-i18n-html="ns.maps.060">Slik gjør du det her</h3><ol><li data-i18n-html="ns.maps.061">Søk på adressen eller gnr/bnr.</li><li data-i18n-html="ns.maps.062">Eiendomskortet viser eier, plan og risiko.</li><li data-i18n-html="ns.maps.063">Slå på de kartlagene du trenger.</li><li data-i18n-html="ns.maps.064">Sakene ligger i samme kort.</li><li data-i18n-html="ns.maps.065">Skriv ut eiendoms- eller områderapporten.</li></ol><div data-i18n-html="ns.maps.066" class="tid"><span>Resultat</span><b>Ett søk</b></div></div>
+      <div class="uten"><span data-i18n-html="ns.maps.047" class="l">I dag</span><h3 data-i18n-html="ns.maps.048">Slik gjøres det ofte</h3><ol><li data-i18n-html="ns.maps.049">Slå opp eiendom og eier på seeiendom.no og i Brønnøysundregistrene.</li><li data-i18n-html="ns.maps.050">Finn reguleringsplanen i kommunens planinnsyn og les bestemmelsene.</li><li data-i18n-html="ns.maps.051">Sjekk flom, skred og kvikkleire hos NVE, og løsmasser og radon hos NGU.</li><li data-i18n-html="ns.maps.052">Let etter byggesaker i postlister og eInnsyn.</li><li data-i18n-html="ns.maps.053">Sett sammen områdeprofilen fra SSB i et regneark.</li></ol><div data-i18n-html="ns.maps.054" class="tid"><span>Resultat</span><b>Sju nettsteder, én eiendom om gangen</b></div></div>
+      <div class="med"><span data-i18n-html="ns.maps.055" class="l">Med Maps</span><h3 data-i18n-html="ns.maps.056">Slik gjør du det her</h3><ol><li data-i18n-html="ns.maps.057">Søk på adressen eller gnr/bnr.</li><li data-i18n-html="ns.maps.058">Eiendomskortet viser eier, plan og risiko.</li><li data-i18n-html="ns.maps.059">Slå på de kartlagene du trenger.</li><li data-i18n-html="ns.maps.060">Sakene ligger i samme kort, i kommunene som er indeksert.</li><li data-i18n-html="ns.maps.061">Lagre eiendoms- eller kommunerapporten som PDF.</li></ol><div data-i18n-html="ns.maps.062" class="tid"><span>Resultat</span><b>Ett søk</b></div></div>
     </div>
-    <p data-i18n-html="ns.maps.067" class="liten mt-s">Eiendomskort med eier og areal gjelder Norge. I Sverige har Maps kartlag og områdestatistikk.</p>
+    <p data-i18n-html="ns.maps.063" class="liten mt-s">Eiendomskort med eier og areal gjelder Norge. I Sverige har Maps kartlag og områdestatistikk.</p>
   </div>
 </section>
-<section class="sek">
+
+<section class="sek skj-sek">
   <div class="w">
-    <div>
-      <div class="sek-hode" style="margin-bottom:0;max-width:860px">
-        <div data-i18n-html="ns.maps.068" class="eyebrow"><span class="t">Tilpasset dere</span><span class="strek"></span><span>Ta kontakt for en gjennomgang</span></div>
-        <h2 data-i18n-html="ns.maps.069" class="h2">Se Maps på deres eget prosjekt.</h2>
-        <p data-i18n-html="ns.maps.070" class="lede">Vi tar utgangspunkt i et område dere kjenner, og viser hvordan dere finner og prioriterer eiendommene der. Vi setter opp produktet med deres data og brukere, og prisen avtales etter hva dere trenger.</p>
-        <div data-i18n-html="ns.maps.071" class="btns"><a class="btn" href="/contact">Book en gjennomgang <span aria-hidden="true">→</span></a></div>
-        <p data-i18n-html="ns.maps.072" class="liten mt-s">Software: <b>Olav Aukan Stenersen</b> <span class="mono">+47 907 00 719</span> · <b>Sofie Thire</b> <span class="mono">+47 912 42 705</span></p>
+    <div class="to">
+      <div class="skj-side">
+        <div data-i18n-html="ns.maps.064" class="eyebrow"><span class="t">Kom i gang</span><span class="strek"></span><span>Tilpasset dere</span></div>
+        <h2 data-i18n-html="ns.maps.065" class="h2" style="margin-top:18px">Finn deres neste prosjekt.</h2>
+        <p data-i18n-html="ns.maps.066" class="lede">Vi tar utgangspunkt i et område dere kjenner, og viser hvordan dere finner og prioriterer eiendommene der. Vi setter opp Maps med deres data og brukere, og prisen avtales etter det dere trenger.</p>
+        <div class="kontakter">
+          <span data-i18n-html="ns.maps.067" class="l">Eller ring oss</span>
+          <div class="kontakt"><img src="/photos/olav.jpg" alt="" width="56" height="64" loading="lazy"><div><b>Olav Aukan Stenersen</b><span><a href="tel:+4790700719">+47 907 00 719</a> · <a href="mailto:olav@builtly.ai">olav@builtly.ai</a></span></div></div>
+          <div class="kontakt"><img src="/photos/sofie.jpg" alt="" width="56" height="64" loading="lazy"><div><b>Sofie Thire</b><span><a href="tel:+4791242705">+47 912 42 705</a> · <a href="mailto:sofie@builtly.ai">sofie@builtly.ai</a></span></div></div>
+        </div>
       </div>
+      <div class="skj-ramme" id="interesse">
+<form class="skj" data-skjema data-intake="https://app.builtly.ai/" data-liste="l_19fe041ff6232371164" novalidate>
+  <fieldset>
+    <legend data-i18n-html="ns.sw.skj.mod">Hvilke moduler gjelder det?</legend>
+    <div class="brikker"><label class="brikke"><input type="checkbox" name="mod" value="Builtly Maps (eiendomskart)" data-modul="maps" checked><span>Maps</span></label><label class="brikke"><input type="checkbox" name="mod" value="Mulighetsstudie (ARK)" data-modul="mulighetsstudie"><span>Mulighetsstudie</span></label><label class="brikke"><input type="checkbox" name="mod" value="Prosjekthotell / datarom" data-modul="prosjekthotell"><span>Prosjekthotell</span></label><label class="brikke"><input type="checkbox" name="mod" value="Salgskonsoll" data-modul="salgskonsoll"><span>Salgskonsoll</span></label></div>
+  </fieldset>
+  <fieldset>
+    <legend data-i18n-html="ns.sw.skj.onske">Hva ønsker dere?</legend>
+    <div class="brikker">
+      <label class="brikke"><input type="radio" name="onske" value="Demo"><span data-i18n-html="ns.sw.skj.o1">Demo</span></label>
+      <label class="brikke"><input type="radio" name="onske" value="Tilbud"><span data-i18n-html="ns.sw.skj.o2">Tilbud</span></label>
+      <label class="brikke"><input type="radio" name="onske" value="Demo + tilbud" checked><span data-i18n-html="ns.sw.skj.o3">Demo og tilbud</span></label>
     </div>
-    <nav data-i18n-attr-aria-label="ns.maps.073" class="lopnav mt-l" aria-label="Løpet"><a data-i18n-html="ns.maps.074" href="/software"><span class="k">← Software</span><b>Hele løpet</b></a><a data-i18n-html="ns.maps.075" href="/mulighetsstudie"><span class="k">02 · Vurder →</span><b>Mulighetsstudie</b></a></nav>
+  </fieldset>
+  <div class="felt-rad">
+    <label class="felt"><span data-i18n-html="ns.sw.skj.firma">Firma</span><input type="text" name="firma" required autocomplete="organization"></label>
+    <label class="felt"><span data-i18n-html="ns.sw.skj.navn">Navn</span><input type="text" name="navn" required autocomplete="name"></label>
+    <label class="felt"><span data-i18n-html="ns.sw.skj.epost">E-post</span><input type="email" name="epost" required autocomplete="email"></label>
+    <label class="felt"><span data-i18n-html="ns.sw.skj.tlf">Telefon <i>valgfritt</i></span><input type="tel" name="tlf" autocomplete="tel"></label>
+  </div>
+  <label class="felt"><span data-i18n-html="ns.sw.skj.melding">Noe vi bør vite om prosjektet? <i>valgfritt</i></span><textarea name="melding" rows="3" maxlength="600"></textarea></label>
+  <div class="skj-felle" aria-hidden="true"><label>Nettside <input type="text" name="nettside" tabindex="-1" autocomplete="off"></label></div>
+  <label class="samtykke"><input type="checkbox" name="samtykke" required><span data-i18n-html="ns.sw.skj.samtykke">Jeg samtykker i at Builtly kontakter meg om henvendelsen og lagrer opplysningene mine til det formålet. Se <a href="/privacy">personvernerklæringen</a>.</span></label>
+  <p class="skj-feil" role="alert" hidden data-i18n-html="ns.sw.skj.feil">Fyll ut firma, navn og e-post, og kryss av for samtykke.</p>
+  <div class="skj-send"><button class="btn" type="submit"><span data-i18n-html="ns.sw.skj.send">Send forespørsel</span> <span aria-hidden="true">→</span></button><span class="liten" data-i18n-html="ns.sw.skj.svar">Vi svarer innen én virkedag.</span></div>
+</form>
+<div class="skj-takk" role="status" hidden><b data-i18n-html="ns.sw.skj.takk">Takk. Forespørselen er sendt.</b><p data-i18n-html="ns.sw.skj.takk2">Vi tar kontakt innen én virkedag. Hører dere ikke fra oss, ring Olav eller Sofie.</p></div>
+</div>
+    </div>
+    <nav data-i18n-attr-aria-label="ns.maps.068" class="lopnav mt-l" aria-label="Løpet"><a data-i18n-html="ns.maps.069" href="/software"><span class="k">← Software</span><b>Hele løpet</b></a><a data-i18n-html="ns.maps.070" href="/mulighetsstudie"><span class="k">02 · Vurder →</span><b>Mulighetsstudie</b></a></nav>
   </div>
 </section>
 </main>

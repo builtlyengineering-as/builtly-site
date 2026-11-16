@@ -16,12 +16,11 @@ import re
 import sys
 
 ROT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-VERSJON = "20261108-2"
+VERSJON = "20261115-1"
 
 SIDER = {
     "apenhetsloven.html": "",
     "bim-viewer.html": "software",
-    "bli-kunde.html": "",
     "careers.html": "",
     "control.html": "software",
     "etiske-retningslinjer.html": "",
