@@ -400,10 +400,9 @@ h1,h2,h3,h4{margin:0;text-wrap:balance}
 
 /* ---------- runde 2: biografier ---------- */
 .bio-liste{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:16px}
-.bio-liste.to-kol{grid-template-columns:repeat(auto-fill,minmax(min(100%,380px),1fr))}
 .bio{display:grid;grid-template-columns:112px minmax(0,1fr);gap:20px;align-items:start;padding:20px;border:1px solid var(--line-strong);background:var(--bg);margin:0;min-width:0}
 .bio.uten{grid-template-columns:minmax(0,1fr)}
-.bio img{width:112px;height:132px;object-fit:cover;background:var(--bg-soft)}
+.bio img{align-self:center;width:112px;height:132px;object-fit:cover;background:var(--bg-soft)}
 .bio .rolle{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-soft)}
 .bio h3{font-size:20px;font-weight:600;letter-spacing:-.015em;margin:6px 0 8px}
 .bio p{margin:0;font-size:14.5px;line-height:1.6;color:var(--ink-soft)}
